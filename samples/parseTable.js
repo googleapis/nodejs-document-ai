@@ -18,10 +18,11 @@
 async function main(
   projectId = 'YOUR_PROJECT_ID',
   gcsOutputUri = 'output-bucket',
-  gcsOutputUriPrefix = `${new Date().toLocaleString().replace(/[\/|,|\s|:]/g, '_')}/`,
-  gcsInputUri = 'gs://cloud-samples-data/documentai/invoice.pdf',
+  gcsOutputUriPrefix = `${new Date()
+    .toLocaleString()
+    .replace(/[/|,|\s|:]/g, '_')}/`,
+  gcsInputUri = 'gs://cloud-samples-data/documentai/invoice.pdf'
 ) {
-
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -30,28 +31,29 @@ async function main(
   // const gcsOutputUriPrefix = 'YOUR_STORAGE_PREFIX';
 
   // Imports the Google Cloud client library
-  const { DocumentUnderstandingServiceClient } = require('@google-cloud/documentai');
-  const { Storage } = require('@google-cloud/storage');
+  const {
+    DocumentUnderstandingServiceClient,
+  } = require('@google-cloud/documentai');
+  const {Storage} = require('@google-cloud/storage');
 
   const client = new DocumentUnderstandingServiceClient();
   const storage = new Storage();
 
   // [START document_parse_table]
   async function parseTableGCS(inputUri, outputUri, outputUriPrefix) {
-
     // Configure the batch process request.
     const request = {
       inputConfig: {
         gcsSource: {
-          uri: inputUri
+          uri: inputUri,
         },
-        mimeType: 'application/pdf'
+        mimeType: 'application/pdf',
       },
       outputConfig: {
         gcsDestination: {
-          uri: `${outputUri}${outputUriPrefix}`
+          uri: `${outputUri}${outputUriPrefix}`,
         },
-        pagesPerShard: 1
+        pagesPerShard: 1,
       },
       tableExtractionParams: {
         enabled: true,
@@ -59,22 +61,22 @@ async function main(
           {
             boundingBox: {
               normalizedVertices: [
-                { x: 0, y: 0 },
-                { x: 1, y: 0 },
-                { x: 1, y: 1 },
-                { x: 0, y: 1 }
-              ]
-            }
-          }
-        ]
-      }
+                {x: 0, y: 0},
+                {x: 1, y: 0},
+                {x: 1, y: 1},
+                {x: 0, y: 1},
+              ],
+            },
+          },
+        ],
+      },
     };
 
     // Configure the request for batch process
     const requests = {
       parent: `projects/${projectId}`,
-      requests: [request]
-    }
+      requests: [request],
+    };
 
     // Batch process document using a long-running operation.
     // You can wait for now, or get results later.
@@ -87,7 +89,7 @@ async function main(
 
     // Query Storage bucket for the results file(s).
     const query = {
-      prefix: outputUriPrefix
+      prefix: outputUriPrefix,
     };
 
     console.log('Fetching results ...');
@@ -112,17 +114,19 @@ async function main(
       const [table] = page1.tables;
       const [headerRow] = table.headerRows;
 
-      console.log('Results from first table processed:')
-      console.log(`First detected language: ${page1.detectedLanguages[0].languageCode}`);
+      console.log('Results from first table processed:');
+      console.log(
+        `First detected language: ${page1.detectedLanguages[0].languageCode}`
+      );
 
       console.log('Header row:');
-      headerRow.cells.forEach((tableCell, index) => {
+      headerRow.cells.forEach(tableCell => {
         if (tableCell.layout.textAnchor.textSegments) {
-
           // Extract shards from the text field
           // First shard in document doesn't have startIndex property
-          let startIndex = tableCell.layout.textAnchor.textSegments[0].startIndex || 0;
-          let endIndex = tableCell.layout.textAnchor.textSegments[0].endIndex;
+          const startIndex =
+            tableCell.layout.textAnchor.textSegments[0].startIndex || 0;
+          const endIndex = tableCell.layout.textAnchor.textSegments[0].endIndex;
 
           console.log(`\t${text.substring(startIndex, endIndex)}`);
         }
@@ -132,6 +136,5 @@ async function main(
   // [END document_parse_table]
 
   parseTableGCS(gcsInputUri, gcsOutputUri, gcsOutputUriPrefix);
-
 }
 main(...process.argv.slice(2));

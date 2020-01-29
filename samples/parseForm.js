@@ -16,119 +16,120 @@
 'use strict';
 
 async function main(
-    projectId = 'YOUR_PROJECT_ID',
-    gcsOutputUri = 'output-bucket',
-    gcsOutputUriPrefix = `${new Date().toLocaleString().replace(/[\/|,|\s|:]/g, '_')}/`,
-    gcsInputUri = 'gs://cloud-samples-data/documentai/invoice.pdf',
+  projectId = 'YOUR_PROJECT_ID',
+  gcsOutputUri = 'output-bucket',
+  gcsOutputUriPrefix = `${new Date()
+    .toLocaleString()
+    .replace(/[/|,|\s|:]/g, '_')}/`,
+  gcsInputUri = 'gs://cloud-samples-data/documentai/invoice.pdf'
 ) {
+  /**
+   * TODO(developer): Uncomment these variables before running the sample.
+   */
+  // const projectId = 'YOUR_PROJECT_ID';
+  // const gcsOutputUri = 'YOUR_STORAGE_BUCKET';
+  // const gcsOutputUriPrefix = 'YOUR_STORAGE_PREFIX';
 
-    /**
-     * TODO(developer): Uncomment these variables before running the sample.
-     */
-    // const projectId = 'YOUR_PROJECT_ID';
-    // const gcsOutputUri = 'YOUR_STORAGE_BUCKET';
-    // const gcsOutputUriPrefix = 'YOUR_STORAGE_PREFIX';
+  // Imports the Google Cloud client library
+  const {
+    DocumentUnderstandingServiceClient,
+  } = require('@google-cloud/documentai');
+  const {Storage} = require('@google-cloud/storage');
 
-    // Imports the Google Cloud client library
-    const { DocumentUnderstandingServiceClient } = require('@google-cloud/documentai');
-    const { Storage } = require('@google-cloud/storage');
+  const client = new DocumentUnderstandingServiceClient();
+  const storage = new Storage();
 
-    const client = new DocumentUnderstandingServiceClient();
-    const storage = new Storage();
+  // [START document_parse_table]
+  async function parseFormGCS(inputUri, outputUri, outputUriPrefix) {
+    // Configure the batch process request.
+    const request = {
+      inputConfig: {
+        gcsSource: {
+          uri: inputUri,
+        },
+        mimeType: 'application/pdf',
+      },
+      outputConfig: {
+        gcsDestination: {
+          uri: `${outputUri}${outputUriPrefix}`,
+        },
+        pagesPerShard: 1,
+      },
+      formExtractionParams: {
+        enabled: true,
+        keyValuePairHints: [
+          {
+            key: 'Phone',
+            valueTypes: ['PHONE_NUMBER'],
+          },
+          {
+            key: 'Contact',
+            valueTypes: ['EMAIL', 'NAME'],
+          },
+        ],
+      },
+    };
 
-    // [START document_parse_table]
-    async function parseFormGCS(inputUri, outputUri, outputUriPrefix) {
+    // Configure the request for batch process
+    const requests = {
+      parent: `projects/${projectId}`,
+      requests: [request],
+    };
 
-        // Configure the batch process request.
-        const request = {
-            inputConfig: {
-                gcsSource: {
-                    uri: inputUri
-                },
-                mimeType: 'application/pdf'
-            },
-            outputConfig: {
-                gcsDestination: {
-                    uri: `${outputUri}${outputUriPrefix}`
-                },
-                pagesPerShard: 1
-            },
-            formExtractionParams: {
-                enabled: true,
-                keyValuePairHints: [
-                    {
-                        key: 'Phone',
-                        valueTypes: ['PHONE_NUMBER']
-                    },
-                    {
-                        key: 'Contact',
-                        valueTypes: ['EMAIL', 'NAME']
-                    }
-                ]
-            }
-        };
+    // Batch process document using a long-running operation.
+    // You can wait for now, or get results later.
+    const [operation] = await client.batchProcessDocuments(requests);
 
-        // Configure the request for batch process
-        const requests = {
-            parent: `projects/${projectId}`,
-            requests: [request]
-        }
+    // Wait for operation to complete.
+    await operation.promise();
 
-        // Batch process document using a long-running operation.
-        // You can wait for now, or get results later.
-        const [operation] = await client.batchProcessDocuments(requests);
+    console.log('Document processing complete.');
 
-        // Wait for operation to complete.
-        await operation.promise();
+    // Query Storage bucket for the results file(s).
+    const query = {
+      prefix: outputUriPrefix,
+    };
 
-        console.log('Document processing complete.');
+    console.log('Fetching results ...');
 
-        // Query Storage bucket for the results file(s).
-        const query = {
-            prefix: outputUriPrefix
-        };
+    // List all of the files in the Storage bucket
+    const [files] = await storage.bucket(gcsOutputUri).getFiles(query);
 
-        console.log('Fetching results ...');
+    files.forEach(async (fileInfo, index) => {
+      // Get the file as a buffer
+      const [file] = await fileInfo.download();
 
-        // List all of the files in the Storage bucket
-        const [files] = await storage.bucket(gcsOutputUri).getFiles(query);
+      console.log(`Fetched file #${index + 1}:`);
 
-        files.forEach(async (fileInfo, index) => {
-            // Get the file as a buffer
-            const [file] = await fileInfo.download();
+      // Read the results
+      const results = JSON.parse(file.toString());
 
-            console.log(`Fetched file #${index + 1}:`);
+      // Get all of the document text as one big string.
+      const text = results.text;
 
-            // Read the results
-            const results = JSON.parse(file.toString());
+      // Utility to extract text anchors from text field.
+      const getText = textAnchor => {
+        const startIndex = textAnchor.textSegments[0].startIndex || 0;
+        const endIndex = textAnchor.textSegments[0].endIndex;
 
-            // Get all of the document text as one big string.
-            const text = results.text;
+        return `\t${text.substring(startIndex, endIndex)}`;
+      };
 
-            // Utility to extract text anchors from text field.
-            let getText = (textAnchor) => {
-                let startIndex = textAnchor.textSegments[0].startIndex || 0;
-                let endIndex = textAnchor.textSegments[0].endIndex;
+      // Process the output
+      const [page1] = results.pages;
+      const formFields = page1.formFields;
 
-                return `\t${text.substring(startIndex, endIndex)}`;
-            }
+      formFields.forEach(field => {
+        const fieldName = getText(field.fieldName.textAnchor);
+        const fieldValue = getText(field.fieldValue.textAnchor);
 
-            // Process the output
-            const [page1] = results.pages;
-            const formFields = page1.formFields;
+        console.log('Extracted key value pair:');
+        console.log(`\t(${fieldName}, ${fieldValue})`);
+      });
+    });
+  }
+  // [END document_parse_table]
 
-            formFields.forEach(field => {
-                let fieldName = getText(field.fieldName.textAnchor);
-                let fieldValue = getText(field.fieldValue.textAnchor);
-
-                console.log('Extracted key value pair:')
-                console.log(`\t(${fieldName}, ${fieldValue})`);
-            });
-        });
-    }
-    // [END document_parse_table]
-
-    parseFormGCS(gcsInputUri, gcsOutputUri, gcsOutputUriPrefix);
-
+  parseFormGCS(gcsInputUri, gcsOutputUri, gcsOutputUriPrefix);
 }
 main(...process.argv.slice(2));
