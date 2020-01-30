@@ -15,12 +15,12 @@
 
 'use strict';
 
+const uuid = require('uuid');
+
 async function main(
   projectId = 'YOUR_PROJECT_ID',
   gcsOutputUri = 'output-bucket',
-  gcsOutputUriPrefix = `${new Date()
-    .toLocaleString()
-    .replace(/[/|,|\s|:]/g, '_')}/`,
+  gcsOutputUriPrefix = uuid.v4(),
   gcsInputUri = 'gs://cloud-samples-data/documentai/invoice.pdf'
 ) {
   /**
