@@ -42,7 +42,7 @@ describe(`Document AI parse table`, () => {
     await bucket.delete();
   });
 
-  it(`should parse the GCS invoice example`, async () => {
+  it(`should parse the GCS invoice example as as table`, async () => {
     const output = execSync(
       `${cmd} ${testParseTable.projectId} gs://${bucketName}/`
     );

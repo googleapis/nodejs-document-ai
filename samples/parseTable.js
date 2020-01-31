@@ -23,6 +23,7 @@ async function main(
   gcsOutputUriPrefix = uuid.v4(),
   gcsInputUri = 'gs://cloud-samples-data/documentai/invoice.pdf'
 ) {
+  // [START document_parse_table]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -39,7 +40,6 @@ async function main(
   const client = new DocumentUnderstandingServiceClient();
   const storage = new Storage();
 
-  // [START document_parse_table]
   async function parseTableGCS(inputUri, outputUri, outputUriPrefix) {
     // Configure the batch process request.
     const request = {

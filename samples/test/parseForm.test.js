@@ -26,7 +26,7 @@ const storage = new Storage();
 const bucketName = `nodejs-docs-samples-test-${uuid.v4()}`;
 const cmd = `node parseForm.js`;
 
-const testParseTable = {
+const testParseForm = {
   projectId: process.env.GCLOUD_PROJECT,
   gcsOutputUriPrefix: uuid.v4(),
 };
@@ -42,9 +42,9 @@ describe(`Document AI parse form`, () => {
     await bucket.delete();
   });
 
-  it(`should parse the GCS invoice example`, async () => {
+  it(`should parse the GCS invoice example as a form`, async () => {
     const output = execSync(
-      `${cmd} ${testParseTable.projectId} gs://${bucketName}/`
+      `${cmd} ${testParseForm.projectId} gs://${bucketName}/`
     );
     assert.match(output, /Extracted key value pair:/);
   });
