@@ -34,12 +34,12 @@ async function main(
   const {
     DocumentUnderstandingServiceClient,
   } = require('@google-cloud/documentai');
-  const {Storage} = require('@google-cloud/storage');
+  const { Storage } = require('@google-cloud/storage');
 
   const client = new DocumentUnderstandingServiceClient();
   const storage = new Storage();
 
-  // [START document_parse_table]
+  // [START document_parse_form]
   async function parseFormGCS(inputUri, outputUri, outputUriPrefix) {
     // Configure the batch process request.
     const request = {
@@ -128,7 +128,7 @@ async function main(
       });
     });
   }
-  // [END document_parse_table]
+  // [END document_parse_form]
 
   parseFormGCS(gcsInputUri, gcsOutputUri, gcsOutputUriPrefix);
 }
