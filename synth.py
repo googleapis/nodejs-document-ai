@@ -22,7 +22,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 # run the gapic generator
 gapic = gcp.GAPICMicrogenerator()
-versions = ['v1beta1','v1beta2']
+versions = ['v1beta2']
 for version in versions:
  library = gapic.typescript_library(
    'documentai',
@@ -41,3 +41,4 @@ s.copy(templates, excludes=[])
 # Node.js specific cleanup
 subprocess.run(['npm', 'install'])
 subprocess.run(['npm', 'run', 'fix'])
+subprocess.run(['npx', 'compileProtos', 'src'])

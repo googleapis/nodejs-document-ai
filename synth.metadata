@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-03-13T18:20:03.620253Z",
+  "updateTime": "2020-03-13T19:57:08.539944Z",
   "sources": [
     {
       "template": {
@@ -10,15 +10,6 @@
     }
   ],
   "destinations": [
-    {
-      "client": {
-        "source": "googleapis",
-        "apiName": "documentai",
-        "apiVersion": "v1beta1",
-        "language": "typescript",
-        "generator": "gapic-generator-typescript"
-      }
-    },
     {
       "client": {
         "source": "googleapis",
