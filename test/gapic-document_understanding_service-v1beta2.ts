@@ -18,209 +18,243 @@
 
 import * as protosTypes from '../protos/protos';
 import * as assert from 'assert';
-import { describe, it } from 'mocha';
+import {describe, it} from 'mocha';
 const documentunderstandingserviceModule = require('../src');
 
-
 const FAKE_STATUS_CODE = 1;
-class FakeError{
-    name: string;
-    message: string;
-    code: number;
-    constructor(n: number){
-        this.name = 'fakeName';
-        this.message = 'fake message';
-        this.code = n;
-    }
+class FakeError {
+  name: string;
+  message: string;
+  code: number;
+  constructor(n: number) {
+    this.name = 'fakeName';
+    this.message = 'fake message';
+    this.code = n;
+  }
 }
 const error = new FakeError(FAKE_STATUS_CODE);
 export interface Callback {
-  (err: FakeError|null, response?: {} | null): void;
+  (err: FakeError | null, response?: {} | null): void;
 }
 
-export class Operation{
-    constructor(){};
-    promise() {};
+export class Operation {
+  constructor() {}
+  promise() {}
 }
-function mockSimpleGrpcMethod(expectedRequest: {}, response: {} | null, error: FakeError | null) {
-    return (actualRequest: {}, options: {}, callback: Callback) => {
-        assert.deepStrictEqual(actualRequest, expectedRequest);
-        if (error) {
-            callback(error);
-        } else if (response) {
-            callback(null, response);
-        } else {
-            callback(null);
-        }
-    };
+function mockSimpleGrpcMethod(
+  expectedRequest: {},
+  response: {} | null,
+  error: FakeError | null
+) {
+  return (actualRequest: {}, options: {}, callback: Callback) => {
+    assert.deepStrictEqual(actualRequest, expectedRequest);
+    if (error) {
+      callback(error);
+    } else if (response) {
+      callback(null, response);
+    } else {
+      callback(null);
+    }
+  };
 }
-function mockLongRunningGrpcMethod(expectedRequest: {}, response: {} | null, error?: {} | null) {
-    return (request: {}) => {
-        assert.deepStrictEqual(request, expectedRequest);
-        const mockOperation = {
-          promise: function() {
-            return new Promise((resolve, reject) => {
-              if (error) {
-                reject(error);
-              }
-              else {
-                resolve([response]);
-              }
-            });
+function mockLongRunningGrpcMethod(
+  expectedRequest: {},
+  response: {} | null,
+  error?: {} | null
+) {
+  return (request: {}) => {
+    assert.deepStrictEqual(request, expectedRequest);
+    const mockOperation = {
+      promise() {
+        return new Promise((resolve, reject) => {
+          if (error) {
+            reject(error);
+          } else {
+            resolve([response]);
           }
-        };
-        return Promise.resolve([mockOperation]);
+        });
+      },
     };
+    return Promise.resolve([mockOperation]);
+  };
 }
 describe('v1beta2.DocumentUnderstandingServiceClient', () => {
-    it('has servicePath', () => {
-        const servicePath = documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient.servicePath;
-        assert(servicePath);
+  it('has servicePath', () => {
+    const servicePath =
+      documentunderstandingserviceModule.v1beta2
+        .DocumentUnderstandingServiceClient.servicePath;
+    assert(servicePath);
+  });
+  it('has apiEndpoint', () => {
+    const apiEndpoint =
+      documentunderstandingserviceModule.v1beta2
+        .DocumentUnderstandingServiceClient.apiEndpoint;
+    assert(apiEndpoint);
+  });
+  it('has port', () => {
+    const port =
+      documentunderstandingserviceModule.v1beta2
+        .DocumentUnderstandingServiceClient.port;
+    assert(port);
+    assert(typeof port === 'number');
+  });
+  it('should create a client with no option', () => {
+    const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient();
+    assert(client);
+  });
+  it('should create a client with gRPC fallback', () => {
+    const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient(
+      {
+        fallback: true,
+      }
+    );
+    assert(client);
+  });
+  it('has initialize method and supports deferred initialization', async () => {
+    const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient(
+      {
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      }
+    );
+    assert.strictEqual(client.documentUnderstandingServiceStub, undefined);
+    await client.initialize();
+    assert(client.documentUnderstandingServiceStub);
+  });
+  it('has close method', () => {
+    const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient(
+      {
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      }
+    );
+    client.close();
+  });
+  describe('processDocument', () => {
+    it('invokes processDocument without error', done => {
+      const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient(
+        {
+          credentials: {client_email: 'bogus', private_key: 'bogus'},
+          projectId: 'bogus',
+        }
+      );
+      // Initialize client before mocking
+      client.initialize();
+      // Mock request
+      const request: protosTypes.google.cloud.documentai.v1beta2.IProcessDocumentRequest = {};
+      request.parent = '';
+      // Mock response
+      const expectedResponse = {};
+      // Mock gRPC layer
+      client._innerApiCalls.processDocument = mockSimpleGrpcMethod(
+        request,
+        expectedResponse,
+        null
+      );
+      client.processDocument(request, (err: {}, response: {}) => {
+        assert.ifError(err);
+        assert.deepStrictEqual(response, expectedResponse);
+        done();
+      });
     });
-    it('has apiEndpoint', () => {
-        const apiEndpoint = documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient.apiEndpoint;
-        assert(apiEndpoint);
-    });
-    it('has port', () => {
-        const port = documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient.port;
-        assert(port);
-        assert(typeof port === 'number');
-    });
-    it('should create a client with no option', () => {
-        const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient();
-        assert(client);
-    });
-    it('should create a client with gRPC fallback', () => {
-        const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-    it('has initialize method and supports deferred initialization', async () => {
-        const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
-        });
-        assert.strictEqual(client.documentUnderstandingServiceStub, undefined);
-        await client.initialize();
-        assert(client.documentUnderstandingServiceStub);
-    });
-    it('has close method', () => {
-        const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
-        });
-        client.close();
-    });
-    describe('processDocument', () => {
-        it('invokes processDocument without error', done => {
-            const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
-            // Initialize client before mocking
-            client.initialize();
-            // Mock request
-            const request: protosTypes.google.cloud.documentai.v1beta2.IProcessDocumentRequest = {};
-            request.parent = '';
-            // Mock response
-            const expectedResponse = {};
-            // Mock gRPC layer
-            client._innerApiCalls.processDocument = mockSimpleGrpcMethod(
-                request,
-                expectedResponse,
-                null
-            );
-            client.processDocument(request, (err: {}, response: {}) => {
-                assert.ifError(err);
-                assert.deepStrictEqual(response, expectedResponse);
-                done();
-            })
-        });
 
-        it('invokes processDocument with error', done => {
-            const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
-            // Initialize client before mocking
-            client.initialize();
-            // Mock request
-            const request: protosTypes.google.cloud.documentai.v1beta2.IProcessDocumentRequest = {};
-            request.parent = '';
-            // Mock response
-            const expectedResponse = {};
-            // Mock gRPC layer
-            client._innerApiCalls.processDocument = mockSimpleGrpcMethod(
-                request,
-                null,
-                error
-            );
-            client.processDocument(request, (err: FakeError, response: {}) => {
-                assert(err instanceof FakeError);
-                assert.strictEqual(err.code, FAKE_STATUS_CODE);
-                assert(typeof response === 'undefined');
-                done();
-            })
+    it('invokes processDocument with error', done => {
+      const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient(
+        {
+          credentials: {client_email: 'bogus', private_key: 'bogus'},
+          projectId: 'bogus',
+        }
+      );
+      // Initialize client before mocking
+      client.initialize();
+      // Mock request
+      const request: protosTypes.google.cloud.documentai.v1beta2.IProcessDocumentRequest = {};
+      request.parent = '';
+      // Mock response
+      const expectedResponse = {};
+      // Mock gRPC layer
+      client._innerApiCalls.processDocument = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+      client.processDocument(request, (err: FakeError, response: {}) => {
+        assert(err instanceof FakeError);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        assert(typeof response === 'undefined');
+        done();
+      });
+    });
+  });
+  describe('batchProcessDocuments', () => {
+    it('invokes batchProcessDocuments without error', done => {
+      const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient(
+        {
+          credentials: {client_email: 'bogus', private_key: 'bogus'},
+          projectId: 'bogus',
+        }
+      );
+      // Initialize client before mocking
+      client.initialize();
+      // Mock request
+      const request: protosTypes.google.cloud.documentai.v1beta2.IBatchProcessDocumentsRequest = {};
+      request.parent = '';
+      // Mock response
+      const expectedResponse = {};
+      // Mock gRPC layer
+      client._innerApiCalls.batchProcessDocuments = mockLongRunningGrpcMethod(
+        request,
+        expectedResponse
+      );
+      client
+        .batchProcessDocuments(request)
+        .then((responses: [Operation]) => {
+          const operation = responses[0];
+          return operation ? operation.promise() : {};
+        })
+        .then((responses: [Operation]) => {
+          assert.deepStrictEqual(responses[0], expectedResponse);
+          done();
+        })
+        .catch((err: {}) => {
+          done(err);
         });
     });
-    describe('batchProcessDocuments', () => {
-        it('invokes batchProcessDocuments without error', done => {
-            const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
-            // Initialize client before mocking
-            client.initialize();
-            // Mock request
-            const request: protosTypes.google.cloud.documentai.v1beta2.IBatchProcessDocumentsRequest = {};
-            request.parent = '';
-            // Mock response
-            const expectedResponse = {};
-            // Mock gRPC layer
-            client._innerApiCalls.batchProcessDocuments = mockLongRunningGrpcMethod(
-                request,
-                expectedResponse
-            );
-            client.batchProcessDocuments(request).then((responses: [Operation]) => {
-                const operation = responses[0];
-                return operation? operation.promise() : {};
-            }).then((responses: [Operation]) => {
-                assert.deepStrictEqual(responses[0], expectedResponse);
-                done();
-            }).catch((err: {}) => {
-                done(err);
-            });
-        });
 
-        it('invokes batchProcessDocuments with error', done => {
-            const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
-            // Initialize client before mocking
-            client.initialize();
-            // Mock request
-            const request: protosTypes.google.cloud.documentai.v1beta2.IBatchProcessDocumentsRequest = {};
-            request.parent = '';
-            // Mock response
-            const expectedResponse = {};
-            // Mock gRPC layer
-            client._innerApiCalls.batchProcessDocuments = mockLongRunningGrpcMethod(
-                request,
-                null,
-                error
-            );
-            client.batchProcessDocuments(request).then((responses: [Operation]) => {
-                const operation = responses[0];
-                return operation? operation.promise() : {};
-            }).then(() => {
-                assert.fail();
-            }).catch((err: FakeError) => {
-                assert(err instanceof FakeError);
-                assert.strictEqual(err.code, FAKE_STATUS_CODE);
-                done();
-            });
+    it('invokes batchProcessDocuments with error', done => {
+      const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient(
+        {
+          credentials: {client_email: 'bogus', private_key: 'bogus'},
+          projectId: 'bogus',
+        }
+      );
+      // Initialize client before mocking
+      client.initialize();
+      // Mock request
+      const request: protosTypes.google.cloud.documentai.v1beta2.IBatchProcessDocumentsRequest = {};
+      request.parent = '';
+      // Mock response
+      const expectedResponse = {};
+      // Mock gRPC layer
+      client._innerApiCalls.batchProcessDocuments = mockLongRunningGrpcMethod(
+        request,
+        null,
+        error
+      );
+      client
+        .batchProcessDocuments(request)
+        .then((responses: [Operation]) => {
+          const operation = responses[0];
+          return operation ? operation.promise() : {};
+        })
+        .then(() => {
+          assert.fail();
+        })
+        .catch((err: FakeError) => {
+          assert(err instanceof FakeError);
+          assert.strictEqual(err.code, FAKE_STATUS_CODE);
+          done();
         });
     });
+  });
 });
