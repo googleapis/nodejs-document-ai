@@ -11,7 +11,7 @@
 
 
 
-Cloud Document API client for Node.js
+Documentai client for Node.js
 
 
 * [Document AI Node.js Client API Reference][client-docs]

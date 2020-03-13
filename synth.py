@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,15 +23,16 @@ logging.basicConfig(level=logging.DEBUG)
 # run the gapic generator
 gapic = gcp.GAPICMicrogenerator()
 versions = ['v1beta2']
+name = 'documentai'
 for version in versions:
  library = gapic.typescript_library(
-   'documentai',
+   name,
    generator_args={
      "package-name": "@google-cloud/documentai"
    },
-   proto_path=f'/google/cloud/documentai/{version}',
+   proto_path=f'/google/cloud/{name}/{version}',
    version=version)
- s.copy(library, excludes=['README.md', 'package.json'])
+ s.copy(library, excludes=['README.md'])
 
 # Copy common templates
 common_templates = gcp.CommonTemplates()
