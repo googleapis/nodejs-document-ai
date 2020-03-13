@@ -1,6 +1,6 @@
 {
   "interfaces": {
-    "google.cloud.documentai.v1beta1.DocumentUnderstandingService": {
+    "google.cloud.documentai.v1beta2.DocumentUnderstandingService": {
       "retry_codes": {
         "non_idempotent": [],
         "idempotent": [
@@ -21,6 +21,10 @@
       },
       "methods": {
         "BatchProcessDocuments": {
+          "retry_codes_name": "non_idempotent",
+          "retry_params_name": "default"
+        },
+        "ProcessDocument": {
           "retry_codes_name": "non_idempotent",
           "retry_params_name": "default"
         }

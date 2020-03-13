@@ -21,17 +21,21 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 
 # run the gapic generator
-gapic = gcp.GAPICGenerator()
-versions = ['v1beta1']
+gapic = gcp.GAPICMicrogenerator()
+versions = ['v1beta1','v1beta2']
 for version in versions:
- library = gapic.node_library(
+ library = gapic.typescript_library(
    'documentai',
-   version)
+   generator_args={
+     "package-name": "@google-cloud/documentai"
+   },
+   proto_path=f'/google/cloud/documentai/{version}',
+   version=version)
  s.copy(library, excludes=['README.md', 'package.json'])
 
 # Copy common templates
 common_templates = gcp.CommonTemplates()
-templates = common_templates.node_library()
+templates = common_templates.node_library(source_location='build/src')
 s.copy(templates, excludes=[])
 
 # Node.js specific cleanup

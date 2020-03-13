@@ -1,26 +1,11 @@
 {
-  "updateTime": "2019-11-06T17:52:39.407684Z",
+  "updateTime": "2020-03-13T17:53:23.840373Z",
   "sources": [
-    {
-      "generator": {
-        "name": "artman",
-        "version": "0.41.0",
-        "dockerImage": "googleapis/artman@sha256:75b38a3b073a7b243545f2332463096624c802bb1e56b8cb6f22ba1ecd325fa9"
-      }
-    },
-    {
-      "git": {
-        "name": "googleapis",
-        "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "5691fcb7c1a926b52577aa1834f31d9c50efda54",
-        "internalRef": "278731899"
-      }
-    },
     {
       "template": {
         "name": "node_library",
         "origin": "synthtool.gcp",
-        "version": "2019.10.17"
+        "version": "2020.2.4"
       }
     }
   ],
@@ -30,9 +15,17 @@
         "source": "googleapis",
         "apiName": "documentai",
         "apiVersion": "v1beta1",
-        "language": "nodejs",
-        "generator": "gapic",
-        "config": "google/cloud/documentai/artman_documentai_v1beta1.yaml"
+        "language": "typescript",
+        "generator": "gapic-generator-typescript"
+      }
+    },
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "documentai",
+        "apiVersion": "v1beta2",
+        "language": "typescript",
+        "generator": "gapic-generator-typescript"
       }
     }
   ]

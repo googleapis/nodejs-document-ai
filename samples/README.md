@@ -12,27 +12,51 @@
 
 * [Before you begin](#before-you-begin)
 * [Samples](#samples)
-  * [Quickstart](#quickstart)
+  * [Parse Form](#parse-form)
+  * [Parse Table](#parse-table)
 
 ## Before you begin
 
 Before running the samples, make sure you've followed the steps outlined in
 [Using the client library](https://github.com/googleapis/nodejs-document-ai#using-the-client-library).
 
+`cd samples`
+
+`npm install`
+
+`cd ..`
+
 ## Samples
 
 
 
-### Quickstart
+### Parse Form
 
-View the [source code](https://github.com/googleapis/nodejs-document-ai/blob/master/samples/quickstart.js).
+View the [source code](https://github.com/googleapis/nodejs-document-ai/blob/master/samples/parseForm.js).
 
-[![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-document-ai&page=editor&open_in_editor=samples/quickstart.js,samples/README.md)
+[![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-document-ai&page=editor&open_in_editor=samples/parseForm.js,samples/README.md)
 
 __Usage:__
 
 
-`node quickstart.js`
+`node samples/parseForm.js`
+
+
+-----
+
+
+
+
+### Parse Table
+
+View the [source code](https://github.com/googleapis/nodejs-document-ai/blob/master/samples/parseTable.js).
+
+[![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-document-ai&page=editor&open_in_editor=samples/parseTable.js,samples/README.md)
+
+__Usage:__
+
+
+`node samples/parseTable.js`
 
 
 
