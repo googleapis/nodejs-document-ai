@@ -1,4 +1,4 @@
-// Copyright 2019 Google LLC
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ const gapic = Object.freeze({
 });
 
 /**
- * The `documentai` package has the following named exports:
+ * The `@google-cloud/documentai` package has the following named exports:
  *
  * - `DocumentUnderstandingServiceClient` - Reference to
  *   {@link v1beta1.DocumentUnderstandingServiceClient}
@@ -42,14 +42,14 @@ const gapic = Object.freeze({
  *     - `DocumentUnderstandingServiceClient` - Reference to
  *       {@link v1beta1.DocumentUnderstandingServiceClient}
  *
- * @module {object} documentai
+ * @module {object} @google-cloud/documentai
  * @alias nodejs-documentai
  *
  * @example <caption>Install the client library with <a href="https://www.npmjs.com/">npm</a>:</caption>
- * npm install --save documentai
+ * npm install --save @google-cloud/documentai
  *
  * @example <caption>Import the client library:</caption>
- * const documentai = require('documentai');
+ * const documentai = require('@google-cloud/documentai');
  *
  * @example <caption>Create a client that uses <a href="https://goo.gl/64dyYX">Application Default Credentials (ADC)</a>:</caption>
  * const client = new documentai.DocumentUnderstandingServiceClient();
