@@ -19,6 +19,7 @@ const uuid = require('uuid');
 
 async function main(
   projectId = 'YOUR_PROJECT_ID',
+  location = 'YOUR_PROJECT_LOCATION',
   gcsOutputUri = 'output-bucket',
   gcsOutputUriPrefix = uuid.v4(),
   gcsInputUri = 'gs://cloud-samples-data/documentai/invoice.pdf'
@@ -28,8 +29,10 @@ async function main(
    * TODO(developer): Uncomment these variables before running the sample.
    */
   // const projectId = 'YOUR_PROJECT_ID';
+  // const location = 'YOUR_PROJECT_LOCATION',
   // const gcsOutputUri = 'YOUR_STORAGE_BUCKET';
   // const gcsOutputUriPrefix = 'YOUR_STORAGE_PREFIX';
+  // const gcsInputUri = 'GCS URI of the PDF to process';
 
   // Imports the Google Cloud client library
   const {
@@ -72,7 +75,7 @@ async function main(
 
     // Configure the request for batch process
     const requests = {
-      parent: `projects/${projectId}`,
+      parent: `projects/${projectId}/locations/${location}`,
       requests: [request],
     };
 

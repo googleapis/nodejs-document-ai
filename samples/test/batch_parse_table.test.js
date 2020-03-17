@@ -24,10 +24,11 @@ const execSync = cmd => cp.execSync(cmd, {encoding: 'utf-8'});
 
 const storage = new Storage();
 const bucketName = `nodejs-docs-samples-test-${uuid.v4()}`;
-const cmd = `node parseTable.js`;
+const cmd = `node batch_parse_table.js`;
 
 const testParseTable = {
   projectId: process.env.GCLOUD_PROJECT,
+  location: 'us-central1',
   gcsOutputUriPrefix: uuid.v4(),
 };
 
@@ -44,8 +45,8 @@ describe(`Document AI parse table`, () => {
 
   it(`should parse the GCS invoice example as as table`, async () => {
     const output = execSync(
-      `${cmd} ${testParseTable.projectId} gs://${bucketName}/`
+      `${cmd} ${testParseTable.projectId} ${testParseTable.location} gs://${bucketName}/`
     );
-    assert.match(output, /First detected language: en/);
+    assert.match(output, /First detected language:/);
   });
 });
