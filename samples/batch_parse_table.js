@@ -19,6 +19,7 @@ const uuid = require('uuid');
 
 async function main(
   projectId = 'YOUR_PROJECT_ID',
+  location = 'YOUR_PROJECT_LOCATION',
   gcsOutputUri = 'output-bucket',
   gcsOutputUriPrefix = uuid.v4(),
   gcsInputUri = 'gs://cloud-samples-data/documentai/invoice.pdf'
@@ -28,8 +29,10 @@ async function main(
    * TODO(developer): Uncomment these variables before running the sample.
    */
   // const projectId = 'YOUR_PROJECT_ID';
+  // const location = 'YOUR_PROJECT_LOCATION';
   // const gcsOutputUri = 'YOUR_STORAGE_BUCKET';
   // const gcsOutputUriPrefix = 'YOUR_STORAGE_PREFIX';
+  // const gcsInputUri = 'YOUR_SOURCE_PDF';
 
   // Imports the Google Cloud client library
   const {
@@ -41,8 +44,11 @@ async function main(
   const storage = new Storage();
 
   async function parseTableGCS(inputUri, outputUri, outputUriPrefix) {
+    const parent = `projects/${projectId}/locations/${location}`;
+
     // Configure the batch process request.
     const request = {
+      //parent,
       inputConfig: {
         gcsSource: {
           uri: inputUri,
@@ -51,7 +57,7 @@ async function main(
       },
       outputConfig: {
         gcsDestination: {
-          uri: `${outputUri}${outputUriPrefix}`,
+          uri: `${outputUri}${outputUriPrefix}/`,
         },
         pagesPerShard: 1,
       },
@@ -74,17 +80,24 @@ async function main(
 
     // Configure the request for batch process
     const requests = {
-      parent: `projects/${projectId}`,
+      parent,
       requests: [request],
     };
 
-    // Batch process document using a long-running operation.
-    // You can wait for now, or get results later.
-    const [operation] = await client.batchProcessDocuments(requests);
+    console.log(requests.parent);
 
-    // Wait for operation to complete.
-    await operation.promise();
+    try {
+      // Batch process document using a long-running operation.
+      // You can wait for now, or get results later.
+      // Note: first request to the service takes longer than subsequent
+      // requests.
+      const [operation] = await client.batchProcessDocuments(requests);
 
+      // Wait for operation to complete.
+      await operation.promise();
+    } catch (ex) {
+      console.log(ex);
+    }
     console.log('Document processing complete.');
 
     // Query Storage bucket for the results file(s).
