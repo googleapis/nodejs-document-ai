@@ -22,6 +22,7 @@
     "predocs-test": "npm run docs",
     "prepare": "npm run compile-protos && npm run compile",
     "system-test": "c8 mocha build/system-test",
+    "samples-test": "cd samples/ && npm link ../ && npm test && cd ../",
     "test": "c8 mocha build/test"
   },
   "dependencies": {
