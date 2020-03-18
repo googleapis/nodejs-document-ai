@@ -80,11 +80,7 @@ async function main(
 
     // Configure the request for batch process
     const requests = {
-<<<<<<< HEAD:samples/batch_parse_table.js
       parent,
-=======
-      parent: `projects/${projectId}/locations/us-central1`,
->>>>>>> master:samples/parseTable.js
       requests: [request],
     };
 

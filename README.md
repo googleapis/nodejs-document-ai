@@ -11,11 +11,7 @@
 
 
 
-<<<<<<< HEAD
-Documentai client for Node.js
-=======
 Document AI client for Node.js
->>>>>>> master
 
 
 * [Document AI Node.js Client API Reference][client-docs]
@@ -56,8 +52,6 @@ npm install @google-cloud/documentai
 ```
 
 
-<<<<<<< HEAD
-=======
 ### Using the client library
 
 ```javascript
@@ -110,7 +104,6 @@ npm install @google-cloud/documentai
 
 ```
 
->>>>>>> master
 
 
 ## Samples
@@ -122,10 +115,7 @@ has instructions for running the samples.
 | --------------------------- | --------------------------------- | ------ |
 | Parse Form | [source code](https://github.com/googleapis/nodejs-document-ai/blob/master/samples/parseForm.js) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-document-ai&page=editor&open_in_editor=samples/parseForm.js,samples/README.md) |
 | Parse Table | [source code](https://github.com/googleapis/nodejs-document-ai/blob/master/samples/parseTable.js) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-document-ai&page=editor&open_in_editor=samples/parseTable.js,samples/README.md) |
-<<<<<<< HEAD
-=======
 | Quickstart | [source code](https://github.com/googleapis/nodejs-document-ai/blob/master/samples/quickstart.js) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-document-ai&page=editor&open_in_editor=samples/quickstart.js,samples/README.md) |
->>>>>>> master
 
 
 
