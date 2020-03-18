@@ -16,6 +16,12 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:src/v1beta2/index.ts
+export {DocumentUnderstandingServiceClient} from './document_understanding_service_client';
+=======
+>>>>>>> master
 import {DocumentUnderstandingServiceClient} from '@google-cloud/documentai';
 
 function main() {
@@ -23,3 +29,7 @@ function main() {
 }
 
 main();
+<<<<<<< HEAD
+=======
+>>>>>>> master:system-test/fixtures/sample/src/index.ts
+>>>>>>> master

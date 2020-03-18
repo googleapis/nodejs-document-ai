@@ -30,9 +30,16 @@ for version in versions:
    generator_args={
      "package-name": "@google-cloud/documentai"
    },
+<<<<<<< HEAD
    proto_path=f'/google/cloud/{name}/{version}',
    version=version)
  s.copy(library, excludes=['README.md'])
+=======
+   extra_proto_files=['google/cloud/common_resources.proto'],
+   proto_path=f'/google/cloud/{name}/{version}',
+   version=version)
+ s.copy(library, excludes=['README.md', 'package.json'])
+>>>>>>> master
 
 # Copy common templates
 common_templates = gcp.CommonTemplates()
