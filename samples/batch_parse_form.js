@@ -108,7 +108,7 @@ async function main(
       const results = JSON.parse(file.toString());
 
       // Get all of the document text as one big string.
-      const text = results.text;
+      const {text} = results;
 
       // Utility to extract text anchors from text field.
       const getText = textAnchor => {
