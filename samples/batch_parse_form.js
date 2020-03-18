@@ -44,7 +44,6 @@ async function main(
   const storage = new Storage();
 
   async function parseFormGCS(inputUri, outputUri, outputUriPrefix) {
-
     const parent = `projects/${projectId}/locations/${location}`;
 
     // Configure the batch process request.
