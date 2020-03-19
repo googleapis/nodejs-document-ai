@@ -24,7 +24,9 @@ const execSync = cmd => cp.execSync(cmd, {encoding: 'utf-8'});
 const cwd = path.join(__dirname, '..');
 const projectId = process.env.GCLOUD_PROJECT;
 const LOCATION = 'us-central1';
-const MODEL_NAME = process.env.MODEL_NAME;
+const MODEL_NAME =
+  process.env.MODEL_NAME ||
+  'projects/1046198160504/locations/us-central1/models/TCN7483069430457434112';
 
 describe('Document AI parse with AutoML model', () => {
   it('should run use an AutoML model to parse a PDF', async () => {
