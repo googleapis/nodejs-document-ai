@@ -55,52 +55,52 @@ npm install @google-cloud/documentai
 ### Using the client library
 
 ```javascript
-  /**
-   * TODO(developer): Uncomment these variables before running the sample.
-   */
-  // const projectId = 'YOUR_PROJECT_ID';
-  // const location = 'YOUR_PROJECT_LOCATION';
-  // const gcsInputUri = 'YOUR_SOURCE_PDF';
+/**
+ * TODO(developer): Uncomment these variables before running the sample.
+ */
+// const projectId = 'YOUR_PROJECT_ID';
+// const location = 'YOUR_PROJECT_LOCATION';
+// const gcsInputUri = 'YOUR_SOURCE_PDF';
 
-  const {
-    DocumentUnderstandingServiceClient,
-  } = require('@google-cloud/documentai');
-  const client = new DocumentUnderstandingServiceClient();
+const {
+  DocumentUnderstandingServiceClient,
+} = require('@google-cloud/documentai');
+const client = new DocumentUnderstandingServiceClient();
 
-  async function quickstart() {
-    // Configure the request for processing the PDF
-    const parent = `projects/${projectId}/locations/${location}`;
-    const request = {
-      parent,
-      inputConfig: {
-        gcsSource: {
-          uri: gcsInputUri,
-        },
-        mimeType: 'application/pdf',
+async function quickstart() {
+  // Configure the request for processing the PDF
+  const parent = `projects/${projectId}/locations/${location}`;
+  const request = {
+    parent,
+    inputConfig: {
+      gcsSource: {
+        uri: gcsInputUri,
       },
-    };
+      mimeType: 'application/pdf',
+    },
+  };
 
-    // Recognizes text entities in the PDF document
-    const [result] = await client.processDocument(request);
+  // Recognizes text entities in the PDF document
+  const [result] = await client.processDocument(request);
 
-    // Get all of the document text as one big string
-    const {text} = result;
+  // Get all of the document text as one big string
+  const {text} = result;
 
-    // Extract shards from the text field
-    function extractText(textAnchor) {
-      // First shard in document doesn't have startIndex property
-      const startIndex = textAnchor.textSegments[0].startIndex || 0;
-      const endIndex = textAnchor.textSegments[0].endIndex;
+  // Extract shards from the text field
+  function extractText(textAnchor) {
+    // First shard in document doesn't have startIndex property
+    const startIndex = textAnchor.textSegments[0].startIndex || 0;
+    const endIndex = textAnchor.textSegments[0].endIndex;
 
-      return text.substring(startIndex, endIndex);
-    }
-
-    for (const entity of result.entities) {
-      console.log(`\nEntity text: ${extractText(entity.textAnchor)}`);
-      console.log(`Entity type: ${entity.type}`);
-      console.log(`Entity mention text: ${entity.mentionText}`);
-    }
+    return text.substring(startIndex, endIndex);
   }
+
+  for (const entity of result.entities) {
+    console.log(`\nEntity text: ${extractText(entity.textAnchor)}`);
+    console.log(`Entity type: ${entity.type}`);
+    console.log(`Entity mention text: ${entity.mentionText}`);
+  }
+}
 
 ```
 
@@ -144,11 +144,13 @@ More Information: [Google Cloud Platform Launch Stages][launch_stages]
 
 Contributions welcome! See the [Contributing Guide](https://github.com/googleapis/nodejs-document-ai/blob/master/CONTRIBUTING.md).
 
-Please note that this `README.md`, the `samples/README.md`,
+Please note that this [README.md](README.md), the [samples/README.md](samples/README.md),
 and a variety of configuration files in this repository (including `.nycrc` and `tsconfig.json`)
-are generated from a central template. To edit one of these files, make an edit
-to its template in this
-[directory](https://github.com/googleapis/synthtool/tree/master/synthtool/gcp/templates/node_library).
+are generated from a central template.
+
+If you would like to make edits to one of those files
+(or if you aren't certain if the file you're changing is one, check in the template repository before making changes),
+look for the file in the [template](https://github.com/googleapis/synthtool/tree/master/synthtool/gcp/templates/node_library).
 
 ## License
 
