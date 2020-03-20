@@ -92,7 +92,7 @@ async function main(
     const [headerRow] = table.headerRows;
 
     console.log('Header row:');
-    headerRow.cells.forEach(tableCell => {
+    for (const tableCell of headerRow.cells) {
       if (tableCell.layout.textAnchor.textSegments) {
         // Extract shards from the text field
         // First shard in document doesn't have startIndex property
@@ -100,7 +100,7 @@ async function main(
 
         console.log(`\t${getText(textAnchor)}`);
       }
-    });
+    }
   }
   // [END document_quickstart]
   await parseTable();

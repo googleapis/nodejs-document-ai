@@ -56,7 +56,7 @@ async function main(
       },
       outputConfig: {
         gcsDestination: {
-          uri: `${outputUri}${outputUriPrefix}`,
+          uri: `${outputUri}/${outputUriPrefix}/`,
         },
         pagesPerShard: 1,
       },
@@ -124,13 +124,13 @@ async function main(
       const [page1] = results.pages;
       const formFields = page1.formFields;
 
-      formFields.forEach(field => {
+      for (const field of formFields) {
         const fieldName = getText(field.fieldName.textAnchor);
         const fieldValue = getText(field.fieldValue.textAnchor);
 
         console.log('Extracted key value pair:');
         console.log(`\t(${fieldName}, ${fieldValue})`);
-      });
+      }
     });
   }
   // [END document_parse_form]

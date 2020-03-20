@@ -82,15 +82,15 @@ async function main(
 
     // Process the output
     const [page1] = result.pages;
-    const formFields = page1.formFields;
+    const {formFields} = page1;
 
-    formFields.forEach(field => {
+    for (const field of formFields) {
       const fieldName = getText(field.fieldName.textAnchor);
       const fieldValue = getText(field.fieldValue.textAnchor);
 
       console.log('Extracted key value pair:');
       console.log(`\t(${fieldName}, ${fieldValue})`);
-    });
+    }
   }
   // [END document_quickstart]
   await parseForm();

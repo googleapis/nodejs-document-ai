@@ -57,7 +57,7 @@ async function main(
       },
       outputConfig: {
         gcsDestination: {
-          uri: `${outputUri}${outputUriPrefix}/`,
+          uri: `${outputUri}/${outputUriPrefix}/`,
         },
         pagesPerShard: 1,
       },
@@ -84,20 +84,15 @@ async function main(
       requests: [request],
     };
 
-    console.log(requests.parent);
+    // Batch process document using a long-running operation.
+    // You can wait for now, or get results later.
+    // Note: first request to the service takes longer than subsequent
+    // requests.
+    const [operation] = await client.batchProcessDocuments(requests);
 
-    try {
-      // Batch process document using a long-running operation.
-      // You can wait for now, or get results later.
-      // Note: first request to the service takes longer than subsequent
-      // requests.
-      const [operation] = await client.batchProcessDocuments(requests);
+    // Wait for operation to complete.
+    await operation.promise();
 
-      // Wait for operation to complete.
-      await operation.promise();
-    } catch (ex) {
-      console.log(ex);
-    }
     console.log('Document processing complete.');
 
     // Query Storage bucket for the results file(s).
@@ -133,7 +128,7 @@ async function main(
       );
 
       console.log('Header row:');
-      headerRow.cells.forEach(tableCell => {
+      for (const tableCell of headerRow.cells) {
         if (tableCell.layout.textAnchor.textSegments) {
           // Extract shards from the text field
           // First shard in document doesn't have startIndex property
@@ -143,7 +138,7 @@ async function main(
 
           console.log(`\t${text.substring(startIndex, endIndex)}`);
         }
-      });
+      }
     });
   }
   // [END document_parse_table]

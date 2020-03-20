@@ -45,7 +45,7 @@ describe(`Document AI batch parse table`, () => {
 
   it(`should parse the GCS invoice example as as table`, async () => {
     const output = execSync(
-      `${cmd} ${testParseTable.projectId} ${testParseTable.location} gs://${bucketName}/`
+      `${cmd} ${testParseTable.projectId} ${testParseTable.location} gs://${bucketName}`
     );
     assert.match(output, /First detected language:/);
   });
