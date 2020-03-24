@@ -19,11 +19,13 @@
  * Process a single PDF.
  * @param {string} projectId your Google Cloud project ID
  * @param {string} location region to use for this operation
+ * @param {string} autoMLModel AutoML Natural Language model to use
  * @param {string} gcsInputUri Cloud Storage URI of the PDF document to parse
  */
 async function main(
   projectId,
   location,
+  autoMLModel,
   gcsInputUri = 'gs://cloud-samples-data/documentai/invoice.pdf'
 ) {
   // [START document_quickstart]
@@ -32,6 +34,7 @@ async function main(
    */
   // const projectId = 'YOUR_PROJECT_ID';
   // const location = 'YOUR_PROJECT_LOCATION';
+  // const autoMLModel = 'Full resource name of AutoML Natural Language model';
   // const gcsInputUri = 'YOUR_SOURCE_PDF';
 
   const {
@@ -39,7 +42,7 @@ async function main(
   } = require('@google-cloud/documentai');
   const client = new DocumentUnderstandingServiceClient();
 
-  async function quickstart() {
+  async function parseWithModel() {
     // Configure the request for processing the PDF
     const parent = `projects/${projectId}/locations/${location}`;
     const request = {
@@ -50,31 +53,21 @@ async function main(
         },
         mimeType: 'application/pdf',
       },
+      automlParams: {
+        model: autoMLModel,
+      },
     };
 
     // Recognizes text entities in the PDF document
     const [result] = await client.processDocument(request);
 
-    // Get all of the document text as one big string
-    const {text} = result;
-
-    // Extract shards from the text field
-    function extractText(textAnchor) {
-      // First shard in document doesn't have startIndex property
-      const startIndex = textAnchor.textSegments[0].startIndex || 0;
-      const endIndex = textAnchor.textSegments[0].endIndex;
-
-      return text.substring(startIndex, endIndex);
-    }
-
-    for (const entity of result.entities) {
-      console.log(`\nEntity text: ${extractText(entity.textAnchor)}`);
-      console.log(`Entity type: ${entity.type}`);
-      console.log(`Entity mention text: ${entity.mentionText}`);
+    for (const label of result.labels) {
+      console.log(`Label detected: ${label.name}`);
+      console.log(`Confidence: ${label.confidence}`);
     }
   }
   // [END document_quickstart]
-  await quickstart();
+  await parseWithModel();
 }
 
 main(...process.argv.slice(2)).catch(err => {

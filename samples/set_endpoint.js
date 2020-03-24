@@ -23,7 +23,7 @@
  */
 async function main(
   projectId,
-  location,
+  location = 'europe-west2',
   gcsInputUri = 'gs://cloud-samples-data/documentai/invoice.pdf'
 ) {
   // [START document_quickstart]
@@ -31,15 +31,18 @@ async function main(
    * TODO(developer): Uncomment these variables before running the sample.
    */
   // const projectId = 'YOUR_PROJECT_ID';
-  // const location = 'YOUR_PROJECT_LOCATION';
+  // const location = 'Location for operation--must match region of endpoint';
   // const gcsInputUri = 'YOUR_SOURCE_PDF';
 
   const {
     DocumentUnderstandingServiceClient,
   } = require('@google-cloud/documentai');
-  const client = new DocumentUnderstandingServiceClient();
 
-  async function quickstart() {
+  // Specifies the location of the api endpoint
+  const clientOptions = {apiEndpoint: 'eu-documentai.googleapis.com'};
+  const client = new DocumentUnderstandingServiceClient(clientOptions);
+
+  async function setEndpoint() {
     // Configure the request for processing the PDF
     const parent = `projects/${projectId}/locations/${location}`;
     const request = {
@@ -74,7 +77,7 @@ async function main(
     }
   }
   // [END document_quickstart]
-  await quickstart();
+  await setEndpoint();
 }
 
 main(...process.argv.slice(2)).catch(err => {

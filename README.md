@@ -11,7 +11,7 @@
 
 
 
-Cloud Document API client for Node.js
+Document AI client for Node.js
 
 
 * [Document AI Node.js Client API Reference][client-docs]
@@ -52,6 +52,57 @@ npm install @google-cloud/documentai
 ```
 
 
+### Using the client library
+
+```javascript
+/**
+ * TODO(developer): Uncomment these variables before running the sample.
+ */
+// const projectId = 'YOUR_PROJECT_ID';
+// const location = 'YOUR_PROJECT_LOCATION';
+// const gcsInputUri = 'YOUR_SOURCE_PDF';
+
+const {
+  DocumentUnderstandingServiceClient,
+} = require('@google-cloud/documentai');
+const client = new DocumentUnderstandingServiceClient();
+
+async function quickstart() {
+  // Configure the request for processing the PDF
+  const parent = `projects/${projectId}/locations/${location}`;
+  const request = {
+    parent,
+    inputConfig: {
+      gcsSource: {
+        uri: gcsInputUri,
+      },
+      mimeType: 'application/pdf',
+    },
+  };
+
+  // Recognizes text entities in the PDF document
+  const [result] = await client.processDocument(request);
+
+  // Get all of the document text as one big string
+  const {text} = result;
+
+  // Extract shards from the text field
+  function extractText(textAnchor) {
+    // First shard in document doesn't have startIndex property
+    const startIndex = textAnchor.textSegments[0].startIndex || 0;
+    const endIndex = textAnchor.textSegments[0].endIndex;
+
+    return text.substring(startIndex, endIndex);
+  }
+
+  for (const entity of result.entities) {
+    console.log(`\nEntity text: ${extractText(entity.textAnchor)}`);
+    console.log(`Entity type: ${entity.type}`);
+    console.log(`Entity mention text: ${entity.mentionText}`);
+  }
+}
+
+```
 
 
 ## Samples
@@ -63,6 +114,7 @@ has instructions for running the samples.
 | --------------------------- | --------------------------------- | ------ |
 | Parse Form | [source code](https://github.com/googleapis/nodejs-document-ai/blob/master/samples/parseForm.js) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-document-ai&page=editor&open_in_editor=samples/parseForm.js,samples/README.md) |
 | Parse Table | [source code](https://github.com/googleapis/nodejs-document-ai/blob/master/samples/parseTable.js) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-document-ai&page=editor&open_in_editor=samples/parseTable.js,samples/README.md) |
+| Quickstart | [source code](https://github.com/googleapis/nodejs-document-ai/blob/master/samples/quickstart.js) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-document-ai&page=editor&open_in_editor=samples/quickstart.js,samples/README.md) |
 
 
 

@@ -19,17 +19,20 @@ const uuid = require('uuid');
 
 async function main(
   projectId = 'YOUR_PROJECT_ID',
+  location = 'YOUR_PROJECT_LOCATION',
   gcsOutputUri = 'output-bucket',
   gcsOutputUriPrefix = uuid.v4(),
   gcsInputUri = 'gs://cloud-samples-data/documentai/invoice.pdf'
 ) {
-  // [START document_parse_form]
+  // [START document_parse_table]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   // const projectId = 'YOUR_PROJECT_ID';
+  // const location = 'YOUR_PROJECT_LOCATION';
   // const gcsOutputUri = 'YOUR_STORAGE_BUCKET';
   // const gcsOutputUriPrefix = 'YOUR_STORAGE_PREFIX';
+  // const gcsInputUri = 'YOUR_SOURCE_PDF';
 
   // Imports the Google Cloud client library
   const {
@@ -40,9 +43,12 @@ async function main(
   const client = new DocumentUnderstandingServiceClient();
   const storage = new Storage();
 
-  async function parseFormGCS(inputUri, outputUri, outputUriPrefix) {
+  async function parseTableGCS(inputUri, outputUri, outputUriPrefix) {
+    const parent = `projects/${projectId}/locations/${location}`;
+
     // Configure the batch process request.
     const request = {
+      //parent,
       inputConfig: {
         gcsSource: {
           uri: inputUri,
@@ -51,20 +57,22 @@ async function main(
       },
       outputConfig: {
         gcsDestination: {
-          uri: `${outputUri}${outputUriPrefix}`,
+          uri: `${outputUri}/${outputUriPrefix}/`,
         },
         pagesPerShard: 1,
       },
-      formExtractionParams: {
+      tableExtractionParams: {
         enabled: true,
-        keyValuePairHints: [
+        tableBoundHints: [
           {
-            key: 'Phone',
-            valueTypes: ['PHONE_NUMBER'],
-          },
-          {
-            key: 'Contact',
-            valueTypes: ['EMAIL', 'NAME'],
+            boundingBox: {
+              normalizedVertices: [
+                {x: 0, y: 0},
+                {x: 1, y: 0},
+                {x: 1, y: 1},
+                {x: 0, y: 1},
+              ],
+            },
           },
         ],
       },
@@ -72,12 +80,14 @@ async function main(
 
     // Configure the request for batch process
     const requests = {
-      parent: `projects/${projectId}/locations/us-central1`,
+      parent,
       requests: [request],
     };
 
     // Batch process document using a long-running operation.
     // You can wait for now, or get results later.
+    // Note: first request to the service takes longer than subsequent
+    // requests.
     const [operation] = await client.batchProcessDocuments(requests);
 
     // Wait for operation to complete.
@@ -104,32 +114,35 @@ async function main(
       // Read the results
       const results = JSON.parse(file.toString());
 
-      // Get all of the document text as one big string.
+      // Get all of the document text as one big string
       const text = results.text;
 
-      // Utility to extract text anchors from text field.
-      const getText = textAnchor => {
-        const startIndex = textAnchor.textSegments[0].startIndex || 0;
-        const endIndex = textAnchor.textSegments[0].endIndex;
-
-        return `\t${text.substring(startIndex, endIndex)}`;
-      };
-
-      // Process the output
+      // Get the first table in the document
       const [page1] = results.pages;
-      const formFields = page1.formFields;
+      const [table] = page1.tables;
+      const [headerRow] = table.headerRows;
 
-      formFields.forEach(field => {
-        const fieldName = getText(field.fieldName.textAnchor);
-        const fieldValue = getText(field.fieldValue.textAnchor);
+      console.log('Results from first table processed:');
+      console.log(
+        `First detected language: ${page1.detectedLanguages[0].languageCode}`
+      );
 
-        console.log('Extracted key value pair:');
-        console.log(`\t(${fieldName}, ${fieldValue})`);
-      });
+      console.log('Header row:');
+      for (const tableCell of headerRow.cells) {
+        if (tableCell.layout.textAnchor.textSegments) {
+          // Extract shards from the text field
+          // First shard in document doesn't have startIndex property
+          const startIndex =
+            tableCell.layout.textAnchor.textSegments[0].startIndex || 0;
+          const endIndex = tableCell.layout.textAnchor.textSegments[0].endIndex;
+
+          console.log(`\t${text.substring(startIndex, endIndex)}`);
+        }
+      }
     });
   }
-  // [END document_parse_form]
+  // [END document_parse_table]
 
-  parseFormGCS(gcsInputUri, gcsOutputUri, gcsOutputUriPrefix);
+  parseTableGCS(gcsInputUri, gcsOutputUri, gcsOutputUriPrefix);
 }
 main(...process.argv.slice(2));

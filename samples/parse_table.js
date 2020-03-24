@@ -39,7 +39,7 @@ async function main(
   } = require('@google-cloud/documentai');
   const client = new DocumentUnderstandingServiceClient();
 
-  async function quickstart() {
+  async function parseTable() {
     // Configure the request for processing the PDF
     const parent = `projects/${projectId}/locations/${location}`;
     const request = {
@@ -50,6 +50,21 @@ async function main(
         },
         mimeType: 'application/pdf',
       },
+      tableExtractionParams: {
+        enabled: true,
+        tableBoundHints: [
+          {
+            boundingBox: {
+              normalizedVertices: [
+                {x: 0, y: 0},
+                {x: 1, y: 0},
+                {x: 1, y: 1},
+                {x: 0, y: 1},
+              ],
+            },
+          },
+        ],
+      },
     };
 
     // Recognizes text entities in the PDF document
@@ -59,22 +74,36 @@ async function main(
     const {text} = result;
 
     // Extract shards from the text field
-    function extractText(textAnchor) {
-      // First shard in document doesn't have startIndex property
-      const startIndex = textAnchor.textSegments[0].startIndex || 0;
-      const endIndex = textAnchor.textSegments[0].endIndex;
+    function getText(textAnchor) {
+      // Text anchor has no text segments if cell is empty
+      if (textAnchor.textSegments.length > 0) {
+        // First shard in document doesn't have startIndex property
+        const startIndex = textAnchor.textSegments[0].startIndex || 0;
+        const endIndex = textAnchor.textSegments[0].endIndex;
 
-      return text.substring(startIndex, endIndex);
+        return text.substring(startIndex, endIndex);
+      }
+      return '[NO TEXT]';
     }
 
-    for (const entity of result.entities) {
-      console.log(`\nEntity text: ${extractText(entity.textAnchor)}`);
-      console.log(`Entity type: ${entity.type}`);
-      console.log(`Entity mention text: ${entity.mentionText}`);
+    // Get the first table in the document
+    const [page1] = result.pages;
+    const [table] = page1.tables;
+    const [headerRow] = table.headerRows;
+
+    console.log('Header row:');
+    for (const tableCell of headerRow.cells) {
+      if (tableCell.layout.textAnchor.textSegments) {
+        // Extract shards from the text field
+        // First shard in document doesn't have startIndex property
+        const textAnchor = tableCell.layout.textAnchor;
+
+        console.log(`\t${getText(textAnchor)}`);
+      }
     }
   }
   // [END document_quickstart]
-  await quickstart();
+  await parseTable();
 }
 
 main(...process.argv.slice(2)).catch(err => {

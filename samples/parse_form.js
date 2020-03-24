@@ -16,7 +16,7 @@
 'use strict';
 
 /**
- * Process a single PDF.
+ * Process a single PDF as a form.
  * @param {string} projectId your Google Cloud project ID
  * @param {string} location region to use for this operation
  * @param {string} gcsInputUri Cloud Storage URI of the PDF document to parse
@@ -39,7 +39,7 @@ async function main(
   } = require('@google-cloud/documentai');
   const client = new DocumentUnderstandingServiceClient();
 
-  async function quickstart() {
+  async function parseForm() {
     // Configure the request for processing the PDF
     const parent = `projects/${projectId}/locations/${location}`;
     const request = {
@@ -50,6 +50,19 @@ async function main(
         },
         mimeType: 'application/pdf',
       },
+      formExtractionParams: {
+        enabled: true,
+        keyValuePairHints: [
+          {
+            key: 'Phone',
+            valueTypes: ['PHONE_NUMBER'],
+          },
+          {
+            key: 'Contact',
+            valueTypes: ['EMAIL', 'NAME'],
+          },
+        ],
+      },
     };
 
     // Recognizes text entities in the PDF document
@@ -59,22 +72,28 @@ async function main(
     const {text} = result;
 
     // Extract shards from the text field
-    function extractText(textAnchor) {
+    const getText = textAnchor => {
       // First shard in document doesn't have startIndex property
       const startIndex = textAnchor.textSegments[0].startIndex || 0;
       const endIndex = textAnchor.textSegments[0].endIndex;
 
       return text.substring(startIndex, endIndex);
-    }
+    };
 
-    for (const entity of result.entities) {
-      console.log(`\nEntity text: ${extractText(entity.textAnchor)}`);
-      console.log(`Entity type: ${entity.type}`);
-      console.log(`Entity mention text: ${entity.mentionText}`);
+    // Process the output
+    const [page1] = result.pages;
+    const {formFields} = page1;
+
+    for (const field of formFields) {
+      const fieldName = getText(field.fieldName.textAnchor);
+      const fieldValue = getText(field.fieldValue.textAnchor);
+
+      console.log('Extracted key value pair:');
+      console.log(`\t(${fieldName}, ${fieldValue})`);
     }
   }
   // [END document_quickstart]
-  await quickstart();
+  await parseForm();
 }
 
 main(...process.argv.slice(2)).catch(err => {
