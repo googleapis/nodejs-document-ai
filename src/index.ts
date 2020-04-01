@@ -17,11 +17,8 @@
 // ** All changes to this file may be overwritten. **
 
 import * as v1beta2 from './v1beta2';
-const DocumentUnderstandingServiceClient =
-  v1beta2.DocumentUnderstandingServiceClient;
+const DocumentUnderstandingServiceClient = v1beta2.DocumentUnderstandingServiceClient;
 export {v1beta2, DocumentUnderstandingServiceClient};
-// For compatibility with JavaScript libraries we need to provide this default export:
-// tslint:disable-next-line no-default-export
 export default {v1beta2, DocumentUnderstandingServiceClient};
 import * as protos from '../protos/protos';
-export {protos};
+export {protos}
