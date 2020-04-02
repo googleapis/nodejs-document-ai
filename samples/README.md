@@ -12,14 +12,147 @@
 
 * [Before you begin](#before-you-begin)
 * [Samples](#samples)
+  * [Batch_parse_form](#batch_parse_form)
+  * [Batch_parse_table](#batch_parse_table)
+  * [Parse Form](#parse-form)
+  * [Parse Table](#parse-table)
+  * [Parse_form](#parse_form)
+  * [Parse_table](#parse_table)
+  * [Parse_with_model](#parse_with_model)
   * [Quickstart](#quickstart)
+  * [Set_endpoint](#set_endpoint)
 
 ## Before you begin
 
 Before running the samples, make sure you've followed the steps outlined in
 [Using the client library](https://github.com/googleapis/nodejs-document-ai#using-the-client-library).
 
+`cd samples`
+
+`npm install`
+
+`cd ..`
+
 ## Samples
+
+
+
+### Batch_parse_form
+
+View the [source code](https://github.com/googleapis/nodejs-document-ai/blob/master/samples/batch_parse_form.js).
+
+[![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-document-ai&page=editor&open_in_editor=samples/batch_parse_form.js,samples/README.md)
+
+__Usage:__
+
+
+`node samples/batch_parse_form.js`
+
+
+-----
+
+
+
+
+### Batch_parse_table
+
+View the [source code](https://github.com/googleapis/nodejs-document-ai/blob/master/samples/batch_parse_table.js).
+
+[![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-document-ai&page=editor&open_in_editor=samples/batch_parse_table.js,samples/README.md)
+
+__Usage:__
+
+
+`node samples/batch_parse_table.js`
+
+
+-----
+
+
+
+
+### Parse Form
+
+View the [source code](https://github.com/googleapis/nodejs-document-ai/blob/master/samples/parseForm.js).
+
+[![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-document-ai&page=editor&open_in_editor=samples/parseForm.js,samples/README.md)
+
+__Usage:__
+
+
+`node samples/parseForm.js`
+
+
+-----
+
+
+
+
+### Parse Table
+
+View the [source code](https://github.com/googleapis/nodejs-document-ai/blob/master/samples/parseTable.js).
+
+[![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-document-ai&page=editor&open_in_editor=samples/parseTable.js,samples/README.md)
+
+__Usage:__
+
+
+`node samples/parseTable.js`
+
+
+-----
+
+
+
+
+### Parse_form
+
+View the [source code](https://github.com/googleapis/nodejs-document-ai/blob/master/samples/parse_form.js).
+
+[![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-document-ai&page=editor&open_in_editor=samples/parse_form.js,samples/README.md)
+
+__Usage:__
+
+
+`node samples/parse_form.js`
+
+
+-----
+
+
+
+
+### Parse_table
+
+View the [source code](https://github.com/googleapis/nodejs-document-ai/blob/master/samples/parse_table.js).
+
+[![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-document-ai&page=editor&open_in_editor=samples/parse_table.js,samples/README.md)
+
+__Usage:__
+
+
+`node samples/parse_table.js`
+
+
+-----
+
+
+
+
+### Parse_with_model
+
+View the [source code](https://github.com/googleapis/nodejs-document-ai/blob/master/samples/parse_with_model.js).
+
+[![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-document-ai&page=editor&open_in_editor=samples/parse_with_model.js,samples/README.md)
+
+__Usage:__
+
+
+`node samples/parse_with_model.js`
+
+
+-----
+
 
 
 
@@ -32,7 +165,24 @@ View the [source code](https://github.com/googleapis/nodejs-document-ai/blob/mas
 __Usage:__
 
 
-`node quickstart.js`
+`node samples/quickstart.js`
+
+
+-----
+
+
+
+
+### Set_endpoint
+
+View the [source code](https://github.com/googleapis/nodejs-document-ai/blob/master/samples/set_endpoint.js).
+
+[![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-document-ai&page=editor&open_in_editor=samples/set_endpoint.js,samples/README.md)
+
+__Usage:__
+
+
+`node samples/set_endpoint.js`
 
 
 
