@@ -26,7 +26,7 @@ async function main(
   location,
   gcsInputUri = 'gs://cloud-samples-data/documentai/invoice.pdf'
 ) {
-  // [START document_quickstart]
+  // [START documentai_quickstart]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -102,7 +102,7 @@ async function main(
       }
     }
   }
-  // [END document_quickstart]
+  // [END documentai_quickstart]
   await parseTable();
 }
 
