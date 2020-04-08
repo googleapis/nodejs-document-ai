@@ -28,7 +28,7 @@ async function main(
   autoMLModel,
   gcsInputUri = 'gs://cloud-samples-data/documentai/invoice.pdf'
 ) {
-  // [START documentai_quickstart]
+  // [START documentai_parse_with_model]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -66,7 +66,7 @@ async function main(
       console.log(`Confidence: ${label.confidence}`);
     }
   }
-  // [END documentai_quickstart]
+  // [END documentai_parse_with_model]
   await parseWithModel();
 }
 
