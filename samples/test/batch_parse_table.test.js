@@ -28,7 +28,7 @@ const cmd = 'node batch_parse_table.js';
 
 const testParseTable = {
   projectId: process.env.GCLOUD_PROJECT,
-  location: 'us-central1',
+  location: 'us',
   gcsOutputUriPrefix: uuid.v4(),
 };
 

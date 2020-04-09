@@ -44,7 +44,7 @@ async function main(
 
   async function setEndpoint() {
     // Configure the request for processing the PDF
-    const parent = `projects/${projectId}`;
+    const parent = `projects/${projectId}/locations/${location}`;
     const request = {
       parent,
       inputConfig: {

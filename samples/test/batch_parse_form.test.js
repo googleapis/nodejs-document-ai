@@ -28,7 +28,7 @@ const cmd = 'node batch_parse_form.js';
 
 const testParseForm = {
   projectId: process.env.GCLOUD_PROJECT,
-  location: 'us-central1',
+  location: 'us',
   gcsOutputUriPrefix: uuid.v4(),
 };
 

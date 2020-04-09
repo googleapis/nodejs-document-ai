@@ -29,7 +29,7 @@ async function main(
    * TODO(developer): Uncomment these variables before running the sample.
    */
   // const projectId = 'YOUR_PROJECT_ID';
-  // const location = 'YOUR_PROJECT_LOCATION';
+  // const location = 'Project location. Must be in format \'us\' or \'eu\'.'; 
   // const gcsOutputUri = 'YOUR_STORAGE_BUCKET';
   // const gcsOutputUriPrefix = 'YOUR_STORAGE_PREFIX';
   // const gcsInputUri = 'YOUR_SOURCE_PDF';
@@ -44,7 +44,7 @@ async function main(
   const storage = new Storage();
 
   async function parseTableGCS(inputUri, outputUri, outputUriPrefix) {
-    const parent = `projects/${projectId}`;
+    const parent = `projects/${projectId}/locations/${location}`;
 
     // Configure the batch process request.
     const request = {

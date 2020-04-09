@@ -23,7 +23,7 @@ const execSync = cmd => cp.execSync(cmd, {encoding: 'utf-8'});
 
 const cwd = path.join(__dirname, '..');
 const projectId = process.env.GCLOUD_PROJECT;
-const LOCATION = 'us-central1';
+const LOCATION = 'us';
 
 describe('Document AI parse form', () => {
   it('should parse the GCS invoice example as a form', async () => {
