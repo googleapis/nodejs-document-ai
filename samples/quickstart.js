@@ -37,11 +37,12 @@ async function main(
   const {
     DocumentUnderstandingServiceClient,
   } = require('@google-cloud/documentai');
-  const client = new DocumentUnderstandingServiceClient();
+  const clientOptions = {apiEndpoint: 'us-documentai.googleapis.com'};
+  const client = new DocumentUnderstandingServiceClient(clientOptions);
 
   async function quickstart() {
     // Configure the request for processing the PDF
-    const parent = `projects/${projectId}/locations/${location}`;
+    const parent = `projects/${projectId}`;
     const request = {
       parent,
       inputConfig: {

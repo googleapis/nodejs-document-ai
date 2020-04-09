@@ -41,7 +41,7 @@ async function main(
 
   async function parseForm() {
     // Configure the request for processing the PDF
-    const parent = `projects/${projectId}/locations/${location}`;
+    const parent = `projects/${projectId}`;
     const request = {
       parent,
       inputConfig: {
