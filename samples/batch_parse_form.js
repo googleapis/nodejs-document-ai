@@ -19,7 +19,7 @@ const uuid = require('uuid');
 
 async function main(
   projectId = 'YOUR_PROJECT_ID',
-  location = '"us" or "eu"',
+  location = 'YOUR_PROJECT_LOCATION',
   gcsOutputUri = 'output-bucket',
   gcsOutputUriPrefix = uuid.v4(),
   gcsInputUri = 'gs://cloud-samples-data/documentai/invoice.pdf'
