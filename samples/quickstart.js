@@ -31,8 +31,7 @@ async function main(
   const {
     DocumentUnderstandingServiceClient,
   } = require('@google-cloud/documentai');
-  const clientOptions = {apiEndpoint: 'us-documentai.googleapis.com'};
-  const client = new DocumentUnderstandingServiceClient(clientOptions);
+  const client = new DocumentUnderstandingServiceClient();
 
   async function quickstart() {
     // Configure the request for processing the PDF
