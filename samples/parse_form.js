@@ -15,11 +15,6 @@
 
 'use strict';
 
-/**
- * Process a single PDF as a form.
- * @param {string} projectId your Google Cloud project ID
- * @param {string} gcsInputUri Cloud Storage URI of the PDF document to parse
- */
 async function main(
   projectId,
   location,

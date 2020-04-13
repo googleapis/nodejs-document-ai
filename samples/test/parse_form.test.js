@@ -27,7 +27,7 @@ const LOCATION = 'us';
 
 describe('Document AI parse form', () => {
   it('should parse the GCS invoice example as a form', async () => {
-    const stdout = execSync(`node ./parse_form.js ${projectId}`, {
+    const stdout = execSync(`node ./parse_form.js ${projectId} ${LOCATION}`, {
       cwd,
     });
     assert.match(stdout, /Extracted key value pair:/);

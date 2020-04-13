@@ -27,7 +27,7 @@ const LOCATION = 'eu';
 
 describe('Document AI set endpoint', () => {
   it('should process a PDF in another region', async () => {
-    const stdout = execSync(`node ./set_endpoint.js ${projectId}`, {
+    const stdout = execSync(`node ./set_endpoint.js ${projectId} ${LOCATION}`, {
       cwd,
     });
     assert.match(stdout, /Entity/);

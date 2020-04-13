@@ -27,7 +27,7 @@ const LOCATION = 'us';
 
 describe('Document AI parse table', () => {
   it('should parse the GCS invoice example as as table', async () => {
-    const stdout = execSync(`node ./parse_table.js ${projectId}`, {
+    const stdout = execSync(`node ./parse_table.js ${projectId} ${LOCATION}`, {
       cwd,
     });
     assert.match(stdout, /Header row/);

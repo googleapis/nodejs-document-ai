@@ -27,7 +27,7 @@ const LOCATION = 'us';
 
 describe('Quickstart', () => {
   it('should run quickstart', async () => {
-    const stdout = execSync(`node ./quickstart.js ${projectId}`, {
+    const stdout = execSync(`node ./quickstart.js ${projectId} ${LOCATION}`, {
       cwd,
     });
     assert.match(stdout, /Entity/);
