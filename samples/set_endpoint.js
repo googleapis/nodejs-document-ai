@@ -25,7 +25,7 @@ async function main(
    * TODO(developer): Uncomment these variables before running the sample.
    */
   // const projectId = 'YOUR_PROJECT_ID';
-  // const location = 'Project location--Must be in format \'us\' or \'eu\'';
+  // const location = 'YOUR_PROJECT_LOCATION'; \\ Format is 'us' or 'eu'
   // const gcsInputUri = 'YOUR_SOURCE_PDF';
 
   const {
