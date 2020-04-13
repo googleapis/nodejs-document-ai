@@ -31,7 +31,7 @@ const MODEL_NAME =
 describe('Document AI parse with AutoML model', () => {
   it('should run use an AutoML model to parse a PDF', async () => {
     const stdout = execSync(
-      `node ./parse_with_model.js ${projectId} ${LOCATION} ${MODEL_NAME}`,
+      `node ./parse_with_model.js ${projectId} ${MODEL_NAME}`,
       {
         cwd,
       }

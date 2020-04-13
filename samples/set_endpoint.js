@@ -18,12 +18,11 @@
 /**
  * Process a single PDF.
  * @param {string} projectId your Google Cloud project ID
- * @param {string} location region to use for this operation
  * @param {string} gcsInputUri Cloud Storage URI of the PDF document to parse
  */
 async function main(
   projectId,
-  location = 'europe-west2',
+  location = 'eu', 
   gcsInputUri = 'gs://cloud-samples-data/documentai/invoice.pdf'
 ) {
   // [START documentai_set_endpoint]

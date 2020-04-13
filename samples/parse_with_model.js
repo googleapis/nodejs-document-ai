@@ -18,7 +18,6 @@
 /**
  * Process a single PDF.
  * @param {string} projectId your Google Cloud project ID
- * @param {string} location region to use for this operation
  * @param {string} autoMLModel AutoML Natural Language model to use
  * @param {string} gcsInputUri Cloud Storage URI of the PDF document to parse
  */

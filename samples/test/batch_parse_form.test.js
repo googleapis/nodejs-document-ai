@@ -45,7 +45,7 @@ describe('Document AI batch parse form', () => {
 
   it('should parse the GCS invoice example as a form', async () => {
     const output = execSync(
-      `${cmd} ${testParseForm.projectId} ${testParseForm.location} gs://${bucketName}`
+      `${cmd} ${testParseForm.projectId} gs://${bucketName}`
     );
     assert.match(output, /Extracted key value pair:/);
   });
