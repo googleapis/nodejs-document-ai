@@ -17,9 +17,8 @@
 // ** All changes to this file may be overwritten. **
 
 import * as v1beta2 from './v1beta2';
-const DocumentUnderstandingServiceClient =
-  v1beta2.DocumentUnderstandingServiceClient;
+const DocumentUnderstandingServiceClient = v1beta2.DocumentUnderstandingServiceClient;
 export {v1beta2, DocumentUnderstandingServiceClient};
 export default {v1beta2, DocumentUnderstandingServiceClient};
 import * as protos from '../protos/protos';
-export {protos};
+export {protos}
