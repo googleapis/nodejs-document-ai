@@ -42,11 +42,11 @@ async function main(projectId, location, processorId, filePath) {
     const name = `projects/${projectId}/locations/${location}/processors/${processorId}`;
 
     // Read the file into memory.
-    var fs = require('fs');
-    var imageFile = fs.readFileSync(filePath);
+    const fs = require('fs');
+    const imageFile = fs.readFileSync(filePath);
 
     // Convert the image data to a Buffer and base64 encode it.
-    var encodedImage = Buffer.from(imageFile).toString('base64');
+    const encodedImage = Buffer.from(imageFile).toString('base64');
 
     const request = {
       name,

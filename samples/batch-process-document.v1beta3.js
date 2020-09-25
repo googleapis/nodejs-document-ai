@@ -43,7 +43,7 @@ async function main(
   const {Storage} = require('@google-cloud/storage');
 
   const clientOptions = {
-    apiEndpoint: 'us-staging-documentai.sandbox.googleapis.com',
+    apiEndpoint: 'us-documentai.googleapis.com',
   };
 
   const client = new DocumentProcessorServiceClient(clientOptions);
@@ -81,7 +81,8 @@ async function main(
       // does not provide a result. This raises an error from the google-gax
       // library, despite the LRO actually succeeeding.
       const lroError = 'Long running operation has finished but there was no result';
-      if (ex.message.indexOf(lroError) == -1) {
+
+      if (ex.message.indexOf(lroError) === -1) {
           throw ex;
       }
     }

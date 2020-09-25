@@ -30,7 +30,7 @@ async function main(projectId, location, processorId, filePath) {
   } = require('@google-cloud/documentai').v1beta3;
 
   const clientOptions = {
-    apiEndpoint: 'us-staging-documentai.sandbox.googleapis.com',
+    apiEndpoint: 'us-documentai.googleapis.com',
   };
 
   const client = new DocumentProcessorServiceClient(clientOptions);
@@ -42,11 +42,11 @@ async function main(projectId, location, processorId, filePath) {
     const name = `projects/${projectId}/locations/${location}/processors/${processorId}`;
 
     // Read the file into memory.
-    var fs = require('fs');
-    var imageFile = fs.readFileSync(filePath);
+    const fs = require('fs');
+    const imageFile = fs.readFileSync(filePath);
 
     // Convert the image data to a Buffer and base64 encode it.
-    var encodedImage = Buffer.from(imageFile).toString('base64');
+    const encodedImage = Buffer.from(imageFile).toString('base64');
 
     const request = {
       name,
@@ -65,7 +65,7 @@ async function main(projectId, location, processorId, filePath) {
 
     // Extract shards from the text field
     const getText = textAnchor => {
-      if (!textAnchor.textSegments || textAnchor.textSegments.length == 0) {
+      if (!textAnchor.textSegments || textAnchor.textSegments.length === 0) {
         return '';
       }
 
