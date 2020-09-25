@@ -65,7 +65,7 @@ async function main(projectId, location, processorId, filePath) {
 
     // Extract shards from the text field
     const getText = textAnchor => {
-      if (!textAnchor.textSegments || textAnchor.textSegments.length == 0) {
+      if (!textAnchor.textSegments || textAnchor.textSegments.length === 0) {
         return '';
       }
 

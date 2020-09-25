@@ -31,9 +31,12 @@ const filePath = path.resolve(path.join(__dirname, `../resources/${fileName}`));
 
 describe('Process document', () => {
   it('should run document (process invoice)', async () => {
-    const stdout = execSync(`node ./process-document.v1beta3.js ${PROJECT_ID} ${LOCATION} ${PROCESSOR_ID} ${filePath}`, {
-      cwd,
-    });
+    const stdout = execSync(
+      `node ./process-document.v1beta3.js ${PROJECT_ID} ${LOCATION} ${PROCESSOR_ID} ${filePath}`,
+      {
+        cwd,
+      }
+    );
     assert.match(stdout, /Paragraph/);
     assert.match(stdout, /Entity/);
   });

@@ -80,10 +80,11 @@ async function main(
       // CURRENTLY the LRO returned from service has 'done = true' but
       // does not provide a result. This raises an error from the google-gax
       // library, despite the LRO actually succeeeding.
-      const lroError = 'Long running operation has finished but there was no result';
+      const lroError =
+        'Long running operation has finished but there was no result';
 
       if (ex.message.indexOf(lroError) === -1) {
-          throw ex;
+        throw ex;
       }
     }
 
@@ -112,7 +113,7 @@ async function main(
 
       // Extract shards from the text field
       const getText = textAnchor => {
-        if (!textAnchor.textSegments || textAnchor.textSegments.length == 0) {
+        if (!textAnchor.textSegments || textAnchor.textSegments.length === 0) {
           return '';
         }
 

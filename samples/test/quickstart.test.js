@@ -31,9 +31,12 @@ const filePath = path.resolve(path.join(__dirname, `../resources/${fileName}`));
 
 describe('Quickstart', () => {
   it('should run quickstart', async () => {
-    const stdout = execSync(`node ./quickstart.js ${PROJECT_ID} ${LOCATION} ${PROCESSOR_ID} ${filePath}`, {
-      cwd,
-    });
+    const stdout = execSync(
+      `node ./quickstart.js ${PROJECT_ID} ${LOCATION} ${PROCESSOR_ID} ${filePath}`,
+      {
+        cwd,
+      }
+    );
     assert.match(stdout, /Paragraph/);
   });
 });
