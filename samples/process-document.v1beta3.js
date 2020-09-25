@@ -16,7 +16,7 @@
 'use strict';
 
 async function main(projectId, location, processorId, filePath) {
-  // [START documentai_quickstart]
+  // [START documentai_process_document]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -30,12 +30,12 @@ async function main(projectId, location, processorId, filePath) {
   } = require('@google-cloud/documentai').v1beta3;
 
   const clientOptions = {
-    apiEndpoint: 'us-documentai.googleapis.com',
+    apiEndpoint: 'us-staging-documentai.sandbox.googleapis.com',
   };
 
   const client = new DocumentProcessorServiceClient(clientOptions);
 
-  async function quickstart() {
+  async function processDocument() {
     // The full resource name of the processor, e.g.:
     // projects/project-id/locations/location/processor/processor-id
     // You must create new processors in the Cloud Console first
@@ -85,9 +85,22 @@ async function main(projectId, location, processorId, filePath) {
       const paragraphText = getText(paragraph.layout.textAnchor);
       console.log(`Paragraph text:\n${paragraphText}`);
     }
+
+    // Invoice parsing provides additional output about
+    // invoice-formatted PDFs. You  must create an invoice
+    // processor in the Cloud Console to see full entity details.
+    console.log('\nThe following entities were detected:');
+
+    const {entities} = document;
+    for (const entity of entities) {
+      console.log(`Entity text: ${entity.mentionText}`);
+      console.log(`Entity ID: ${entity.id}`);
+      console.log(`Entity type: ${entity.type}`);
+      console.log(`Confidence: ${entity.confidence}\n`);
+    }
   }
-  // [END documentai_quickstart]
-  await quickstart();
+  // [END documentai_process_document]
+  await processDocument();
 }
 
 main(...process.argv.slice(2)).catch(err => {

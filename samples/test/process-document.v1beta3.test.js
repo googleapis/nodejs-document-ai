@@ -29,11 +29,12 @@ const PROCESSOR_ID = process.env.PROCESSOR_ID; // TODO: Add processor ID to env 
 const fileName = 'invoice.pdf';
 const filePath = path.resolve(path.join(__dirname, `../resources/${fileName}`));
 
-describe('Quickstart', () => {
-  it('should run quickstart', async () => {
-    const stdout = execSync(`node ./quickstart.js ${PROJECT_ID} ${LOCATION} ${PROCESSOR_ID} ${filePath}`, {
+describe('Process document', () => {
+  it('should run document (process invoice)', async () => {
+    const stdout = execSync(`node ./process-document.v1beta3.js ${PROJECT_ID} ${LOCATION} ${PROCESSOR_ID} ${filePath}`, {
       cwd,
     });
     assert.match(stdout, /Paragraph/);
+    assert.match(stdout, /Entity/);
   });
 });
