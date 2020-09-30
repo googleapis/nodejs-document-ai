@@ -38,6 +38,6 @@ describe('Process document', () => {
       }
     );
     assert.match(stdout, /Paragraph/);
-    assert.match(stdout, /Entity/);
+    assert.match(stdout, /Extracted/);
   });
 });

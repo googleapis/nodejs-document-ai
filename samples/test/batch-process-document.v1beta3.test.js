@@ -49,6 +49,6 @@ describe('Document AI batch parse form', () => {
     const output = execSync(
       `${cmd} ${testParseForm.projectId} ${testParseForm.location} ${testParseForm.processorId} ${testParseForm.gcsInputUri} gs://${bucketName} ${testParseForm.gcsOutputUriPrefix}`
     );
-    assert.match(output, /entities/);
+    assert.match(output, /Extracted/);
   });
 });

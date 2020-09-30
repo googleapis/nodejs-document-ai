@@ -86,17 +86,18 @@ async function main(projectId, location, processorId, filePath) {
       console.log(`Paragraph text:\n${paragraphText}`);
     }
 
-    // Invoice parsing provides additional output about
-    // invoice-formatted PDFs. You  must create an invoice
-    // processor in the Cloud Console to see full entity details.
-    console.log('\nThe following entities were detected:');
+    // Form parsing provides additional output about
+    // form-formatted PDFs. You  must create a form
+    // processor in the Cloud Console to see full field details.
+    console.log('\nThe following form key/value pairs were detected:');
 
-    const {entities} = document;
-    for (const entity of entities) {
-      console.log(`Entity text: ${entity.mentionText}`);
-      console.log(`Entity ID: ${entity.id}`);
-      console.log(`Entity type: ${entity.type}`);
-      console.log(`Confidence: ${entity.confidence}\n`);
+    const {formFields} = page1;
+    for (const field of formFields) {
+      const fieldName = getText(field.fieldName.textAnchor);
+      const fieldValue = getText(field.fieldValue.textAnchor);
+
+      console.log('Extracted key value pair:');
+      console.log(`\t(${fieldName}, ${fieldValue})`);
     }
   }
   // [END documentai_process_document]
