@@ -16,10 +16,4 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import {DocumentProcessorServiceClient} from '@google-cloud/documentai';
-
-function main() {
-  new DocumentProcessorServiceClient();
-}
-
-main();
+export {DocumentProcessorServiceClient} from './document_processor_service_client';
