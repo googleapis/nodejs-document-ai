@@ -3,23 +3,23 @@
     {
       "git": {
         "name": ".",
-        "remote": "https://github.com/googleapis/nodejs-document-ai.git",
-        "sha": "44bb7b9f25e436dc8857b62993201ea17d5e4c1f"
+        "remote": "git@github.com:googleapis/nodejs-document-ai.git",
+        "sha": "483df36ad3a047ac6e4ac9986026867f511e9528"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "4c5071b615d96ef9dfd6a63d8429090f1f2872bb",
-        "internalRef": "327369997"
+        "sha": "e86eab6a3d6fb401404df81b8aa87116b15d8e0e",
+        "internalRef": "334598452"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "0c868d49b8e05bc1f299bc773df9eb4ef9ed96e9"
+        "sha": "e6168630be3e31eede633ba2c6f1cd64248dec1c"
       }
     }
   ],
@@ -29,6 +29,15 @@
         "source": "googleapis",
         "apiName": "documentai",
         "apiVersion": "v1beta2",
+        "language": "nodejs",
+        "generator": "bazel"
+      }
+    },
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "documentai",
+        "apiVersion": "v1beta3",
         "language": "nodejs",
         "generator": "bazel"
       }
@@ -106,5 +115,4 @@
     "test/gapic_document_understanding_service_v1beta2.ts",
     "tsconfig.json",
     "webpack.config.js"
-  ]
 }

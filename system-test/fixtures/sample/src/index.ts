@@ -16,10 +16,11 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import {DocumentUnderstandingServiceClient} from '@google-cloud/documentai';
+/* eslint-disable node/no-missing-require, no-unused-vars */
+import {DocumentProcessorServiceClient} from '@google-cloud/documentai';
 
 function main() {
-  new DocumentUnderstandingServiceClient();
+  new DocumentProcessorServiceClient();
 }
 
 main();
