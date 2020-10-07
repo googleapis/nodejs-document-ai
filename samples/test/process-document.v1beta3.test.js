@@ -24,7 +24,7 @@ const execSync = cmd => cp.execSync(cmd, {encoding: 'utf-8'});
 const cwd = path.join(__dirname, '..');
 const PROJECT_ID = process.env.GCLOUD_PROJECT;
 const LOCATION = 'us';
-const PROCESSOR_ID = process.env.PROCESSOR_ID; // TODO: Add processor ID to env vars for test project
+const PROCESSOR_ID = '8f1123c1b125e0b7'; // TODO: Add processor ID to env vars for test project
 
 const fileName = 'invoice.pdf';
 const filePath = path.resolve(path.join(__dirname, `../resources/${fileName}`));

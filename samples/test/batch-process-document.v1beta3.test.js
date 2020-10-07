@@ -29,7 +29,7 @@ const cmd = 'node batch-process-document.v1beta3.js';
 const testParseForm = {
   projectId: process.env.GCLOUD_PROJECT,
   location: 'us',
-  processorId: process.env.PROCESSOR_ID, // TODO: Add processor ID to env vars for test project
+  processorId: '8f1123c1b125e0b7',
   gcsInputUri: 'gs://cloud-samples-data/documentai/invoice.pdf',
   gcsOutputUriPrefix: uuid.v4(),
 };
