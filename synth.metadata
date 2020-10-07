@@ -4,22 +4,22 @@
       "git": {
         "name": ".",
         "remote": "git@github.com:googleapis/nodejs-document-ai.git",
-        "sha": "483df36ad3a047ac6e4ac9986026867f511e9528"
+        "sha": "dad35ff47a263244ae7b662880a763621fb66839"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e86eab6a3d6fb401404df81b8aa87116b15d8e0e",
-        "internalRef": "334598452"
+        "sha": "80eada6dbc452b58b4663fa3ab4f0b6746f49f80",
+        "internalRef": "335745163"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "e6168630be3e31eede633ba2c6f1cd64248dec1c"
+        "sha": "487eba79f8260e34205d8ceb1ebcc65685085e19"
       }
     }
   ],
@@ -41,7 +41,7 @@
         "language": "nodejs",
         "generator": "bazel"
       }
-    }
+    },  
   ],
   "generatedFiles": [
     ".eslintignore",
