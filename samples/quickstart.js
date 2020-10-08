@@ -33,6 +33,7 @@ async function main(projectId, location, processorId, filePath) {
     apiEndpoint: 'us-documentai.googleapis.com',
   };
 
+  // Instantiates a client
   const client = new DocumentProcessorServiceClient(clientOptions);
 
   async function quickstart() {
@@ -42,8 +43,8 @@ async function main(projectId, location, processorId, filePath) {
     const name = `projects/${projectId}/locations/${location}/processors/${processorId}`;
 
     // Read the file into memory.
-    const fs = require('fs');
-    const imageFile = fs.readFileSync(filePath);
+    const fs = require('fs.promises');
+    const imageFile = await fs.readFile(filePath);
 
     // Convert the image data to a Buffer and base64 encode it.
     const encodedImage = Buffer.from(imageFile).toString('base64');

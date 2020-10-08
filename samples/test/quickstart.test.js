@@ -16,27 +16,38 @@
 'use strict';
 
 const path = require('path');
-const {assert} = require('chai');
+const assert = require('assert').strict;
 const cp = require('child_process');
+
+const {
+  DocumentProcessorServiceClient,
+} = require('@google-cloud/documentai').v1beta3;
+const client = new DocumentProcessorServiceClient({
+  apiEndpoint: 'us-documentai.googleapis.com',
+});
 
 const execSync = cmd => cp.execSync(cmd, {encoding: 'utf-8'});
 
 const cwd = path.join(__dirname, '..');
-const PROJECT_ID = process.env.GCLOUD_PROJECT;
 const LOCATION = 'us';
-const PROCESSOR_ID = '8f1123c1b125e0b7' // TODO: Add processor ID to env vars for test project
+const PROCESSOR_ID = '8f1123c1b125e0b7';
 
 const fileName = 'invoice.pdf';
 const filePath = path.resolve(path.join(__dirname, `../resources/${fileName}`));
 
 describe('Quickstart', () => {
+  let projectId;
+  before(async () => {
+    projectId = await client.getProjectId();
+  });
+
   it('should run quickstart', async () => {
     const stdout = execSync(
-      `node ./quickstart.js ${PROJECT_ID} ${LOCATION} ${PROCESSOR_ID} ${filePath}`,
+      `node ./quickstart.js ${projectId} ${LOCATION} ${PROCESSOR_ID} ${filePath}`,
       {
         cwd,
       }
     );
-    assert.match(stdout, /Paragraph/);
+    assert.notStrictEqual(stdout.indexOf('Paragraph'), -1);
   });
 });

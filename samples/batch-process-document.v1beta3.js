@@ -46,22 +46,22 @@ async function main(
     apiEndpoint: 'us-documentai.googleapis.com',
   };
 
+  // Instantiates a client
   const client = new DocumentProcessorServiceClient(clientOptions);
   const storage = new Storage();
 
   async function batchProcessDocument() {
     const name = `projects/${projectId}/locations/${location}/processors/${processorId}`;
 
-    const inputConfig = {
-      gcsSource: gcsInputUri,
-      mimeType: 'application/pdf',
-    };
-    const inputConfigs = [inputConfig];
-
     // Configure the batch process request.
     const request = {
       name,
-      inputConfigs,
+      inputConfigs: [
+        {
+          gcsSource: gcsInputUri,
+          mimeType: 'application/pdf',
+        },
+      ],
       outputConfig: {
         gcsDestination: `${gcsOutputUri}/${gcsOutputUriPrefix}/`,
       },
@@ -71,6 +71,8 @@ async function main(
     // You can wait for now, or get results later.
     // Note: first request to the service takes longer than subsequent
     // requests.
+
+    // TODO: Remove try/catch block when appropriate changes are made to service.
     try {
       const [operation] = await client.batchProcessDocuments(request);
 
