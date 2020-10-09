@@ -46,9 +46,11 @@ async function main(
     apiEndpoint: 'us-documentai.googleapis.com',
   };
 
-  // Instantiates a client
+  // Instantiates Document AI, Storage clients
   const client = new DocumentProcessorServiceClient(clientOptions);
   const storage = new Storage();
+
+  const {default: PQueue} = require('p-queue');
 
   async function batchProcessDocument() {
     const name = `projects/${projectId}/locations/${location}/processors/${processorId}`;
@@ -102,7 +104,9 @@ async function main(
     // List all of the files in the Storage bucket
     const [files] = await storage.bucket(gcsOutputUri).getFiles(query);
 
-    files.forEach(async (fileInfo, index) => {
+    // Add all asynchronous downloads to queue for execution.
+    const queue = new PQueue({concurrency: 15});
+    const tasks = files.map((fileInfo, index) => async () => {
       // Get the file as a buffer
       const [file] = await fileInfo.download();
 
@@ -150,6 +154,7 @@ async function main(
         console.log(`\t(${fieldName}, ${fieldValue})`);
       }
     });
+    queue.addAll(tasks);
   }
   // [END documentai_batch_process_document]
 
