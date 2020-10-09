@@ -115,4 +115,5 @@
     "test/gapic_document_understanding_service_v1beta2.ts",
     "tsconfig.json",
     "webpack.config.js"
+  ]
 }
