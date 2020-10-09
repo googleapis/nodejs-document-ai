@@ -23,7 +23,7 @@ const client = new DocumentProcessorServiceClient({
 });
 
 const cp = require('child_process');
-const assert = require('assert').strict;
+const assert = require('assert');
 const {describe, it, before, after} = require('mocha');
 const uuid = require('uuid');
 
