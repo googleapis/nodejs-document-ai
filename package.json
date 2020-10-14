@@ -30,8 +30,7 @@
   },
   "dependencies": {
     "fs.promises": "^0.1.2",
-    "google-gax": "^2.1.0",
-    "p-queue": "^6.6.1"
+    "google-gax": "^2.1.0"
   },
   "devDependencies": {
     "@types/mocha": "^8.0.0",

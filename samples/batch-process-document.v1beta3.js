@@ -73,24 +73,10 @@ async function main(
     // You can wait for now, or get results later.
     // Note: first request to the service takes longer than subsequent
     // requests.
+    const [operation] = await client.batchProcessDocuments(request);
 
-    // TODO: Remove try/catch block when appropriate changes are made to service.
-    try {
-      const [operation] = await client.batchProcessDocuments(request);
-
-      // Wait for operation to complete.
-      await operation.promise();
-    } catch (ex) {
-      // CURRENTLY the LRO returned from service has 'done = true' but
-      // does not provide a result. This raises an error from the google-gax
-      // library, despite the LRO actually succeeeding.
-      const lroError =
-        'Long running operation has finished but there was no result';
-
-      if (ex.message.indexOf(lroError) === -1) {
-        throw ex;
-      }
-    }
+    // Wait for operation to complete.
+    await operation.promise();
 
     console.log('Document processing complete.');
 
@@ -154,7 +140,7 @@ async function main(
         console.log(`\t(${fieldName}, ${fieldValue})`);
       }
     });
-    queue.addAll(tasks);
+    await queue.addAll(tasks);
   }
   // [END documentai_batch_process_document]
 
