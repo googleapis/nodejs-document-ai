@@ -29,12 +29,8 @@ async function main(projectId, location, processorId, filePath) {
     DocumentProcessorServiceClient,
   } = require('@google-cloud/documentai').v1beta3;
 
-  const clientOptions = {
-    apiEndpoint: 'us-documentai.googleapis.com',
-  };
-
   // Instantiates a client
-  const client = new DocumentProcessorServiceClient(clientOptions);
+  const client = new DocumentProcessorServiceClient();
 
   async function processDocument() {
     // The full resource name of the processor, e.g.:

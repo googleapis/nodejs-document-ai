@@ -42,12 +42,8 @@ async function main(
   } = require('@google-cloud/documentai').v1beta3;
   const {Storage} = require('@google-cloud/storage');
 
-  const clientOptions = {
-    apiEndpoint: 'us-documentai.googleapis.com',
-  };
-
   // Instantiates Document AI, Storage clients
-  const client = new DocumentProcessorServiceClient(clientOptions);
+  const client = new DocumentProcessorServiceClient();
   const storage = new Storage();
 
   const {default: PQueue} = require('p-queue');
