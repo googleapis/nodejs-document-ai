@@ -67,7 +67,7 @@ npm install @google-cloud/documentai
 
 const {
   DocumentUnderstandingServiceClient,
-} = require('@google-cloud/documentai');
+} = require('@google-cloud/documentai').v1beta2;
 const client = new DocumentUnderstandingServiceClient();
 
 async function quickstart() {

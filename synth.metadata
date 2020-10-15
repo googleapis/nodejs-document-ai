@@ -3,8 +3,8 @@
     {
       "git": {
         "name": ".",
-        "remote": "git@github.com:googleapis/nodejs-document-ai.git",
-        "sha": "bdd070467079aa7a075c9756d7445493685a8e7e"
+        "remote": "https://github.com/googleapis/nodejs-document-ai.git",
+        "sha": "83ca09497a4803e566c58a9a88e5bdac04585743"
       }
     },
     {
@@ -99,6 +99,9 @@
     "protos/google/cloud/documentai/v1beta2/document.proto",
     "protos/google/cloud/documentai/v1beta2/document_understanding.proto",
     "protos/google/cloud/documentai/v1beta2/geometry.proto",
+    "protos/google/cloud/documentai/v1beta3/document.proto",
+    "protos/google/cloud/documentai/v1beta3/document_processor_service.proto",
+    "protos/google/cloud/documentai/v1beta3/geometry.proto",
     "protos/protos.d.ts",
     "protos/protos.js",
     "protos/protos.json",
@@ -109,9 +112,14 @@
     "src/v1beta2/document_understanding_service_client_config.json",
     "src/v1beta2/document_understanding_service_proto_list.json",
     "src/v1beta2/index.ts",
+    "src/v1beta3/document_processor_service_client.ts",
+    "src/v1beta3/document_processor_service_client_config.json",
+    "src/v1beta3/document_processor_service_proto_list.json",
+    "src/v1beta3/index.ts",
     "system-test/fixtures/sample/src/index.js",
     "system-test/fixtures/sample/src/index.ts",
     "system-test/install.ts",
+    "test/gapic_document_processor_service_v1beta3.ts",
     "test/gapic_document_understanding_service_v1beta2.ts",
     "tsconfig.json",
     "webpack.config.js"
