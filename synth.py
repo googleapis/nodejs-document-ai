@@ -21,7 +21,7 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 
 AUTOSYNTH_MULTIPLE_COMMITS = True
-AUTOSYNTH_
+
 
 
 # run the gapic generator
