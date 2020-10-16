@@ -17,7 +17,7 @@
 // ** All changes to this file may be overwritten. **
 
 /* eslint-disable node/no-missing-require, no-unused-vars */
-const documentai = require('@google-cloud/documentai');
+const documentai = require('documentai');
 
 function main() {
   const documentProcessorServiceClient = new documentai.DocumentProcessorServiceClient();
