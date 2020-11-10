@@ -4,14 +4,22 @@
       "git": {
         "name": ".",
         "remote": "git@github.com:googleapis/nodejs-document-ai.git",
-        "sha": "f27b0b95bdba335207b33dbc4e58d692265fd6de"
+        "sha": "74520d6a9c6bc8781c28c198f47babb3d373aa44"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "8b159675150e6d8b149bc4db4540e574462bc4a2",
+        "internalRef": "341678368"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "1f1148d3c7a7a52f0c98077f976bd9b3c948ee2b"
+        "sha": "7db8a6c5ffb12a6e4c2f799c18f00f7f3d60e279"
       }
     }
   ],
@@ -88,7 +96,6 @@
     "README.md",
     "api-extractor.json",
     "linkinator.config.json",
-    "package-lock.json.2676851867",
     "protos/google/cloud/documentai/v1beta2/document.proto",
     "protos/google/cloud/documentai/v1beta2/document_understanding.proto",
     "protos/google/cloud/documentai/v1beta2/geometry.proto",
@@ -100,7 +107,6 @@
     "protos/protos.json",
     "renovate.json",
     "samples/README.md",
-    "samples/package-lock.json.2197701460",
     "src/index.ts",
     "src/v1beta2/document_understanding_service_client.ts",
     "src/v1beta2/document_understanding_service_client_config.json",

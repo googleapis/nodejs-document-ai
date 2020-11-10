@@ -101,8 +101,8 @@ export class DocumentUnderstandingServiceClient {
     const fallback = opts?.fallback ?? typeof window !== 'undefined';
     opts = Object.assign({servicePath, port, clientConfig, fallback}, opts);
 
-    // If scopes are unset in options and we're connecting to a non-default endpoint, set scopes just in case.
-    if (servicePath !== staticMembers.servicePath && !('scopes' in opts)) {
+    // If scopes are unset in options set scopes.
+    if (!('scopes' in opts)) {
       opts['scopes'] = staticMembers.scopes;
     }
 
@@ -117,11 +117,6 @@ export class DocumentUnderstandingServiceClient {
 
     // Save the auth object to the client, for use by other methods.
     this.auth = this._gaxGrpc.auth as gax.GoogleAuth;
-
-    // Set the default scopes in auth client if needed.
-    if (servicePath === staticMembers.servicePath) {
-      this.auth.defaultScopes = staticMembers.scopes;
-    }
 
     // Determine the client header string.
     const clientHeader = [`gax/${this._gaxModule.version}`, `gapic/${version}`];
