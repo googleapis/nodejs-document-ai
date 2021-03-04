@@ -35,10 +35,6 @@ function stubSimpleCall<ResponseType>(response?: ResponseType, error?: Error) {
     return error ? sinon.stub().rejects(error) : sinon.stub().resolves([response]);
 }
 
-function stubSimpleCallWithCallback<ResponseType>(response?: ResponseType, error?: Error) {
-    return error ? sinon.stub().callsArgWith(2, error) : sinon.stub().callsArgWith(2, null, response);
-}
-
 function stubLongRunningCall<ResponseType>(response?: ResponseType, callError?: Error, lroError?: Error) {
     const innerStub = lroError ? sinon.stub().rejects(lroError) : sinon.stub().resolves([response]);
     const mockOperation = {
@@ -55,37 +51,37 @@ function stubLongRunningCallWithCallback<ResponseType>(response?: ResponseType, 
     return callError ? sinon.stub().callsArgWith(2, callError) : sinon.stub().callsArgWith(2, null, mockOperation);
 }
 
-describe('v1beta2.DocumentUnderstandingServiceClient', () => {
+describe('v1beta1.DocumentUnderstandingServiceClient', () => {
     it('has servicePath', () => {
-        const servicePath = documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient.servicePath;
+        const servicePath = documentunderstandingserviceModule.v1beta1.DocumentUnderstandingServiceClient.servicePath;
         assert(servicePath);
     });
 
     it('has apiEndpoint', () => {
-        const apiEndpoint = documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient.apiEndpoint;
+        const apiEndpoint = documentunderstandingserviceModule.v1beta1.DocumentUnderstandingServiceClient.apiEndpoint;
         assert(apiEndpoint);
     });
 
     it('has port', () => {
-        const port = documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient.port;
+        const port = documentunderstandingserviceModule.v1beta1.DocumentUnderstandingServiceClient.port;
         assert(port);
         assert(typeof port === 'number');
     });
 
     it('should create a client with no option', () => {
-        const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient();
+        const client = new documentunderstandingserviceModule.v1beta1.DocumentUnderstandingServiceClient();
         assert(client);
     });
 
     it('should create a client with gRPC fallback', () => {
-        const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient({
+        const client = new documentunderstandingserviceModule.v1beta1.DocumentUnderstandingServiceClient({
             fallback: true,
         });
         assert(client);
     });
 
     it('has initialize method and supports deferred initialization', async () => {
-        const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient({
+        const client = new documentunderstandingserviceModule.v1beta1.DocumentUnderstandingServiceClient({
             credentials: { client_email: 'bogus', private_key: 'bogus' },
             projectId: 'bogus',
         });
@@ -95,7 +91,7 @@ describe('v1beta2.DocumentUnderstandingServiceClient', () => {
     });
 
     it('has close method', () => {
-        const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient({
+        const client = new documentunderstandingserviceModule.v1beta1.DocumentUnderstandingServiceClient({
             credentials: { client_email: 'bogus', private_key: 'bogus' },
             projectId: 'bogus',
         });
@@ -104,7 +100,7 @@ describe('v1beta2.DocumentUnderstandingServiceClient', () => {
 
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
-        const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient({
+        const client = new documentunderstandingserviceModule.v1beta1.DocumentUnderstandingServiceClient({
             credentials: { client_email: 'bogus', private_key: 'bogus' },
             projectId: 'bogus',
         });
@@ -116,7 +112,7 @@ describe('v1beta2.DocumentUnderstandingServiceClient', () => {
 
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
-        const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient({
+        const client = new documentunderstandingserviceModule.v1beta1.DocumentUnderstandingServiceClient({
             credentials: { client_email: 'bogus', private_key: 'bogus' },
             projectId: 'bogus',
         });
@@ -134,98 +130,14 @@ describe('v1beta2.DocumentUnderstandingServiceClient', () => {
         assert.strictEqual(result, fakeProjectId);
     });
 
-    describe('processDocument', () => {
-        it('invokes processDocument without error', async () => {
-            const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
-            client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta2.ProcessDocumentRequest());
-            request.parent = '';
-            const expectedHeaderRequestParams = "parent=";
-            const expectedOptions = {
-                otherArgs: {
-                    headers: {
-                        'x-goog-request-params': expectedHeaderRequestParams,
-                    },
-                },
-            };
-            const expectedResponse = generateSampleMessage(new protos.google.cloud.documentai.v1beta2.Document());
-            client.innerApiCalls.processDocument = stubSimpleCall(expectedResponse);
-            const [response] = await client.processDocument(request);
-            assert.deepStrictEqual(response, expectedResponse);
-            assert((client.innerApiCalls.processDocument as SinonStub)
-                .getCall(0).calledWith(request, expectedOptions, undefined));
-        });
-
-        it('invokes processDocument without error using callback', async () => {
-            const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
-            client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta2.ProcessDocumentRequest());
-            request.parent = '';
-            const expectedHeaderRequestParams = "parent=";
-            const expectedOptions = {
-                otherArgs: {
-                    headers: {
-                        'x-goog-request-params': expectedHeaderRequestParams,
-                    },
-                },
-            };
-            const expectedResponse = generateSampleMessage(new protos.google.cloud.documentai.v1beta2.Document());
-            client.innerApiCalls.processDocument = stubSimpleCallWithCallback(expectedResponse);
-            const promise = new Promise((resolve, reject) => {
-                 client.processDocument(
-                    request,
-                    (err?: Error|null, result?: protos.google.cloud.documentai.v1beta2.IDocument|null) => {
-                        if (err) {
-                            reject(err);
-                        } else {
-                            resolve(result);
-                        }
-                    });
-            });
-            const response = await promise;
-            assert.deepStrictEqual(response, expectedResponse);
-            assert((client.innerApiCalls.processDocument as SinonStub)
-                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
-        });
-
-        it('invokes processDocument with error', async () => {
-            const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
-            client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta2.ProcessDocumentRequest());
-            request.parent = '';
-            const expectedHeaderRequestParams = "parent=";
-            const expectedOptions = {
-                otherArgs: {
-                    headers: {
-                        'x-goog-request-params': expectedHeaderRequestParams,
-                    },
-                },
-            };
-            const expectedError = new Error('expected');
-            client.innerApiCalls.processDocument = stubSimpleCall(undefined, expectedError);
-            await assert.rejects(client.processDocument(request), expectedError);
-            assert((client.innerApiCalls.processDocument as SinonStub)
-                .getCall(0).calledWith(request, expectedOptions, undefined));
-        });
-    });
-
     describe('batchProcessDocuments', () => {
         it('invokes batchProcessDocuments without error', async () => {
-            const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient({
+            const client = new documentunderstandingserviceModule.v1beta1.DocumentUnderstandingServiceClient({
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta2.BatchProcessDocumentsRequest());
+            const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest());
             request.parent = '';
             const expectedHeaderRequestParams = "parent=";
             const expectedOptions = {
@@ -245,12 +157,12 @@ describe('v1beta2.DocumentUnderstandingServiceClient', () => {
         });
 
         it('invokes batchProcessDocuments without error using callback', async () => {
-            const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient({
+            const client = new documentunderstandingserviceModule.v1beta1.DocumentUnderstandingServiceClient({
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta2.BatchProcessDocumentsRequest());
+            const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest());
             request.parent = '';
             const expectedHeaderRequestParams = "parent=";
             const expectedOptions = {
@@ -266,7 +178,7 @@ describe('v1beta2.DocumentUnderstandingServiceClient', () => {
                  client.batchProcessDocuments(
                     request,
                     (err?: Error|null,
-                     result?: LROperation<protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta2.IOperationMetadata>|null
+                     result?: LROperation<protos.google.cloud.documentai.v1beta1.IBatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta1.IOperationMetadata>|null
                     ) => {
                         if (err) {
                             reject(err);
@@ -275,7 +187,7 @@ describe('v1beta2.DocumentUnderstandingServiceClient', () => {
                         }
                     });
             });
-            const operation = await promise as LROperation<protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta2.IOperationMetadata>;
+            const operation = await promise as LROperation<protos.google.cloud.documentai.v1beta1.IBatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta1.IOperationMetadata>;
             const [response] = await operation.promise();
             assert.deepStrictEqual(response, expectedResponse);
             assert((client.innerApiCalls.batchProcessDocuments as SinonStub)
@@ -283,12 +195,12 @@ describe('v1beta2.DocumentUnderstandingServiceClient', () => {
         });
 
         it('invokes batchProcessDocuments with call error', async () => {
-            const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient({
+            const client = new documentunderstandingserviceModule.v1beta1.DocumentUnderstandingServiceClient({
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta2.BatchProcessDocumentsRequest());
+            const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest());
             request.parent = '';
             const expectedHeaderRequestParams = "parent=";
             const expectedOptions = {
@@ -306,12 +218,12 @@ describe('v1beta2.DocumentUnderstandingServiceClient', () => {
         });
 
         it('invokes batchProcessDocuments with LRO error', async () => {
-            const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient({
+            const client = new documentunderstandingserviceModule.v1beta1.DocumentUnderstandingServiceClient({
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta2.BatchProcessDocumentsRequest());
+            const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest());
             request.parent = '';
             const expectedHeaderRequestParams = "parent=";
             const expectedOptions = {
@@ -330,7 +242,7 @@ describe('v1beta2.DocumentUnderstandingServiceClient', () => {
         });
 
         it('invokes checkBatchProcessDocumentsProgress without error', async () => {
-            const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient({
+            const client = new documentunderstandingserviceModule.v1beta1.DocumentUnderstandingServiceClient({
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
@@ -348,7 +260,7 @@ describe('v1beta2.DocumentUnderstandingServiceClient', () => {
         });
 
         it('invokes checkBatchProcessDocumentsProgress with error', async () => {
-            const client = new documentunderstandingserviceModule.v1beta2.DocumentUnderstandingServiceClient({
+            const client = new documentunderstandingserviceModule.v1beta1.DocumentUnderstandingServiceClient({
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
