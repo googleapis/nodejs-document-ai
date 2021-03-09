@@ -18,7 +18,13 @@
 
 /* global window */
 import * as gax from 'google-gax';
-import {Callback, CallOptions, Descriptors, ClientOptions, LROperation} from 'google-gax';
+import {
+  Callback,
+  CallOptions,
+  Descriptors,
+  ClientOptions,
+  LROperation,
+} from 'google-gax';
 import * as path from 'path';
 
 import * as protos from '../../protos/protos';
@@ -28,7 +34,7 @@ import * as protos from '../../protos/protos';
  * This file defines retry strategy and timeouts for all API methods in this library.
  */
 import * as gapicConfig from './document_understanding_service_client_config.json';
-import { operationsProtos } from 'google-gax';
+import {operationsProtos} from 'google-gax';
 const version = require('../../../package.json').version;
 
 /**
@@ -92,15 +98,19 @@ export class DocumentUnderstandingServiceClient {
    */
   constructor(opts?: ClientOptions) {
     // Ensure that options include all the required fields.
-    const staticMembers = this.constructor as typeof DocumentUnderstandingServiceClient;
-    const servicePath = opts?.servicePath || opts?.apiEndpoint || staticMembers.servicePath;
+    const staticMembers = this
+      .constructor as typeof DocumentUnderstandingServiceClient;
+    const servicePath =
+      opts?.servicePath || opts?.apiEndpoint || staticMembers.servicePath;
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
-    const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
+    const fallback =
+      opts?.fallback ??
+      (typeof window !== 'undefined' && typeof window?.fetch === 'function');
     opts = Object.assign({servicePath, port, clientConfig, fallback}, opts);
 
-    // If scopes are unset in options and we're connecting to a non-default endpoint, set scopes just in case.
-    if (servicePath !== staticMembers.servicePath && !('scopes' in opts)) {
+    // If scopes are unset in options set scopes.
+    if (!('scopes' in opts)) {
       opts['scopes'] = staticMembers.scopes;
     }
 
@@ -114,18 +124,10 @@ export class DocumentUnderstandingServiceClient {
     this._opts = opts;
 
     // Save the auth object to the client, for use by other methods.
-    this.auth = (this._gaxGrpc.auth as gax.GoogleAuth);
-
-    // Set the default scopes in auth client if needed.
-    if (servicePath === staticMembers.servicePath) {
-      this.auth.defaultScopes = staticMembers.scopes;
-    }
+    this.auth = this._gaxGrpc.auth as gax.GoogleAuth;
 
     // Determine the client header string.
-    const clientHeader = [
-      `gax/${this._gaxModule.version}`,
-      `gapic/${version}`,
-    ];
+    const clientHeader = [`gax/${this._gaxModule.version}`, `gapic/${version}`];
     if (typeof process !== 'undefined' && 'versions' in process) {
       clientHeader.push(`gl-node/${process.versions.node}`);
     } else {
@@ -141,43 +143,60 @@ export class DocumentUnderstandingServiceClient {
     // For Node.js, pass the path to JSON proto file.
     // For browsers, pass the JSON content.
 
-    const nodejsProtoPath = path.join(__dirname, '..', '..', 'protos', 'protos.json');
+    const nodejsProtoPath = path.join(
+      __dirname,
+      '..',
+      '..',
+      'protos',
+      'protos.json'
+    );
     this._protos = this._gaxGrpc.loadProto(
-      opts.fallback ?
-        // eslint-disable-next-line @typescript-eslint/no-var-requires
-        require("../../protos/protos.json") :
-        nodejsProtoPath
+      opts.fallback
+        ? // eslint-disable-next-line @typescript-eslint/no-var-requires
+          require('../../protos/protos.json')
+        : nodejsProtoPath
     );
 
     // This API contains "long-running operations", which return a
     // an Operation object that allows for tracking of the operation,
     // rather than holding a request open.
-    const protoFilesRoot = opts.fallback ?
-      this._gaxModule.protobuf.Root.fromJSON(
-        // eslint-disable-next-line @typescript-eslint/no-var-requires
-        require("../../protos/protos.json")) :
-      this._gaxModule.protobuf.loadSync(nodejsProtoPath);
+    const protoFilesRoot = opts.fallback
+      ? this._gaxModule.protobuf.Root.fromJSON(
+          // eslint-disable-next-line @typescript-eslint/no-var-requires
+          require('../../protos/protos.json')
+        )
+      : this._gaxModule.protobuf.loadSync(nodejsProtoPath);
 
-    this.operationsClient = this._gaxModule.lro({
-      auth: this.auth,
-      grpc: 'grpc' in this._gaxGrpc ? this._gaxGrpc.grpc : undefined
-    }).operationsClient(opts);
+    this.operationsClient = this._gaxModule
+      .lro({
+        auth: this.auth,
+        grpc: 'grpc' in this._gaxGrpc ? this._gaxGrpc.grpc : undefined,
+      })
+      .operationsClient(opts);
     const batchProcessDocumentsResponse = protoFilesRoot.lookup(
-      '.google.cloud.documentai.v1beta2.BatchProcessDocumentsResponse') as gax.protobuf.Type;
+      '.google.cloud.documentai.v1beta2.BatchProcessDocumentsResponse'
+    ) as gax.protobuf.Type;
     const batchProcessDocumentsMetadata = protoFilesRoot.lookup(
-      '.google.cloud.documentai.v1beta2.OperationMetadata') as gax.protobuf.Type;
+      '.google.cloud.documentai.v1beta2.OperationMetadata'
+    ) as gax.protobuf.Type;
 
     this.descriptors.longrunning = {
       batchProcessDocuments: new this._gaxModule.LongrunningDescriptor(
         this.operationsClient,
-        batchProcessDocumentsResponse.decode.bind(batchProcessDocumentsResponse),
-        batchProcessDocumentsMetadata.decode.bind(batchProcessDocumentsMetadata))
+        batchProcessDocumentsResponse.decode.bind(
+          batchProcessDocumentsResponse
+        ),
+        batchProcessDocumentsMetadata.decode.bind(batchProcessDocumentsMetadata)
+      ),
     };
 
     // Put together the default options sent with requests.
     this._defaults = this._gaxGrpc.constructSettings(
-        'google.cloud.documentai.v1beta2.DocumentUnderstandingService', gapicConfig as gax.ClientConfig,
-        opts.clientConfig || {}, {'x-goog-api-client': clientHeader.join(' ')});
+      'google.cloud.documentai.v1beta2.DocumentUnderstandingService',
+      gapicConfig as gax.ClientConfig,
+      opts.clientConfig || {},
+      {'x-goog-api-client': clientHeader.join(' ')}
+    );
 
     // Set up a dictionary of "inner API calls"; the core implementation
     // of calling the API is handled in `google-gax`, with this code
@@ -205,16 +224,22 @@ export class DocumentUnderstandingServiceClient {
     // Put together the "service stub" for
     // google.cloud.documentai.v1beta2.DocumentUnderstandingService.
     this.documentUnderstandingServiceStub = this._gaxGrpc.createStub(
-        this._opts.fallback ?
-          (this._protos as protobuf.Root).lookupService('google.cloud.documentai.v1beta2.DocumentUnderstandingService') :
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          (this._protos as any).google.cloud.documentai.v1beta2.DocumentUnderstandingService,
-        this._opts) as Promise<{[method: string]: Function}>;
+      this._opts.fallback
+        ? (this._protos as protobuf.Root).lookupService(
+            'google.cloud.documentai.v1beta2.DocumentUnderstandingService'
+          )
+        : // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          (this._protos as any).google.cloud.documentai.v1beta2
+            .DocumentUnderstandingService,
+      this._opts
+    ) as Promise<{[method: string]: Function}>;
 
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
-    const documentUnderstandingServiceStubMethods =
-        ['batchProcessDocuments', 'processDocument'];
+    const documentUnderstandingServiceStubMethods = [
+      'batchProcessDocuments',
+      'processDocument',
+    ];
     for (const methodName of documentUnderstandingServiceStubMethods) {
       const callPromise = this.documentUnderstandingServiceStub.then(
         stub => (...args: Array<{}>) => {
@@ -224,13 +249,12 @@ export class DocumentUnderstandingServiceClient {
           const func = stub[methodName];
           return func.apply(stub, args);
         },
-        (err: Error|null|undefined) => () => {
+        (err: Error | null | undefined) => () => {
           throw err;
-        });
+        }
+      );
 
-      const descriptor =
-        this.descriptors.longrunning[methodName] ||
-        undefined;
+      const descriptor = this.descriptors.longrunning[methodName] || undefined;
       const apiCall = this._gaxModule.createApiCall(
         callPromise,
         this._defaults[methodName],
@@ -274,9 +298,7 @@ export class DocumentUnderstandingServiceClient {
    * @returns {string[]} List of default scopes.
    */
   static get scopes() {
-    return [
-      'https://www.googleapis.com/auth/cloud-platform'
-    ];
+    return ['https://www.googleapis.com/auth/cloud-platform'];
   }
 
   getProjectId(): Promise<string>;
@@ -285,8 +307,9 @@ export class DocumentUnderstandingServiceClient {
    * Return the project ID used by this class.
    * @returns {Promise} A promise that resolves to string containing the project ID.
    */
-  getProjectId(callback?: Callback<string, undefined, undefined>):
-      Promise<string>|void {
+  getProjectId(
+    callback?: Callback<string, undefined, undefined>
+  ): Promise<string> | void {
     if (callback) {
       this.auth.getProjectId(callback);
       return;
@@ -298,92 +321,119 @@ export class DocumentUnderstandingServiceClient {
   // -- Service calls --
   // -------------------
   processDocument(
-      request: protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.documentai.v1beta2.IDocument,
-        protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest|undefined, {}|undefined
-      ]>;
+    request: protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest,
+    options?: CallOptions
+  ): Promise<
+    [
+      protos.google.cloud.documentai.v1beta2.IDocument,
+      (
+        | protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest
+        | undefined
+      ),
+      {} | undefined
+    ]
+  >;
   processDocument(
-      request: protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.documentai.v1beta2.IDocument,
-          protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest|null|undefined,
-          {}|null|undefined>): void;
+    request: protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest,
+    options: CallOptions,
+    callback: Callback<
+      protos.google.cloud.documentai.v1beta2.IDocument,
+      | protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest
+      | null
+      | undefined,
+      {} | null | undefined
+    >
+  ): void;
   processDocument(
-      request: protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest,
-      callback: Callback<
-          protos.google.cloud.documentai.v1beta2.IDocument,
-          protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest|null|undefined,
-          {}|null|undefined>): void;
-/**
- * Processes a single document.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Target project and location to make a call.
- *
- *   Format: `projects/{project-id}/locations/{location-id}`.
- *
- *   If no location is specified, a region will be chosen automatically.
- *   This field is only populated when used in ProcessDocument method.
- * @param {google.cloud.documentai.v1beta2.InputConfig} request.inputConfig
- *   Required. Information about the input file.
- * @param {google.cloud.documentai.v1beta2.OutputConfig} [request.outputConfig]
- *   Optional. The desired output location. This field is only needed in
- *   BatchProcessDocumentsRequest.
- * @param {string} request.documentType
- *   Specifies a known document type for deeper structure detection. Valid
- *   values are currently "general" and "invoice". If not provided, "general"\
- *   is used as default. If any other value is given, the request is rejected.
- * @param {google.cloud.documentai.v1beta2.TableExtractionParams} request.tableExtractionParams
- *   Controls table extraction behavior. If not specified, the system will
- *   decide reasonable defaults.
- * @param {google.cloud.documentai.v1beta2.FormExtractionParams} request.formExtractionParams
- *   Controls form extraction behavior. If not specified, the system will
- *   decide reasonable defaults.
- * @param {google.cloud.documentai.v1beta2.EntityExtractionParams} request.entityExtractionParams
- *   Controls entity extraction behavior. If not specified, the system will
- *   decide reasonable defaults.
- * @param {google.cloud.documentai.v1beta2.OcrParams} request.ocrParams
- *   Controls OCR behavior. If not specified, the system will decide reasonable
- *   defaults.
- * @param {google.cloud.documentai.v1beta2.AutoMlParams} request.automlParams
- *   Controls AutoML model prediction behavior. AutoMlParams cannot be used
- *   together with other Params.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Document]{@link google.cloud.documentai.v1beta2.Document}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.processDocument(request);
- */
+    request: protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest,
+    callback: Callback<
+      protos.google.cloud.documentai.v1beta2.IDocument,
+      | protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest
+      | null
+      | undefined,
+      {} | null | undefined
+    >
+  ): void;
+  /**
+   * Processes a single document.
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {string} request.parent
+   *   Target project and location to make a call.
+   *
+   *   Format: `projects/{project-id}/locations/{location-id}`.
+   *
+   *   If no location is specified, a region will be chosen automatically.
+   *   This field is only populated when used in ProcessDocument method.
+   * @param {google.cloud.documentai.v1beta2.InputConfig} request.inputConfig
+   *   Required. Information about the input file.
+   * @param {google.cloud.documentai.v1beta2.OutputConfig} [request.outputConfig]
+   *   Optional. The desired output location. This field is only needed in
+   *   BatchProcessDocumentsRequest.
+   * @param {string} request.documentType
+   *   Specifies a known document type for deeper structure detection. Valid
+   *   values are currently "general" and "invoice". If not provided, "general"\
+   *   is used as default. If any other value is given, the request is rejected.
+   * @param {google.cloud.documentai.v1beta2.TableExtractionParams} request.tableExtractionParams
+   *   Controls table extraction behavior. If not specified, the system will
+   *   decide reasonable defaults.
+   * @param {google.cloud.documentai.v1beta2.FormExtractionParams} request.formExtractionParams
+   *   Controls form extraction behavior. If not specified, the system will
+   *   decide reasonable defaults.
+   * @param {google.cloud.documentai.v1beta2.EntityExtractionParams} request.entityExtractionParams
+   *   Controls entity extraction behavior. If not specified, the system will
+   *   decide reasonable defaults.
+   * @param {google.cloud.documentai.v1beta2.OcrParams} request.ocrParams
+   *   Controls OCR behavior. If not specified, the system will decide reasonable
+   *   defaults.
+   * @param {google.cloud.documentai.v1beta2.AutoMlParams} request.automlParams
+   *   Controls AutoML model prediction behavior. AutoMlParams cannot be used
+   *   together with other Params.
+   * @param {object} [options]
+   *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+   * @returns {Promise} - The promise which resolves to an array.
+   *   The first element of the array is an object representing [Document]{@link google.cloud.documentai.v1beta2.Document}.
+   *   Please see the
+   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+   *   for more details and examples.
+   * @example
+   * const [response] = await client.processDocument(request);
+   */
   processDocument(
-      request: protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest,
-      optionsOrCallback?: CallOptions|Callback<
+    request: protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest,
+    optionsOrCallback?:
+      | CallOptions
+      | Callback<
           protos.google.cloud.documentai.v1beta2.IDocument,
-          protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest|null|undefined,
-          {}|null|undefined>,
-      callback?: Callback<
-          protos.google.cloud.documentai.v1beta2.IDocument,
-          protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest|null|undefined,
-          {}|null|undefined>):
-      Promise<[
-        protos.google.cloud.documentai.v1beta2.IDocument,
-        protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest|undefined, {}|undefined
-      ]>|void {
+          | protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest
+          | null
+          | undefined,
+          {} | null | undefined
+        >,
+    callback?: Callback<
+      protos.google.cloud.documentai.v1beta2.IDocument,
+      | protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest
+      | null
+      | undefined,
+      {} | null | undefined
+    >
+  ): Promise<
+    [
+      protos.google.cloud.documentai.v1beta2.IDocument,
+      (
+        | protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest
+        | undefined
+      ),
+      {} | undefined
+    ]
+  > | void {
     request = request || {};
     let options: CallOptions;
     if (typeof optionsOrCallback === 'function' && callback === undefined) {
       callback = optionsOrCallback;
       options = {};
-    }
-    else {
+    } else {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
@@ -392,80 +442,111 @@ export class DocumentUnderstandingServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'parent': request.parent || '',
+      parent: request.parent || '',
     });
     this.initialize();
     return this.innerApiCalls.processDocument(request, options, callback);
   }
 
   batchProcessDocuments(
-      request: protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta2.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
+    request: protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsRequest,
+    options?: CallOptions
+  ): Promise<
+    [
+      LROperation<
+        protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsResponse,
+        protos.google.cloud.documentai.v1beta2.IOperationMetadata
+      >,
+      protos.google.longrunning.IOperation | undefined,
+      {} | undefined
+    ]
+  >;
   batchProcessDocuments(
-      request: protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta2.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
+    request: protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsRequest,
+    options: CallOptions,
+    callback: Callback<
+      LROperation<
+        protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsResponse,
+        protos.google.cloud.documentai.v1beta2.IOperationMetadata
+      >,
+      protos.google.longrunning.IOperation | null | undefined,
+      {} | null | undefined
+    >
+  ): void;
   batchProcessDocuments(
-      request: protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta2.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-/**
- * LRO endpoint to batch process many documents. The output is written
- * to Cloud Storage as JSON in the [Document] format.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {number[]} request.requests
- *   Required. Individual requests for each document.
- * @param {string} request.parent
- *   Target project and location to make a call.
- *
- *   Format: `projects/{project-id}/locations/{location-id}`.
- *
- *   If no location is specified, a region will be chosen automatically.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.batchProcessDocuments(request);
- * const [response] = await operation.promise();
- */
+    request: protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsRequest,
+    callback: Callback<
+      LROperation<
+        protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsResponse,
+        protos.google.cloud.documentai.v1beta2.IOperationMetadata
+      >,
+      protos.google.longrunning.IOperation | null | undefined,
+      {} | null | undefined
+    >
+  ): void;
+  /**
+   * LRO endpoint to batch process many documents. The output is written
+   * to Cloud Storage as JSON in the [Document] format.
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {number[]} request.requests
+   *   Required. Individual requests for each document.
+   * @param {string} request.parent
+   *   Target project and location to make a call.
+   *
+   *   Format: `projects/{project-id}/locations/{location-id}`.
+   *
+   *   If no location is specified, a region will be chosen automatically.
+   * @param {object} [options]
+   *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+   * @returns {Promise} - The promise which resolves to an array.
+   *   The first element of the array is an object representing
+   *   a long running operation. Its `promise()` method returns a promise
+   *   you can `await` for.
+   *   Please see the
+   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   for more details and examples.
+   * @example
+   * const [operation] = await client.batchProcessDocuments(request);
+   * const [response] = await operation.promise();
+   */
   batchProcessDocuments(
-      request: protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsRequest,
-      optionsOrCallback?: CallOptions|Callback<
-          LROperation<protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta2.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>,
-      callback?: Callback<
-          LROperation<protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta2.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>):
-      Promise<[
-        LROperation<protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta2.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>|void {
+    request: protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsRequest,
+    optionsOrCallback?:
+      | CallOptions
+      | Callback<
+          LROperation<
+            protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsResponse,
+            protos.google.cloud.documentai.v1beta2.IOperationMetadata
+          >,
+          protos.google.longrunning.IOperation | null | undefined,
+          {} | null | undefined
+        >,
+    callback?: Callback<
+      LROperation<
+        protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsResponse,
+        protos.google.cloud.documentai.v1beta2.IOperationMetadata
+      >,
+      protos.google.longrunning.IOperation | null | undefined,
+      {} | null | undefined
+    >
+  ): Promise<
+    [
+      LROperation<
+        protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsResponse,
+        protos.google.cloud.documentai.v1beta2.IOperationMetadata
+      >,
+      protos.google.longrunning.IOperation | undefined,
+      {} | undefined
+    ]
+  > | void {
     request = request || {};
     let options: CallOptions;
     if (typeof optionsOrCallback === 'function' && callback === undefined) {
       callback = optionsOrCallback;
       options = {};
-    }
-    else {
+    } else {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
@@ -474,31 +555,47 @@ export class DocumentUnderstandingServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'parent': request.parent || '',
+      parent: request.parent || '',
     });
     this.initialize();
     return this.innerApiCalls.batchProcessDocuments(request, options, callback);
   }
-/**
- * Check the status of the long running operation returned by `batchProcessDocuments()`.
- * @param {String} name
- *   The operation name that will be passed.
- * @returns {Promise} - The promise which resolves to an object.
- *   The decoded operation object has result and metadata field to get information from.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const decodedOperation = await checkBatchProcessDocumentsProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
- */
-  async checkBatchProcessDocumentsProgress(name: string): Promise<LROperation<protos.google.cloud.documentai.v1beta2.BatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta2.OperationMetadata>>{
-    const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
+  /**
+   * Check the status of the long running operation returned by `batchProcessDocuments()`.
+   * @param {String} name
+   *   The operation name that will be passed.
+   * @returns {Promise} - The promise which resolves to an object.
+   *   The decoded operation object has result and metadata field to get information from.
+   *   Please see the
+   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   for more details and examples.
+   * @example
+   * const decodedOperation = await checkBatchProcessDocumentsProgress(name);
+   * console.log(decodedOperation.result);
+   * console.log(decodedOperation.done);
+   * console.log(decodedOperation.metadata);
+   */
+  async checkBatchProcessDocumentsProgress(
+    name: string
+  ): Promise<
+    LROperation<
+      protos.google.cloud.documentai.v1beta2.BatchProcessDocumentsResponse,
+      protos.google.cloud.documentai.v1beta2.OperationMetadata
+    >
+  > {
+    const request = new operationsProtos.google.longrunning.GetOperationRequest(
+      {name}
+    );
     const [operation] = await this.operationsClient.getOperation(request);
-    const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.batchProcessDocuments, gax.createDefaultBackoffSettings());
-    return decodeOperation as LROperation<protos.google.cloud.documentai.v1beta2.BatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta2.OperationMetadata>;
+    const decodeOperation = new gax.Operation(
+      operation,
+      this.descriptors.longrunning.batchProcessDocuments,
+      gax.createDefaultBackoffSettings()
+    );
+    return decodeOperation as LROperation<
+      protos.google.cloud.documentai.v1beta2.BatchProcessDocumentsResponse,
+      protos.google.cloud.documentai.v1beta2.OperationMetadata
+    >;
   }
 
   /**
