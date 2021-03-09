@@ -26,8 +26,8 @@ deep-copy-regex:
   # unit tests:
   - source: /google/cloud/documentai/.*/documentai-.*-nodejs/test/(.*)
     dest: /test/$1
-    rm-dest: /test/$1
+    rm-dest: /test/.*
   # TypeScript integration tests:
   - source: /google/cloud/documentai/.*/documentai-.*-nodejs/system-test/(.*)
     dest: /system-test/$1
-    rm-dest: /system-test/$1
+    rm-dest: /system-test/.*
