@@ -26,15 +26,15 @@ templates = common_templates.node_library(
 synthtool.copy(templates, excludes=[])
 
 ## Note: this API only supports regional endpoints and does not support default scopes.
-s.replace(f"src/*/document_*_service_client.ts",
+synthtool.replace(f"src/*/document_*_service_client.ts",
           "servicePath !== staticMembers.servicePath && ",
           ""
          )
-s.replace(f"src/*/document_*_service_client.ts",
+synthtool.replace(f"src/*/document_*_service_client.ts",
           "and we're connecting to a non-default endpoint, set scopes just in case",
           "set scopes"
          )
-s.replace(f"src/*/document_*_service_client.ts",
+synthtool.replace(f"src/*/document_*_service_client.ts",
           r"// Set the default scopes in auth client if needed(.|\n)*?}",
           ""
          )
