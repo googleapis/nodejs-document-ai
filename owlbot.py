@@ -19,7 +19,7 @@ import logging
 # Copy common templates
 common_templates = gcp.CommonTemplates()
 templates = common_templates.node_library(
-    versions=node.detect_versions()
+    versions=node.detect_versions(),
     default_version='v1beta3'
 )
 s.copy(templates, excludes=[])
