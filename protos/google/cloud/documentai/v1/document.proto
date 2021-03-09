@@ -14,10 +14,10 @@
 
 syntax = "proto3";
 
-package google.cloud.documentai.v1beta3;
+package google.cloud.documentai.v1;
 
 import "google/api/field_behavior.proto";
-import "google/cloud/documentai/v1beta3/geometry.proto";
+import "google/cloud/documentai/v1/geometry.proto";
 import "google/protobuf/timestamp.proto";
 import "google/rpc/status.proto";
 import "google/type/color.proto";
@@ -27,13 +27,13 @@ import "google/type/money.proto";
 import "google/type/postal_address.proto";
 import "google/api/annotations.proto";
 
-option csharp_namespace = "Google.Cloud.DocumentAI.V1Beta3";
-option go_package = "google.golang.org/genproto/googleapis/cloud/documentai/v1beta3;documentai";
+option csharp_namespace = "Google.Cloud.DocumentAI.V1";
+option go_package = "google.golang.org/genproto/googleapis/cloud/documentai/v1;documentai";
 option java_multiple_files = true;
 option java_outer_classname = "DocumentProto";
-option java_package = "com.google.cloud.documentai.v1beta3";
-option php_namespace = "Google\\Cloud\\DocumentAI\\V1beta3";
-option ruby_package = "Google::Cloud::DocumentAI::V1beta3";
+option java_package = "com.google.cloud.documentai.v1";
+option php_namespace = "Google\\Cloud\\DocumentAI\\V1";
+option ruby_package = "Google::Cloud::DocumentAI::V1";
 
 // Document represents the canonical document resource in Document Understanding
 // AI.
@@ -51,7 +51,7 @@ message Document {
     // Total number of shards.
     int64 shard_count = 2;
 
-    // The index of the first character in [Document.text][google.cloud.documentai.v1beta3.Document.text] in the overall
+    // The index of the first character in [Document.text][google.cloud.documentai.v1.Document.text] in the overall
     // document global text.
     int64 text_offset = 3;
   }
@@ -68,7 +68,7 @@ message Document {
       string unit = 2;
     }
 
-    // Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
+    // Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
     TextAnchor text_anchor = 1;
 
     // Text color.
@@ -94,7 +94,7 @@ message Document {
     FontSize font_size = 7;
   }
 
-  // A page in a [Document][google.cloud.documentai.v1beta3.Document].
+  // A page in a [Document][google.cloud.documentai.v1.Document].
   message Page {
     // Dimension for the page.
     message Dimension {
@@ -165,25 +165,25 @@ message Document {
         PAGE_LEFT = 4;
       }
 
-      // Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
+      // Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
       TextAnchor text_anchor = 1;
 
-      // Confidence of the current [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] within context of the object this
+      // Confidence of the current [Layout][google.cloud.documentai.v1.Document.Page.Layout] within context of the object this
       // layout is for. e.g. confidence can be for a single token, a table,
       // a visual element, etc. depending on context. Range [0, 1].
       float confidence = 2;
 
-      // The bounding polygon for the [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout].
+      // The bounding polygon for the [Layout][google.cloud.documentai.v1.Document.Page.Layout].
       BoundingPoly bounding_poly = 3;
 
-      // Detected orientation for the [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout].
+      // Detected orientation for the [Layout][google.cloud.documentai.v1.Document.Page.Layout].
       Orientation orientation = 4;
     }
 
     // A block has a set of lines (collected into paragraphs) that have a
     // common line-spacing and orientation.
     message Block {
-      // [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for [Block][google.cloud.documentai.v1beta3.Document.Page.Block].
+      // [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Block][google.cloud.documentai.v1.Document.Page.Block].
       Layout layout = 1;
 
       // A list of detected languages together with confidence.
@@ -195,7 +195,7 @@ message Document {
 
     // A collection of lines that a human would perceive as a paragraph.
     message Paragraph {
-      // [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for [Paragraph][google.cloud.documentai.v1beta3.Document.Page.Paragraph].
+      // [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
       Layout layout = 1;
 
       // A list of detected languages together with confidence.
@@ -208,7 +208,7 @@ message Document {
     // A collection of tokens that a human would perceive as a line.
     // Does not cross column boundaries, can be horizontal, vertical, etc.
     message Line {
-      // [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for [Line][google.cloud.documentai.v1beta3.Document.Page.Line].
+      // [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Line][google.cloud.documentai.v1.Document.Page.Line].
       Layout layout = 1;
 
       // A list of detected languages together with confidence.
@@ -220,7 +220,7 @@ message Document {
 
     // A detected token.
     message Token {
-      // Detected break at the end of a [Token][google.cloud.documentai.v1beta3.Document.Page.Token].
+      // Detected break at the end of a [Token][google.cloud.documentai.v1.Document.Page.Token].
       message DetectedBreak {
         // Enum to denote the type of break found.
         enum Type {
@@ -241,10 +241,10 @@ message Document {
         Type type = 1;
       }
 
-      // [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for [Token][google.cloud.documentai.v1beta3.Document.Page.Token].
+      // [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Token][google.cloud.documentai.v1.Document.Page.Token].
       Layout layout = 1;
 
-      // Detected break at the end of a [Token][google.cloud.documentai.v1beta3.Document.Page.Token].
+      // Detected break at the end of a [Token][google.cloud.documentai.v1.Document.Page.Token].
       DetectedBreak detected_break = 2;
 
       // A list of detected languages together with confidence.
@@ -257,10 +257,10 @@ message Document {
     // Detected non-text visual elements e.g. checkbox, signature etc. on the
     // page.
     message VisualElement {
-      // [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for [VisualElement][google.cloud.documentai.v1beta3.Document.Page.VisualElement].
+      // [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
       Layout layout = 1;
 
-      // Type of the [VisualElement][google.cloud.documentai.v1beta3.Document.Page.VisualElement].
+      // Type of the [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
       string type = 2;
 
       // A list of detected languages together with confidence.
@@ -277,7 +277,7 @@ message Document {
 
       // A cell representation inside the table.
       message TableCell {
-        // [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for [TableCell][google.cloud.documentai.v1beta3.Document.Page.Table.TableCell].
+        // [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
         Layout layout = 1;
 
         // How many rows this cell spans.
@@ -290,7 +290,7 @@ message Document {
         repeated DetectedLanguage detected_languages = 4;
       }
 
-      // [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for [Table][google.cloud.documentai.v1beta3.Document.Page.Table].
+      // [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Table][google.cloud.documentai.v1.Document.Page.Table].
       Layout layout = 1;
 
       // Header rows of the table.
@@ -305,11 +305,11 @@ message Document {
 
     // A form field detected on the page.
     message FormField {
-      // [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1beta3.Document.Page.FormField] name. e.g. `Address`, `Email`,
+      // [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] name. e.g. `Address`, `Email`,
       // `Grand total`, `Phone number`, etc.
       Layout field_name = 1;
 
-      // [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1beta3.Document.Page.FormField] value.
+      // [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
       Layout field_value = 2;
 
       // A list of detected languages for name together with confidence.
@@ -337,8 +337,8 @@ message Document {
       float confidence = 2;
     }
 
-    // 1-based index for current [Page][google.cloud.documentai.v1beta3.Document.Page] in a parent [Document][google.cloud.documentai.v1beta3.Document].
-    // Useful when a page is taken out of a [Document][google.cloud.documentai.v1beta3.Document] for individual
+    // 1-based index for current [Page][google.cloud.documentai.v1.Document.Page] in a parent [Document][google.cloud.documentai.v1.Document].
+    // Useful when a page is taken out of a [Document][google.cloud.documentai.v1.Document] for individual
     // processing.
     int32 page_number = 1;
 
@@ -348,13 +348,13 @@ message Document {
     Image image = 13;
 
     // Transformation matrices that were applied to the original document image
-    // to produce [Page.image][google.cloud.documentai.v1beta3.Document.Page.image].
+    // to produce [Page.image][google.cloud.documentai.v1.Document.Page.image].
     repeated Matrix transforms = 14;
 
     // Physical dimension of the page.
     Dimension dimension = 2;
 
-    // [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for the page.
+    // [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the page.
     Layout layout = 3;
 
     // A list of detected languages together with confidence.
@@ -396,27 +396,19 @@ message Document {
       // known. If this field is present, the 'text' field is still populated.
       oneof structured_value {
         // Money value. See also:
-        //
-        // https:
-        // github.com/googleapis/googleapis/blob/master/google/type/money.proto
+        // https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
         google.type.Money money_value = 2;
 
         // Date value. Includes year, month, day. See also:
-        //
-        // https:
-        // github.com/googleapis/googleapis/blob/master/google/type/date.proto
+        // https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
         google.type.Date date_value = 3;
 
         // DateTime value. Includes date, time, and timezone. See also:
-        //
-        // https:
-        // github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+        // https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
         google.type.DateTime datetime_value = 4;
 
         // Postal address. See also:
-        //
-        // https:
-        // github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+        // https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
         google.type.PostalAddress address_value = 5;
 
         // Boolean value. Can be used for entities with binary values, or for
@@ -434,18 +426,18 @@ message Document {
       string text = 1 [(google.api.field_behavior) = REQUIRED];
     }
 
-    // Provenance of the entity.
-    // Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
-    TextAnchor text_anchor = 1;
+    // Optional. Provenance of the entity.
+    // Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+    TextAnchor text_anchor = 1 [(google.api.field_behavior) = OPTIONAL];
 
     // Entity type from a schema e.g. `Address`.
     string type = 2;
 
-    // Text value in the document e.g. `1600 Amphitheatre Pkwy`.
-    string mention_text = 3;
+    // Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`.
+    string mention_text = 3 [(google.api.field_behavior) = OPTIONAL];
 
-    // Deprecated.  Use `id` field instead.
-    string mention_id = 4;
+    // Optional. Deprecated.  Use `id` field instead.
+    string mention_id = 4 [(google.api.field_behavior) = OPTIONAL];
 
     // Optional. Confidence of detected Schema entity. Range [0, 1].
     float confidence = 5 [(google.api.field_behavior) = OPTIONAL];
@@ -475,7 +467,7 @@ message Document {
     bool redacted = 12 [(google.api.field_behavior) = OPTIONAL];
   }
 
-  // Relationship between [Entities][google.cloud.documentai.v1beta3.Document.Entity].
+  // Relationship between [Entities][google.cloud.documentai.v1.Document.Entity].
   message EntityRelation {
     // Subject entity id.
     string subject_id = 1;
@@ -487,21 +479,21 @@ message Document {
     string relation = 3;
   }
 
-  // Text reference indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
+  // Text reference indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
   message TextAnchor {
-    // A text segment in the [Document.text][google.cloud.documentai.v1beta3.Document.text]. The indices may be out of bounds
+    // A text segment in the [Document.text][google.cloud.documentai.v1.Document.text]. The indices may be out of bounds
     // which indicate that the text extends into another document shard for
-    // large sharded documents. See [ShardInfo.text_offset][google.cloud.documentai.v1beta3.Document.ShardInfo.text_offset]
+    // large sharded documents. See [ShardInfo.text_offset][google.cloud.documentai.v1.Document.ShardInfo.text_offset]
     message TextSegment {
-      // [TextSegment][google.cloud.documentai.v1beta3.Document.TextAnchor.TextSegment] start UTF-8 char index in the [Document.text][google.cloud.documentai.v1beta3.Document.text].
+      // [TextSegment][google.cloud.documentai.v1.Document.TextAnchor.TextSegment] start UTF-8 char index in the [Document.text][google.cloud.documentai.v1.Document.text].
       int64 start_index = 1;
 
-      // [TextSegment][google.cloud.documentai.v1beta3.Document.TextAnchor.TextSegment] half open end UTF-8 char index in the
-      // [Document.text][google.cloud.documentai.v1beta3.Document.text].
+      // [TextSegment][google.cloud.documentai.v1.Document.TextAnchor.TextSegment] half open end UTF-8 char index in the
+      // [Document.text][google.cloud.documentai.v1.Document.text].
       int64 end_index = 2;
     }
 
-    // The text segments from the [Document.text][google.cloud.documentai.v1beta3.Document.text].
+    // The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
     repeated TextSegment text_segments = 1;
 
     // Contains the content of the text span so that users do
@@ -509,7 +501,7 @@ message Document {
     string content = 2;
   }
 
-  // Referencing the visual context of the entity in the [Document.pages][google.cloud.documentai.v1beta3.Document.pages].
+  // Referencing the visual context of the entity in the [Document.pages][google.cloud.documentai.v1.Document.pages].
   // Page anchors can be cross-page, consist of multiple bounding polygons and
   // optionally reference specific layout element types.
   message PageAnchor {
@@ -520,36 +512,36 @@ message Document {
         // Layout Unspecified.
         LAYOUT_TYPE_UNSPECIFIED = 0;
 
-        // References a [Page.blocks][google.cloud.documentai.v1beta3.Document.Page.blocks] element.
+        // References a [Page.blocks][google.cloud.documentai.v1.Document.Page.blocks] element.
         BLOCK = 1;
 
-        // References a [Page.paragraphs][google.cloud.documentai.v1beta3.Document.Page.paragraphs] element.
+        // References a [Page.paragraphs][google.cloud.documentai.v1.Document.Page.paragraphs] element.
         PARAGRAPH = 2;
 
-        // References a [Page.lines][google.cloud.documentai.v1beta3.Document.Page.lines] element.
+        // References a [Page.lines][google.cloud.documentai.v1.Document.Page.lines] element.
         LINE = 3;
 
-        // References a [Page.tokens][google.cloud.documentai.v1beta3.Document.Page.tokens] element.
+        // References a [Page.tokens][google.cloud.documentai.v1.Document.Page.tokens] element.
         TOKEN = 4;
 
-        // References a [Page.visual_elements][google.cloud.documentai.v1beta3.Document.Page.visual_elements] element.
+        // References a [Page.visual_elements][google.cloud.documentai.v1.Document.Page.visual_elements] element.
         VISUAL_ELEMENT = 5;
 
-        // Refrrences a [Page.tables][google.cloud.documentai.v1beta3.Document.Page.tables] element.
+        // Refrrences a [Page.tables][google.cloud.documentai.v1.Document.Page.tables] element.
         TABLE = 6;
 
-        // References a [Page.form_fields][google.cloud.documentai.v1beta3.Document.Page.form_fields] element.
+        // References a [Page.form_fields][google.cloud.documentai.v1.Document.Page.form_fields] element.
         FORM_FIELD = 7;
       }
 
-      // Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element, for example using
+      // Required. Index into the [Document.pages][google.cloud.documentai.v1.Document.pages] element, for example using
       // [Document.pages][page_refs.page] to locate the related page element.
       int64 page = 1 [(google.api.field_behavior) = REQUIRED];
 
       // Optional. The type of the layout element that is being referenced if any.
       LayoutType layout_type = 2 [(google.api.field_behavior) = OPTIONAL];
 
-      // Optional. Deprecated.  Use [PageRef.bounding_poly][google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.bounding_poly] instead.
+      // Optional. Deprecated.  Use [PageRef.bounding_poly][google.cloud.documentai.v1.Document.PageAnchor.PageRef.bounding_poly] instead.
       string layout_id = 3 [
         deprecated = true,
         (google.api.field_behavior) = OPTIONAL
@@ -654,7 +646,7 @@ message Document {
   // This message is used for text changes aka. OCR corrections.
   message TextChange {
     // Provenance of the correction.
-    // Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].  There can only be a
+    // Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].  There can only be a
     // single `TextAnchor.text_segments` element.  If the start and
     // end index of the text segment are the same, the text change is inserted
     // before that index.
@@ -669,17 +661,17 @@ message Document {
 
   // Original source document from the user.
   oneof source {
-    // Currently supports Google Cloud Storage URI of the form
+    // Optional. Currently supports Google Cloud Storage URI of the form
     //    `gs://bucket_name/object_name`. Object versioning is not supported.
     //    See [Google Cloud Storage Request
     //    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
     //    info.
-    string uri = 1;
+    string uri = 1 [(google.api.field_behavior) = OPTIONAL];
 
-    // Inline document content, represented as a stream of bytes.
+    // Optional. Inline document content, represented as a stream of bytes.
     // Note: As with all `bytes` fields, protobuffers use a pure binary
     // representation, whereas JSON representations use base64.
-    bytes content = 2;
+    bytes content = 2 [(google.api.field_behavior) = OPTIONAL];
   }
 
   // An IANA published MIME type (also referred to as media type). For more
@@ -687,20 +679,20 @@ message Document {
   // https://www.iana.org/assignments/media-types/media-types.xhtml.
   string mime_type = 3;
 
-  // UTF-8 encoded text in reading order from the document.
-  string text = 4;
+  // Optional. UTF-8 encoded text in reading order from the document.
+  string text = 4 [(google.api.field_behavior) = OPTIONAL];
 
-  // Styles for the [Document.text][google.cloud.documentai.v1beta3.Document.text].
+  // Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
   repeated Style text_styles = 5;
 
-  // Visual page layout for the [Document][google.cloud.documentai.v1beta3.Document].
+  // Visual page layout for the [Document][google.cloud.documentai.v1.Document].
   repeated Page pages = 6;
 
-  // A list of entities detected on [Document.text][google.cloud.documentai.v1beta3.Document.text]. For document shards,
+  // A list of entities detected on [Document.text][google.cloud.documentai.v1.Document.text]. For document shards,
   // entities in this list may cross shard boundaries.
   repeated Entity entities = 7;
 
-  // Relationship among [Document.entities][google.cloud.documentai.v1beta3.Document.entities].
+  // Relationship among [Document.entities][google.cloud.documentai.v1.Document.entities].
   repeated EntityRelation entity_relations = 8;
 
   // A list of text corrections made to [Document.text].  This is usually
