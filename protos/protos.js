@@ -57,6 +57,10528 @@
                  */
                 var documentai = {};
     
+                documentai.v1beta1 = (function() {
+    
+                    /**
+                     * Namespace v1beta1.
+                     * @memberof google.cloud.documentai
+                     * @namespace
+                     */
+                    var v1beta1 = {};
+    
+                    v1beta1.Document = (function() {
+    
+                        /**
+                         * Properties of a Document.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @interface IDocument
+                         * @property {string|null} [uri] Document uri
+                         * @property {Uint8Array|null} [content] Document content
+                         * @property {string|null} [mimeType] Document mimeType
+                         * @property {string|null} [text] Document text
+                         * @property {Array.<google.cloud.documentai.v1beta1.Document.IStyle>|null} [textStyles] Document textStyles
+                         * @property {Array.<google.cloud.documentai.v1beta1.Document.IPage>|null} [pages] Document pages
+                         * @property {Array.<google.cloud.documentai.v1beta1.Document.IEntity>|null} [entities] Document entities
+                         * @property {Array.<google.cloud.documentai.v1beta1.Document.IEntityRelation>|null} [entityRelations] Document entityRelations
+                         * @property {google.cloud.documentai.v1beta1.Document.IShardInfo|null} [shardInfo] Document shardInfo
+                         * @property {google.rpc.IStatus|null} [error] Document error
+                         */
+    
+                        /**
+                         * Constructs a new Document.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @classdesc Represents a Document.
+                         * @implements IDocument
+                         * @constructor
+                         * @param {google.cloud.documentai.v1beta1.IDocument=} [properties] Properties to set
+                         */
+                        function Document(properties) {
+                            this.textStyles = [];
+                            this.pages = [];
+                            this.entities = [];
+                            this.entityRelations = [];
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * Document uri.
+                         * @member {string} uri
+                         * @memberof google.cloud.documentai.v1beta1.Document
+                         * @instance
+                         */
+                        Document.prototype.uri = "";
+    
+                        /**
+                         * Document content.
+                         * @member {Uint8Array} content
+                         * @memberof google.cloud.documentai.v1beta1.Document
+                         * @instance
+                         */
+                        Document.prototype.content = $util.newBuffer([]);
+    
+                        /**
+                         * Document mimeType.
+                         * @member {string} mimeType
+                         * @memberof google.cloud.documentai.v1beta1.Document
+                         * @instance
+                         */
+                        Document.prototype.mimeType = "";
+    
+                        /**
+                         * Document text.
+                         * @member {string} text
+                         * @memberof google.cloud.documentai.v1beta1.Document
+                         * @instance
+                         */
+                        Document.prototype.text = "";
+    
+                        /**
+                         * Document textStyles.
+                         * @member {Array.<google.cloud.documentai.v1beta1.Document.IStyle>} textStyles
+                         * @memberof google.cloud.documentai.v1beta1.Document
+                         * @instance
+                         */
+                        Document.prototype.textStyles = $util.emptyArray;
+    
+                        /**
+                         * Document pages.
+                         * @member {Array.<google.cloud.documentai.v1beta1.Document.IPage>} pages
+                         * @memberof google.cloud.documentai.v1beta1.Document
+                         * @instance
+                         */
+                        Document.prototype.pages = $util.emptyArray;
+    
+                        /**
+                         * Document entities.
+                         * @member {Array.<google.cloud.documentai.v1beta1.Document.IEntity>} entities
+                         * @memberof google.cloud.documentai.v1beta1.Document
+                         * @instance
+                         */
+                        Document.prototype.entities = $util.emptyArray;
+    
+                        /**
+                         * Document entityRelations.
+                         * @member {Array.<google.cloud.documentai.v1beta1.Document.IEntityRelation>} entityRelations
+                         * @memberof google.cloud.documentai.v1beta1.Document
+                         * @instance
+                         */
+                        Document.prototype.entityRelations = $util.emptyArray;
+    
+                        /**
+                         * Document shardInfo.
+                         * @member {google.cloud.documentai.v1beta1.Document.IShardInfo|null|undefined} shardInfo
+                         * @memberof google.cloud.documentai.v1beta1.Document
+                         * @instance
+                         */
+                        Document.prototype.shardInfo = null;
+    
+                        /**
+                         * Document error.
+                         * @member {google.rpc.IStatus|null|undefined} error
+                         * @memberof google.cloud.documentai.v1beta1.Document
+                         * @instance
+                         */
+                        Document.prototype.error = null;
+    
+                        // OneOf field names bound to virtual getters and setters
+                        var $oneOfFields;
+    
+                        /**
+                         * Document source.
+                         * @member {"uri"|"content"|undefined} source
+                         * @memberof google.cloud.documentai.v1beta1.Document
+                         * @instance
+                         */
+                        Object.defineProperty(Document.prototype, "source", {
+                            get: $util.oneOfGetter($oneOfFields = ["uri", "content"]),
+                            set: $util.oneOfSetter($oneOfFields)
+                        });
+    
+                        /**
+                         * Creates a new Document instance using the specified properties.
+                         * @function create
+                         * @memberof google.cloud.documentai.v1beta1.Document
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IDocument=} [properties] Properties to set
+                         * @returns {google.cloud.documentai.v1beta1.Document} Document instance
+                         */
+                        Document.create = function create(properties) {
+                            return new Document(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified Document message. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.cloud.documentai.v1beta1.Document
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IDocument} message Document message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        Document.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.uri != null && Object.hasOwnProperty.call(message, "uri"))
+                                writer.uint32(/* id 1, wireType 2 =*/10).string(message.uri);
+                            if (message.content != null && Object.hasOwnProperty.call(message, "content"))
+                                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.content);
+                            if (message.mimeType != null && Object.hasOwnProperty.call(message, "mimeType"))
+                                writer.uint32(/* id 3, wireType 2 =*/26).string(message.mimeType);
+                            if (message.text != null && Object.hasOwnProperty.call(message, "text"))
+                                writer.uint32(/* id 4, wireType 2 =*/34).string(message.text);
+                            if (message.textStyles != null && message.textStyles.length)
+                                for (var i = 0; i < message.textStyles.length; ++i)
+                                    $root.google.cloud.documentai.v1beta1.Document.Style.encode(message.textStyles[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                            if (message.pages != null && message.pages.length)
+                                for (var i = 0; i < message.pages.length; ++i)
+                                    $root.google.cloud.documentai.v1beta1.Document.Page.encode(message.pages[i], writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                            if (message.entities != null && message.entities.length)
+                                for (var i = 0; i < message.entities.length; ++i)
+                                    $root.google.cloud.documentai.v1beta1.Document.Entity.encode(message.entities[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                            if (message.entityRelations != null && message.entityRelations.length)
+                                for (var i = 0; i < message.entityRelations.length; ++i)
+                                    $root.google.cloud.documentai.v1beta1.Document.EntityRelation.encode(message.entityRelations[i], writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                            if (message.shardInfo != null && Object.hasOwnProperty.call(message, "shardInfo"))
+                                $root.google.cloud.documentai.v1beta1.Document.ShardInfo.encode(message.shardInfo, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                            if (message.error != null && Object.hasOwnProperty.call(message, "error"))
+                                $root.google.rpc.Status.encode(message.error, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified Document message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.Document
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IDocument} message Document message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        Document.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes a Document message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.cloud.documentai.v1beta1.Document
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.cloud.documentai.v1beta1.Document} Document
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        Document.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.Document();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    message.uri = reader.string();
+                                    break;
+                                case 2:
+                                    message.content = reader.bytes();
+                                    break;
+                                case 3:
+                                    message.mimeType = reader.string();
+                                    break;
+                                case 4:
+                                    message.text = reader.string();
+                                    break;
+                                case 5:
+                                    if (!(message.textStyles && message.textStyles.length))
+                                        message.textStyles = [];
+                                    message.textStyles.push($root.google.cloud.documentai.v1beta1.Document.Style.decode(reader, reader.uint32()));
+                                    break;
+                                case 6:
+                                    if (!(message.pages && message.pages.length))
+                                        message.pages = [];
+                                    message.pages.push($root.google.cloud.documentai.v1beta1.Document.Page.decode(reader, reader.uint32()));
+                                    break;
+                                case 7:
+                                    if (!(message.entities && message.entities.length))
+                                        message.entities = [];
+                                    message.entities.push($root.google.cloud.documentai.v1beta1.Document.Entity.decode(reader, reader.uint32()));
+                                    break;
+                                case 8:
+                                    if (!(message.entityRelations && message.entityRelations.length))
+                                        message.entityRelations = [];
+                                    message.entityRelations.push($root.google.cloud.documentai.v1beta1.Document.EntityRelation.decode(reader, reader.uint32()));
+                                    break;
+                                case 9:
+                                    message.shardInfo = $root.google.cloud.documentai.v1beta1.Document.ShardInfo.decode(reader, reader.uint32());
+                                    break;
+                                case 10:
+                                    message.error = $root.google.rpc.Status.decode(reader, reader.uint32());
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes a Document message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.Document
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.cloud.documentai.v1beta1.Document} Document
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        Document.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies a Document message.
+                         * @function verify
+                         * @memberof google.cloud.documentai.v1beta1.Document
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        Document.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            var properties = {};
+                            if (message.uri != null && message.hasOwnProperty("uri")) {
+                                properties.source = 1;
+                                if (!$util.isString(message.uri))
+                                    return "uri: string expected";
+                            }
+                            if (message.content != null && message.hasOwnProperty("content")) {
+                                if (properties.source === 1)
+                                    return "source: multiple values";
+                                properties.source = 1;
+                                if (!(message.content && typeof message.content.length === "number" || $util.isString(message.content)))
+                                    return "content: buffer expected";
+                            }
+                            if (message.mimeType != null && message.hasOwnProperty("mimeType"))
+                                if (!$util.isString(message.mimeType))
+                                    return "mimeType: string expected";
+                            if (message.text != null && message.hasOwnProperty("text"))
+                                if (!$util.isString(message.text))
+                                    return "text: string expected";
+                            if (message.textStyles != null && message.hasOwnProperty("textStyles")) {
+                                if (!Array.isArray(message.textStyles))
+                                    return "textStyles: array expected";
+                                for (var i = 0; i < message.textStyles.length; ++i) {
+                                    var error = $root.google.cloud.documentai.v1beta1.Document.Style.verify(message.textStyles[i]);
+                                    if (error)
+                                        return "textStyles." + error;
+                                }
+                            }
+                            if (message.pages != null && message.hasOwnProperty("pages")) {
+                                if (!Array.isArray(message.pages))
+                                    return "pages: array expected";
+                                for (var i = 0; i < message.pages.length; ++i) {
+                                    var error = $root.google.cloud.documentai.v1beta1.Document.Page.verify(message.pages[i]);
+                                    if (error)
+                                        return "pages." + error;
+                                }
+                            }
+                            if (message.entities != null && message.hasOwnProperty("entities")) {
+                                if (!Array.isArray(message.entities))
+                                    return "entities: array expected";
+                                for (var i = 0; i < message.entities.length; ++i) {
+                                    var error = $root.google.cloud.documentai.v1beta1.Document.Entity.verify(message.entities[i]);
+                                    if (error)
+                                        return "entities." + error;
+                                }
+                            }
+                            if (message.entityRelations != null && message.hasOwnProperty("entityRelations")) {
+                                if (!Array.isArray(message.entityRelations))
+                                    return "entityRelations: array expected";
+                                for (var i = 0; i < message.entityRelations.length; ++i) {
+                                    var error = $root.google.cloud.documentai.v1beta1.Document.EntityRelation.verify(message.entityRelations[i]);
+                                    if (error)
+                                        return "entityRelations." + error;
+                                }
+                            }
+                            if (message.shardInfo != null && message.hasOwnProperty("shardInfo")) {
+                                var error = $root.google.cloud.documentai.v1beta1.Document.ShardInfo.verify(message.shardInfo);
+                                if (error)
+                                    return "shardInfo." + error;
+                            }
+                            if (message.error != null && message.hasOwnProperty("error")) {
+                                var error = $root.google.rpc.Status.verify(message.error);
+                                if (error)
+                                    return "error." + error;
+                            }
+                            return null;
+                        };
+    
+                        /**
+                         * Creates a Document message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.cloud.documentai.v1beta1.Document
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.cloud.documentai.v1beta1.Document} Document
+                         */
+                        Document.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.cloud.documentai.v1beta1.Document)
+                                return object;
+                            var message = new $root.google.cloud.documentai.v1beta1.Document();
+                            if (object.uri != null)
+                                message.uri = String(object.uri);
+                            if (object.content != null)
+                                if (typeof object.content === "string")
+                                    $util.base64.decode(object.content, message.content = $util.newBuffer($util.base64.length(object.content)), 0);
+                                else if (object.content.length)
+                                    message.content = object.content;
+                            if (object.mimeType != null)
+                                message.mimeType = String(object.mimeType);
+                            if (object.text != null)
+                                message.text = String(object.text);
+                            if (object.textStyles) {
+                                if (!Array.isArray(object.textStyles))
+                                    throw TypeError(".google.cloud.documentai.v1beta1.Document.textStyles: array expected");
+                                message.textStyles = [];
+                                for (var i = 0; i < object.textStyles.length; ++i) {
+                                    if (typeof object.textStyles[i] !== "object")
+                                        throw TypeError(".google.cloud.documentai.v1beta1.Document.textStyles: object expected");
+                                    message.textStyles[i] = $root.google.cloud.documentai.v1beta1.Document.Style.fromObject(object.textStyles[i]);
+                                }
+                            }
+                            if (object.pages) {
+                                if (!Array.isArray(object.pages))
+                                    throw TypeError(".google.cloud.documentai.v1beta1.Document.pages: array expected");
+                                message.pages = [];
+                                for (var i = 0; i < object.pages.length; ++i) {
+                                    if (typeof object.pages[i] !== "object")
+                                        throw TypeError(".google.cloud.documentai.v1beta1.Document.pages: object expected");
+                                    message.pages[i] = $root.google.cloud.documentai.v1beta1.Document.Page.fromObject(object.pages[i]);
+                                }
+                            }
+                            if (object.entities) {
+                                if (!Array.isArray(object.entities))
+                                    throw TypeError(".google.cloud.documentai.v1beta1.Document.entities: array expected");
+                                message.entities = [];
+                                for (var i = 0; i < object.entities.length; ++i) {
+                                    if (typeof object.entities[i] !== "object")
+                                        throw TypeError(".google.cloud.documentai.v1beta1.Document.entities: object expected");
+                                    message.entities[i] = $root.google.cloud.documentai.v1beta1.Document.Entity.fromObject(object.entities[i]);
+                                }
+                            }
+                            if (object.entityRelations) {
+                                if (!Array.isArray(object.entityRelations))
+                                    throw TypeError(".google.cloud.documentai.v1beta1.Document.entityRelations: array expected");
+                                message.entityRelations = [];
+                                for (var i = 0; i < object.entityRelations.length; ++i) {
+                                    if (typeof object.entityRelations[i] !== "object")
+                                        throw TypeError(".google.cloud.documentai.v1beta1.Document.entityRelations: object expected");
+                                    message.entityRelations[i] = $root.google.cloud.documentai.v1beta1.Document.EntityRelation.fromObject(object.entityRelations[i]);
+                                }
+                            }
+                            if (object.shardInfo != null) {
+                                if (typeof object.shardInfo !== "object")
+                                    throw TypeError(".google.cloud.documentai.v1beta1.Document.shardInfo: object expected");
+                                message.shardInfo = $root.google.cloud.documentai.v1beta1.Document.ShardInfo.fromObject(object.shardInfo);
+                            }
+                            if (object.error != null) {
+                                if (typeof object.error !== "object")
+                                    throw TypeError(".google.cloud.documentai.v1beta1.Document.error: object expected");
+                                message.error = $root.google.rpc.Status.fromObject(object.error);
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from a Document message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.cloud.documentai.v1beta1.Document
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.Document} message Document
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        Document.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.arrays || options.defaults) {
+                                object.textStyles = [];
+                                object.pages = [];
+                                object.entities = [];
+                                object.entityRelations = [];
+                            }
+                            if (options.defaults) {
+                                object.mimeType = "";
+                                object.text = "";
+                                object.shardInfo = null;
+                                object.error = null;
+                            }
+                            if (message.uri != null && message.hasOwnProperty("uri")) {
+                                object.uri = message.uri;
+                                if (options.oneofs)
+                                    object.source = "uri";
+                            }
+                            if (message.content != null && message.hasOwnProperty("content")) {
+                                object.content = options.bytes === String ? $util.base64.encode(message.content, 0, message.content.length) : options.bytes === Array ? Array.prototype.slice.call(message.content) : message.content;
+                                if (options.oneofs)
+                                    object.source = "content";
+                            }
+                            if (message.mimeType != null && message.hasOwnProperty("mimeType"))
+                                object.mimeType = message.mimeType;
+                            if (message.text != null && message.hasOwnProperty("text"))
+                                object.text = message.text;
+                            if (message.textStyles && message.textStyles.length) {
+                                object.textStyles = [];
+                                for (var j = 0; j < message.textStyles.length; ++j)
+                                    object.textStyles[j] = $root.google.cloud.documentai.v1beta1.Document.Style.toObject(message.textStyles[j], options);
+                            }
+                            if (message.pages && message.pages.length) {
+                                object.pages = [];
+                                for (var j = 0; j < message.pages.length; ++j)
+                                    object.pages[j] = $root.google.cloud.documentai.v1beta1.Document.Page.toObject(message.pages[j], options);
+                            }
+                            if (message.entities && message.entities.length) {
+                                object.entities = [];
+                                for (var j = 0; j < message.entities.length; ++j)
+                                    object.entities[j] = $root.google.cloud.documentai.v1beta1.Document.Entity.toObject(message.entities[j], options);
+                            }
+                            if (message.entityRelations && message.entityRelations.length) {
+                                object.entityRelations = [];
+                                for (var j = 0; j < message.entityRelations.length; ++j)
+                                    object.entityRelations[j] = $root.google.cloud.documentai.v1beta1.Document.EntityRelation.toObject(message.entityRelations[j], options);
+                            }
+                            if (message.shardInfo != null && message.hasOwnProperty("shardInfo"))
+                                object.shardInfo = $root.google.cloud.documentai.v1beta1.Document.ShardInfo.toObject(message.shardInfo, options);
+                            if (message.error != null && message.hasOwnProperty("error"))
+                                object.error = $root.google.rpc.Status.toObject(message.error, options);
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this Document to JSON.
+                         * @function toJSON
+                         * @memberof google.cloud.documentai.v1beta1.Document
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        Document.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        Document.ShardInfo = (function() {
+    
+                            /**
+                             * Properties of a ShardInfo.
+                             * @memberof google.cloud.documentai.v1beta1.Document
+                             * @interface IShardInfo
+                             * @property {number|Long|null} [shardIndex] ShardInfo shardIndex
+                             * @property {number|Long|null} [shardCount] ShardInfo shardCount
+                             * @property {number|Long|null} [textOffset] ShardInfo textOffset
+                             */
+    
+                            /**
+                             * Constructs a new ShardInfo.
+                             * @memberof google.cloud.documentai.v1beta1.Document
+                             * @classdesc Represents a ShardInfo.
+                             * @implements IShardInfo
+                             * @constructor
+                             * @param {google.cloud.documentai.v1beta1.Document.IShardInfo=} [properties] Properties to set
+                             */
+                            function ShardInfo(properties) {
+                                if (properties)
+                                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                        if (properties[keys[i]] != null)
+                                            this[keys[i]] = properties[keys[i]];
+                            }
+    
+                            /**
+                             * ShardInfo shardIndex.
+                             * @member {number|Long} shardIndex
+                             * @memberof google.cloud.documentai.v1beta1.Document.ShardInfo
+                             * @instance
+                             */
+                            ShardInfo.prototype.shardIndex = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+    
+                            /**
+                             * ShardInfo shardCount.
+                             * @member {number|Long} shardCount
+                             * @memberof google.cloud.documentai.v1beta1.Document.ShardInfo
+                             * @instance
+                             */
+                            ShardInfo.prototype.shardCount = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+    
+                            /**
+                             * ShardInfo textOffset.
+                             * @member {number|Long} textOffset
+                             * @memberof google.cloud.documentai.v1beta1.Document.ShardInfo
+                             * @instance
+                             */
+                            ShardInfo.prototype.textOffset = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+    
+                            /**
+                             * Creates a new ShardInfo instance using the specified properties.
+                             * @function create
+                             * @memberof google.cloud.documentai.v1beta1.Document.ShardInfo
+                             * @static
+                             * @param {google.cloud.documentai.v1beta1.Document.IShardInfo=} [properties] Properties to set
+                             * @returns {google.cloud.documentai.v1beta1.Document.ShardInfo} ShardInfo instance
+                             */
+                            ShardInfo.create = function create(properties) {
+                                return new ShardInfo(properties);
+                            };
+    
+                            /**
+                             * Encodes the specified ShardInfo message. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.ShardInfo.verify|verify} messages.
+                             * @function encode
+                             * @memberof google.cloud.documentai.v1beta1.Document.ShardInfo
+                             * @static
+                             * @param {google.cloud.documentai.v1beta1.Document.IShardInfo} message ShardInfo message or plain object to encode
+                             * @param {$protobuf.Writer} [writer] Writer to encode to
+                             * @returns {$protobuf.Writer} Writer
+                             */
+                            ShardInfo.encode = function encode(message, writer) {
+                                if (!writer)
+                                    writer = $Writer.create();
+                                if (message.shardIndex != null && Object.hasOwnProperty.call(message, "shardIndex"))
+                                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.shardIndex);
+                                if (message.shardCount != null && Object.hasOwnProperty.call(message, "shardCount"))
+                                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.shardCount);
+                                if (message.textOffset != null && Object.hasOwnProperty.call(message, "textOffset"))
+                                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.textOffset);
+                                return writer;
+                            };
+    
+                            /**
+                             * Encodes the specified ShardInfo message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.ShardInfo.verify|verify} messages.
+                             * @function encodeDelimited
+                             * @memberof google.cloud.documentai.v1beta1.Document.ShardInfo
+                             * @static
+                             * @param {google.cloud.documentai.v1beta1.Document.IShardInfo} message ShardInfo message or plain object to encode
+                             * @param {$protobuf.Writer} [writer] Writer to encode to
+                             * @returns {$protobuf.Writer} Writer
+                             */
+                            ShardInfo.encodeDelimited = function encodeDelimited(message, writer) {
+                                return this.encode(message, writer).ldelim();
+                            };
+    
+                            /**
+                             * Decodes a ShardInfo message from the specified reader or buffer.
+                             * @function decode
+                             * @memberof google.cloud.documentai.v1beta1.Document.ShardInfo
+                             * @static
+                             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                             * @param {number} [length] Message length if known beforehand
+                             * @returns {google.cloud.documentai.v1beta1.Document.ShardInfo} ShardInfo
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            ShardInfo.decode = function decode(reader, length) {
+                                if (!(reader instanceof $Reader))
+                                    reader = $Reader.create(reader);
+                                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.Document.ShardInfo();
+                                while (reader.pos < end) {
+                                    var tag = reader.uint32();
+                                    switch (tag >>> 3) {
+                                    case 1:
+                                        message.shardIndex = reader.int64();
+                                        break;
+                                    case 2:
+                                        message.shardCount = reader.int64();
+                                        break;
+                                    case 3:
+                                        message.textOffset = reader.int64();
+                                        break;
+                                    default:
+                                        reader.skipType(tag & 7);
+                                        break;
+                                    }
+                                }
+                                return message;
+                            };
+    
+                            /**
+                             * Decodes a ShardInfo message from the specified reader or buffer, length delimited.
+                             * @function decodeDelimited
+                             * @memberof google.cloud.documentai.v1beta1.Document.ShardInfo
+                             * @static
+                             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                             * @returns {google.cloud.documentai.v1beta1.Document.ShardInfo} ShardInfo
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            ShardInfo.decodeDelimited = function decodeDelimited(reader) {
+                                if (!(reader instanceof $Reader))
+                                    reader = new $Reader(reader);
+                                return this.decode(reader, reader.uint32());
+                            };
+    
+                            /**
+                             * Verifies a ShardInfo message.
+                             * @function verify
+                             * @memberof google.cloud.documentai.v1beta1.Document.ShardInfo
+                             * @static
+                             * @param {Object.<string,*>} message Plain object to verify
+                             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                             */
+                            ShardInfo.verify = function verify(message) {
+                                if (typeof message !== "object" || message === null)
+                                    return "object expected";
+                                if (message.shardIndex != null && message.hasOwnProperty("shardIndex"))
+                                    if (!$util.isInteger(message.shardIndex) && !(message.shardIndex && $util.isInteger(message.shardIndex.low) && $util.isInteger(message.shardIndex.high)))
+                                        return "shardIndex: integer|Long expected";
+                                if (message.shardCount != null && message.hasOwnProperty("shardCount"))
+                                    if (!$util.isInteger(message.shardCount) && !(message.shardCount && $util.isInteger(message.shardCount.low) && $util.isInteger(message.shardCount.high)))
+                                        return "shardCount: integer|Long expected";
+                                if (message.textOffset != null && message.hasOwnProperty("textOffset"))
+                                    if (!$util.isInteger(message.textOffset) && !(message.textOffset && $util.isInteger(message.textOffset.low) && $util.isInteger(message.textOffset.high)))
+                                        return "textOffset: integer|Long expected";
+                                return null;
+                            };
+    
+                            /**
+                             * Creates a ShardInfo message from a plain object. Also converts values to their respective internal types.
+                             * @function fromObject
+                             * @memberof google.cloud.documentai.v1beta1.Document.ShardInfo
+                             * @static
+                             * @param {Object.<string,*>} object Plain object
+                             * @returns {google.cloud.documentai.v1beta1.Document.ShardInfo} ShardInfo
+                             */
+                            ShardInfo.fromObject = function fromObject(object) {
+                                if (object instanceof $root.google.cloud.documentai.v1beta1.Document.ShardInfo)
+                                    return object;
+                                var message = new $root.google.cloud.documentai.v1beta1.Document.ShardInfo();
+                                if (object.shardIndex != null)
+                                    if ($util.Long)
+                                        (message.shardIndex = $util.Long.fromValue(object.shardIndex)).unsigned = false;
+                                    else if (typeof object.shardIndex === "string")
+                                        message.shardIndex = parseInt(object.shardIndex, 10);
+                                    else if (typeof object.shardIndex === "number")
+                                        message.shardIndex = object.shardIndex;
+                                    else if (typeof object.shardIndex === "object")
+                                        message.shardIndex = new $util.LongBits(object.shardIndex.low >>> 0, object.shardIndex.high >>> 0).toNumber();
+                                if (object.shardCount != null)
+                                    if ($util.Long)
+                                        (message.shardCount = $util.Long.fromValue(object.shardCount)).unsigned = false;
+                                    else if (typeof object.shardCount === "string")
+                                        message.shardCount = parseInt(object.shardCount, 10);
+                                    else if (typeof object.shardCount === "number")
+                                        message.shardCount = object.shardCount;
+                                    else if (typeof object.shardCount === "object")
+                                        message.shardCount = new $util.LongBits(object.shardCount.low >>> 0, object.shardCount.high >>> 0).toNumber();
+                                if (object.textOffset != null)
+                                    if ($util.Long)
+                                        (message.textOffset = $util.Long.fromValue(object.textOffset)).unsigned = false;
+                                    else if (typeof object.textOffset === "string")
+                                        message.textOffset = parseInt(object.textOffset, 10);
+                                    else if (typeof object.textOffset === "number")
+                                        message.textOffset = object.textOffset;
+                                    else if (typeof object.textOffset === "object")
+                                        message.textOffset = new $util.LongBits(object.textOffset.low >>> 0, object.textOffset.high >>> 0).toNumber();
+                                return message;
+                            };
+    
+                            /**
+                             * Creates a plain object from a ShardInfo message. Also converts values to other types if specified.
+                             * @function toObject
+                             * @memberof google.cloud.documentai.v1beta1.Document.ShardInfo
+                             * @static
+                             * @param {google.cloud.documentai.v1beta1.Document.ShardInfo} message ShardInfo
+                             * @param {$protobuf.IConversionOptions} [options] Conversion options
+                             * @returns {Object.<string,*>} Plain object
+                             */
+                            ShardInfo.toObject = function toObject(message, options) {
+                                if (!options)
+                                    options = {};
+                                var object = {};
+                                if (options.defaults) {
+                                    if ($util.Long) {
+                                        var long = new $util.Long(0, 0, false);
+                                        object.shardIndex = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                                    } else
+                                        object.shardIndex = options.longs === String ? "0" : 0;
+                                    if ($util.Long) {
+                                        var long = new $util.Long(0, 0, false);
+                                        object.shardCount = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                                    } else
+                                        object.shardCount = options.longs === String ? "0" : 0;
+                                    if ($util.Long) {
+                                        var long = new $util.Long(0, 0, false);
+                                        object.textOffset = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                                    } else
+                                        object.textOffset = options.longs === String ? "0" : 0;
+                                }
+                                if (message.shardIndex != null && message.hasOwnProperty("shardIndex"))
+                                    if (typeof message.shardIndex === "number")
+                                        object.shardIndex = options.longs === String ? String(message.shardIndex) : message.shardIndex;
+                                    else
+                                        object.shardIndex = options.longs === String ? $util.Long.prototype.toString.call(message.shardIndex) : options.longs === Number ? new $util.LongBits(message.shardIndex.low >>> 0, message.shardIndex.high >>> 0).toNumber() : message.shardIndex;
+                                if (message.shardCount != null && message.hasOwnProperty("shardCount"))
+                                    if (typeof message.shardCount === "number")
+                                        object.shardCount = options.longs === String ? String(message.shardCount) : message.shardCount;
+                                    else
+                                        object.shardCount = options.longs === String ? $util.Long.prototype.toString.call(message.shardCount) : options.longs === Number ? new $util.LongBits(message.shardCount.low >>> 0, message.shardCount.high >>> 0).toNumber() : message.shardCount;
+                                if (message.textOffset != null && message.hasOwnProperty("textOffset"))
+                                    if (typeof message.textOffset === "number")
+                                        object.textOffset = options.longs === String ? String(message.textOffset) : message.textOffset;
+                                    else
+                                        object.textOffset = options.longs === String ? $util.Long.prototype.toString.call(message.textOffset) : options.longs === Number ? new $util.LongBits(message.textOffset.low >>> 0, message.textOffset.high >>> 0).toNumber() : message.textOffset;
+                                return object;
+                            };
+    
+                            /**
+                             * Converts this ShardInfo to JSON.
+                             * @function toJSON
+                             * @memberof google.cloud.documentai.v1beta1.Document.ShardInfo
+                             * @instance
+                             * @returns {Object.<string,*>} JSON object
+                             */
+                            ShardInfo.prototype.toJSON = function toJSON() {
+                                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                            };
+    
+                            return ShardInfo;
+                        })();
+    
+                        Document.Style = (function() {
+    
+                            /**
+                             * Properties of a Style.
+                             * @memberof google.cloud.documentai.v1beta1.Document
+                             * @interface IStyle
+                             * @property {google.cloud.documentai.v1beta1.Document.ITextAnchor|null} [textAnchor] Style textAnchor
+                             * @property {google.type.IColor|null} [color] Style color
+                             * @property {google.type.IColor|null} [backgroundColor] Style backgroundColor
+                             * @property {string|null} [fontWeight] Style fontWeight
+                             * @property {string|null} [textStyle] Style textStyle
+                             * @property {string|null} [textDecoration] Style textDecoration
+                             * @property {google.cloud.documentai.v1beta1.Document.Style.IFontSize|null} [fontSize] Style fontSize
+                             */
+    
+                            /**
+                             * Constructs a new Style.
+                             * @memberof google.cloud.documentai.v1beta1.Document
+                             * @classdesc Represents a Style.
+                             * @implements IStyle
+                             * @constructor
+                             * @param {google.cloud.documentai.v1beta1.Document.IStyle=} [properties] Properties to set
+                             */
+                            function Style(properties) {
+                                if (properties)
+                                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                        if (properties[keys[i]] != null)
+                                            this[keys[i]] = properties[keys[i]];
+                            }
+    
+                            /**
+                             * Style textAnchor.
+                             * @member {google.cloud.documentai.v1beta1.Document.ITextAnchor|null|undefined} textAnchor
+                             * @memberof google.cloud.documentai.v1beta1.Document.Style
+                             * @instance
+                             */
+                            Style.prototype.textAnchor = null;
+    
+                            /**
+                             * Style color.
+                             * @member {google.type.IColor|null|undefined} color
+                             * @memberof google.cloud.documentai.v1beta1.Document.Style
+                             * @instance
+                             */
+                            Style.prototype.color = null;
+    
+                            /**
+                             * Style backgroundColor.
+                             * @member {google.type.IColor|null|undefined} backgroundColor
+                             * @memberof google.cloud.documentai.v1beta1.Document.Style
+                             * @instance
+                             */
+                            Style.prototype.backgroundColor = null;
+    
+                            /**
+                             * Style fontWeight.
+                             * @member {string} fontWeight
+                             * @memberof google.cloud.documentai.v1beta1.Document.Style
+                             * @instance
+                             */
+                            Style.prototype.fontWeight = "";
+    
+                            /**
+                             * Style textStyle.
+                             * @member {string} textStyle
+                             * @memberof google.cloud.documentai.v1beta1.Document.Style
+                             * @instance
+                             */
+                            Style.prototype.textStyle = "";
+    
+                            /**
+                             * Style textDecoration.
+                             * @member {string} textDecoration
+                             * @memberof google.cloud.documentai.v1beta1.Document.Style
+                             * @instance
+                             */
+                            Style.prototype.textDecoration = "";
+    
+                            /**
+                             * Style fontSize.
+                             * @member {google.cloud.documentai.v1beta1.Document.Style.IFontSize|null|undefined} fontSize
+                             * @memberof google.cloud.documentai.v1beta1.Document.Style
+                             * @instance
+                             */
+                            Style.prototype.fontSize = null;
+    
+                            /**
+                             * Creates a new Style instance using the specified properties.
+                             * @function create
+                             * @memberof google.cloud.documentai.v1beta1.Document.Style
+                             * @static
+                             * @param {google.cloud.documentai.v1beta1.Document.IStyle=} [properties] Properties to set
+                             * @returns {google.cloud.documentai.v1beta1.Document.Style} Style instance
+                             */
+                            Style.create = function create(properties) {
+                                return new Style(properties);
+                            };
+    
+                            /**
+                             * Encodes the specified Style message. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Style.verify|verify} messages.
+                             * @function encode
+                             * @memberof google.cloud.documentai.v1beta1.Document.Style
+                             * @static
+                             * @param {google.cloud.documentai.v1beta1.Document.IStyle} message Style message or plain object to encode
+                             * @param {$protobuf.Writer} [writer] Writer to encode to
+                             * @returns {$protobuf.Writer} Writer
+                             */
+                            Style.encode = function encode(message, writer) {
+                                if (!writer)
+                                    writer = $Writer.create();
+                                if (message.textAnchor != null && Object.hasOwnProperty.call(message, "textAnchor"))
+                                    $root.google.cloud.documentai.v1beta1.Document.TextAnchor.encode(message.textAnchor, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                                if (message.color != null && Object.hasOwnProperty.call(message, "color"))
+                                    $root.google.type.Color.encode(message.color, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                                if (message.backgroundColor != null && Object.hasOwnProperty.call(message, "backgroundColor"))
+                                    $root.google.type.Color.encode(message.backgroundColor, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                                if (message.fontWeight != null && Object.hasOwnProperty.call(message, "fontWeight"))
+                                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.fontWeight);
+                                if (message.textStyle != null && Object.hasOwnProperty.call(message, "textStyle"))
+                                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.textStyle);
+                                if (message.textDecoration != null && Object.hasOwnProperty.call(message, "textDecoration"))
+                                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.textDecoration);
+                                if (message.fontSize != null && Object.hasOwnProperty.call(message, "fontSize"))
+                                    $root.google.cloud.documentai.v1beta1.Document.Style.FontSize.encode(message.fontSize, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                                return writer;
+                            };
+    
+                            /**
+                             * Encodes the specified Style message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Style.verify|verify} messages.
+                             * @function encodeDelimited
+                             * @memberof google.cloud.documentai.v1beta1.Document.Style
+                             * @static
+                             * @param {google.cloud.documentai.v1beta1.Document.IStyle} message Style message or plain object to encode
+                             * @param {$protobuf.Writer} [writer] Writer to encode to
+                             * @returns {$protobuf.Writer} Writer
+                             */
+                            Style.encodeDelimited = function encodeDelimited(message, writer) {
+                                return this.encode(message, writer).ldelim();
+                            };
+    
+                            /**
+                             * Decodes a Style message from the specified reader or buffer.
+                             * @function decode
+                             * @memberof google.cloud.documentai.v1beta1.Document.Style
+                             * @static
+                             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                             * @param {number} [length] Message length if known beforehand
+                             * @returns {google.cloud.documentai.v1beta1.Document.Style} Style
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            Style.decode = function decode(reader, length) {
+                                if (!(reader instanceof $Reader))
+                                    reader = $Reader.create(reader);
+                                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.Document.Style();
+                                while (reader.pos < end) {
+                                    var tag = reader.uint32();
+                                    switch (tag >>> 3) {
+                                    case 1:
+                                        message.textAnchor = $root.google.cloud.documentai.v1beta1.Document.TextAnchor.decode(reader, reader.uint32());
+                                        break;
+                                    case 2:
+                                        message.color = $root.google.type.Color.decode(reader, reader.uint32());
+                                        break;
+                                    case 3:
+                                        message.backgroundColor = $root.google.type.Color.decode(reader, reader.uint32());
+                                        break;
+                                    case 4:
+                                        message.fontWeight = reader.string();
+                                        break;
+                                    case 5:
+                                        message.textStyle = reader.string();
+                                        break;
+                                    case 6:
+                                        message.textDecoration = reader.string();
+                                        break;
+                                    case 7:
+                                        message.fontSize = $root.google.cloud.documentai.v1beta1.Document.Style.FontSize.decode(reader, reader.uint32());
+                                        break;
+                                    default:
+                                        reader.skipType(tag & 7);
+                                        break;
+                                    }
+                                }
+                                return message;
+                            };
+    
+                            /**
+                             * Decodes a Style message from the specified reader or buffer, length delimited.
+                             * @function decodeDelimited
+                             * @memberof google.cloud.documentai.v1beta1.Document.Style
+                             * @static
+                             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                             * @returns {google.cloud.documentai.v1beta1.Document.Style} Style
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            Style.decodeDelimited = function decodeDelimited(reader) {
+                                if (!(reader instanceof $Reader))
+                                    reader = new $Reader(reader);
+                                return this.decode(reader, reader.uint32());
+                            };
+    
+                            /**
+                             * Verifies a Style message.
+                             * @function verify
+                             * @memberof google.cloud.documentai.v1beta1.Document.Style
+                             * @static
+                             * @param {Object.<string,*>} message Plain object to verify
+                             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                             */
+                            Style.verify = function verify(message) {
+                                if (typeof message !== "object" || message === null)
+                                    return "object expected";
+                                if (message.textAnchor != null && message.hasOwnProperty("textAnchor")) {
+                                    var error = $root.google.cloud.documentai.v1beta1.Document.TextAnchor.verify(message.textAnchor);
+                                    if (error)
+                                        return "textAnchor." + error;
+                                }
+                                if (message.color != null && message.hasOwnProperty("color")) {
+                                    var error = $root.google.type.Color.verify(message.color);
+                                    if (error)
+                                        return "color." + error;
+                                }
+                                if (message.backgroundColor != null && message.hasOwnProperty("backgroundColor")) {
+                                    var error = $root.google.type.Color.verify(message.backgroundColor);
+                                    if (error)
+                                        return "backgroundColor." + error;
+                                }
+                                if (message.fontWeight != null && message.hasOwnProperty("fontWeight"))
+                                    if (!$util.isString(message.fontWeight))
+                                        return "fontWeight: string expected";
+                                if (message.textStyle != null && message.hasOwnProperty("textStyle"))
+                                    if (!$util.isString(message.textStyle))
+                                        return "textStyle: string expected";
+                                if (message.textDecoration != null && message.hasOwnProperty("textDecoration"))
+                                    if (!$util.isString(message.textDecoration))
+                                        return "textDecoration: string expected";
+                                if (message.fontSize != null && message.hasOwnProperty("fontSize")) {
+                                    var error = $root.google.cloud.documentai.v1beta1.Document.Style.FontSize.verify(message.fontSize);
+                                    if (error)
+                                        return "fontSize." + error;
+                                }
+                                return null;
+                            };
+    
+                            /**
+                             * Creates a Style message from a plain object. Also converts values to their respective internal types.
+                             * @function fromObject
+                             * @memberof google.cloud.documentai.v1beta1.Document.Style
+                             * @static
+                             * @param {Object.<string,*>} object Plain object
+                             * @returns {google.cloud.documentai.v1beta1.Document.Style} Style
+                             */
+                            Style.fromObject = function fromObject(object) {
+                                if (object instanceof $root.google.cloud.documentai.v1beta1.Document.Style)
+                                    return object;
+                                var message = new $root.google.cloud.documentai.v1beta1.Document.Style();
+                                if (object.textAnchor != null) {
+                                    if (typeof object.textAnchor !== "object")
+                                        throw TypeError(".google.cloud.documentai.v1beta1.Document.Style.textAnchor: object expected");
+                                    message.textAnchor = $root.google.cloud.documentai.v1beta1.Document.TextAnchor.fromObject(object.textAnchor);
+                                }
+                                if (object.color != null) {
+                                    if (typeof object.color !== "object")
+                                        throw TypeError(".google.cloud.documentai.v1beta1.Document.Style.color: object expected");
+                                    message.color = $root.google.type.Color.fromObject(object.color);
+                                }
+                                if (object.backgroundColor != null) {
+                                    if (typeof object.backgroundColor !== "object")
+                                        throw TypeError(".google.cloud.documentai.v1beta1.Document.Style.backgroundColor: object expected");
+                                    message.backgroundColor = $root.google.type.Color.fromObject(object.backgroundColor);
+                                }
+                                if (object.fontWeight != null)
+                                    message.fontWeight = String(object.fontWeight);
+                                if (object.textStyle != null)
+                                    message.textStyle = String(object.textStyle);
+                                if (object.textDecoration != null)
+                                    message.textDecoration = String(object.textDecoration);
+                                if (object.fontSize != null) {
+                                    if (typeof object.fontSize !== "object")
+                                        throw TypeError(".google.cloud.documentai.v1beta1.Document.Style.fontSize: object expected");
+                                    message.fontSize = $root.google.cloud.documentai.v1beta1.Document.Style.FontSize.fromObject(object.fontSize);
+                                }
+                                return message;
+                            };
+    
+                            /**
+                             * Creates a plain object from a Style message. Also converts values to other types if specified.
+                             * @function toObject
+                             * @memberof google.cloud.documentai.v1beta1.Document.Style
+                             * @static
+                             * @param {google.cloud.documentai.v1beta1.Document.Style} message Style
+                             * @param {$protobuf.IConversionOptions} [options] Conversion options
+                             * @returns {Object.<string,*>} Plain object
+                             */
+                            Style.toObject = function toObject(message, options) {
+                                if (!options)
+                                    options = {};
+                                var object = {};
+                                if (options.defaults) {
+                                    object.textAnchor = null;
+                                    object.color = null;
+                                    object.backgroundColor = null;
+                                    object.fontWeight = "";
+                                    object.textStyle = "";
+                                    object.textDecoration = "";
+                                    object.fontSize = null;
+                                }
+                                if (message.textAnchor != null && message.hasOwnProperty("textAnchor"))
+                                    object.textAnchor = $root.google.cloud.documentai.v1beta1.Document.TextAnchor.toObject(message.textAnchor, options);
+                                if (message.color != null && message.hasOwnProperty("color"))
+                                    object.color = $root.google.type.Color.toObject(message.color, options);
+                                if (message.backgroundColor != null && message.hasOwnProperty("backgroundColor"))
+                                    object.backgroundColor = $root.google.type.Color.toObject(message.backgroundColor, options);
+                                if (message.fontWeight != null && message.hasOwnProperty("fontWeight"))
+                                    object.fontWeight = message.fontWeight;
+                                if (message.textStyle != null && message.hasOwnProperty("textStyle"))
+                                    object.textStyle = message.textStyle;
+                                if (message.textDecoration != null && message.hasOwnProperty("textDecoration"))
+                                    object.textDecoration = message.textDecoration;
+                                if (message.fontSize != null && message.hasOwnProperty("fontSize"))
+                                    object.fontSize = $root.google.cloud.documentai.v1beta1.Document.Style.FontSize.toObject(message.fontSize, options);
+                                return object;
+                            };
+    
+                            /**
+                             * Converts this Style to JSON.
+                             * @function toJSON
+                             * @memberof google.cloud.documentai.v1beta1.Document.Style
+                             * @instance
+                             * @returns {Object.<string,*>} JSON object
+                             */
+                            Style.prototype.toJSON = function toJSON() {
+                                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                            };
+    
+                            Style.FontSize = (function() {
+    
+                                /**
+                                 * Properties of a FontSize.
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Style
+                                 * @interface IFontSize
+                                 * @property {number|null} [size] FontSize size
+                                 * @property {string|null} [unit] FontSize unit
+                                 */
+    
+                                /**
+                                 * Constructs a new FontSize.
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Style
+                                 * @classdesc Represents a FontSize.
+                                 * @implements IFontSize
+                                 * @constructor
+                                 * @param {google.cloud.documentai.v1beta1.Document.Style.IFontSize=} [properties] Properties to set
+                                 */
+                                function FontSize(properties) {
+                                    if (properties)
+                                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                            if (properties[keys[i]] != null)
+                                                this[keys[i]] = properties[keys[i]];
+                                }
+    
+                                /**
+                                 * FontSize size.
+                                 * @member {number} size
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Style.FontSize
+                                 * @instance
+                                 */
+                                FontSize.prototype.size = 0;
+    
+                                /**
+                                 * FontSize unit.
+                                 * @member {string} unit
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Style.FontSize
+                                 * @instance
+                                 */
+                                FontSize.prototype.unit = "";
+    
+                                /**
+                                 * Creates a new FontSize instance using the specified properties.
+                                 * @function create
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Style.FontSize
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Style.IFontSize=} [properties] Properties to set
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Style.FontSize} FontSize instance
+                                 */
+                                FontSize.create = function create(properties) {
+                                    return new FontSize(properties);
+                                };
+    
+                                /**
+                                 * Encodes the specified FontSize message. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Style.FontSize.verify|verify} messages.
+                                 * @function encode
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Style.FontSize
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Style.IFontSize} message FontSize message or plain object to encode
+                                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                                 * @returns {$protobuf.Writer} Writer
+                                 */
+                                FontSize.encode = function encode(message, writer) {
+                                    if (!writer)
+                                        writer = $Writer.create();
+                                    if (message.size != null && Object.hasOwnProperty.call(message, "size"))
+                                        writer.uint32(/* id 1, wireType 5 =*/13).float(message.size);
+                                    if (message.unit != null && Object.hasOwnProperty.call(message, "unit"))
+                                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.unit);
+                                    return writer;
+                                };
+    
+                                /**
+                                 * Encodes the specified FontSize message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Style.FontSize.verify|verify} messages.
+                                 * @function encodeDelimited
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Style.FontSize
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Style.IFontSize} message FontSize message or plain object to encode
+                                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                                 * @returns {$protobuf.Writer} Writer
+                                 */
+                                FontSize.encodeDelimited = function encodeDelimited(message, writer) {
+                                    return this.encode(message, writer).ldelim();
+                                };
+    
+                                /**
+                                 * Decodes a FontSize message from the specified reader or buffer.
+                                 * @function decode
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Style.FontSize
+                                 * @static
+                                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                 * @param {number} [length] Message length if known beforehand
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Style.FontSize} FontSize
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                FontSize.decode = function decode(reader, length) {
+                                    if (!(reader instanceof $Reader))
+                                        reader = $Reader.create(reader);
+                                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.Document.Style.FontSize();
+                                    while (reader.pos < end) {
+                                        var tag = reader.uint32();
+                                        switch (tag >>> 3) {
+                                        case 1:
+                                            message.size = reader.float();
+                                            break;
+                                        case 2:
+                                            message.unit = reader.string();
+                                            break;
+                                        default:
+                                            reader.skipType(tag & 7);
+                                            break;
+                                        }
+                                    }
+                                    return message;
+                                };
+    
+                                /**
+                                 * Decodes a FontSize message from the specified reader or buffer, length delimited.
+                                 * @function decodeDelimited
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Style.FontSize
+                                 * @static
+                                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Style.FontSize} FontSize
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                FontSize.decodeDelimited = function decodeDelimited(reader) {
+                                    if (!(reader instanceof $Reader))
+                                        reader = new $Reader(reader);
+                                    return this.decode(reader, reader.uint32());
+                                };
+    
+                                /**
+                                 * Verifies a FontSize message.
+                                 * @function verify
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Style.FontSize
+                                 * @static
+                                 * @param {Object.<string,*>} message Plain object to verify
+                                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                                 */
+                                FontSize.verify = function verify(message) {
+                                    if (typeof message !== "object" || message === null)
+                                        return "object expected";
+                                    if (message.size != null && message.hasOwnProperty("size"))
+                                        if (typeof message.size !== "number")
+                                            return "size: number expected";
+                                    if (message.unit != null && message.hasOwnProperty("unit"))
+                                        if (!$util.isString(message.unit))
+                                            return "unit: string expected";
+                                    return null;
+                                };
+    
+                                /**
+                                 * Creates a FontSize message from a plain object. Also converts values to their respective internal types.
+                                 * @function fromObject
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Style.FontSize
+                                 * @static
+                                 * @param {Object.<string,*>} object Plain object
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Style.FontSize} FontSize
+                                 */
+                                FontSize.fromObject = function fromObject(object) {
+                                    if (object instanceof $root.google.cloud.documentai.v1beta1.Document.Style.FontSize)
+                                        return object;
+                                    var message = new $root.google.cloud.documentai.v1beta1.Document.Style.FontSize();
+                                    if (object.size != null)
+                                        message.size = Number(object.size);
+                                    if (object.unit != null)
+                                        message.unit = String(object.unit);
+                                    return message;
+                                };
+    
+                                /**
+                                 * Creates a plain object from a FontSize message. Also converts values to other types if specified.
+                                 * @function toObject
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Style.FontSize
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Style.FontSize} message FontSize
+                                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                                 * @returns {Object.<string,*>} Plain object
+                                 */
+                                FontSize.toObject = function toObject(message, options) {
+                                    if (!options)
+                                        options = {};
+                                    var object = {};
+                                    if (options.defaults) {
+                                        object.size = 0;
+                                        object.unit = "";
+                                    }
+                                    if (message.size != null && message.hasOwnProperty("size"))
+                                        object.size = options.json && !isFinite(message.size) ? String(message.size) : message.size;
+                                    if (message.unit != null && message.hasOwnProperty("unit"))
+                                        object.unit = message.unit;
+                                    return object;
+                                };
+    
+                                /**
+                                 * Converts this FontSize to JSON.
+                                 * @function toJSON
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Style.FontSize
+                                 * @instance
+                                 * @returns {Object.<string,*>} JSON object
+                                 */
+                                FontSize.prototype.toJSON = function toJSON() {
+                                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                                };
+    
+                                return FontSize;
+                            })();
+    
+                            return Style;
+                        })();
+    
+                        Document.Page = (function() {
+    
+                            /**
+                             * Properties of a Page.
+                             * @memberof google.cloud.documentai.v1beta1.Document
+                             * @interface IPage
+                             * @property {number|null} [pageNumber] Page pageNumber
+                             * @property {google.cloud.documentai.v1beta1.Document.Page.IDimension|null} [dimension] Page dimension
+                             * @property {google.cloud.documentai.v1beta1.Document.Page.ILayout|null} [layout] Page layout
+                             * @property {Array.<google.cloud.documentai.v1beta1.Document.Page.IDetectedLanguage>|null} [detectedLanguages] Page detectedLanguages
+                             * @property {Array.<google.cloud.documentai.v1beta1.Document.Page.IBlock>|null} [blocks] Page blocks
+                             * @property {Array.<google.cloud.documentai.v1beta1.Document.Page.IParagraph>|null} [paragraphs] Page paragraphs
+                             * @property {Array.<google.cloud.documentai.v1beta1.Document.Page.ILine>|null} [lines] Page lines
+                             * @property {Array.<google.cloud.documentai.v1beta1.Document.Page.IToken>|null} [tokens] Page tokens
+                             * @property {Array.<google.cloud.documentai.v1beta1.Document.Page.IVisualElement>|null} [visualElements] Page visualElements
+                             * @property {Array.<google.cloud.documentai.v1beta1.Document.Page.ITable>|null} [tables] Page tables
+                             * @property {Array.<google.cloud.documentai.v1beta1.Document.Page.IFormField>|null} [formFields] Page formFields
+                             */
+    
+                            /**
+                             * Constructs a new Page.
+                             * @memberof google.cloud.documentai.v1beta1.Document
+                             * @classdesc Represents a Page.
+                             * @implements IPage
+                             * @constructor
+                             * @param {google.cloud.documentai.v1beta1.Document.IPage=} [properties] Properties to set
+                             */
+                            function Page(properties) {
+                                this.detectedLanguages = [];
+                                this.blocks = [];
+                                this.paragraphs = [];
+                                this.lines = [];
+                                this.tokens = [];
+                                this.visualElements = [];
+                                this.tables = [];
+                                this.formFields = [];
+                                if (properties)
+                                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                        if (properties[keys[i]] != null)
+                                            this[keys[i]] = properties[keys[i]];
+                            }
+    
+                            /**
+                             * Page pageNumber.
+                             * @member {number} pageNumber
+                             * @memberof google.cloud.documentai.v1beta1.Document.Page
+                             * @instance
+                             */
+                            Page.prototype.pageNumber = 0;
+    
+                            /**
+                             * Page dimension.
+                             * @member {google.cloud.documentai.v1beta1.Document.Page.IDimension|null|undefined} dimension
+                             * @memberof google.cloud.documentai.v1beta1.Document.Page
+                             * @instance
+                             */
+                            Page.prototype.dimension = null;
+    
+                            /**
+                             * Page layout.
+                             * @member {google.cloud.documentai.v1beta1.Document.Page.ILayout|null|undefined} layout
+                             * @memberof google.cloud.documentai.v1beta1.Document.Page
+                             * @instance
+                             */
+                            Page.prototype.layout = null;
+    
+                            /**
+                             * Page detectedLanguages.
+                             * @member {Array.<google.cloud.documentai.v1beta1.Document.Page.IDetectedLanguage>} detectedLanguages
+                             * @memberof google.cloud.documentai.v1beta1.Document.Page
+                             * @instance
+                             */
+                            Page.prototype.detectedLanguages = $util.emptyArray;
+    
+                            /**
+                             * Page blocks.
+                             * @member {Array.<google.cloud.documentai.v1beta1.Document.Page.IBlock>} blocks
+                             * @memberof google.cloud.documentai.v1beta1.Document.Page
+                             * @instance
+                             */
+                            Page.prototype.blocks = $util.emptyArray;
+    
+                            /**
+                             * Page paragraphs.
+                             * @member {Array.<google.cloud.documentai.v1beta1.Document.Page.IParagraph>} paragraphs
+                             * @memberof google.cloud.documentai.v1beta1.Document.Page
+                             * @instance
+                             */
+                            Page.prototype.paragraphs = $util.emptyArray;
+    
+                            /**
+                             * Page lines.
+                             * @member {Array.<google.cloud.documentai.v1beta1.Document.Page.ILine>} lines
+                             * @memberof google.cloud.documentai.v1beta1.Document.Page
+                             * @instance
+                             */
+                            Page.prototype.lines = $util.emptyArray;
+    
+                            /**
+                             * Page tokens.
+                             * @member {Array.<google.cloud.documentai.v1beta1.Document.Page.IToken>} tokens
+                             * @memberof google.cloud.documentai.v1beta1.Document.Page
+                             * @instance
+                             */
+                            Page.prototype.tokens = $util.emptyArray;
+    
+                            /**
+                             * Page visualElements.
+                             * @member {Array.<google.cloud.documentai.v1beta1.Document.Page.IVisualElement>} visualElements
+                             * @memberof google.cloud.documentai.v1beta1.Document.Page
+                             * @instance
+                             */
+                            Page.prototype.visualElements = $util.emptyArray;
+    
+                            /**
+                             * Page tables.
+                             * @member {Array.<google.cloud.documentai.v1beta1.Document.Page.ITable>} tables
+                             * @memberof google.cloud.documentai.v1beta1.Document.Page
+                             * @instance
+                             */
+                            Page.prototype.tables = $util.emptyArray;
+    
+                            /**
+                             * Page formFields.
+                             * @member {Array.<google.cloud.documentai.v1beta1.Document.Page.IFormField>} formFields
+                             * @memberof google.cloud.documentai.v1beta1.Document.Page
+                             * @instance
+                             */
+                            Page.prototype.formFields = $util.emptyArray;
+    
+                            /**
+                             * Creates a new Page instance using the specified properties.
+                             * @function create
+                             * @memberof google.cloud.documentai.v1beta1.Document.Page
+                             * @static
+                             * @param {google.cloud.documentai.v1beta1.Document.IPage=} [properties] Properties to set
+                             * @returns {google.cloud.documentai.v1beta1.Document.Page} Page instance
+                             */
+                            Page.create = function create(properties) {
+                                return new Page(properties);
+                            };
+    
+                            /**
+                             * Encodes the specified Page message. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.verify|verify} messages.
+                             * @function encode
+                             * @memberof google.cloud.documentai.v1beta1.Document.Page
+                             * @static
+                             * @param {google.cloud.documentai.v1beta1.Document.IPage} message Page message or plain object to encode
+                             * @param {$protobuf.Writer} [writer] Writer to encode to
+                             * @returns {$protobuf.Writer} Writer
+                             */
+                            Page.encode = function encode(message, writer) {
+                                if (!writer)
+                                    writer = $Writer.create();
+                                if (message.pageNumber != null && Object.hasOwnProperty.call(message, "pageNumber"))
+                                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.pageNumber);
+                                if (message.dimension != null && Object.hasOwnProperty.call(message, "dimension"))
+                                    $root.google.cloud.documentai.v1beta1.Document.Page.Dimension.encode(message.dimension, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                                if (message.layout != null && Object.hasOwnProperty.call(message, "layout"))
+                                    $root.google.cloud.documentai.v1beta1.Document.Page.Layout.encode(message.layout, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                                if (message.detectedLanguages != null && message.detectedLanguages.length)
+                                    for (var i = 0; i < message.detectedLanguages.length; ++i)
+                                        $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.encode(message.detectedLanguages[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                                if (message.blocks != null && message.blocks.length)
+                                    for (var i = 0; i < message.blocks.length; ++i)
+                                        $root.google.cloud.documentai.v1beta1.Document.Page.Block.encode(message.blocks[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                                if (message.paragraphs != null && message.paragraphs.length)
+                                    for (var i = 0; i < message.paragraphs.length; ++i)
+                                        $root.google.cloud.documentai.v1beta1.Document.Page.Paragraph.encode(message.paragraphs[i], writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                                if (message.lines != null && message.lines.length)
+                                    for (var i = 0; i < message.lines.length; ++i)
+                                        $root.google.cloud.documentai.v1beta1.Document.Page.Line.encode(message.lines[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                                if (message.tokens != null && message.tokens.length)
+                                    for (var i = 0; i < message.tokens.length; ++i)
+                                        $root.google.cloud.documentai.v1beta1.Document.Page.Token.encode(message.tokens[i], writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                                if (message.visualElements != null && message.visualElements.length)
+                                    for (var i = 0; i < message.visualElements.length; ++i)
+                                        $root.google.cloud.documentai.v1beta1.Document.Page.VisualElement.encode(message.visualElements[i], writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                                if (message.tables != null && message.tables.length)
+                                    for (var i = 0; i < message.tables.length; ++i)
+                                        $root.google.cloud.documentai.v1beta1.Document.Page.Table.encode(message.tables[i], writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
+                                if (message.formFields != null && message.formFields.length)
+                                    for (var i = 0; i < message.formFields.length; ++i)
+                                        $root.google.cloud.documentai.v1beta1.Document.Page.FormField.encode(message.formFields[i], writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
+                                return writer;
+                            };
+    
+                            /**
+                             * Encodes the specified Page message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.verify|verify} messages.
+                             * @function encodeDelimited
+                             * @memberof google.cloud.documentai.v1beta1.Document.Page
+                             * @static
+                             * @param {google.cloud.documentai.v1beta1.Document.IPage} message Page message or plain object to encode
+                             * @param {$protobuf.Writer} [writer] Writer to encode to
+                             * @returns {$protobuf.Writer} Writer
+                             */
+                            Page.encodeDelimited = function encodeDelimited(message, writer) {
+                                return this.encode(message, writer).ldelim();
+                            };
+    
+                            /**
+                             * Decodes a Page message from the specified reader or buffer.
+                             * @function decode
+                             * @memberof google.cloud.documentai.v1beta1.Document.Page
+                             * @static
+                             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                             * @param {number} [length] Message length if known beforehand
+                             * @returns {google.cloud.documentai.v1beta1.Document.Page} Page
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            Page.decode = function decode(reader, length) {
+                                if (!(reader instanceof $Reader))
+                                    reader = $Reader.create(reader);
+                                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.Document.Page();
+                                while (reader.pos < end) {
+                                    var tag = reader.uint32();
+                                    switch (tag >>> 3) {
+                                    case 1:
+                                        message.pageNumber = reader.int32();
+                                        break;
+                                    case 2:
+                                        message.dimension = $root.google.cloud.documentai.v1beta1.Document.Page.Dimension.decode(reader, reader.uint32());
+                                        break;
+                                    case 3:
+                                        message.layout = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.decode(reader, reader.uint32());
+                                        break;
+                                    case 4:
+                                        if (!(message.detectedLanguages && message.detectedLanguages.length))
+                                            message.detectedLanguages = [];
+                                        message.detectedLanguages.push($root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.decode(reader, reader.uint32()));
+                                        break;
+                                    case 5:
+                                        if (!(message.blocks && message.blocks.length))
+                                            message.blocks = [];
+                                        message.blocks.push($root.google.cloud.documentai.v1beta1.Document.Page.Block.decode(reader, reader.uint32()));
+                                        break;
+                                    case 6:
+                                        if (!(message.paragraphs && message.paragraphs.length))
+                                            message.paragraphs = [];
+                                        message.paragraphs.push($root.google.cloud.documentai.v1beta1.Document.Page.Paragraph.decode(reader, reader.uint32()));
+                                        break;
+                                    case 7:
+                                        if (!(message.lines && message.lines.length))
+                                            message.lines = [];
+                                        message.lines.push($root.google.cloud.documentai.v1beta1.Document.Page.Line.decode(reader, reader.uint32()));
+                                        break;
+                                    case 8:
+                                        if (!(message.tokens && message.tokens.length))
+                                            message.tokens = [];
+                                        message.tokens.push($root.google.cloud.documentai.v1beta1.Document.Page.Token.decode(reader, reader.uint32()));
+                                        break;
+                                    case 9:
+                                        if (!(message.visualElements && message.visualElements.length))
+                                            message.visualElements = [];
+                                        message.visualElements.push($root.google.cloud.documentai.v1beta1.Document.Page.VisualElement.decode(reader, reader.uint32()));
+                                        break;
+                                    case 10:
+                                        if (!(message.tables && message.tables.length))
+                                            message.tables = [];
+                                        message.tables.push($root.google.cloud.documentai.v1beta1.Document.Page.Table.decode(reader, reader.uint32()));
+                                        break;
+                                    case 11:
+                                        if (!(message.formFields && message.formFields.length))
+                                            message.formFields = [];
+                                        message.formFields.push($root.google.cloud.documentai.v1beta1.Document.Page.FormField.decode(reader, reader.uint32()));
+                                        break;
+                                    default:
+                                        reader.skipType(tag & 7);
+                                        break;
+                                    }
+                                }
+                                return message;
+                            };
+    
+                            /**
+                             * Decodes a Page message from the specified reader or buffer, length delimited.
+                             * @function decodeDelimited
+                             * @memberof google.cloud.documentai.v1beta1.Document.Page
+                             * @static
+                             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                             * @returns {google.cloud.documentai.v1beta1.Document.Page} Page
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            Page.decodeDelimited = function decodeDelimited(reader) {
+                                if (!(reader instanceof $Reader))
+                                    reader = new $Reader(reader);
+                                return this.decode(reader, reader.uint32());
+                            };
+    
+                            /**
+                             * Verifies a Page message.
+                             * @function verify
+                             * @memberof google.cloud.documentai.v1beta1.Document.Page
+                             * @static
+                             * @param {Object.<string,*>} message Plain object to verify
+                             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                             */
+                            Page.verify = function verify(message) {
+                                if (typeof message !== "object" || message === null)
+                                    return "object expected";
+                                if (message.pageNumber != null && message.hasOwnProperty("pageNumber"))
+                                    if (!$util.isInteger(message.pageNumber))
+                                        return "pageNumber: integer expected";
+                                if (message.dimension != null && message.hasOwnProperty("dimension")) {
+                                    var error = $root.google.cloud.documentai.v1beta1.Document.Page.Dimension.verify(message.dimension);
+                                    if (error)
+                                        return "dimension." + error;
+                                }
+                                if (message.layout != null && message.hasOwnProperty("layout")) {
+                                    var error = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.verify(message.layout);
+                                    if (error)
+                                        return "layout." + error;
+                                }
+                                if (message.detectedLanguages != null && message.hasOwnProperty("detectedLanguages")) {
+                                    if (!Array.isArray(message.detectedLanguages))
+                                        return "detectedLanguages: array expected";
+                                    for (var i = 0; i < message.detectedLanguages.length; ++i) {
+                                        var error = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.verify(message.detectedLanguages[i]);
+                                        if (error)
+                                            return "detectedLanguages." + error;
+                                    }
+                                }
+                                if (message.blocks != null && message.hasOwnProperty("blocks")) {
+                                    if (!Array.isArray(message.blocks))
+                                        return "blocks: array expected";
+                                    for (var i = 0; i < message.blocks.length; ++i) {
+                                        var error = $root.google.cloud.documentai.v1beta1.Document.Page.Block.verify(message.blocks[i]);
+                                        if (error)
+                                            return "blocks." + error;
+                                    }
+                                }
+                                if (message.paragraphs != null && message.hasOwnProperty("paragraphs")) {
+                                    if (!Array.isArray(message.paragraphs))
+                                        return "paragraphs: array expected";
+                                    for (var i = 0; i < message.paragraphs.length; ++i) {
+                                        var error = $root.google.cloud.documentai.v1beta1.Document.Page.Paragraph.verify(message.paragraphs[i]);
+                                        if (error)
+                                            return "paragraphs." + error;
+                                    }
+                                }
+                                if (message.lines != null && message.hasOwnProperty("lines")) {
+                                    if (!Array.isArray(message.lines))
+                                        return "lines: array expected";
+                                    for (var i = 0; i < message.lines.length; ++i) {
+                                        var error = $root.google.cloud.documentai.v1beta1.Document.Page.Line.verify(message.lines[i]);
+                                        if (error)
+                                            return "lines." + error;
+                                    }
+                                }
+                                if (message.tokens != null && message.hasOwnProperty("tokens")) {
+                                    if (!Array.isArray(message.tokens))
+                                        return "tokens: array expected";
+                                    for (var i = 0; i < message.tokens.length; ++i) {
+                                        var error = $root.google.cloud.documentai.v1beta1.Document.Page.Token.verify(message.tokens[i]);
+                                        if (error)
+                                            return "tokens." + error;
+                                    }
+                                }
+                                if (message.visualElements != null && message.hasOwnProperty("visualElements")) {
+                                    if (!Array.isArray(message.visualElements))
+                                        return "visualElements: array expected";
+                                    for (var i = 0; i < message.visualElements.length; ++i) {
+                                        var error = $root.google.cloud.documentai.v1beta1.Document.Page.VisualElement.verify(message.visualElements[i]);
+                                        if (error)
+                                            return "visualElements." + error;
+                                    }
+                                }
+                                if (message.tables != null && message.hasOwnProperty("tables")) {
+                                    if (!Array.isArray(message.tables))
+                                        return "tables: array expected";
+                                    for (var i = 0; i < message.tables.length; ++i) {
+                                        var error = $root.google.cloud.documentai.v1beta1.Document.Page.Table.verify(message.tables[i]);
+                                        if (error)
+                                            return "tables." + error;
+                                    }
+                                }
+                                if (message.formFields != null && message.hasOwnProperty("formFields")) {
+                                    if (!Array.isArray(message.formFields))
+                                        return "formFields: array expected";
+                                    for (var i = 0; i < message.formFields.length; ++i) {
+                                        var error = $root.google.cloud.documentai.v1beta1.Document.Page.FormField.verify(message.formFields[i]);
+                                        if (error)
+                                            return "formFields." + error;
+                                    }
+                                }
+                                return null;
+                            };
+    
+                            /**
+                             * Creates a Page message from a plain object. Also converts values to their respective internal types.
+                             * @function fromObject
+                             * @memberof google.cloud.documentai.v1beta1.Document.Page
+                             * @static
+                             * @param {Object.<string,*>} object Plain object
+                             * @returns {google.cloud.documentai.v1beta1.Document.Page} Page
+                             */
+                            Page.fromObject = function fromObject(object) {
+                                if (object instanceof $root.google.cloud.documentai.v1beta1.Document.Page)
+                                    return object;
+                                var message = new $root.google.cloud.documentai.v1beta1.Document.Page();
+                                if (object.pageNumber != null)
+                                    message.pageNumber = object.pageNumber | 0;
+                                if (object.dimension != null) {
+                                    if (typeof object.dimension !== "object")
+                                        throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.dimension: object expected");
+                                    message.dimension = $root.google.cloud.documentai.v1beta1.Document.Page.Dimension.fromObject(object.dimension);
+                                }
+                                if (object.layout != null) {
+                                    if (typeof object.layout !== "object")
+                                        throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.layout: object expected");
+                                    message.layout = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.fromObject(object.layout);
+                                }
+                                if (object.detectedLanguages) {
+                                    if (!Array.isArray(object.detectedLanguages))
+                                        throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.detectedLanguages: array expected");
+                                    message.detectedLanguages = [];
+                                    for (var i = 0; i < object.detectedLanguages.length; ++i) {
+                                        if (typeof object.detectedLanguages[i] !== "object")
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.detectedLanguages: object expected");
+                                        message.detectedLanguages[i] = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.fromObject(object.detectedLanguages[i]);
+                                    }
+                                }
+                                if (object.blocks) {
+                                    if (!Array.isArray(object.blocks))
+                                        throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.blocks: array expected");
+                                    message.blocks = [];
+                                    for (var i = 0; i < object.blocks.length; ++i) {
+                                        if (typeof object.blocks[i] !== "object")
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.blocks: object expected");
+                                        message.blocks[i] = $root.google.cloud.documentai.v1beta1.Document.Page.Block.fromObject(object.blocks[i]);
+                                    }
+                                }
+                                if (object.paragraphs) {
+                                    if (!Array.isArray(object.paragraphs))
+                                        throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.paragraphs: array expected");
+                                    message.paragraphs = [];
+                                    for (var i = 0; i < object.paragraphs.length; ++i) {
+                                        if (typeof object.paragraphs[i] !== "object")
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.paragraphs: object expected");
+                                        message.paragraphs[i] = $root.google.cloud.documentai.v1beta1.Document.Page.Paragraph.fromObject(object.paragraphs[i]);
+                                    }
+                                }
+                                if (object.lines) {
+                                    if (!Array.isArray(object.lines))
+                                        throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.lines: array expected");
+                                    message.lines = [];
+                                    for (var i = 0; i < object.lines.length; ++i) {
+                                        if (typeof object.lines[i] !== "object")
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.lines: object expected");
+                                        message.lines[i] = $root.google.cloud.documentai.v1beta1.Document.Page.Line.fromObject(object.lines[i]);
+                                    }
+                                }
+                                if (object.tokens) {
+                                    if (!Array.isArray(object.tokens))
+                                        throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.tokens: array expected");
+                                    message.tokens = [];
+                                    for (var i = 0; i < object.tokens.length; ++i) {
+                                        if (typeof object.tokens[i] !== "object")
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.tokens: object expected");
+                                        message.tokens[i] = $root.google.cloud.documentai.v1beta1.Document.Page.Token.fromObject(object.tokens[i]);
+                                    }
+                                }
+                                if (object.visualElements) {
+                                    if (!Array.isArray(object.visualElements))
+                                        throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.visualElements: array expected");
+                                    message.visualElements = [];
+                                    for (var i = 0; i < object.visualElements.length; ++i) {
+                                        if (typeof object.visualElements[i] !== "object")
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.visualElements: object expected");
+                                        message.visualElements[i] = $root.google.cloud.documentai.v1beta1.Document.Page.VisualElement.fromObject(object.visualElements[i]);
+                                    }
+                                }
+                                if (object.tables) {
+                                    if (!Array.isArray(object.tables))
+                                        throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.tables: array expected");
+                                    message.tables = [];
+                                    for (var i = 0; i < object.tables.length; ++i) {
+                                        if (typeof object.tables[i] !== "object")
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.tables: object expected");
+                                        message.tables[i] = $root.google.cloud.documentai.v1beta1.Document.Page.Table.fromObject(object.tables[i]);
+                                    }
+                                }
+                                if (object.formFields) {
+                                    if (!Array.isArray(object.formFields))
+                                        throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.formFields: array expected");
+                                    message.formFields = [];
+                                    for (var i = 0; i < object.formFields.length; ++i) {
+                                        if (typeof object.formFields[i] !== "object")
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.formFields: object expected");
+                                        message.formFields[i] = $root.google.cloud.documentai.v1beta1.Document.Page.FormField.fromObject(object.formFields[i]);
+                                    }
+                                }
+                                return message;
+                            };
+    
+                            /**
+                             * Creates a plain object from a Page message. Also converts values to other types if specified.
+                             * @function toObject
+                             * @memberof google.cloud.documentai.v1beta1.Document.Page
+                             * @static
+                             * @param {google.cloud.documentai.v1beta1.Document.Page} message Page
+                             * @param {$protobuf.IConversionOptions} [options] Conversion options
+                             * @returns {Object.<string,*>} Plain object
+                             */
+                            Page.toObject = function toObject(message, options) {
+                                if (!options)
+                                    options = {};
+                                var object = {};
+                                if (options.arrays || options.defaults) {
+                                    object.detectedLanguages = [];
+                                    object.blocks = [];
+                                    object.paragraphs = [];
+                                    object.lines = [];
+                                    object.tokens = [];
+                                    object.visualElements = [];
+                                    object.tables = [];
+                                    object.formFields = [];
+                                }
+                                if (options.defaults) {
+                                    object.pageNumber = 0;
+                                    object.dimension = null;
+                                    object.layout = null;
+                                }
+                                if (message.pageNumber != null && message.hasOwnProperty("pageNumber"))
+                                    object.pageNumber = message.pageNumber;
+                                if (message.dimension != null && message.hasOwnProperty("dimension"))
+                                    object.dimension = $root.google.cloud.documentai.v1beta1.Document.Page.Dimension.toObject(message.dimension, options);
+                                if (message.layout != null && message.hasOwnProperty("layout"))
+                                    object.layout = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.toObject(message.layout, options);
+                                if (message.detectedLanguages && message.detectedLanguages.length) {
+                                    object.detectedLanguages = [];
+                                    for (var j = 0; j < message.detectedLanguages.length; ++j)
+                                        object.detectedLanguages[j] = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.toObject(message.detectedLanguages[j], options);
+                                }
+                                if (message.blocks && message.blocks.length) {
+                                    object.blocks = [];
+                                    for (var j = 0; j < message.blocks.length; ++j)
+                                        object.blocks[j] = $root.google.cloud.documentai.v1beta1.Document.Page.Block.toObject(message.blocks[j], options);
+                                }
+                                if (message.paragraphs && message.paragraphs.length) {
+                                    object.paragraphs = [];
+                                    for (var j = 0; j < message.paragraphs.length; ++j)
+                                        object.paragraphs[j] = $root.google.cloud.documentai.v1beta1.Document.Page.Paragraph.toObject(message.paragraphs[j], options);
+                                }
+                                if (message.lines && message.lines.length) {
+                                    object.lines = [];
+                                    for (var j = 0; j < message.lines.length; ++j)
+                                        object.lines[j] = $root.google.cloud.documentai.v1beta1.Document.Page.Line.toObject(message.lines[j], options);
+                                }
+                                if (message.tokens && message.tokens.length) {
+                                    object.tokens = [];
+                                    for (var j = 0; j < message.tokens.length; ++j)
+                                        object.tokens[j] = $root.google.cloud.documentai.v1beta1.Document.Page.Token.toObject(message.tokens[j], options);
+                                }
+                                if (message.visualElements && message.visualElements.length) {
+                                    object.visualElements = [];
+                                    for (var j = 0; j < message.visualElements.length; ++j)
+                                        object.visualElements[j] = $root.google.cloud.documentai.v1beta1.Document.Page.VisualElement.toObject(message.visualElements[j], options);
+                                }
+                                if (message.tables && message.tables.length) {
+                                    object.tables = [];
+                                    for (var j = 0; j < message.tables.length; ++j)
+                                        object.tables[j] = $root.google.cloud.documentai.v1beta1.Document.Page.Table.toObject(message.tables[j], options);
+                                }
+                                if (message.formFields && message.formFields.length) {
+                                    object.formFields = [];
+                                    for (var j = 0; j < message.formFields.length; ++j)
+                                        object.formFields[j] = $root.google.cloud.documentai.v1beta1.Document.Page.FormField.toObject(message.formFields[j], options);
+                                }
+                                return object;
+                            };
+    
+                            /**
+                             * Converts this Page to JSON.
+                             * @function toJSON
+                             * @memberof google.cloud.documentai.v1beta1.Document.Page
+                             * @instance
+                             * @returns {Object.<string,*>} JSON object
+                             */
+                            Page.prototype.toJSON = function toJSON() {
+                                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                            };
+    
+                            Page.Dimension = (function() {
+    
+                                /**
+                                 * Properties of a Dimension.
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page
+                                 * @interface IDimension
+                                 * @property {number|null} [width] Dimension width
+                                 * @property {number|null} [height] Dimension height
+                                 * @property {string|null} [unit] Dimension unit
+                                 */
+    
+                                /**
+                                 * Constructs a new Dimension.
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page
+                                 * @classdesc Represents a Dimension.
+                                 * @implements IDimension
+                                 * @constructor
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IDimension=} [properties] Properties to set
+                                 */
+                                function Dimension(properties) {
+                                    if (properties)
+                                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                            if (properties[keys[i]] != null)
+                                                this[keys[i]] = properties[keys[i]];
+                                }
+    
+                                /**
+                                 * Dimension width.
+                                 * @member {number} width
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Dimension
+                                 * @instance
+                                 */
+                                Dimension.prototype.width = 0;
+    
+                                /**
+                                 * Dimension height.
+                                 * @member {number} height
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Dimension
+                                 * @instance
+                                 */
+                                Dimension.prototype.height = 0;
+    
+                                /**
+                                 * Dimension unit.
+                                 * @member {string} unit
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Dimension
+                                 * @instance
+                                 */
+                                Dimension.prototype.unit = "";
+    
+                                /**
+                                 * Creates a new Dimension instance using the specified properties.
+                                 * @function create
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Dimension
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IDimension=} [properties] Properties to set
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Dimension} Dimension instance
+                                 */
+                                Dimension.create = function create(properties) {
+                                    return new Dimension(properties);
+                                };
+    
+                                /**
+                                 * Encodes the specified Dimension message. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.Dimension.verify|verify} messages.
+                                 * @function encode
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Dimension
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IDimension} message Dimension message or plain object to encode
+                                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                                 * @returns {$protobuf.Writer} Writer
+                                 */
+                                Dimension.encode = function encode(message, writer) {
+                                    if (!writer)
+                                        writer = $Writer.create();
+                                    if (message.width != null && Object.hasOwnProperty.call(message, "width"))
+                                        writer.uint32(/* id 1, wireType 5 =*/13).float(message.width);
+                                    if (message.height != null && Object.hasOwnProperty.call(message, "height"))
+                                        writer.uint32(/* id 2, wireType 5 =*/21).float(message.height);
+                                    if (message.unit != null && Object.hasOwnProperty.call(message, "unit"))
+                                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.unit);
+                                    return writer;
+                                };
+    
+                                /**
+                                 * Encodes the specified Dimension message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.Dimension.verify|verify} messages.
+                                 * @function encodeDelimited
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Dimension
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IDimension} message Dimension message or plain object to encode
+                                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                                 * @returns {$protobuf.Writer} Writer
+                                 */
+                                Dimension.encodeDelimited = function encodeDelimited(message, writer) {
+                                    return this.encode(message, writer).ldelim();
+                                };
+    
+                                /**
+                                 * Decodes a Dimension message from the specified reader or buffer.
+                                 * @function decode
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Dimension
+                                 * @static
+                                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                 * @param {number} [length] Message length if known beforehand
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Dimension} Dimension
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                Dimension.decode = function decode(reader, length) {
+                                    if (!(reader instanceof $Reader))
+                                        reader = $Reader.create(reader);
+                                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.Document.Page.Dimension();
+                                    while (reader.pos < end) {
+                                        var tag = reader.uint32();
+                                        switch (tag >>> 3) {
+                                        case 1:
+                                            message.width = reader.float();
+                                            break;
+                                        case 2:
+                                            message.height = reader.float();
+                                            break;
+                                        case 3:
+                                            message.unit = reader.string();
+                                            break;
+                                        default:
+                                            reader.skipType(tag & 7);
+                                            break;
+                                        }
+                                    }
+                                    return message;
+                                };
+    
+                                /**
+                                 * Decodes a Dimension message from the specified reader or buffer, length delimited.
+                                 * @function decodeDelimited
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Dimension
+                                 * @static
+                                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Dimension} Dimension
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                Dimension.decodeDelimited = function decodeDelimited(reader) {
+                                    if (!(reader instanceof $Reader))
+                                        reader = new $Reader(reader);
+                                    return this.decode(reader, reader.uint32());
+                                };
+    
+                                /**
+                                 * Verifies a Dimension message.
+                                 * @function verify
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Dimension
+                                 * @static
+                                 * @param {Object.<string,*>} message Plain object to verify
+                                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                                 */
+                                Dimension.verify = function verify(message) {
+                                    if (typeof message !== "object" || message === null)
+                                        return "object expected";
+                                    if (message.width != null && message.hasOwnProperty("width"))
+                                        if (typeof message.width !== "number")
+                                            return "width: number expected";
+                                    if (message.height != null && message.hasOwnProperty("height"))
+                                        if (typeof message.height !== "number")
+                                            return "height: number expected";
+                                    if (message.unit != null && message.hasOwnProperty("unit"))
+                                        if (!$util.isString(message.unit))
+                                            return "unit: string expected";
+                                    return null;
+                                };
+    
+                                /**
+                                 * Creates a Dimension message from a plain object. Also converts values to their respective internal types.
+                                 * @function fromObject
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Dimension
+                                 * @static
+                                 * @param {Object.<string,*>} object Plain object
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Dimension} Dimension
+                                 */
+                                Dimension.fromObject = function fromObject(object) {
+                                    if (object instanceof $root.google.cloud.documentai.v1beta1.Document.Page.Dimension)
+                                        return object;
+                                    var message = new $root.google.cloud.documentai.v1beta1.Document.Page.Dimension();
+                                    if (object.width != null)
+                                        message.width = Number(object.width);
+                                    if (object.height != null)
+                                        message.height = Number(object.height);
+                                    if (object.unit != null)
+                                        message.unit = String(object.unit);
+                                    return message;
+                                };
+    
+                                /**
+                                 * Creates a plain object from a Dimension message. Also converts values to other types if specified.
+                                 * @function toObject
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Dimension
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.Dimension} message Dimension
+                                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                                 * @returns {Object.<string,*>} Plain object
+                                 */
+                                Dimension.toObject = function toObject(message, options) {
+                                    if (!options)
+                                        options = {};
+                                    var object = {};
+                                    if (options.defaults) {
+                                        object.width = 0;
+                                        object.height = 0;
+                                        object.unit = "";
+                                    }
+                                    if (message.width != null && message.hasOwnProperty("width"))
+                                        object.width = options.json && !isFinite(message.width) ? String(message.width) : message.width;
+                                    if (message.height != null && message.hasOwnProperty("height"))
+                                        object.height = options.json && !isFinite(message.height) ? String(message.height) : message.height;
+                                    if (message.unit != null && message.hasOwnProperty("unit"))
+                                        object.unit = message.unit;
+                                    return object;
+                                };
+    
+                                /**
+                                 * Converts this Dimension to JSON.
+                                 * @function toJSON
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Dimension
+                                 * @instance
+                                 * @returns {Object.<string,*>} JSON object
+                                 */
+                                Dimension.prototype.toJSON = function toJSON() {
+                                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                                };
+    
+                                return Dimension;
+                            })();
+    
+                            Page.Layout = (function() {
+    
+                                /**
+                                 * Properties of a Layout.
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page
+                                 * @interface ILayout
+                                 * @property {google.cloud.documentai.v1beta1.Document.ITextAnchor|null} [textAnchor] Layout textAnchor
+                                 * @property {number|null} [confidence] Layout confidence
+                                 * @property {google.cloud.documentai.v1beta1.IBoundingPoly|null} [boundingPoly] Layout boundingPoly
+                                 * @property {google.cloud.documentai.v1beta1.Document.Page.Layout.Orientation|null} [orientation] Layout orientation
+                                 */
+    
+                                /**
+                                 * Constructs a new Layout.
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page
+                                 * @classdesc Represents a Layout.
+                                 * @implements ILayout
+                                 * @constructor
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.ILayout=} [properties] Properties to set
+                                 */
+                                function Layout(properties) {
+                                    if (properties)
+                                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                            if (properties[keys[i]] != null)
+                                                this[keys[i]] = properties[keys[i]];
+                                }
+    
+                                /**
+                                 * Layout textAnchor.
+                                 * @member {google.cloud.documentai.v1beta1.Document.ITextAnchor|null|undefined} textAnchor
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Layout
+                                 * @instance
+                                 */
+                                Layout.prototype.textAnchor = null;
+    
+                                /**
+                                 * Layout confidence.
+                                 * @member {number} confidence
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Layout
+                                 * @instance
+                                 */
+                                Layout.prototype.confidence = 0;
+    
+                                /**
+                                 * Layout boundingPoly.
+                                 * @member {google.cloud.documentai.v1beta1.IBoundingPoly|null|undefined} boundingPoly
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Layout
+                                 * @instance
+                                 */
+                                Layout.prototype.boundingPoly = null;
+    
+                                /**
+                                 * Layout orientation.
+                                 * @member {google.cloud.documentai.v1beta1.Document.Page.Layout.Orientation} orientation
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Layout
+                                 * @instance
+                                 */
+                                Layout.prototype.orientation = 0;
+    
+                                /**
+                                 * Creates a new Layout instance using the specified properties.
+                                 * @function create
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Layout
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.ILayout=} [properties] Properties to set
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Layout} Layout instance
+                                 */
+                                Layout.create = function create(properties) {
+                                    return new Layout(properties);
+                                };
+    
+                                /**
+                                 * Encodes the specified Layout message. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.Layout.verify|verify} messages.
+                                 * @function encode
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Layout
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.ILayout} message Layout message or plain object to encode
+                                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                                 * @returns {$protobuf.Writer} Writer
+                                 */
+                                Layout.encode = function encode(message, writer) {
+                                    if (!writer)
+                                        writer = $Writer.create();
+                                    if (message.textAnchor != null && Object.hasOwnProperty.call(message, "textAnchor"))
+                                        $root.google.cloud.documentai.v1beta1.Document.TextAnchor.encode(message.textAnchor, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                                    if (message.confidence != null && Object.hasOwnProperty.call(message, "confidence"))
+                                        writer.uint32(/* id 2, wireType 5 =*/21).float(message.confidence);
+                                    if (message.boundingPoly != null && Object.hasOwnProperty.call(message, "boundingPoly"))
+                                        $root.google.cloud.documentai.v1beta1.BoundingPoly.encode(message.boundingPoly, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                                    if (message.orientation != null && Object.hasOwnProperty.call(message, "orientation"))
+                                        writer.uint32(/* id 4, wireType 0 =*/32).int32(message.orientation);
+                                    return writer;
+                                };
+    
+                                /**
+                                 * Encodes the specified Layout message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.Layout.verify|verify} messages.
+                                 * @function encodeDelimited
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Layout
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.ILayout} message Layout message or plain object to encode
+                                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                                 * @returns {$protobuf.Writer} Writer
+                                 */
+                                Layout.encodeDelimited = function encodeDelimited(message, writer) {
+                                    return this.encode(message, writer).ldelim();
+                                };
+    
+                                /**
+                                 * Decodes a Layout message from the specified reader or buffer.
+                                 * @function decode
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Layout
+                                 * @static
+                                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                 * @param {number} [length] Message length if known beforehand
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Layout} Layout
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                Layout.decode = function decode(reader, length) {
+                                    if (!(reader instanceof $Reader))
+                                        reader = $Reader.create(reader);
+                                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.Document.Page.Layout();
+                                    while (reader.pos < end) {
+                                        var tag = reader.uint32();
+                                        switch (tag >>> 3) {
+                                        case 1:
+                                            message.textAnchor = $root.google.cloud.documentai.v1beta1.Document.TextAnchor.decode(reader, reader.uint32());
+                                            break;
+                                        case 2:
+                                            message.confidence = reader.float();
+                                            break;
+                                        case 3:
+                                            message.boundingPoly = $root.google.cloud.documentai.v1beta1.BoundingPoly.decode(reader, reader.uint32());
+                                            break;
+                                        case 4:
+                                            message.orientation = reader.int32();
+                                            break;
+                                        default:
+                                            reader.skipType(tag & 7);
+                                            break;
+                                        }
+                                    }
+                                    return message;
+                                };
+    
+                                /**
+                                 * Decodes a Layout message from the specified reader or buffer, length delimited.
+                                 * @function decodeDelimited
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Layout
+                                 * @static
+                                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Layout} Layout
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                Layout.decodeDelimited = function decodeDelimited(reader) {
+                                    if (!(reader instanceof $Reader))
+                                        reader = new $Reader(reader);
+                                    return this.decode(reader, reader.uint32());
+                                };
+    
+                                /**
+                                 * Verifies a Layout message.
+                                 * @function verify
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Layout
+                                 * @static
+                                 * @param {Object.<string,*>} message Plain object to verify
+                                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                                 */
+                                Layout.verify = function verify(message) {
+                                    if (typeof message !== "object" || message === null)
+                                        return "object expected";
+                                    if (message.textAnchor != null && message.hasOwnProperty("textAnchor")) {
+                                        var error = $root.google.cloud.documentai.v1beta1.Document.TextAnchor.verify(message.textAnchor);
+                                        if (error)
+                                            return "textAnchor." + error;
+                                    }
+                                    if (message.confidence != null && message.hasOwnProperty("confidence"))
+                                        if (typeof message.confidence !== "number")
+                                            return "confidence: number expected";
+                                    if (message.boundingPoly != null && message.hasOwnProperty("boundingPoly")) {
+                                        var error = $root.google.cloud.documentai.v1beta1.BoundingPoly.verify(message.boundingPoly);
+                                        if (error)
+                                            return "boundingPoly." + error;
+                                    }
+                                    if (message.orientation != null && message.hasOwnProperty("orientation"))
+                                        switch (message.orientation) {
+                                        default:
+                                            return "orientation: enum value expected";
+                                        case 0:
+                                        case 1:
+                                        case 2:
+                                        case 3:
+                                        case 4:
+                                            break;
+                                        }
+                                    return null;
+                                };
+    
+                                /**
+                                 * Creates a Layout message from a plain object. Also converts values to their respective internal types.
+                                 * @function fromObject
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Layout
+                                 * @static
+                                 * @param {Object.<string,*>} object Plain object
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Layout} Layout
+                                 */
+                                Layout.fromObject = function fromObject(object) {
+                                    if (object instanceof $root.google.cloud.documentai.v1beta1.Document.Page.Layout)
+                                        return object;
+                                    var message = new $root.google.cloud.documentai.v1beta1.Document.Page.Layout();
+                                    if (object.textAnchor != null) {
+                                        if (typeof object.textAnchor !== "object")
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Layout.textAnchor: object expected");
+                                        message.textAnchor = $root.google.cloud.documentai.v1beta1.Document.TextAnchor.fromObject(object.textAnchor);
+                                    }
+                                    if (object.confidence != null)
+                                        message.confidence = Number(object.confidence);
+                                    if (object.boundingPoly != null) {
+                                        if (typeof object.boundingPoly !== "object")
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Layout.boundingPoly: object expected");
+                                        message.boundingPoly = $root.google.cloud.documentai.v1beta1.BoundingPoly.fromObject(object.boundingPoly);
+                                    }
+                                    switch (object.orientation) {
+                                    case "ORIENTATION_UNSPECIFIED":
+                                    case 0:
+                                        message.orientation = 0;
+                                        break;
+                                    case "PAGE_UP":
+                                    case 1:
+                                        message.orientation = 1;
+                                        break;
+                                    case "PAGE_RIGHT":
+                                    case 2:
+                                        message.orientation = 2;
+                                        break;
+                                    case "PAGE_DOWN":
+                                    case 3:
+                                        message.orientation = 3;
+                                        break;
+                                    case "PAGE_LEFT":
+                                    case 4:
+                                        message.orientation = 4;
+                                        break;
+                                    }
+                                    return message;
+                                };
+    
+                                /**
+                                 * Creates a plain object from a Layout message. Also converts values to other types if specified.
+                                 * @function toObject
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Layout
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.Layout} message Layout
+                                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                                 * @returns {Object.<string,*>} Plain object
+                                 */
+                                Layout.toObject = function toObject(message, options) {
+                                    if (!options)
+                                        options = {};
+                                    var object = {};
+                                    if (options.defaults) {
+                                        object.textAnchor = null;
+                                        object.confidence = 0;
+                                        object.boundingPoly = null;
+                                        object.orientation = options.enums === String ? "ORIENTATION_UNSPECIFIED" : 0;
+                                    }
+                                    if (message.textAnchor != null && message.hasOwnProperty("textAnchor"))
+                                        object.textAnchor = $root.google.cloud.documentai.v1beta1.Document.TextAnchor.toObject(message.textAnchor, options);
+                                    if (message.confidence != null && message.hasOwnProperty("confidence"))
+                                        object.confidence = options.json && !isFinite(message.confidence) ? String(message.confidence) : message.confidence;
+                                    if (message.boundingPoly != null && message.hasOwnProperty("boundingPoly"))
+                                        object.boundingPoly = $root.google.cloud.documentai.v1beta1.BoundingPoly.toObject(message.boundingPoly, options);
+                                    if (message.orientation != null && message.hasOwnProperty("orientation"))
+                                        object.orientation = options.enums === String ? $root.google.cloud.documentai.v1beta1.Document.Page.Layout.Orientation[message.orientation] : message.orientation;
+                                    return object;
+                                };
+    
+                                /**
+                                 * Converts this Layout to JSON.
+                                 * @function toJSON
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Layout
+                                 * @instance
+                                 * @returns {Object.<string,*>} JSON object
+                                 */
+                                Layout.prototype.toJSON = function toJSON() {
+                                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                                };
+    
+                                /**
+                                 * Orientation enum.
+                                 * @name google.cloud.documentai.v1beta1.Document.Page.Layout.Orientation
+                                 * @enum {number}
+                                 * @property {number} ORIENTATION_UNSPECIFIED=0 ORIENTATION_UNSPECIFIED value
+                                 * @property {number} PAGE_UP=1 PAGE_UP value
+                                 * @property {number} PAGE_RIGHT=2 PAGE_RIGHT value
+                                 * @property {number} PAGE_DOWN=3 PAGE_DOWN value
+                                 * @property {number} PAGE_LEFT=4 PAGE_LEFT value
+                                 */
+                                Layout.Orientation = (function() {
+                                    var valuesById = {}, values = Object.create(valuesById);
+                                    values[valuesById[0] = "ORIENTATION_UNSPECIFIED"] = 0;
+                                    values[valuesById[1] = "PAGE_UP"] = 1;
+                                    values[valuesById[2] = "PAGE_RIGHT"] = 2;
+                                    values[valuesById[3] = "PAGE_DOWN"] = 3;
+                                    values[valuesById[4] = "PAGE_LEFT"] = 4;
+                                    return values;
+                                })();
+    
+                                return Layout;
+                            })();
+    
+                            Page.Block = (function() {
+    
+                                /**
+                                 * Properties of a Block.
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page
+                                 * @interface IBlock
+                                 * @property {google.cloud.documentai.v1beta1.Document.Page.ILayout|null} [layout] Block layout
+                                 * @property {Array.<google.cloud.documentai.v1beta1.Document.Page.IDetectedLanguage>|null} [detectedLanguages] Block detectedLanguages
+                                 */
+    
+                                /**
+                                 * Constructs a new Block.
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page
+                                 * @classdesc Represents a Block.
+                                 * @implements IBlock
+                                 * @constructor
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IBlock=} [properties] Properties to set
+                                 */
+                                function Block(properties) {
+                                    this.detectedLanguages = [];
+                                    if (properties)
+                                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                            if (properties[keys[i]] != null)
+                                                this[keys[i]] = properties[keys[i]];
+                                }
+    
+                                /**
+                                 * Block layout.
+                                 * @member {google.cloud.documentai.v1beta1.Document.Page.ILayout|null|undefined} layout
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Block
+                                 * @instance
+                                 */
+                                Block.prototype.layout = null;
+    
+                                /**
+                                 * Block detectedLanguages.
+                                 * @member {Array.<google.cloud.documentai.v1beta1.Document.Page.IDetectedLanguage>} detectedLanguages
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Block
+                                 * @instance
+                                 */
+                                Block.prototype.detectedLanguages = $util.emptyArray;
+    
+                                /**
+                                 * Creates a new Block instance using the specified properties.
+                                 * @function create
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Block
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IBlock=} [properties] Properties to set
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Block} Block instance
+                                 */
+                                Block.create = function create(properties) {
+                                    return new Block(properties);
+                                };
+    
+                                /**
+                                 * Encodes the specified Block message. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.Block.verify|verify} messages.
+                                 * @function encode
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Block
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IBlock} message Block message or plain object to encode
+                                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                                 * @returns {$protobuf.Writer} Writer
+                                 */
+                                Block.encode = function encode(message, writer) {
+                                    if (!writer)
+                                        writer = $Writer.create();
+                                    if (message.layout != null && Object.hasOwnProperty.call(message, "layout"))
+                                        $root.google.cloud.documentai.v1beta1.Document.Page.Layout.encode(message.layout, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                                    if (message.detectedLanguages != null && message.detectedLanguages.length)
+                                        for (var i = 0; i < message.detectedLanguages.length; ++i)
+                                            $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.encode(message.detectedLanguages[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                                    return writer;
+                                };
+    
+                                /**
+                                 * Encodes the specified Block message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.Block.verify|verify} messages.
+                                 * @function encodeDelimited
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Block
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IBlock} message Block message or plain object to encode
+                                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                                 * @returns {$protobuf.Writer} Writer
+                                 */
+                                Block.encodeDelimited = function encodeDelimited(message, writer) {
+                                    return this.encode(message, writer).ldelim();
+                                };
+    
+                                /**
+                                 * Decodes a Block message from the specified reader or buffer.
+                                 * @function decode
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Block
+                                 * @static
+                                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                 * @param {number} [length] Message length if known beforehand
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Block} Block
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                Block.decode = function decode(reader, length) {
+                                    if (!(reader instanceof $Reader))
+                                        reader = $Reader.create(reader);
+                                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.Document.Page.Block();
+                                    while (reader.pos < end) {
+                                        var tag = reader.uint32();
+                                        switch (tag >>> 3) {
+                                        case 1:
+                                            message.layout = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.decode(reader, reader.uint32());
+                                            break;
+                                        case 2:
+                                            if (!(message.detectedLanguages && message.detectedLanguages.length))
+                                                message.detectedLanguages = [];
+                                            message.detectedLanguages.push($root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.decode(reader, reader.uint32()));
+                                            break;
+                                        default:
+                                            reader.skipType(tag & 7);
+                                            break;
+                                        }
+                                    }
+                                    return message;
+                                };
+    
+                                /**
+                                 * Decodes a Block message from the specified reader or buffer, length delimited.
+                                 * @function decodeDelimited
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Block
+                                 * @static
+                                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Block} Block
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                Block.decodeDelimited = function decodeDelimited(reader) {
+                                    if (!(reader instanceof $Reader))
+                                        reader = new $Reader(reader);
+                                    return this.decode(reader, reader.uint32());
+                                };
+    
+                                /**
+                                 * Verifies a Block message.
+                                 * @function verify
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Block
+                                 * @static
+                                 * @param {Object.<string,*>} message Plain object to verify
+                                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                                 */
+                                Block.verify = function verify(message) {
+                                    if (typeof message !== "object" || message === null)
+                                        return "object expected";
+                                    if (message.layout != null && message.hasOwnProperty("layout")) {
+                                        var error = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.verify(message.layout);
+                                        if (error)
+                                            return "layout." + error;
+                                    }
+                                    if (message.detectedLanguages != null && message.hasOwnProperty("detectedLanguages")) {
+                                        if (!Array.isArray(message.detectedLanguages))
+                                            return "detectedLanguages: array expected";
+                                        for (var i = 0; i < message.detectedLanguages.length; ++i) {
+                                            var error = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.verify(message.detectedLanguages[i]);
+                                            if (error)
+                                                return "detectedLanguages." + error;
+                                        }
+                                    }
+                                    return null;
+                                };
+    
+                                /**
+                                 * Creates a Block message from a plain object. Also converts values to their respective internal types.
+                                 * @function fromObject
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Block
+                                 * @static
+                                 * @param {Object.<string,*>} object Plain object
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Block} Block
+                                 */
+                                Block.fromObject = function fromObject(object) {
+                                    if (object instanceof $root.google.cloud.documentai.v1beta1.Document.Page.Block)
+                                        return object;
+                                    var message = new $root.google.cloud.documentai.v1beta1.Document.Page.Block();
+                                    if (object.layout != null) {
+                                        if (typeof object.layout !== "object")
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Block.layout: object expected");
+                                        message.layout = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.fromObject(object.layout);
+                                    }
+                                    if (object.detectedLanguages) {
+                                        if (!Array.isArray(object.detectedLanguages))
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Block.detectedLanguages: array expected");
+                                        message.detectedLanguages = [];
+                                        for (var i = 0; i < object.detectedLanguages.length; ++i) {
+                                            if (typeof object.detectedLanguages[i] !== "object")
+                                                throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Block.detectedLanguages: object expected");
+                                            message.detectedLanguages[i] = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.fromObject(object.detectedLanguages[i]);
+                                        }
+                                    }
+                                    return message;
+                                };
+    
+                                /**
+                                 * Creates a plain object from a Block message. Also converts values to other types if specified.
+                                 * @function toObject
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Block
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.Block} message Block
+                                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                                 * @returns {Object.<string,*>} Plain object
+                                 */
+                                Block.toObject = function toObject(message, options) {
+                                    if (!options)
+                                        options = {};
+                                    var object = {};
+                                    if (options.arrays || options.defaults)
+                                        object.detectedLanguages = [];
+                                    if (options.defaults)
+                                        object.layout = null;
+                                    if (message.layout != null && message.hasOwnProperty("layout"))
+                                        object.layout = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.toObject(message.layout, options);
+                                    if (message.detectedLanguages && message.detectedLanguages.length) {
+                                        object.detectedLanguages = [];
+                                        for (var j = 0; j < message.detectedLanguages.length; ++j)
+                                            object.detectedLanguages[j] = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.toObject(message.detectedLanguages[j], options);
+                                    }
+                                    return object;
+                                };
+    
+                                /**
+                                 * Converts this Block to JSON.
+                                 * @function toJSON
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Block
+                                 * @instance
+                                 * @returns {Object.<string,*>} JSON object
+                                 */
+                                Block.prototype.toJSON = function toJSON() {
+                                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                                };
+    
+                                return Block;
+                            })();
+    
+                            Page.Paragraph = (function() {
+    
+                                /**
+                                 * Properties of a Paragraph.
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page
+                                 * @interface IParagraph
+                                 * @property {google.cloud.documentai.v1beta1.Document.Page.ILayout|null} [layout] Paragraph layout
+                                 * @property {Array.<google.cloud.documentai.v1beta1.Document.Page.IDetectedLanguage>|null} [detectedLanguages] Paragraph detectedLanguages
+                                 */
+    
+                                /**
+                                 * Constructs a new Paragraph.
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page
+                                 * @classdesc Represents a Paragraph.
+                                 * @implements IParagraph
+                                 * @constructor
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IParagraph=} [properties] Properties to set
+                                 */
+                                function Paragraph(properties) {
+                                    this.detectedLanguages = [];
+                                    if (properties)
+                                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                            if (properties[keys[i]] != null)
+                                                this[keys[i]] = properties[keys[i]];
+                                }
+    
+                                /**
+                                 * Paragraph layout.
+                                 * @member {google.cloud.documentai.v1beta1.Document.Page.ILayout|null|undefined} layout
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Paragraph
+                                 * @instance
+                                 */
+                                Paragraph.prototype.layout = null;
+    
+                                /**
+                                 * Paragraph detectedLanguages.
+                                 * @member {Array.<google.cloud.documentai.v1beta1.Document.Page.IDetectedLanguage>} detectedLanguages
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Paragraph
+                                 * @instance
+                                 */
+                                Paragraph.prototype.detectedLanguages = $util.emptyArray;
+    
+                                /**
+                                 * Creates a new Paragraph instance using the specified properties.
+                                 * @function create
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Paragraph
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IParagraph=} [properties] Properties to set
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Paragraph} Paragraph instance
+                                 */
+                                Paragraph.create = function create(properties) {
+                                    return new Paragraph(properties);
+                                };
+    
+                                /**
+                                 * Encodes the specified Paragraph message. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.Paragraph.verify|verify} messages.
+                                 * @function encode
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Paragraph
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IParagraph} message Paragraph message or plain object to encode
+                                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                                 * @returns {$protobuf.Writer} Writer
+                                 */
+                                Paragraph.encode = function encode(message, writer) {
+                                    if (!writer)
+                                        writer = $Writer.create();
+                                    if (message.layout != null && Object.hasOwnProperty.call(message, "layout"))
+                                        $root.google.cloud.documentai.v1beta1.Document.Page.Layout.encode(message.layout, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                                    if (message.detectedLanguages != null && message.detectedLanguages.length)
+                                        for (var i = 0; i < message.detectedLanguages.length; ++i)
+                                            $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.encode(message.detectedLanguages[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                                    return writer;
+                                };
+    
+                                /**
+                                 * Encodes the specified Paragraph message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.Paragraph.verify|verify} messages.
+                                 * @function encodeDelimited
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Paragraph
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IParagraph} message Paragraph message or plain object to encode
+                                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                                 * @returns {$protobuf.Writer} Writer
+                                 */
+                                Paragraph.encodeDelimited = function encodeDelimited(message, writer) {
+                                    return this.encode(message, writer).ldelim();
+                                };
+    
+                                /**
+                                 * Decodes a Paragraph message from the specified reader or buffer.
+                                 * @function decode
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Paragraph
+                                 * @static
+                                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                 * @param {number} [length] Message length if known beforehand
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Paragraph} Paragraph
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                Paragraph.decode = function decode(reader, length) {
+                                    if (!(reader instanceof $Reader))
+                                        reader = $Reader.create(reader);
+                                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.Document.Page.Paragraph();
+                                    while (reader.pos < end) {
+                                        var tag = reader.uint32();
+                                        switch (tag >>> 3) {
+                                        case 1:
+                                            message.layout = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.decode(reader, reader.uint32());
+                                            break;
+                                        case 2:
+                                            if (!(message.detectedLanguages && message.detectedLanguages.length))
+                                                message.detectedLanguages = [];
+                                            message.detectedLanguages.push($root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.decode(reader, reader.uint32()));
+                                            break;
+                                        default:
+                                            reader.skipType(tag & 7);
+                                            break;
+                                        }
+                                    }
+                                    return message;
+                                };
+    
+                                /**
+                                 * Decodes a Paragraph message from the specified reader or buffer, length delimited.
+                                 * @function decodeDelimited
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Paragraph
+                                 * @static
+                                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Paragraph} Paragraph
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                Paragraph.decodeDelimited = function decodeDelimited(reader) {
+                                    if (!(reader instanceof $Reader))
+                                        reader = new $Reader(reader);
+                                    return this.decode(reader, reader.uint32());
+                                };
+    
+                                /**
+                                 * Verifies a Paragraph message.
+                                 * @function verify
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Paragraph
+                                 * @static
+                                 * @param {Object.<string,*>} message Plain object to verify
+                                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                                 */
+                                Paragraph.verify = function verify(message) {
+                                    if (typeof message !== "object" || message === null)
+                                        return "object expected";
+                                    if (message.layout != null && message.hasOwnProperty("layout")) {
+                                        var error = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.verify(message.layout);
+                                        if (error)
+                                            return "layout." + error;
+                                    }
+                                    if (message.detectedLanguages != null && message.hasOwnProperty("detectedLanguages")) {
+                                        if (!Array.isArray(message.detectedLanguages))
+                                            return "detectedLanguages: array expected";
+                                        for (var i = 0; i < message.detectedLanguages.length; ++i) {
+                                            var error = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.verify(message.detectedLanguages[i]);
+                                            if (error)
+                                                return "detectedLanguages." + error;
+                                        }
+                                    }
+                                    return null;
+                                };
+    
+                                /**
+                                 * Creates a Paragraph message from a plain object. Also converts values to their respective internal types.
+                                 * @function fromObject
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Paragraph
+                                 * @static
+                                 * @param {Object.<string,*>} object Plain object
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Paragraph} Paragraph
+                                 */
+                                Paragraph.fromObject = function fromObject(object) {
+                                    if (object instanceof $root.google.cloud.documentai.v1beta1.Document.Page.Paragraph)
+                                        return object;
+                                    var message = new $root.google.cloud.documentai.v1beta1.Document.Page.Paragraph();
+                                    if (object.layout != null) {
+                                        if (typeof object.layout !== "object")
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Paragraph.layout: object expected");
+                                        message.layout = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.fromObject(object.layout);
+                                    }
+                                    if (object.detectedLanguages) {
+                                        if (!Array.isArray(object.detectedLanguages))
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Paragraph.detectedLanguages: array expected");
+                                        message.detectedLanguages = [];
+                                        for (var i = 0; i < object.detectedLanguages.length; ++i) {
+                                            if (typeof object.detectedLanguages[i] !== "object")
+                                                throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Paragraph.detectedLanguages: object expected");
+                                            message.detectedLanguages[i] = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.fromObject(object.detectedLanguages[i]);
+                                        }
+                                    }
+                                    return message;
+                                };
+    
+                                /**
+                                 * Creates a plain object from a Paragraph message. Also converts values to other types if specified.
+                                 * @function toObject
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Paragraph
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.Paragraph} message Paragraph
+                                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                                 * @returns {Object.<string,*>} Plain object
+                                 */
+                                Paragraph.toObject = function toObject(message, options) {
+                                    if (!options)
+                                        options = {};
+                                    var object = {};
+                                    if (options.arrays || options.defaults)
+                                        object.detectedLanguages = [];
+                                    if (options.defaults)
+                                        object.layout = null;
+                                    if (message.layout != null && message.hasOwnProperty("layout"))
+                                        object.layout = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.toObject(message.layout, options);
+                                    if (message.detectedLanguages && message.detectedLanguages.length) {
+                                        object.detectedLanguages = [];
+                                        for (var j = 0; j < message.detectedLanguages.length; ++j)
+                                            object.detectedLanguages[j] = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.toObject(message.detectedLanguages[j], options);
+                                    }
+                                    return object;
+                                };
+    
+                                /**
+                                 * Converts this Paragraph to JSON.
+                                 * @function toJSON
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Paragraph
+                                 * @instance
+                                 * @returns {Object.<string,*>} JSON object
+                                 */
+                                Paragraph.prototype.toJSON = function toJSON() {
+                                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                                };
+    
+                                return Paragraph;
+                            })();
+    
+                            Page.Line = (function() {
+    
+                                /**
+                                 * Properties of a Line.
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page
+                                 * @interface ILine
+                                 * @property {google.cloud.documentai.v1beta1.Document.Page.ILayout|null} [layout] Line layout
+                                 * @property {Array.<google.cloud.documentai.v1beta1.Document.Page.IDetectedLanguage>|null} [detectedLanguages] Line detectedLanguages
+                                 */
+    
+                                /**
+                                 * Constructs a new Line.
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page
+                                 * @classdesc Represents a Line.
+                                 * @implements ILine
+                                 * @constructor
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.ILine=} [properties] Properties to set
+                                 */
+                                function Line(properties) {
+                                    this.detectedLanguages = [];
+                                    if (properties)
+                                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                            if (properties[keys[i]] != null)
+                                                this[keys[i]] = properties[keys[i]];
+                                }
+    
+                                /**
+                                 * Line layout.
+                                 * @member {google.cloud.documentai.v1beta1.Document.Page.ILayout|null|undefined} layout
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Line
+                                 * @instance
+                                 */
+                                Line.prototype.layout = null;
+    
+                                /**
+                                 * Line detectedLanguages.
+                                 * @member {Array.<google.cloud.documentai.v1beta1.Document.Page.IDetectedLanguage>} detectedLanguages
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Line
+                                 * @instance
+                                 */
+                                Line.prototype.detectedLanguages = $util.emptyArray;
+    
+                                /**
+                                 * Creates a new Line instance using the specified properties.
+                                 * @function create
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Line
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.ILine=} [properties] Properties to set
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Line} Line instance
+                                 */
+                                Line.create = function create(properties) {
+                                    return new Line(properties);
+                                };
+    
+                                /**
+                                 * Encodes the specified Line message. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.Line.verify|verify} messages.
+                                 * @function encode
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Line
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.ILine} message Line message or plain object to encode
+                                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                                 * @returns {$protobuf.Writer} Writer
+                                 */
+                                Line.encode = function encode(message, writer) {
+                                    if (!writer)
+                                        writer = $Writer.create();
+                                    if (message.layout != null && Object.hasOwnProperty.call(message, "layout"))
+                                        $root.google.cloud.documentai.v1beta1.Document.Page.Layout.encode(message.layout, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                                    if (message.detectedLanguages != null && message.detectedLanguages.length)
+                                        for (var i = 0; i < message.detectedLanguages.length; ++i)
+                                            $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.encode(message.detectedLanguages[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                                    return writer;
+                                };
+    
+                                /**
+                                 * Encodes the specified Line message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.Line.verify|verify} messages.
+                                 * @function encodeDelimited
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Line
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.ILine} message Line message or plain object to encode
+                                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                                 * @returns {$protobuf.Writer} Writer
+                                 */
+                                Line.encodeDelimited = function encodeDelimited(message, writer) {
+                                    return this.encode(message, writer).ldelim();
+                                };
+    
+                                /**
+                                 * Decodes a Line message from the specified reader or buffer.
+                                 * @function decode
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Line
+                                 * @static
+                                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                 * @param {number} [length] Message length if known beforehand
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Line} Line
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                Line.decode = function decode(reader, length) {
+                                    if (!(reader instanceof $Reader))
+                                        reader = $Reader.create(reader);
+                                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.Document.Page.Line();
+                                    while (reader.pos < end) {
+                                        var tag = reader.uint32();
+                                        switch (tag >>> 3) {
+                                        case 1:
+                                            message.layout = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.decode(reader, reader.uint32());
+                                            break;
+                                        case 2:
+                                            if (!(message.detectedLanguages && message.detectedLanguages.length))
+                                                message.detectedLanguages = [];
+                                            message.detectedLanguages.push($root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.decode(reader, reader.uint32()));
+                                            break;
+                                        default:
+                                            reader.skipType(tag & 7);
+                                            break;
+                                        }
+                                    }
+                                    return message;
+                                };
+    
+                                /**
+                                 * Decodes a Line message from the specified reader or buffer, length delimited.
+                                 * @function decodeDelimited
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Line
+                                 * @static
+                                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Line} Line
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                Line.decodeDelimited = function decodeDelimited(reader) {
+                                    if (!(reader instanceof $Reader))
+                                        reader = new $Reader(reader);
+                                    return this.decode(reader, reader.uint32());
+                                };
+    
+                                /**
+                                 * Verifies a Line message.
+                                 * @function verify
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Line
+                                 * @static
+                                 * @param {Object.<string,*>} message Plain object to verify
+                                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                                 */
+                                Line.verify = function verify(message) {
+                                    if (typeof message !== "object" || message === null)
+                                        return "object expected";
+                                    if (message.layout != null && message.hasOwnProperty("layout")) {
+                                        var error = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.verify(message.layout);
+                                        if (error)
+                                            return "layout." + error;
+                                    }
+                                    if (message.detectedLanguages != null && message.hasOwnProperty("detectedLanguages")) {
+                                        if (!Array.isArray(message.detectedLanguages))
+                                            return "detectedLanguages: array expected";
+                                        for (var i = 0; i < message.detectedLanguages.length; ++i) {
+                                            var error = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.verify(message.detectedLanguages[i]);
+                                            if (error)
+                                                return "detectedLanguages." + error;
+                                        }
+                                    }
+                                    return null;
+                                };
+    
+                                /**
+                                 * Creates a Line message from a plain object. Also converts values to their respective internal types.
+                                 * @function fromObject
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Line
+                                 * @static
+                                 * @param {Object.<string,*>} object Plain object
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Line} Line
+                                 */
+                                Line.fromObject = function fromObject(object) {
+                                    if (object instanceof $root.google.cloud.documentai.v1beta1.Document.Page.Line)
+                                        return object;
+                                    var message = new $root.google.cloud.documentai.v1beta1.Document.Page.Line();
+                                    if (object.layout != null) {
+                                        if (typeof object.layout !== "object")
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Line.layout: object expected");
+                                        message.layout = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.fromObject(object.layout);
+                                    }
+                                    if (object.detectedLanguages) {
+                                        if (!Array.isArray(object.detectedLanguages))
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Line.detectedLanguages: array expected");
+                                        message.detectedLanguages = [];
+                                        for (var i = 0; i < object.detectedLanguages.length; ++i) {
+                                            if (typeof object.detectedLanguages[i] !== "object")
+                                                throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Line.detectedLanguages: object expected");
+                                            message.detectedLanguages[i] = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.fromObject(object.detectedLanguages[i]);
+                                        }
+                                    }
+                                    return message;
+                                };
+    
+                                /**
+                                 * Creates a plain object from a Line message. Also converts values to other types if specified.
+                                 * @function toObject
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Line
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.Line} message Line
+                                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                                 * @returns {Object.<string,*>} Plain object
+                                 */
+                                Line.toObject = function toObject(message, options) {
+                                    if (!options)
+                                        options = {};
+                                    var object = {};
+                                    if (options.arrays || options.defaults)
+                                        object.detectedLanguages = [];
+                                    if (options.defaults)
+                                        object.layout = null;
+                                    if (message.layout != null && message.hasOwnProperty("layout"))
+                                        object.layout = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.toObject(message.layout, options);
+                                    if (message.detectedLanguages && message.detectedLanguages.length) {
+                                        object.detectedLanguages = [];
+                                        for (var j = 0; j < message.detectedLanguages.length; ++j)
+                                            object.detectedLanguages[j] = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.toObject(message.detectedLanguages[j], options);
+                                    }
+                                    return object;
+                                };
+    
+                                /**
+                                 * Converts this Line to JSON.
+                                 * @function toJSON
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Line
+                                 * @instance
+                                 * @returns {Object.<string,*>} JSON object
+                                 */
+                                Line.prototype.toJSON = function toJSON() {
+                                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                                };
+    
+                                return Line;
+                            })();
+    
+                            Page.Token = (function() {
+    
+                                /**
+                                 * Properties of a Token.
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page
+                                 * @interface IToken
+                                 * @property {google.cloud.documentai.v1beta1.Document.Page.ILayout|null} [layout] Token layout
+                                 * @property {google.cloud.documentai.v1beta1.Document.Page.Token.IDetectedBreak|null} [detectedBreak] Token detectedBreak
+                                 * @property {Array.<google.cloud.documentai.v1beta1.Document.Page.IDetectedLanguage>|null} [detectedLanguages] Token detectedLanguages
+                                 */
+    
+                                /**
+                                 * Constructs a new Token.
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page
+                                 * @classdesc Represents a Token.
+                                 * @implements IToken
+                                 * @constructor
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IToken=} [properties] Properties to set
+                                 */
+                                function Token(properties) {
+                                    this.detectedLanguages = [];
+                                    if (properties)
+                                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                            if (properties[keys[i]] != null)
+                                                this[keys[i]] = properties[keys[i]];
+                                }
+    
+                                /**
+                                 * Token layout.
+                                 * @member {google.cloud.documentai.v1beta1.Document.Page.ILayout|null|undefined} layout
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Token
+                                 * @instance
+                                 */
+                                Token.prototype.layout = null;
+    
+                                /**
+                                 * Token detectedBreak.
+                                 * @member {google.cloud.documentai.v1beta1.Document.Page.Token.IDetectedBreak|null|undefined} detectedBreak
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Token
+                                 * @instance
+                                 */
+                                Token.prototype.detectedBreak = null;
+    
+                                /**
+                                 * Token detectedLanguages.
+                                 * @member {Array.<google.cloud.documentai.v1beta1.Document.Page.IDetectedLanguage>} detectedLanguages
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Token
+                                 * @instance
+                                 */
+                                Token.prototype.detectedLanguages = $util.emptyArray;
+    
+                                /**
+                                 * Creates a new Token instance using the specified properties.
+                                 * @function create
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Token
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IToken=} [properties] Properties to set
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Token} Token instance
+                                 */
+                                Token.create = function create(properties) {
+                                    return new Token(properties);
+                                };
+    
+                                /**
+                                 * Encodes the specified Token message. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.Token.verify|verify} messages.
+                                 * @function encode
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Token
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IToken} message Token message or plain object to encode
+                                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                                 * @returns {$protobuf.Writer} Writer
+                                 */
+                                Token.encode = function encode(message, writer) {
+                                    if (!writer)
+                                        writer = $Writer.create();
+                                    if (message.layout != null && Object.hasOwnProperty.call(message, "layout"))
+                                        $root.google.cloud.documentai.v1beta1.Document.Page.Layout.encode(message.layout, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                                    if (message.detectedBreak != null && Object.hasOwnProperty.call(message, "detectedBreak"))
+                                        $root.google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak.encode(message.detectedBreak, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                                    if (message.detectedLanguages != null && message.detectedLanguages.length)
+                                        for (var i = 0; i < message.detectedLanguages.length; ++i)
+                                            $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.encode(message.detectedLanguages[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                                    return writer;
+                                };
+    
+                                /**
+                                 * Encodes the specified Token message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.Token.verify|verify} messages.
+                                 * @function encodeDelimited
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Token
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IToken} message Token message or plain object to encode
+                                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                                 * @returns {$protobuf.Writer} Writer
+                                 */
+                                Token.encodeDelimited = function encodeDelimited(message, writer) {
+                                    return this.encode(message, writer).ldelim();
+                                };
+    
+                                /**
+                                 * Decodes a Token message from the specified reader or buffer.
+                                 * @function decode
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Token
+                                 * @static
+                                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                 * @param {number} [length] Message length if known beforehand
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Token} Token
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                Token.decode = function decode(reader, length) {
+                                    if (!(reader instanceof $Reader))
+                                        reader = $Reader.create(reader);
+                                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.Document.Page.Token();
+                                    while (reader.pos < end) {
+                                        var tag = reader.uint32();
+                                        switch (tag >>> 3) {
+                                        case 1:
+                                            message.layout = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.decode(reader, reader.uint32());
+                                            break;
+                                        case 2:
+                                            message.detectedBreak = $root.google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak.decode(reader, reader.uint32());
+                                            break;
+                                        case 3:
+                                            if (!(message.detectedLanguages && message.detectedLanguages.length))
+                                                message.detectedLanguages = [];
+                                            message.detectedLanguages.push($root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.decode(reader, reader.uint32()));
+                                            break;
+                                        default:
+                                            reader.skipType(tag & 7);
+                                            break;
+                                        }
+                                    }
+                                    return message;
+                                };
+    
+                                /**
+                                 * Decodes a Token message from the specified reader or buffer, length delimited.
+                                 * @function decodeDelimited
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Token
+                                 * @static
+                                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Token} Token
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                Token.decodeDelimited = function decodeDelimited(reader) {
+                                    if (!(reader instanceof $Reader))
+                                        reader = new $Reader(reader);
+                                    return this.decode(reader, reader.uint32());
+                                };
+    
+                                /**
+                                 * Verifies a Token message.
+                                 * @function verify
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Token
+                                 * @static
+                                 * @param {Object.<string,*>} message Plain object to verify
+                                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                                 */
+                                Token.verify = function verify(message) {
+                                    if (typeof message !== "object" || message === null)
+                                        return "object expected";
+                                    if (message.layout != null && message.hasOwnProperty("layout")) {
+                                        var error = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.verify(message.layout);
+                                        if (error)
+                                            return "layout." + error;
+                                    }
+                                    if (message.detectedBreak != null && message.hasOwnProperty("detectedBreak")) {
+                                        var error = $root.google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak.verify(message.detectedBreak);
+                                        if (error)
+                                            return "detectedBreak." + error;
+                                    }
+                                    if (message.detectedLanguages != null && message.hasOwnProperty("detectedLanguages")) {
+                                        if (!Array.isArray(message.detectedLanguages))
+                                            return "detectedLanguages: array expected";
+                                        for (var i = 0; i < message.detectedLanguages.length; ++i) {
+                                            var error = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.verify(message.detectedLanguages[i]);
+                                            if (error)
+                                                return "detectedLanguages." + error;
+                                        }
+                                    }
+                                    return null;
+                                };
+    
+                                /**
+                                 * Creates a Token message from a plain object. Also converts values to their respective internal types.
+                                 * @function fromObject
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Token
+                                 * @static
+                                 * @param {Object.<string,*>} object Plain object
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Token} Token
+                                 */
+                                Token.fromObject = function fromObject(object) {
+                                    if (object instanceof $root.google.cloud.documentai.v1beta1.Document.Page.Token)
+                                        return object;
+                                    var message = new $root.google.cloud.documentai.v1beta1.Document.Page.Token();
+                                    if (object.layout != null) {
+                                        if (typeof object.layout !== "object")
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Token.layout: object expected");
+                                        message.layout = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.fromObject(object.layout);
+                                    }
+                                    if (object.detectedBreak != null) {
+                                        if (typeof object.detectedBreak !== "object")
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Token.detectedBreak: object expected");
+                                        message.detectedBreak = $root.google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak.fromObject(object.detectedBreak);
+                                    }
+                                    if (object.detectedLanguages) {
+                                        if (!Array.isArray(object.detectedLanguages))
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Token.detectedLanguages: array expected");
+                                        message.detectedLanguages = [];
+                                        for (var i = 0; i < object.detectedLanguages.length; ++i) {
+                                            if (typeof object.detectedLanguages[i] !== "object")
+                                                throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Token.detectedLanguages: object expected");
+                                            message.detectedLanguages[i] = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.fromObject(object.detectedLanguages[i]);
+                                        }
+                                    }
+                                    return message;
+                                };
+    
+                                /**
+                                 * Creates a plain object from a Token message. Also converts values to other types if specified.
+                                 * @function toObject
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Token
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.Token} message Token
+                                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                                 * @returns {Object.<string,*>} Plain object
+                                 */
+                                Token.toObject = function toObject(message, options) {
+                                    if (!options)
+                                        options = {};
+                                    var object = {};
+                                    if (options.arrays || options.defaults)
+                                        object.detectedLanguages = [];
+                                    if (options.defaults) {
+                                        object.layout = null;
+                                        object.detectedBreak = null;
+                                    }
+                                    if (message.layout != null && message.hasOwnProperty("layout"))
+                                        object.layout = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.toObject(message.layout, options);
+                                    if (message.detectedBreak != null && message.hasOwnProperty("detectedBreak"))
+                                        object.detectedBreak = $root.google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak.toObject(message.detectedBreak, options);
+                                    if (message.detectedLanguages && message.detectedLanguages.length) {
+                                        object.detectedLanguages = [];
+                                        for (var j = 0; j < message.detectedLanguages.length; ++j)
+                                            object.detectedLanguages[j] = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.toObject(message.detectedLanguages[j], options);
+                                    }
+                                    return object;
+                                };
+    
+                                /**
+                                 * Converts this Token to JSON.
+                                 * @function toJSON
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Token
+                                 * @instance
+                                 * @returns {Object.<string,*>} JSON object
+                                 */
+                                Token.prototype.toJSON = function toJSON() {
+                                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                                };
+    
+                                Token.DetectedBreak = (function() {
+    
+                                    /**
+                                     * Properties of a DetectedBreak.
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Token
+                                     * @interface IDetectedBreak
+                                     * @property {google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak.Type|null} [type] DetectedBreak type
+                                     */
+    
+                                    /**
+                                     * Constructs a new DetectedBreak.
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Token
+                                     * @classdesc Represents a DetectedBreak.
+                                     * @implements IDetectedBreak
+                                     * @constructor
+                                     * @param {google.cloud.documentai.v1beta1.Document.Page.Token.IDetectedBreak=} [properties] Properties to set
+                                     */
+                                    function DetectedBreak(properties) {
+                                        if (properties)
+                                            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                                if (properties[keys[i]] != null)
+                                                    this[keys[i]] = properties[keys[i]];
+                                    }
+    
+                                    /**
+                                     * DetectedBreak type.
+                                     * @member {google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak.Type} type
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak
+                                     * @instance
+                                     */
+                                    DetectedBreak.prototype.type = 0;
+    
+                                    /**
+                                     * Creates a new DetectedBreak instance using the specified properties.
+                                     * @function create
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak
+                                     * @static
+                                     * @param {google.cloud.documentai.v1beta1.Document.Page.Token.IDetectedBreak=} [properties] Properties to set
+                                     * @returns {google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak} DetectedBreak instance
+                                     */
+                                    DetectedBreak.create = function create(properties) {
+                                        return new DetectedBreak(properties);
+                                    };
+    
+                                    /**
+                                     * Encodes the specified DetectedBreak message. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak.verify|verify} messages.
+                                     * @function encode
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak
+                                     * @static
+                                     * @param {google.cloud.documentai.v1beta1.Document.Page.Token.IDetectedBreak} message DetectedBreak message or plain object to encode
+                                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                                     * @returns {$protobuf.Writer} Writer
+                                     */
+                                    DetectedBreak.encode = function encode(message, writer) {
+                                        if (!writer)
+                                            writer = $Writer.create();
+                                        if (message.type != null && Object.hasOwnProperty.call(message, "type"))
+                                            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.type);
+                                        return writer;
+                                    };
+    
+                                    /**
+                                     * Encodes the specified DetectedBreak message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak.verify|verify} messages.
+                                     * @function encodeDelimited
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak
+                                     * @static
+                                     * @param {google.cloud.documentai.v1beta1.Document.Page.Token.IDetectedBreak} message DetectedBreak message or plain object to encode
+                                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                                     * @returns {$protobuf.Writer} Writer
+                                     */
+                                    DetectedBreak.encodeDelimited = function encodeDelimited(message, writer) {
+                                        return this.encode(message, writer).ldelim();
+                                    };
+    
+                                    /**
+                                     * Decodes a DetectedBreak message from the specified reader or buffer.
+                                     * @function decode
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak
+                                     * @static
+                                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                     * @param {number} [length] Message length if known beforehand
+                                     * @returns {google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak} DetectedBreak
+                                     * @throws {Error} If the payload is not a reader or valid buffer
+                                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                     */
+                                    DetectedBreak.decode = function decode(reader, length) {
+                                        if (!(reader instanceof $Reader))
+                                            reader = $Reader.create(reader);
+                                        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak();
+                                        while (reader.pos < end) {
+                                            var tag = reader.uint32();
+                                            switch (tag >>> 3) {
+                                            case 1:
+                                                message.type = reader.int32();
+                                                break;
+                                            default:
+                                                reader.skipType(tag & 7);
+                                                break;
+                                            }
+                                        }
+                                        return message;
+                                    };
+    
+                                    /**
+                                     * Decodes a DetectedBreak message from the specified reader or buffer, length delimited.
+                                     * @function decodeDelimited
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak
+                                     * @static
+                                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                     * @returns {google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak} DetectedBreak
+                                     * @throws {Error} If the payload is not a reader or valid buffer
+                                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                     */
+                                    DetectedBreak.decodeDelimited = function decodeDelimited(reader) {
+                                        if (!(reader instanceof $Reader))
+                                            reader = new $Reader(reader);
+                                        return this.decode(reader, reader.uint32());
+                                    };
+    
+                                    /**
+                                     * Verifies a DetectedBreak message.
+                                     * @function verify
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak
+                                     * @static
+                                     * @param {Object.<string,*>} message Plain object to verify
+                                     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                                     */
+                                    DetectedBreak.verify = function verify(message) {
+                                        if (typeof message !== "object" || message === null)
+                                            return "object expected";
+                                        if (message.type != null && message.hasOwnProperty("type"))
+                                            switch (message.type) {
+                                            default:
+                                                return "type: enum value expected";
+                                            case 0:
+                                            case 1:
+                                            case 2:
+                                            case 3:
+                                                break;
+                                            }
+                                        return null;
+                                    };
+    
+                                    /**
+                                     * Creates a DetectedBreak message from a plain object. Also converts values to their respective internal types.
+                                     * @function fromObject
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak
+                                     * @static
+                                     * @param {Object.<string,*>} object Plain object
+                                     * @returns {google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak} DetectedBreak
+                                     */
+                                    DetectedBreak.fromObject = function fromObject(object) {
+                                        if (object instanceof $root.google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak)
+                                            return object;
+                                        var message = new $root.google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak();
+                                        switch (object.type) {
+                                        case "TYPE_UNSPECIFIED":
+                                        case 0:
+                                            message.type = 0;
+                                            break;
+                                        case "SPACE":
+                                        case 1:
+                                            message.type = 1;
+                                            break;
+                                        case "WIDE_SPACE":
+                                        case 2:
+                                            message.type = 2;
+                                            break;
+                                        case "HYPHEN":
+                                        case 3:
+                                            message.type = 3;
+                                            break;
+                                        }
+                                        return message;
+                                    };
+    
+                                    /**
+                                     * Creates a plain object from a DetectedBreak message. Also converts values to other types if specified.
+                                     * @function toObject
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak
+                                     * @static
+                                     * @param {google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak} message DetectedBreak
+                                     * @param {$protobuf.IConversionOptions} [options] Conversion options
+                                     * @returns {Object.<string,*>} Plain object
+                                     */
+                                    DetectedBreak.toObject = function toObject(message, options) {
+                                        if (!options)
+                                            options = {};
+                                        var object = {};
+                                        if (options.defaults)
+                                            object.type = options.enums === String ? "TYPE_UNSPECIFIED" : 0;
+                                        if (message.type != null && message.hasOwnProperty("type"))
+                                            object.type = options.enums === String ? $root.google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak.Type[message.type] : message.type;
+                                        return object;
+                                    };
+    
+                                    /**
+                                     * Converts this DetectedBreak to JSON.
+                                     * @function toJSON
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak
+                                     * @instance
+                                     * @returns {Object.<string,*>} JSON object
+                                     */
+                                    DetectedBreak.prototype.toJSON = function toJSON() {
+                                        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                                    };
+    
+                                    /**
+                                     * Type enum.
+                                     * @name google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak.Type
+                                     * @enum {number}
+                                     * @property {number} TYPE_UNSPECIFIED=0 TYPE_UNSPECIFIED value
+                                     * @property {number} SPACE=1 SPACE value
+                                     * @property {number} WIDE_SPACE=2 WIDE_SPACE value
+                                     * @property {number} HYPHEN=3 HYPHEN value
+                                     */
+                                    DetectedBreak.Type = (function() {
+                                        var valuesById = {}, values = Object.create(valuesById);
+                                        values[valuesById[0] = "TYPE_UNSPECIFIED"] = 0;
+                                        values[valuesById[1] = "SPACE"] = 1;
+                                        values[valuesById[2] = "WIDE_SPACE"] = 2;
+                                        values[valuesById[3] = "HYPHEN"] = 3;
+                                        return values;
+                                    })();
+    
+                                    return DetectedBreak;
+                                })();
+    
+                                return Token;
+                            })();
+    
+                            Page.VisualElement = (function() {
+    
+                                /**
+                                 * Properties of a VisualElement.
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page
+                                 * @interface IVisualElement
+                                 * @property {google.cloud.documentai.v1beta1.Document.Page.ILayout|null} [layout] VisualElement layout
+                                 * @property {string|null} [type] VisualElement type
+                                 * @property {Array.<google.cloud.documentai.v1beta1.Document.Page.IDetectedLanguage>|null} [detectedLanguages] VisualElement detectedLanguages
+                                 */
+    
+                                /**
+                                 * Constructs a new VisualElement.
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page
+                                 * @classdesc Represents a VisualElement.
+                                 * @implements IVisualElement
+                                 * @constructor
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IVisualElement=} [properties] Properties to set
+                                 */
+                                function VisualElement(properties) {
+                                    this.detectedLanguages = [];
+                                    if (properties)
+                                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                            if (properties[keys[i]] != null)
+                                                this[keys[i]] = properties[keys[i]];
+                                }
+    
+                                /**
+                                 * VisualElement layout.
+                                 * @member {google.cloud.documentai.v1beta1.Document.Page.ILayout|null|undefined} layout
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.VisualElement
+                                 * @instance
+                                 */
+                                VisualElement.prototype.layout = null;
+    
+                                /**
+                                 * VisualElement type.
+                                 * @member {string} type
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.VisualElement
+                                 * @instance
+                                 */
+                                VisualElement.prototype.type = "";
+    
+                                /**
+                                 * VisualElement detectedLanguages.
+                                 * @member {Array.<google.cloud.documentai.v1beta1.Document.Page.IDetectedLanguage>} detectedLanguages
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.VisualElement
+                                 * @instance
+                                 */
+                                VisualElement.prototype.detectedLanguages = $util.emptyArray;
+    
+                                /**
+                                 * Creates a new VisualElement instance using the specified properties.
+                                 * @function create
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.VisualElement
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IVisualElement=} [properties] Properties to set
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.VisualElement} VisualElement instance
+                                 */
+                                VisualElement.create = function create(properties) {
+                                    return new VisualElement(properties);
+                                };
+    
+                                /**
+                                 * Encodes the specified VisualElement message. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.VisualElement.verify|verify} messages.
+                                 * @function encode
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.VisualElement
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IVisualElement} message VisualElement message or plain object to encode
+                                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                                 * @returns {$protobuf.Writer} Writer
+                                 */
+                                VisualElement.encode = function encode(message, writer) {
+                                    if (!writer)
+                                        writer = $Writer.create();
+                                    if (message.layout != null && Object.hasOwnProperty.call(message, "layout"))
+                                        $root.google.cloud.documentai.v1beta1.Document.Page.Layout.encode(message.layout, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                                    if (message.type != null && Object.hasOwnProperty.call(message, "type"))
+                                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.type);
+                                    if (message.detectedLanguages != null && message.detectedLanguages.length)
+                                        for (var i = 0; i < message.detectedLanguages.length; ++i)
+                                            $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.encode(message.detectedLanguages[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                                    return writer;
+                                };
+    
+                                /**
+                                 * Encodes the specified VisualElement message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.VisualElement.verify|verify} messages.
+                                 * @function encodeDelimited
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.VisualElement
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IVisualElement} message VisualElement message or plain object to encode
+                                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                                 * @returns {$protobuf.Writer} Writer
+                                 */
+                                VisualElement.encodeDelimited = function encodeDelimited(message, writer) {
+                                    return this.encode(message, writer).ldelim();
+                                };
+    
+                                /**
+                                 * Decodes a VisualElement message from the specified reader or buffer.
+                                 * @function decode
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.VisualElement
+                                 * @static
+                                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                 * @param {number} [length] Message length if known beforehand
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.VisualElement} VisualElement
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                VisualElement.decode = function decode(reader, length) {
+                                    if (!(reader instanceof $Reader))
+                                        reader = $Reader.create(reader);
+                                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.Document.Page.VisualElement();
+                                    while (reader.pos < end) {
+                                        var tag = reader.uint32();
+                                        switch (tag >>> 3) {
+                                        case 1:
+                                            message.layout = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.decode(reader, reader.uint32());
+                                            break;
+                                        case 2:
+                                            message.type = reader.string();
+                                            break;
+                                        case 3:
+                                            if (!(message.detectedLanguages && message.detectedLanguages.length))
+                                                message.detectedLanguages = [];
+                                            message.detectedLanguages.push($root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.decode(reader, reader.uint32()));
+                                            break;
+                                        default:
+                                            reader.skipType(tag & 7);
+                                            break;
+                                        }
+                                    }
+                                    return message;
+                                };
+    
+                                /**
+                                 * Decodes a VisualElement message from the specified reader or buffer, length delimited.
+                                 * @function decodeDelimited
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.VisualElement
+                                 * @static
+                                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.VisualElement} VisualElement
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                VisualElement.decodeDelimited = function decodeDelimited(reader) {
+                                    if (!(reader instanceof $Reader))
+                                        reader = new $Reader(reader);
+                                    return this.decode(reader, reader.uint32());
+                                };
+    
+                                /**
+                                 * Verifies a VisualElement message.
+                                 * @function verify
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.VisualElement
+                                 * @static
+                                 * @param {Object.<string,*>} message Plain object to verify
+                                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                                 */
+                                VisualElement.verify = function verify(message) {
+                                    if (typeof message !== "object" || message === null)
+                                        return "object expected";
+                                    if (message.layout != null && message.hasOwnProperty("layout")) {
+                                        var error = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.verify(message.layout);
+                                        if (error)
+                                            return "layout." + error;
+                                    }
+                                    if (message.type != null && message.hasOwnProperty("type"))
+                                        if (!$util.isString(message.type))
+                                            return "type: string expected";
+                                    if (message.detectedLanguages != null && message.hasOwnProperty("detectedLanguages")) {
+                                        if (!Array.isArray(message.detectedLanguages))
+                                            return "detectedLanguages: array expected";
+                                        for (var i = 0; i < message.detectedLanguages.length; ++i) {
+                                            var error = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.verify(message.detectedLanguages[i]);
+                                            if (error)
+                                                return "detectedLanguages." + error;
+                                        }
+                                    }
+                                    return null;
+                                };
+    
+                                /**
+                                 * Creates a VisualElement message from a plain object. Also converts values to their respective internal types.
+                                 * @function fromObject
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.VisualElement
+                                 * @static
+                                 * @param {Object.<string,*>} object Plain object
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.VisualElement} VisualElement
+                                 */
+                                VisualElement.fromObject = function fromObject(object) {
+                                    if (object instanceof $root.google.cloud.documentai.v1beta1.Document.Page.VisualElement)
+                                        return object;
+                                    var message = new $root.google.cloud.documentai.v1beta1.Document.Page.VisualElement();
+                                    if (object.layout != null) {
+                                        if (typeof object.layout !== "object")
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.VisualElement.layout: object expected");
+                                        message.layout = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.fromObject(object.layout);
+                                    }
+                                    if (object.type != null)
+                                        message.type = String(object.type);
+                                    if (object.detectedLanguages) {
+                                        if (!Array.isArray(object.detectedLanguages))
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.VisualElement.detectedLanguages: array expected");
+                                        message.detectedLanguages = [];
+                                        for (var i = 0; i < object.detectedLanguages.length; ++i) {
+                                            if (typeof object.detectedLanguages[i] !== "object")
+                                                throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.VisualElement.detectedLanguages: object expected");
+                                            message.detectedLanguages[i] = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.fromObject(object.detectedLanguages[i]);
+                                        }
+                                    }
+                                    return message;
+                                };
+    
+                                /**
+                                 * Creates a plain object from a VisualElement message. Also converts values to other types if specified.
+                                 * @function toObject
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.VisualElement
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.VisualElement} message VisualElement
+                                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                                 * @returns {Object.<string,*>} Plain object
+                                 */
+                                VisualElement.toObject = function toObject(message, options) {
+                                    if (!options)
+                                        options = {};
+                                    var object = {};
+                                    if (options.arrays || options.defaults)
+                                        object.detectedLanguages = [];
+                                    if (options.defaults) {
+                                        object.layout = null;
+                                        object.type = "";
+                                    }
+                                    if (message.layout != null && message.hasOwnProperty("layout"))
+                                        object.layout = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.toObject(message.layout, options);
+                                    if (message.type != null && message.hasOwnProperty("type"))
+                                        object.type = message.type;
+                                    if (message.detectedLanguages && message.detectedLanguages.length) {
+                                        object.detectedLanguages = [];
+                                        for (var j = 0; j < message.detectedLanguages.length; ++j)
+                                            object.detectedLanguages[j] = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.toObject(message.detectedLanguages[j], options);
+                                    }
+                                    return object;
+                                };
+    
+                                /**
+                                 * Converts this VisualElement to JSON.
+                                 * @function toJSON
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.VisualElement
+                                 * @instance
+                                 * @returns {Object.<string,*>} JSON object
+                                 */
+                                VisualElement.prototype.toJSON = function toJSON() {
+                                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                                };
+    
+                                return VisualElement;
+                            })();
+    
+                            Page.Table = (function() {
+    
+                                /**
+                                 * Properties of a Table.
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page
+                                 * @interface ITable
+                                 * @property {google.cloud.documentai.v1beta1.Document.Page.ILayout|null} [layout] Table layout
+                                 * @property {Array.<google.cloud.documentai.v1beta1.Document.Page.Table.ITableRow>|null} [headerRows] Table headerRows
+                                 * @property {Array.<google.cloud.documentai.v1beta1.Document.Page.Table.ITableRow>|null} [bodyRows] Table bodyRows
+                                 * @property {Array.<google.cloud.documentai.v1beta1.Document.Page.IDetectedLanguage>|null} [detectedLanguages] Table detectedLanguages
+                                 */
+    
+                                /**
+                                 * Constructs a new Table.
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page
+                                 * @classdesc Represents a Table.
+                                 * @implements ITable
+                                 * @constructor
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.ITable=} [properties] Properties to set
+                                 */
+                                function Table(properties) {
+                                    this.headerRows = [];
+                                    this.bodyRows = [];
+                                    this.detectedLanguages = [];
+                                    if (properties)
+                                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                            if (properties[keys[i]] != null)
+                                                this[keys[i]] = properties[keys[i]];
+                                }
+    
+                                /**
+                                 * Table layout.
+                                 * @member {google.cloud.documentai.v1beta1.Document.Page.ILayout|null|undefined} layout
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Table
+                                 * @instance
+                                 */
+                                Table.prototype.layout = null;
+    
+                                /**
+                                 * Table headerRows.
+                                 * @member {Array.<google.cloud.documentai.v1beta1.Document.Page.Table.ITableRow>} headerRows
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Table
+                                 * @instance
+                                 */
+                                Table.prototype.headerRows = $util.emptyArray;
+    
+                                /**
+                                 * Table bodyRows.
+                                 * @member {Array.<google.cloud.documentai.v1beta1.Document.Page.Table.ITableRow>} bodyRows
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Table
+                                 * @instance
+                                 */
+                                Table.prototype.bodyRows = $util.emptyArray;
+    
+                                /**
+                                 * Table detectedLanguages.
+                                 * @member {Array.<google.cloud.documentai.v1beta1.Document.Page.IDetectedLanguage>} detectedLanguages
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Table
+                                 * @instance
+                                 */
+                                Table.prototype.detectedLanguages = $util.emptyArray;
+    
+                                /**
+                                 * Creates a new Table instance using the specified properties.
+                                 * @function create
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Table
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.ITable=} [properties] Properties to set
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Table} Table instance
+                                 */
+                                Table.create = function create(properties) {
+                                    return new Table(properties);
+                                };
+    
+                                /**
+                                 * Encodes the specified Table message. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.Table.verify|verify} messages.
+                                 * @function encode
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Table
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.ITable} message Table message or plain object to encode
+                                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                                 * @returns {$protobuf.Writer} Writer
+                                 */
+                                Table.encode = function encode(message, writer) {
+                                    if (!writer)
+                                        writer = $Writer.create();
+                                    if (message.layout != null && Object.hasOwnProperty.call(message, "layout"))
+                                        $root.google.cloud.documentai.v1beta1.Document.Page.Layout.encode(message.layout, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                                    if (message.headerRows != null && message.headerRows.length)
+                                        for (var i = 0; i < message.headerRows.length; ++i)
+                                            $root.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow.encode(message.headerRows[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                                    if (message.bodyRows != null && message.bodyRows.length)
+                                        for (var i = 0; i < message.bodyRows.length; ++i)
+                                            $root.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow.encode(message.bodyRows[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                                    if (message.detectedLanguages != null && message.detectedLanguages.length)
+                                        for (var i = 0; i < message.detectedLanguages.length; ++i)
+                                            $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.encode(message.detectedLanguages[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                                    return writer;
+                                };
+    
+                                /**
+                                 * Encodes the specified Table message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.Table.verify|verify} messages.
+                                 * @function encodeDelimited
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Table
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.ITable} message Table message or plain object to encode
+                                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                                 * @returns {$protobuf.Writer} Writer
+                                 */
+                                Table.encodeDelimited = function encodeDelimited(message, writer) {
+                                    return this.encode(message, writer).ldelim();
+                                };
+    
+                                /**
+                                 * Decodes a Table message from the specified reader or buffer.
+                                 * @function decode
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Table
+                                 * @static
+                                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                 * @param {number} [length] Message length if known beforehand
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Table} Table
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                Table.decode = function decode(reader, length) {
+                                    if (!(reader instanceof $Reader))
+                                        reader = $Reader.create(reader);
+                                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.Document.Page.Table();
+                                    while (reader.pos < end) {
+                                        var tag = reader.uint32();
+                                        switch (tag >>> 3) {
+                                        case 1:
+                                            message.layout = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.decode(reader, reader.uint32());
+                                            break;
+                                        case 2:
+                                            if (!(message.headerRows && message.headerRows.length))
+                                                message.headerRows = [];
+                                            message.headerRows.push($root.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow.decode(reader, reader.uint32()));
+                                            break;
+                                        case 3:
+                                            if (!(message.bodyRows && message.bodyRows.length))
+                                                message.bodyRows = [];
+                                            message.bodyRows.push($root.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow.decode(reader, reader.uint32()));
+                                            break;
+                                        case 4:
+                                            if (!(message.detectedLanguages && message.detectedLanguages.length))
+                                                message.detectedLanguages = [];
+                                            message.detectedLanguages.push($root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.decode(reader, reader.uint32()));
+                                            break;
+                                        default:
+                                            reader.skipType(tag & 7);
+                                            break;
+                                        }
+                                    }
+                                    return message;
+                                };
+    
+                                /**
+                                 * Decodes a Table message from the specified reader or buffer, length delimited.
+                                 * @function decodeDelimited
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Table
+                                 * @static
+                                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Table} Table
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                Table.decodeDelimited = function decodeDelimited(reader) {
+                                    if (!(reader instanceof $Reader))
+                                        reader = new $Reader(reader);
+                                    return this.decode(reader, reader.uint32());
+                                };
+    
+                                /**
+                                 * Verifies a Table message.
+                                 * @function verify
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Table
+                                 * @static
+                                 * @param {Object.<string,*>} message Plain object to verify
+                                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                                 */
+                                Table.verify = function verify(message) {
+                                    if (typeof message !== "object" || message === null)
+                                        return "object expected";
+                                    if (message.layout != null && message.hasOwnProperty("layout")) {
+                                        var error = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.verify(message.layout);
+                                        if (error)
+                                            return "layout." + error;
+                                    }
+                                    if (message.headerRows != null && message.hasOwnProperty("headerRows")) {
+                                        if (!Array.isArray(message.headerRows))
+                                            return "headerRows: array expected";
+                                        for (var i = 0; i < message.headerRows.length; ++i) {
+                                            var error = $root.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow.verify(message.headerRows[i]);
+                                            if (error)
+                                                return "headerRows." + error;
+                                        }
+                                    }
+                                    if (message.bodyRows != null && message.hasOwnProperty("bodyRows")) {
+                                        if (!Array.isArray(message.bodyRows))
+                                            return "bodyRows: array expected";
+                                        for (var i = 0; i < message.bodyRows.length; ++i) {
+                                            var error = $root.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow.verify(message.bodyRows[i]);
+                                            if (error)
+                                                return "bodyRows." + error;
+                                        }
+                                    }
+                                    if (message.detectedLanguages != null && message.hasOwnProperty("detectedLanguages")) {
+                                        if (!Array.isArray(message.detectedLanguages))
+                                            return "detectedLanguages: array expected";
+                                        for (var i = 0; i < message.detectedLanguages.length; ++i) {
+                                            var error = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.verify(message.detectedLanguages[i]);
+                                            if (error)
+                                                return "detectedLanguages." + error;
+                                        }
+                                    }
+                                    return null;
+                                };
+    
+                                /**
+                                 * Creates a Table message from a plain object. Also converts values to their respective internal types.
+                                 * @function fromObject
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Table
+                                 * @static
+                                 * @param {Object.<string,*>} object Plain object
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.Table} Table
+                                 */
+                                Table.fromObject = function fromObject(object) {
+                                    if (object instanceof $root.google.cloud.documentai.v1beta1.Document.Page.Table)
+                                        return object;
+                                    var message = new $root.google.cloud.documentai.v1beta1.Document.Page.Table();
+                                    if (object.layout != null) {
+                                        if (typeof object.layout !== "object")
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Table.layout: object expected");
+                                        message.layout = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.fromObject(object.layout);
+                                    }
+                                    if (object.headerRows) {
+                                        if (!Array.isArray(object.headerRows))
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Table.headerRows: array expected");
+                                        message.headerRows = [];
+                                        for (var i = 0; i < object.headerRows.length; ++i) {
+                                            if (typeof object.headerRows[i] !== "object")
+                                                throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Table.headerRows: object expected");
+                                            message.headerRows[i] = $root.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow.fromObject(object.headerRows[i]);
+                                        }
+                                    }
+                                    if (object.bodyRows) {
+                                        if (!Array.isArray(object.bodyRows))
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Table.bodyRows: array expected");
+                                        message.bodyRows = [];
+                                        for (var i = 0; i < object.bodyRows.length; ++i) {
+                                            if (typeof object.bodyRows[i] !== "object")
+                                                throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Table.bodyRows: object expected");
+                                            message.bodyRows[i] = $root.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow.fromObject(object.bodyRows[i]);
+                                        }
+                                    }
+                                    if (object.detectedLanguages) {
+                                        if (!Array.isArray(object.detectedLanguages))
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Table.detectedLanguages: array expected");
+                                        message.detectedLanguages = [];
+                                        for (var i = 0; i < object.detectedLanguages.length; ++i) {
+                                            if (typeof object.detectedLanguages[i] !== "object")
+                                                throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Table.detectedLanguages: object expected");
+                                            message.detectedLanguages[i] = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.fromObject(object.detectedLanguages[i]);
+                                        }
+                                    }
+                                    return message;
+                                };
+    
+                                /**
+                                 * Creates a plain object from a Table message. Also converts values to other types if specified.
+                                 * @function toObject
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Table
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.Table} message Table
+                                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                                 * @returns {Object.<string,*>} Plain object
+                                 */
+                                Table.toObject = function toObject(message, options) {
+                                    if (!options)
+                                        options = {};
+                                    var object = {};
+                                    if (options.arrays || options.defaults) {
+                                        object.headerRows = [];
+                                        object.bodyRows = [];
+                                        object.detectedLanguages = [];
+                                    }
+                                    if (options.defaults)
+                                        object.layout = null;
+                                    if (message.layout != null && message.hasOwnProperty("layout"))
+                                        object.layout = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.toObject(message.layout, options);
+                                    if (message.headerRows && message.headerRows.length) {
+                                        object.headerRows = [];
+                                        for (var j = 0; j < message.headerRows.length; ++j)
+                                            object.headerRows[j] = $root.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow.toObject(message.headerRows[j], options);
+                                    }
+                                    if (message.bodyRows && message.bodyRows.length) {
+                                        object.bodyRows = [];
+                                        for (var j = 0; j < message.bodyRows.length; ++j)
+                                            object.bodyRows[j] = $root.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow.toObject(message.bodyRows[j], options);
+                                    }
+                                    if (message.detectedLanguages && message.detectedLanguages.length) {
+                                        object.detectedLanguages = [];
+                                        for (var j = 0; j < message.detectedLanguages.length; ++j)
+                                            object.detectedLanguages[j] = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.toObject(message.detectedLanguages[j], options);
+                                    }
+                                    return object;
+                                };
+    
+                                /**
+                                 * Converts this Table to JSON.
+                                 * @function toJSON
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.Table
+                                 * @instance
+                                 * @returns {Object.<string,*>} JSON object
+                                 */
+                                Table.prototype.toJSON = function toJSON() {
+                                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                                };
+    
+                                Table.TableRow = (function() {
+    
+                                    /**
+                                     * Properties of a TableRow.
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table
+                                     * @interface ITableRow
+                                     * @property {Array.<google.cloud.documentai.v1beta1.Document.Page.Table.ITableCell>|null} [cells] TableRow cells
+                                     */
+    
+                                    /**
+                                     * Constructs a new TableRow.
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table
+                                     * @classdesc Represents a TableRow.
+                                     * @implements ITableRow
+                                     * @constructor
+                                     * @param {google.cloud.documentai.v1beta1.Document.Page.Table.ITableRow=} [properties] Properties to set
+                                     */
+                                    function TableRow(properties) {
+                                        this.cells = [];
+                                        if (properties)
+                                            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                                if (properties[keys[i]] != null)
+                                                    this[keys[i]] = properties[keys[i]];
+                                    }
+    
+                                    /**
+                                     * TableRow cells.
+                                     * @member {Array.<google.cloud.documentai.v1beta1.Document.Page.Table.ITableCell>} cells
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table.TableRow
+                                     * @instance
+                                     */
+                                    TableRow.prototype.cells = $util.emptyArray;
+    
+                                    /**
+                                     * Creates a new TableRow instance using the specified properties.
+                                     * @function create
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table.TableRow
+                                     * @static
+                                     * @param {google.cloud.documentai.v1beta1.Document.Page.Table.ITableRow=} [properties] Properties to set
+                                     * @returns {google.cloud.documentai.v1beta1.Document.Page.Table.TableRow} TableRow instance
+                                     */
+                                    TableRow.create = function create(properties) {
+                                        return new TableRow(properties);
+                                    };
+    
+                                    /**
+                                     * Encodes the specified TableRow message. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.Table.TableRow.verify|verify} messages.
+                                     * @function encode
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table.TableRow
+                                     * @static
+                                     * @param {google.cloud.documentai.v1beta1.Document.Page.Table.ITableRow} message TableRow message or plain object to encode
+                                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                                     * @returns {$protobuf.Writer} Writer
+                                     */
+                                    TableRow.encode = function encode(message, writer) {
+                                        if (!writer)
+                                            writer = $Writer.create();
+                                        if (message.cells != null && message.cells.length)
+                                            for (var i = 0; i < message.cells.length; ++i)
+                                                $root.google.cloud.documentai.v1beta1.Document.Page.Table.TableCell.encode(message.cells[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                                        return writer;
+                                    };
+    
+                                    /**
+                                     * Encodes the specified TableRow message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.Table.TableRow.verify|verify} messages.
+                                     * @function encodeDelimited
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table.TableRow
+                                     * @static
+                                     * @param {google.cloud.documentai.v1beta1.Document.Page.Table.ITableRow} message TableRow message or plain object to encode
+                                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                                     * @returns {$protobuf.Writer} Writer
+                                     */
+                                    TableRow.encodeDelimited = function encodeDelimited(message, writer) {
+                                        return this.encode(message, writer).ldelim();
+                                    };
+    
+                                    /**
+                                     * Decodes a TableRow message from the specified reader or buffer.
+                                     * @function decode
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table.TableRow
+                                     * @static
+                                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                     * @param {number} [length] Message length if known beforehand
+                                     * @returns {google.cloud.documentai.v1beta1.Document.Page.Table.TableRow} TableRow
+                                     * @throws {Error} If the payload is not a reader or valid buffer
+                                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                     */
+                                    TableRow.decode = function decode(reader, length) {
+                                        if (!(reader instanceof $Reader))
+                                            reader = $Reader.create(reader);
+                                        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow();
+                                        while (reader.pos < end) {
+                                            var tag = reader.uint32();
+                                            switch (tag >>> 3) {
+                                            case 1:
+                                                if (!(message.cells && message.cells.length))
+                                                    message.cells = [];
+                                                message.cells.push($root.google.cloud.documentai.v1beta1.Document.Page.Table.TableCell.decode(reader, reader.uint32()));
+                                                break;
+                                            default:
+                                                reader.skipType(tag & 7);
+                                                break;
+                                            }
+                                        }
+                                        return message;
+                                    };
+    
+                                    /**
+                                     * Decodes a TableRow message from the specified reader or buffer, length delimited.
+                                     * @function decodeDelimited
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table.TableRow
+                                     * @static
+                                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                     * @returns {google.cloud.documentai.v1beta1.Document.Page.Table.TableRow} TableRow
+                                     * @throws {Error} If the payload is not a reader or valid buffer
+                                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                     */
+                                    TableRow.decodeDelimited = function decodeDelimited(reader) {
+                                        if (!(reader instanceof $Reader))
+                                            reader = new $Reader(reader);
+                                        return this.decode(reader, reader.uint32());
+                                    };
+    
+                                    /**
+                                     * Verifies a TableRow message.
+                                     * @function verify
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table.TableRow
+                                     * @static
+                                     * @param {Object.<string,*>} message Plain object to verify
+                                     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                                     */
+                                    TableRow.verify = function verify(message) {
+                                        if (typeof message !== "object" || message === null)
+                                            return "object expected";
+                                        if (message.cells != null && message.hasOwnProperty("cells")) {
+                                            if (!Array.isArray(message.cells))
+                                                return "cells: array expected";
+                                            for (var i = 0; i < message.cells.length; ++i) {
+                                                var error = $root.google.cloud.documentai.v1beta1.Document.Page.Table.TableCell.verify(message.cells[i]);
+                                                if (error)
+                                                    return "cells." + error;
+                                            }
+                                        }
+                                        return null;
+                                    };
+    
+                                    /**
+                                     * Creates a TableRow message from a plain object. Also converts values to their respective internal types.
+                                     * @function fromObject
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table.TableRow
+                                     * @static
+                                     * @param {Object.<string,*>} object Plain object
+                                     * @returns {google.cloud.documentai.v1beta1.Document.Page.Table.TableRow} TableRow
+                                     */
+                                    TableRow.fromObject = function fromObject(object) {
+                                        if (object instanceof $root.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow)
+                                            return object;
+                                        var message = new $root.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow();
+                                        if (object.cells) {
+                                            if (!Array.isArray(object.cells))
+                                                throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Table.TableRow.cells: array expected");
+                                            message.cells = [];
+                                            for (var i = 0; i < object.cells.length; ++i) {
+                                                if (typeof object.cells[i] !== "object")
+                                                    throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Table.TableRow.cells: object expected");
+                                                message.cells[i] = $root.google.cloud.documentai.v1beta1.Document.Page.Table.TableCell.fromObject(object.cells[i]);
+                                            }
+                                        }
+                                        return message;
+                                    };
+    
+                                    /**
+                                     * Creates a plain object from a TableRow message. Also converts values to other types if specified.
+                                     * @function toObject
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table.TableRow
+                                     * @static
+                                     * @param {google.cloud.documentai.v1beta1.Document.Page.Table.TableRow} message TableRow
+                                     * @param {$protobuf.IConversionOptions} [options] Conversion options
+                                     * @returns {Object.<string,*>} Plain object
+                                     */
+                                    TableRow.toObject = function toObject(message, options) {
+                                        if (!options)
+                                            options = {};
+                                        var object = {};
+                                        if (options.arrays || options.defaults)
+                                            object.cells = [];
+                                        if (message.cells && message.cells.length) {
+                                            object.cells = [];
+                                            for (var j = 0; j < message.cells.length; ++j)
+                                                object.cells[j] = $root.google.cloud.documentai.v1beta1.Document.Page.Table.TableCell.toObject(message.cells[j], options);
+                                        }
+                                        return object;
+                                    };
+    
+                                    /**
+                                     * Converts this TableRow to JSON.
+                                     * @function toJSON
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table.TableRow
+                                     * @instance
+                                     * @returns {Object.<string,*>} JSON object
+                                     */
+                                    TableRow.prototype.toJSON = function toJSON() {
+                                        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                                    };
+    
+                                    return TableRow;
+                                })();
+    
+                                Table.TableCell = (function() {
+    
+                                    /**
+                                     * Properties of a TableCell.
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table
+                                     * @interface ITableCell
+                                     * @property {google.cloud.documentai.v1beta1.Document.Page.ILayout|null} [layout] TableCell layout
+                                     * @property {number|null} [rowSpan] TableCell rowSpan
+                                     * @property {number|null} [colSpan] TableCell colSpan
+                                     * @property {Array.<google.cloud.documentai.v1beta1.Document.Page.IDetectedLanguage>|null} [detectedLanguages] TableCell detectedLanguages
+                                     */
+    
+                                    /**
+                                     * Constructs a new TableCell.
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table
+                                     * @classdesc Represents a TableCell.
+                                     * @implements ITableCell
+                                     * @constructor
+                                     * @param {google.cloud.documentai.v1beta1.Document.Page.Table.ITableCell=} [properties] Properties to set
+                                     */
+                                    function TableCell(properties) {
+                                        this.detectedLanguages = [];
+                                        if (properties)
+                                            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                                if (properties[keys[i]] != null)
+                                                    this[keys[i]] = properties[keys[i]];
+                                    }
+    
+                                    /**
+                                     * TableCell layout.
+                                     * @member {google.cloud.documentai.v1beta1.Document.Page.ILayout|null|undefined} layout
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table.TableCell
+                                     * @instance
+                                     */
+                                    TableCell.prototype.layout = null;
+    
+                                    /**
+                                     * TableCell rowSpan.
+                                     * @member {number} rowSpan
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table.TableCell
+                                     * @instance
+                                     */
+                                    TableCell.prototype.rowSpan = 0;
+    
+                                    /**
+                                     * TableCell colSpan.
+                                     * @member {number} colSpan
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table.TableCell
+                                     * @instance
+                                     */
+                                    TableCell.prototype.colSpan = 0;
+    
+                                    /**
+                                     * TableCell detectedLanguages.
+                                     * @member {Array.<google.cloud.documentai.v1beta1.Document.Page.IDetectedLanguage>} detectedLanguages
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table.TableCell
+                                     * @instance
+                                     */
+                                    TableCell.prototype.detectedLanguages = $util.emptyArray;
+    
+                                    /**
+                                     * Creates a new TableCell instance using the specified properties.
+                                     * @function create
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table.TableCell
+                                     * @static
+                                     * @param {google.cloud.documentai.v1beta1.Document.Page.Table.ITableCell=} [properties] Properties to set
+                                     * @returns {google.cloud.documentai.v1beta1.Document.Page.Table.TableCell} TableCell instance
+                                     */
+                                    TableCell.create = function create(properties) {
+                                        return new TableCell(properties);
+                                    };
+    
+                                    /**
+                                     * Encodes the specified TableCell message. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.Table.TableCell.verify|verify} messages.
+                                     * @function encode
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table.TableCell
+                                     * @static
+                                     * @param {google.cloud.documentai.v1beta1.Document.Page.Table.ITableCell} message TableCell message or plain object to encode
+                                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                                     * @returns {$protobuf.Writer} Writer
+                                     */
+                                    TableCell.encode = function encode(message, writer) {
+                                        if (!writer)
+                                            writer = $Writer.create();
+                                        if (message.layout != null && Object.hasOwnProperty.call(message, "layout"))
+                                            $root.google.cloud.documentai.v1beta1.Document.Page.Layout.encode(message.layout, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                                        if (message.rowSpan != null && Object.hasOwnProperty.call(message, "rowSpan"))
+                                            writer.uint32(/* id 2, wireType 0 =*/16).int32(message.rowSpan);
+                                        if (message.colSpan != null && Object.hasOwnProperty.call(message, "colSpan"))
+                                            writer.uint32(/* id 3, wireType 0 =*/24).int32(message.colSpan);
+                                        if (message.detectedLanguages != null && message.detectedLanguages.length)
+                                            for (var i = 0; i < message.detectedLanguages.length; ++i)
+                                                $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.encode(message.detectedLanguages[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                                        return writer;
+                                    };
+    
+                                    /**
+                                     * Encodes the specified TableCell message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.Table.TableCell.verify|verify} messages.
+                                     * @function encodeDelimited
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table.TableCell
+                                     * @static
+                                     * @param {google.cloud.documentai.v1beta1.Document.Page.Table.ITableCell} message TableCell message or plain object to encode
+                                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                                     * @returns {$protobuf.Writer} Writer
+                                     */
+                                    TableCell.encodeDelimited = function encodeDelimited(message, writer) {
+                                        return this.encode(message, writer).ldelim();
+                                    };
+    
+                                    /**
+                                     * Decodes a TableCell message from the specified reader or buffer.
+                                     * @function decode
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table.TableCell
+                                     * @static
+                                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                     * @param {number} [length] Message length if known beforehand
+                                     * @returns {google.cloud.documentai.v1beta1.Document.Page.Table.TableCell} TableCell
+                                     * @throws {Error} If the payload is not a reader or valid buffer
+                                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                     */
+                                    TableCell.decode = function decode(reader, length) {
+                                        if (!(reader instanceof $Reader))
+                                            reader = $Reader.create(reader);
+                                        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.Document.Page.Table.TableCell();
+                                        while (reader.pos < end) {
+                                            var tag = reader.uint32();
+                                            switch (tag >>> 3) {
+                                            case 1:
+                                                message.layout = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.decode(reader, reader.uint32());
+                                                break;
+                                            case 2:
+                                                message.rowSpan = reader.int32();
+                                                break;
+                                            case 3:
+                                                message.colSpan = reader.int32();
+                                                break;
+                                            case 4:
+                                                if (!(message.detectedLanguages && message.detectedLanguages.length))
+                                                    message.detectedLanguages = [];
+                                                message.detectedLanguages.push($root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.decode(reader, reader.uint32()));
+                                                break;
+                                            default:
+                                                reader.skipType(tag & 7);
+                                                break;
+                                            }
+                                        }
+                                        return message;
+                                    };
+    
+                                    /**
+                                     * Decodes a TableCell message from the specified reader or buffer, length delimited.
+                                     * @function decodeDelimited
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table.TableCell
+                                     * @static
+                                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                     * @returns {google.cloud.documentai.v1beta1.Document.Page.Table.TableCell} TableCell
+                                     * @throws {Error} If the payload is not a reader or valid buffer
+                                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                     */
+                                    TableCell.decodeDelimited = function decodeDelimited(reader) {
+                                        if (!(reader instanceof $Reader))
+                                            reader = new $Reader(reader);
+                                        return this.decode(reader, reader.uint32());
+                                    };
+    
+                                    /**
+                                     * Verifies a TableCell message.
+                                     * @function verify
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table.TableCell
+                                     * @static
+                                     * @param {Object.<string,*>} message Plain object to verify
+                                     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                                     */
+                                    TableCell.verify = function verify(message) {
+                                        if (typeof message !== "object" || message === null)
+                                            return "object expected";
+                                        if (message.layout != null && message.hasOwnProperty("layout")) {
+                                            var error = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.verify(message.layout);
+                                            if (error)
+                                                return "layout." + error;
+                                        }
+                                        if (message.rowSpan != null && message.hasOwnProperty("rowSpan"))
+                                            if (!$util.isInteger(message.rowSpan))
+                                                return "rowSpan: integer expected";
+                                        if (message.colSpan != null && message.hasOwnProperty("colSpan"))
+                                            if (!$util.isInteger(message.colSpan))
+                                                return "colSpan: integer expected";
+                                        if (message.detectedLanguages != null && message.hasOwnProperty("detectedLanguages")) {
+                                            if (!Array.isArray(message.detectedLanguages))
+                                                return "detectedLanguages: array expected";
+                                            for (var i = 0; i < message.detectedLanguages.length; ++i) {
+                                                var error = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.verify(message.detectedLanguages[i]);
+                                                if (error)
+                                                    return "detectedLanguages." + error;
+                                            }
+                                        }
+                                        return null;
+                                    };
+    
+                                    /**
+                                     * Creates a TableCell message from a plain object. Also converts values to their respective internal types.
+                                     * @function fromObject
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table.TableCell
+                                     * @static
+                                     * @param {Object.<string,*>} object Plain object
+                                     * @returns {google.cloud.documentai.v1beta1.Document.Page.Table.TableCell} TableCell
+                                     */
+                                    TableCell.fromObject = function fromObject(object) {
+                                        if (object instanceof $root.google.cloud.documentai.v1beta1.Document.Page.Table.TableCell)
+                                            return object;
+                                        var message = new $root.google.cloud.documentai.v1beta1.Document.Page.Table.TableCell();
+                                        if (object.layout != null) {
+                                            if (typeof object.layout !== "object")
+                                                throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Table.TableCell.layout: object expected");
+                                            message.layout = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.fromObject(object.layout);
+                                        }
+                                        if (object.rowSpan != null)
+                                            message.rowSpan = object.rowSpan | 0;
+                                        if (object.colSpan != null)
+                                            message.colSpan = object.colSpan | 0;
+                                        if (object.detectedLanguages) {
+                                            if (!Array.isArray(object.detectedLanguages))
+                                                throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Table.TableCell.detectedLanguages: array expected");
+                                            message.detectedLanguages = [];
+                                            for (var i = 0; i < object.detectedLanguages.length; ++i) {
+                                                if (typeof object.detectedLanguages[i] !== "object")
+                                                    throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.Table.TableCell.detectedLanguages: object expected");
+                                                message.detectedLanguages[i] = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.fromObject(object.detectedLanguages[i]);
+                                            }
+                                        }
+                                        return message;
+                                    };
+    
+                                    /**
+                                     * Creates a plain object from a TableCell message. Also converts values to other types if specified.
+                                     * @function toObject
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table.TableCell
+                                     * @static
+                                     * @param {google.cloud.documentai.v1beta1.Document.Page.Table.TableCell} message TableCell
+                                     * @param {$protobuf.IConversionOptions} [options] Conversion options
+                                     * @returns {Object.<string,*>} Plain object
+                                     */
+                                    TableCell.toObject = function toObject(message, options) {
+                                        if (!options)
+                                            options = {};
+                                        var object = {};
+                                        if (options.arrays || options.defaults)
+                                            object.detectedLanguages = [];
+                                        if (options.defaults) {
+                                            object.layout = null;
+                                            object.rowSpan = 0;
+                                            object.colSpan = 0;
+                                        }
+                                        if (message.layout != null && message.hasOwnProperty("layout"))
+                                            object.layout = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.toObject(message.layout, options);
+                                        if (message.rowSpan != null && message.hasOwnProperty("rowSpan"))
+                                            object.rowSpan = message.rowSpan;
+                                        if (message.colSpan != null && message.hasOwnProperty("colSpan"))
+                                            object.colSpan = message.colSpan;
+                                        if (message.detectedLanguages && message.detectedLanguages.length) {
+                                            object.detectedLanguages = [];
+                                            for (var j = 0; j < message.detectedLanguages.length; ++j)
+                                                object.detectedLanguages[j] = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.toObject(message.detectedLanguages[j], options);
+                                        }
+                                        return object;
+                                    };
+    
+                                    /**
+                                     * Converts this TableCell to JSON.
+                                     * @function toJSON
+                                     * @memberof google.cloud.documentai.v1beta1.Document.Page.Table.TableCell
+                                     * @instance
+                                     * @returns {Object.<string,*>} JSON object
+                                     */
+                                    TableCell.prototype.toJSON = function toJSON() {
+                                        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                                    };
+    
+                                    return TableCell;
+                                })();
+    
+                                return Table;
+                            })();
+    
+                            Page.FormField = (function() {
+    
+                                /**
+                                 * Properties of a FormField.
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page
+                                 * @interface IFormField
+                                 * @property {google.cloud.documentai.v1beta1.Document.Page.ILayout|null} [fieldName] FormField fieldName
+                                 * @property {google.cloud.documentai.v1beta1.Document.Page.ILayout|null} [fieldValue] FormField fieldValue
+                                 * @property {Array.<google.cloud.documentai.v1beta1.Document.Page.IDetectedLanguage>|null} [nameDetectedLanguages] FormField nameDetectedLanguages
+                                 * @property {Array.<google.cloud.documentai.v1beta1.Document.Page.IDetectedLanguage>|null} [valueDetectedLanguages] FormField valueDetectedLanguages
+                                 */
+    
+                                /**
+                                 * Constructs a new FormField.
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page
+                                 * @classdesc Represents a FormField.
+                                 * @implements IFormField
+                                 * @constructor
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IFormField=} [properties] Properties to set
+                                 */
+                                function FormField(properties) {
+                                    this.nameDetectedLanguages = [];
+                                    this.valueDetectedLanguages = [];
+                                    if (properties)
+                                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                            if (properties[keys[i]] != null)
+                                                this[keys[i]] = properties[keys[i]];
+                                }
+    
+                                /**
+                                 * FormField fieldName.
+                                 * @member {google.cloud.documentai.v1beta1.Document.Page.ILayout|null|undefined} fieldName
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.FormField
+                                 * @instance
+                                 */
+                                FormField.prototype.fieldName = null;
+    
+                                /**
+                                 * FormField fieldValue.
+                                 * @member {google.cloud.documentai.v1beta1.Document.Page.ILayout|null|undefined} fieldValue
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.FormField
+                                 * @instance
+                                 */
+                                FormField.prototype.fieldValue = null;
+    
+                                /**
+                                 * FormField nameDetectedLanguages.
+                                 * @member {Array.<google.cloud.documentai.v1beta1.Document.Page.IDetectedLanguage>} nameDetectedLanguages
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.FormField
+                                 * @instance
+                                 */
+                                FormField.prototype.nameDetectedLanguages = $util.emptyArray;
+    
+                                /**
+                                 * FormField valueDetectedLanguages.
+                                 * @member {Array.<google.cloud.documentai.v1beta1.Document.Page.IDetectedLanguage>} valueDetectedLanguages
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.FormField
+                                 * @instance
+                                 */
+                                FormField.prototype.valueDetectedLanguages = $util.emptyArray;
+    
+                                /**
+                                 * Creates a new FormField instance using the specified properties.
+                                 * @function create
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.FormField
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IFormField=} [properties] Properties to set
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.FormField} FormField instance
+                                 */
+                                FormField.create = function create(properties) {
+                                    return new FormField(properties);
+                                };
+    
+                                /**
+                                 * Encodes the specified FormField message. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.FormField.verify|verify} messages.
+                                 * @function encode
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.FormField
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IFormField} message FormField message or plain object to encode
+                                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                                 * @returns {$protobuf.Writer} Writer
+                                 */
+                                FormField.encode = function encode(message, writer) {
+                                    if (!writer)
+                                        writer = $Writer.create();
+                                    if (message.fieldName != null && Object.hasOwnProperty.call(message, "fieldName"))
+                                        $root.google.cloud.documentai.v1beta1.Document.Page.Layout.encode(message.fieldName, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                                    if (message.fieldValue != null && Object.hasOwnProperty.call(message, "fieldValue"))
+                                        $root.google.cloud.documentai.v1beta1.Document.Page.Layout.encode(message.fieldValue, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                                    if (message.nameDetectedLanguages != null && message.nameDetectedLanguages.length)
+                                        for (var i = 0; i < message.nameDetectedLanguages.length; ++i)
+                                            $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.encode(message.nameDetectedLanguages[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                                    if (message.valueDetectedLanguages != null && message.valueDetectedLanguages.length)
+                                        for (var i = 0; i < message.valueDetectedLanguages.length; ++i)
+                                            $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.encode(message.valueDetectedLanguages[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                                    return writer;
+                                };
+    
+                                /**
+                                 * Encodes the specified FormField message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.FormField.verify|verify} messages.
+                                 * @function encodeDelimited
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.FormField
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IFormField} message FormField message or plain object to encode
+                                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                                 * @returns {$protobuf.Writer} Writer
+                                 */
+                                FormField.encodeDelimited = function encodeDelimited(message, writer) {
+                                    return this.encode(message, writer).ldelim();
+                                };
+    
+                                /**
+                                 * Decodes a FormField message from the specified reader or buffer.
+                                 * @function decode
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.FormField
+                                 * @static
+                                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                 * @param {number} [length] Message length if known beforehand
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.FormField} FormField
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                FormField.decode = function decode(reader, length) {
+                                    if (!(reader instanceof $Reader))
+                                        reader = $Reader.create(reader);
+                                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.Document.Page.FormField();
+                                    while (reader.pos < end) {
+                                        var tag = reader.uint32();
+                                        switch (tag >>> 3) {
+                                        case 1:
+                                            message.fieldName = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.decode(reader, reader.uint32());
+                                            break;
+                                        case 2:
+                                            message.fieldValue = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.decode(reader, reader.uint32());
+                                            break;
+                                        case 3:
+                                            if (!(message.nameDetectedLanguages && message.nameDetectedLanguages.length))
+                                                message.nameDetectedLanguages = [];
+                                            message.nameDetectedLanguages.push($root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.decode(reader, reader.uint32()));
+                                            break;
+                                        case 4:
+                                            if (!(message.valueDetectedLanguages && message.valueDetectedLanguages.length))
+                                                message.valueDetectedLanguages = [];
+                                            message.valueDetectedLanguages.push($root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.decode(reader, reader.uint32()));
+                                            break;
+                                        default:
+                                            reader.skipType(tag & 7);
+                                            break;
+                                        }
+                                    }
+                                    return message;
+                                };
+    
+                                /**
+                                 * Decodes a FormField message from the specified reader or buffer, length delimited.
+                                 * @function decodeDelimited
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.FormField
+                                 * @static
+                                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.FormField} FormField
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                FormField.decodeDelimited = function decodeDelimited(reader) {
+                                    if (!(reader instanceof $Reader))
+                                        reader = new $Reader(reader);
+                                    return this.decode(reader, reader.uint32());
+                                };
+    
+                                /**
+                                 * Verifies a FormField message.
+                                 * @function verify
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.FormField
+                                 * @static
+                                 * @param {Object.<string,*>} message Plain object to verify
+                                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                                 */
+                                FormField.verify = function verify(message) {
+                                    if (typeof message !== "object" || message === null)
+                                        return "object expected";
+                                    if (message.fieldName != null && message.hasOwnProperty("fieldName")) {
+                                        var error = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.verify(message.fieldName);
+                                        if (error)
+                                            return "fieldName." + error;
+                                    }
+                                    if (message.fieldValue != null && message.hasOwnProperty("fieldValue")) {
+                                        var error = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.verify(message.fieldValue);
+                                        if (error)
+                                            return "fieldValue." + error;
+                                    }
+                                    if (message.nameDetectedLanguages != null && message.hasOwnProperty("nameDetectedLanguages")) {
+                                        if (!Array.isArray(message.nameDetectedLanguages))
+                                            return "nameDetectedLanguages: array expected";
+                                        for (var i = 0; i < message.nameDetectedLanguages.length; ++i) {
+                                            var error = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.verify(message.nameDetectedLanguages[i]);
+                                            if (error)
+                                                return "nameDetectedLanguages." + error;
+                                        }
+                                    }
+                                    if (message.valueDetectedLanguages != null && message.hasOwnProperty("valueDetectedLanguages")) {
+                                        if (!Array.isArray(message.valueDetectedLanguages))
+                                            return "valueDetectedLanguages: array expected";
+                                        for (var i = 0; i < message.valueDetectedLanguages.length; ++i) {
+                                            var error = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.verify(message.valueDetectedLanguages[i]);
+                                            if (error)
+                                                return "valueDetectedLanguages." + error;
+                                        }
+                                    }
+                                    return null;
+                                };
+    
+                                /**
+                                 * Creates a FormField message from a plain object. Also converts values to their respective internal types.
+                                 * @function fromObject
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.FormField
+                                 * @static
+                                 * @param {Object.<string,*>} object Plain object
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.FormField} FormField
+                                 */
+                                FormField.fromObject = function fromObject(object) {
+                                    if (object instanceof $root.google.cloud.documentai.v1beta1.Document.Page.FormField)
+                                        return object;
+                                    var message = new $root.google.cloud.documentai.v1beta1.Document.Page.FormField();
+                                    if (object.fieldName != null) {
+                                        if (typeof object.fieldName !== "object")
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.FormField.fieldName: object expected");
+                                        message.fieldName = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.fromObject(object.fieldName);
+                                    }
+                                    if (object.fieldValue != null) {
+                                        if (typeof object.fieldValue !== "object")
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.FormField.fieldValue: object expected");
+                                        message.fieldValue = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.fromObject(object.fieldValue);
+                                    }
+                                    if (object.nameDetectedLanguages) {
+                                        if (!Array.isArray(object.nameDetectedLanguages))
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.FormField.nameDetectedLanguages: array expected");
+                                        message.nameDetectedLanguages = [];
+                                        for (var i = 0; i < object.nameDetectedLanguages.length; ++i) {
+                                            if (typeof object.nameDetectedLanguages[i] !== "object")
+                                                throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.FormField.nameDetectedLanguages: object expected");
+                                            message.nameDetectedLanguages[i] = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.fromObject(object.nameDetectedLanguages[i]);
+                                        }
+                                    }
+                                    if (object.valueDetectedLanguages) {
+                                        if (!Array.isArray(object.valueDetectedLanguages))
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.FormField.valueDetectedLanguages: array expected");
+                                        message.valueDetectedLanguages = [];
+                                        for (var i = 0; i < object.valueDetectedLanguages.length; ++i) {
+                                            if (typeof object.valueDetectedLanguages[i] !== "object")
+                                                throw TypeError(".google.cloud.documentai.v1beta1.Document.Page.FormField.valueDetectedLanguages: object expected");
+                                            message.valueDetectedLanguages[i] = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.fromObject(object.valueDetectedLanguages[i]);
+                                        }
+                                    }
+                                    return message;
+                                };
+    
+                                /**
+                                 * Creates a plain object from a FormField message. Also converts values to other types if specified.
+                                 * @function toObject
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.FormField
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.FormField} message FormField
+                                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                                 * @returns {Object.<string,*>} Plain object
+                                 */
+                                FormField.toObject = function toObject(message, options) {
+                                    if (!options)
+                                        options = {};
+                                    var object = {};
+                                    if (options.arrays || options.defaults) {
+                                        object.nameDetectedLanguages = [];
+                                        object.valueDetectedLanguages = [];
+                                    }
+                                    if (options.defaults) {
+                                        object.fieldName = null;
+                                        object.fieldValue = null;
+                                    }
+                                    if (message.fieldName != null && message.hasOwnProperty("fieldName"))
+                                        object.fieldName = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.toObject(message.fieldName, options);
+                                    if (message.fieldValue != null && message.hasOwnProperty("fieldValue"))
+                                        object.fieldValue = $root.google.cloud.documentai.v1beta1.Document.Page.Layout.toObject(message.fieldValue, options);
+                                    if (message.nameDetectedLanguages && message.nameDetectedLanguages.length) {
+                                        object.nameDetectedLanguages = [];
+                                        for (var j = 0; j < message.nameDetectedLanguages.length; ++j)
+                                            object.nameDetectedLanguages[j] = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.toObject(message.nameDetectedLanguages[j], options);
+                                    }
+                                    if (message.valueDetectedLanguages && message.valueDetectedLanguages.length) {
+                                        object.valueDetectedLanguages = [];
+                                        for (var j = 0; j < message.valueDetectedLanguages.length; ++j)
+                                            object.valueDetectedLanguages[j] = $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.toObject(message.valueDetectedLanguages[j], options);
+                                    }
+                                    return object;
+                                };
+    
+                                /**
+                                 * Converts this FormField to JSON.
+                                 * @function toJSON
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.FormField
+                                 * @instance
+                                 * @returns {Object.<string,*>} JSON object
+                                 */
+                                FormField.prototype.toJSON = function toJSON() {
+                                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                                };
+    
+                                return FormField;
+                            })();
+    
+                            Page.DetectedLanguage = (function() {
+    
+                                /**
+                                 * Properties of a DetectedLanguage.
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page
+                                 * @interface IDetectedLanguage
+                                 * @property {string|null} [languageCode] DetectedLanguage languageCode
+                                 * @property {number|null} [confidence] DetectedLanguage confidence
+                                 */
+    
+                                /**
+                                 * Constructs a new DetectedLanguage.
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page
+                                 * @classdesc Represents a DetectedLanguage.
+                                 * @implements IDetectedLanguage
+                                 * @constructor
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IDetectedLanguage=} [properties] Properties to set
+                                 */
+                                function DetectedLanguage(properties) {
+                                    if (properties)
+                                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                            if (properties[keys[i]] != null)
+                                                this[keys[i]] = properties[keys[i]];
+                                }
+    
+                                /**
+                                 * DetectedLanguage languageCode.
+                                 * @member {string} languageCode
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
+                                 * @instance
+                                 */
+                                DetectedLanguage.prototype.languageCode = "";
+    
+                                /**
+                                 * DetectedLanguage confidence.
+                                 * @member {number} confidence
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
+                                 * @instance
+                                 */
+                                DetectedLanguage.prototype.confidence = 0;
+    
+                                /**
+                                 * Creates a new DetectedLanguage instance using the specified properties.
+                                 * @function create
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IDetectedLanguage=} [properties] Properties to set
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage} DetectedLanguage instance
+                                 */
+                                DetectedLanguage.create = function create(properties) {
+                                    return new DetectedLanguage(properties);
+                                };
+    
+                                /**
+                                 * Encodes the specified DetectedLanguage message. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.verify|verify} messages.
+                                 * @function encode
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IDetectedLanguage} message DetectedLanguage message or plain object to encode
+                                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                                 * @returns {$protobuf.Writer} Writer
+                                 */
+                                DetectedLanguage.encode = function encode(message, writer) {
+                                    if (!writer)
+                                        writer = $Writer.create();
+                                    if (message.languageCode != null && Object.hasOwnProperty.call(message, "languageCode"))
+                                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.languageCode);
+                                    if (message.confidence != null && Object.hasOwnProperty.call(message, "confidence"))
+                                        writer.uint32(/* id 2, wireType 5 =*/21).float(message.confidence);
+                                    return writer;
+                                };
+    
+                                /**
+                                 * Encodes the specified DetectedLanguage message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.verify|verify} messages.
+                                 * @function encodeDelimited
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.IDetectedLanguage} message DetectedLanguage message or plain object to encode
+                                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                                 * @returns {$protobuf.Writer} Writer
+                                 */
+                                DetectedLanguage.encodeDelimited = function encodeDelimited(message, writer) {
+                                    return this.encode(message, writer).ldelim();
+                                };
+    
+                                /**
+                                 * Decodes a DetectedLanguage message from the specified reader or buffer.
+                                 * @function decode
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
+                                 * @static
+                                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                 * @param {number} [length] Message length if known beforehand
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage} DetectedLanguage
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                DetectedLanguage.decode = function decode(reader, length) {
+                                    if (!(reader instanceof $Reader))
+                                        reader = $Reader.create(reader);
+                                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage();
+                                    while (reader.pos < end) {
+                                        var tag = reader.uint32();
+                                        switch (tag >>> 3) {
+                                        case 1:
+                                            message.languageCode = reader.string();
+                                            break;
+                                        case 2:
+                                            message.confidence = reader.float();
+                                            break;
+                                        default:
+                                            reader.skipType(tag & 7);
+                                            break;
+                                        }
+                                    }
+                                    return message;
+                                };
+    
+                                /**
+                                 * Decodes a DetectedLanguage message from the specified reader or buffer, length delimited.
+                                 * @function decodeDelimited
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
+                                 * @static
+                                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage} DetectedLanguage
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                DetectedLanguage.decodeDelimited = function decodeDelimited(reader) {
+                                    if (!(reader instanceof $Reader))
+                                        reader = new $Reader(reader);
+                                    return this.decode(reader, reader.uint32());
+                                };
+    
+                                /**
+                                 * Verifies a DetectedLanguage message.
+                                 * @function verify
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
+                                 * @static
+                                 * @param {Object.<string,*>} message Plain object to verify
+                                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                                 */
+                                DetectedLanguage.verify = function verify(message) {
+                                    if (typeof message !== "object" || message === null)
+                                        return "object expected";
+                                    if (message.languageCode != null && message.hasOwnProperty("languageCode"))
+                                        if (!$util.isString(message.languageCode))
+                                            return "languageCode: string expected";
+                                    if (message.confidence != null && message.hasOwnProperty("confidence"))
+                                        if (typeof message.confidence !== "number")
+                                            return "confidence: number expected";
+                                    return null;
+                                };
+    
+                                /**
+                                 * Creates a DetectedLanguage message from a plain object. Also converts values to their respective internal types.
+                                 * @function fromObject
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
+                                 * @static
+                                 * @param {Object.<string,*>} object Plain object
+                                 * @returns {google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage} DetectedLanguage
+                                 */
+                                DetectedLanguage.fromObject = function fromObject(object) {
+                                    if (object instanceof $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage)
+                                        return object;
+                                    var message = new $root.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage();
+                                    if (object.languageCode != null)
+                                        message.languageCode = String(object.languageCode);
+                                    if (object.confidence != null)
+                                        message.confidence = Number(object.confidence);
+                                    return message;
+                                };
+    
+                                /**
+                                 * Creates a plain object from a DetectedLanguage message. Also converts values to other types if specified.
+                                 * @function toObject
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage} message DetectedLanguage
+                                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                                 * @returns {Object.<string,*>} Plain object
+                                 */
+                                DetectedLanguage.toObject = function toObject(message, options) {
+                                    if (!options)
+                                        options = {};
+                                    var object = {};
+                                    if (options.defaults) {
+                                        object.languageCode = "";
+                                        object.confidence = 0;
+                                    }
+                                    if (message.languageCode != null && message.hasOwnProperty("languageCode"))
+                                        object.languageCode = message.languageCode;
+                                    if (message.confidence != null && message.hasOwnProperty("confidence"))
+                                        object.confidence = options.json && !isFinite(message.confidence) ? String(message.confidence) : message.confidence;
+                                    return object;
+                                };
+    
+                                /**
+                                 * Converts this DetectedLanguage to JSON.
+                                 * @function toJSON
+                                 * @memberof google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
+                                 * @instance
+                                 * @returns {Object.<string,*>} JSON object
+                                 */
+                                DetectedLanguage.prototype.toJSON = function toJSON() {
+                                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                                };
+    
+                                return DetectedLanguage;
+                            })();
+    
+                            return Page;
+                        })();
+    
+                        Document.Entity = (function() {
+    
+                            /**
+                             * Properties of an Entity.
+                             * @memberof google.cloud.documentai.v1beta1.Document
+                             * @interface IEntity
+                             * @property {google.cloud.documentai.v1beta1.Document.ITextAnchor|null} [textAnchor] Entity textAnchor
+                             * @property {string|null} [type] Entity type
+                             * @property {string|null} [mentionText] Entity mentionText
+                             * @property {string|null} [mentionId] Entity mentionId
+                             */
+    
+                            /**
+                             * Constructs a new Entity.
+                             * @memberof google.cloud.documentai.v1beta1.Document
+                             * @classdesc Represents an Entity.
+                             * @implements IEntity
+                             * @constructor
+                             * @param {google.cloud.documentai.v1beta1.Document.IEntity=} [properties] Properties to set
+                             */
+                            function Entity(properties) {
+                                if (properties)
+                                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                        if (properties[keys[i]] != null)
+                                            this[keys[i]] = properties[keys[i]];
+                            }
+    
+                            /**
+                             * Entity textAnchor.
+                             * @member {google.cloud.documentai.v1beta1.Document.ITextAnchor|null|undefined} textAnchor
+                             * @memberof google.cloud.documentai.v1beta1.Document.Entity
+                             * @instance
+                             */
+                            Entity.prototype.textAnchor = null;
+    
+                            /**
+                             * Entity type.
+                             * @member {string} type
+                             * @memberof google.cloud.documentai.v1beta1.Document.Entity
+                             * @instance
+                             */
+                            Entity.prototype.type = "";
+    
+                            /**
+                             * Entity mentionText.
+                             * @member {string} mentionText
+                             * @memberof google.cloud.documentai.v1beta1.Document.Entity
+                             * @instance
+                             */
+                            Entity.prototype.mentionText = "";
+    
+                            /**
+                             * Entity mentionId.
+                             * @member {string} mentionId
+                             * @memberof google.cloud.documentai.v1beta1.Document.Entity
+                             * @instance
+                             */
+                            Entity.prototype.mentionId = "";
+    
+                            /**
+                             * Creates a new Entity instance using the specified properties.
+                             * @function create
+                             * @memberof google.cloud.documentai.v1beta1.Document.Entity
+                             * @static
+                             * @param {google.cloud.documentai.v1beta1.Document.IEntity=} [properties] Properties to set
+                             * @returns {google.cloud.documentai.v1beta1.Document.Entity} Entity instance
+                             */
+                            Entity.create = function create(properties) {
+                                return new Entity(properties);
+                            };
+    
+                            /**
+                             * Encodes the specified Entity message. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Entity.verify|verify} messages.
+                             * @function encode
+                             * @memberof google.cloud.documentai.v1beta1.Document.Entity
+                             * @static
+                             * @param {google.cloud.documentai.v1beta1.Document.IEntity} message Entity message or plain object to encode
+                             * @param {$protobuf.Writer} [writer] Writer to encode to
+                             * @returns {$protobuf.Writer} Writer
+                             */
+                            Entity.encode = function encode(message, writer) {
+                                if (!writer)
+                                    writer = $Writer.create();
+                                if (message.textAnchor != null && Object.hasOwnProperty.call(message, "textAnchor"))
+                                    $root.google.cloud.documentai.v1beta1.Document.TextAnchor.encode(message.textAnchor, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                                if (message.type != null && Object.hasOwnProperty.call(message, "type"))
+                                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.type);
+                                if (message.mentionText != null && Object.hasOwnProperty.call(message, "mentionText"))
+                                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.mentionText);
+                                if (message.mentionId != null && Object.hasOwnProperty.call(message, "mentionId"))
+                                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.mentionId);
+                                return writer;
+                            };
+    
+                            /**
+                             * Encodes the specified Entity message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.Entity.verify|verify} messages.
+                             * @function encodeDelimited
+                             * @memberof google.cloud.documentai.v1beta1.Document.Entity
+                             * @static
+                             * @param {google.cloud.documentai.v1beta1.Document.IEntity} message Entity message or plain object to encode
+                             * @param {$protobuf.Writer} [writer] Writer to encode to
+                             * @returns {$protobuf.Writer} Writer
+                             */
+                            Entity.encodeDelimited = function encodeDelimited(message, writer) {
+                                return this.encode(message, writer).ldelim();
+                            };
+    
+                            /**
+                             * Decodes an Entity message from the specified reader or buffer.
+                             * @function decode
+                             * @memberof google.cloud.documentai.v1beta1.Document.Entity
+                             * @static
+                             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                             * @param {number} [length] Message length if known beforehand
+                             * @returns {google.cloud.documentai.v1beta1.Document.Entity} Entity
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            Entity.decode = function decode(reader, length) {
+                                if (!(reader instanceof $Reader))
+                                    reader = $Reader.create(reader);
+                                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.Document.Entity();
+                                while (reader.pos < end) {
+                                    var tag = reader.uint32();
+                                    switch (tag >>> 3) {
+                                    case 1:
+                                        message.textAnchor = $root.google.cloud.documentai.v1beta1.Document.TextAnchor.decode(reader, reader.uint32());
+                                        break;
+                                    case 2:
+                                        message.type = reader.string();
+                                        break;
+                                    case 3:
+                                        message.mentionText = reader.string();
+                                        break;
+                                    case 4:
+                                        message.mentionId = reader.string();
+                                        break;
+                                    default:
+                                        reader.skipType(tag & 7);
+                                        break;
+                                    }
+                                }
+                                return message;
+                            };
+    
+                            /**
+                             * Decodes an Entity message from the specified reader or buffer, length delimited.
+                             * @function decodeDelimited
+                             * @memberof google.cloud.documentai.v1beta1.Document.Entity
+                             * @static
+                             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                             * @returns {google.cloud.documentai.v1beta1.Document.Entity} Entity
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            Entity.decodeDelimited = function decodeDelimited(reader) {
+                                if (!(reader instanceof $Reader))
+                                    reader = new $Reader(reader);
+                                return this.decode(reader, reader.uint32());
+                            };
+    
+                            /**
+                             * Verifies an Entity message.
+                             * @function verify
+                             * @memberof google.cloud.documentai.v1beta1.Document.Entity
+                             * @static
+                             * @param {Object.<string,*>} message Plain object to verify
+                             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                             */
+                            Entity.verify = function verify(message) {
+                                if (typeof message !== "object" || message === null)
+                                    return "object expected";
+                                if (message.textAnchor != null && message.hasOwnProperty("textAnchor")) {
+                                    var error = $root.google.cloud.documentai.v1beta1.Document.TextAnchor.verify(message.textAnchor);
+                                    if (error)
+                                        return "textAnchor." + error;
+                                }
+                                if (message.type != null && message.hasOwnProperty("type"))
+                                    if (!$util.isString(message.type))
+                                        return "type: string expected";
+                                if (message.mentionText != null && message.hasOwnProperty("mentionText"))
+                                    if (!$util.isString(message.mentionText))
+                                        return "mentionText: string expected";
+                                if (message.mentionId != null && message.hasOwnProperty("mentionId"))
+                                    if (!$util.isString(message.mentionId))
+                                        return "mentionId: string expected";
+                                return null;
+                            };
+    
+                            /**
+                             * Creates an Entity message from a plain object. Also converts values to their respective internal types.
+                             * @function fromObject
+                             * @memberof google.cloud.documentai.v1beta1.Document.Entity
+                             * @static
+                             * @param {Object.<string,*>} object Plain object
+                             * @returns {google.cloud.documentai.v1beta1.Document.Entity} Entity
+                             */
+                            Entity.fromObject = function fromObject(object) {
+                                if (object instanceof $root.google.cloud.documentai.v1beta1.Document.Entity)
+                                    return object;
+                                var message = new $root.google.cloud.documentai.v1beta1.Document.Entity();
+                                if (object.textAnchor != null) {
+                                    if (typeof object.textAnchor !== "object")
+                                        throw TypeError(".google.cloud.documentai.v1beta1.Document.Entity.textAnchor: object expected");
+                                    message.textAnchor = $root.google.cloud.documentai.v1beta1.Document.TextAnchor.fromObject(object.textAnchor);
+                                }
+                                if (object.type != null)
+                                    message.type = String(object.type);
+                                if (object.mentionText != null)
+                                    message.mentionText = String(object.mentionText);
+                                if (object.mentionId != null)
+                                    message.mentionId = String(object.mentionId);
+                                return message;
+                            };
+    
+                            /**
+                             * Creates a plain object from an Entity message. Also converts values to other types if specified.
+                             * @function toObject
+                             * @memberof google.cloud.documentai.v1beta1.Document.Entity
+                             * @static
+                             * @param {google.cloud.documentai.v1beta1.Document.Entity} message Entity
+                             * @param {$protobuf.IConversionOptions} [options] Conversion options
+                             * @returns {Object.<string,*>} Plain object
+                             */
+                            Entity.toObject = function toObject(message, options) {
+                                if (!options)
+                                    options = {};
+                                var object = {};
+                                if (options.defaults) {
+                                    object.textAnchor = null;
+                                    object.type = "";
+                                    object.mentionText = "";
+                                    object.mentionId = "";
+                                }
+                                if (message.textAnchor != null && message.hasOwnProperty("textAnchor"))
+                                    object.textAnchor = $root.google.cloud.documentai.v1beta1.Document.TextAnchor.toObject(message.textAnchor, options);
+                                if (message.type != null && message.hasOwnProperty("type"))
+                                    object.type = message.type;
+                                if (message.mentionText != null && message.hasOwnProperty("mentionText"))
+                                    object.mentionText = message.mentionText;
+                                if (message.mentionId != null && message.hasOwnProperty("mentionId"))
+                                    object.mentionId = message.mentionId;
+                                return object;
+                            };
+    
+                            /**
+                             * Converts this Entity to JSON.
+                             * @function toJSON
+                             * @memberof google.cloud.documentai.v1beta1.Document.Entity
+                             * @instance
+                             * @returns {Object.<string,*>} JSON object
+                             */
+                            Entity.prototype.toJSON = function toJSON() {
+                                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                            };
+    
+                            return Entity;
+                        })();
+    
+                        Document.EntityRelation = (function() {
+    
+                            /**
+                             * Properties of an EntityRelation.
+                             * @memberof google.cloud.documentai.v1beta1.Document
+                             * @interface IEntityRelation
+                             * @property {string|null} [subjectId] EntityRelation subjectId
+                             * @property {string|null} [objectId] EntityRelation objectId
+                             * @property {string|null} [relation] EntityRelation relation
+                             */
+    
+                            /**
+                             * Constructs a new EntityRelation.
+                             * @memberof google.cloud.documentai.v1beta1.Document
+                             * @classdesc Represents an EntityRelation.
+                             * @implements IEntityRelation
+                             * @constructor
+                             * @param {google.cloud.documentai.v1beta1.Document.IEntityRelation=} [properties] Properties to set
+                             */
+                            function EntityRelation(properties) {
+                                if (properties)
+                                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                        if (properties[keys[i]] != null)
+                                            this[keys[i]] = properties[keys[i]];
+                            }
+    
+                            /**
+                             * EntityRelation subjectId.
+                             * @member {string} subjectId
+                             * @memberof google.cloud.documentai.v1beta1.Document.EntityRelation
+                             * @instance
+                             */
+                            EntityRelation.prototype.subjectId = "";
+    
+                            /**
+                             * EntityRelation objectId.
+                             * @member {string} objectId
+                             * @memberof google.cloud.documentai.v1beta1.Document.EntityRelation
+                             * @instance
+                             */
+                            EntityRelation.prototype.objectId = "";
+    
+                            /**
+                             * EntityRelation relation.
+                             * @member {string} relation
+                             * @memberof google.cloud.documentai.v1beta1.Document.EntityRelation
+                             * @instance
+                             */
+                            EntityRelation.prototype.relation = "";
+    
+                            /**
+                             * Creates a new EntityRelation instance using the specified properties.
+                             * @function create
+                             * @memberof google.cloud.documentai.v1beta1.Document.EntityRelation
+                             * @static
+                             * @param {google.cloud.documentai.v1beta1.Document.IEntityRelation=} [properties] Properties to set
+                             * @returns {google.cloud.documentai.v1beta1.Document.EntityRelation} EntityRelation instance
+                             */
+                            EntityRelation.create = function create(properties) {
+                                return new EntityRelation(properties);
+                            };
+    
+                            /**
+                             * Encodes the specified EntityRelation message. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.EntityRelation.verify|verify} messages.
+                             * @function encode
+                             * @memberof google.cloud.documentai.v1beta1.Document.EntityRelation
+                             * @static
+                             * @param {google.cloud.documentai.v1beta1.Document.IEntityRelation} message EntityRelation message or plain object to encode
+                             * @param {$protobuf.Writer} [writer] Writer to encode to
+                             * @returns {$protobuf.Writer} Writer
+                             */
+                            EntityRelation.encode = function encode(message, writer) {
+                                if (!writer)
+                                    writer = $Writer.create();
+                                if (message.subjectId != null && Object.hasOwnProperty.call(message, "subjectId"))
+                                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.subjectId);
+                                if (message.objectId != null && Object.hasOwnProperty.call(message, "objectId"))
+                                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.objectId);
+                                if (message.relation != null && Object.hasOwnProperty.call(message, "relation"))
+                                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.relation);
+                                return writer;
+                            };
+    
+                            /**
+                             * Encodes the specified EntityRelation message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.EntityRelation.verify|verify} messages.
+                             * @function encodeDelimited
+                             * @memberof google.cloud.documentai.v1beta1.Document.EntityRelation
+                             * @static
+                             * @param {google.cloud.documentai.v1beta1.Document.IEntityRelation} message EntityRelation message or plain object to encode
+                             * @param {$protobuf.Writer} [writer] Writer to encode to
+                             * @returns {$protobuf.Writer} Writer
+                             */
+                            EntityRelation.encodeDelimited = function encodeDelimited(message, writer) {
+                                return this.encode(message, writer).ldelim();
+                            };
+    
+                            /**
+                             * Decodes an EntityRelation message from the specified reader or buffer.
+                             * @function decode
+                             * @memberof google.cloud.documentai.v1beta1.Document.EntityRelation
+                             * @static
+                             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                             * @param {number} [length] Message length if known beforehand
+                             * @returns {google.cloud.documentai.v1beta1.Document.EntityRelation} EntityRelation
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            EntityRelation.decode = function decode(reader, length) {
+                                if (!(reader instanceof $Reader))
+                                    reader = $Reader.create(reader);
+                                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.Document.EntityRelation();
+                                while (reader.pos < end) {
+                                    var tag = reader.uint32();
+                                    switch (tag >>> 3) {
+                                    case 1:
+                                        message.subjectId = reader.string();
+                                        break;
+                                    case 2:
+                                        message.objectId = reader.string();
+                                        break;
+                                    case 3:
+                                        message.relation = reader.string();
+                                        break;
+                                    default:
+                                        reader.skipType(tag & 7);
+                                        break;
+                                    }
+                                }
+                                return message;
+                            };
+    
+                            /**
+                             * Decodes an EntityRelation message from the specified reader or buffer, length delimited.
+                             * @function decodeDelimited
+                             * @memberof google.cloud.documentai.v1beta1.Document.EntityRelation
+                             * @static
+                             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                             * @returns {google.cloud.documentai.v1beta1.Document.EntityRelation} EntityRelation
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            EntityRelation.decodeDelimited = function decodeDelimited(reader) {
+                                if (!(reader instanceof $Reader))
+                                    reader = new $Reader(reader);
+                                return this.decode(reader, reader.uint32());
+                            };
+    
+                            /**
+                             * Verifies an EntityRelation message.
+                             * @function verify
+                             * @memberof google.cloud.documentai.v1beta1.Document.EntityRelation
+                             * @static
+                             * @param {Object.<string,*>} message Plain object to verify
+                             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                             */
+                            EntityRelation.verify = function verify(message) {
+                                if (typeof message !== "object" || message === null)
+                                    return "object expected";
+                                if (message.subjectId != null && message.hasOwnProperty("subjectId"))
+                                    if (!$util.isString(message.subjectId))
+                                        return "subjectId: string expected";
+                                if (message.objectId != null && message.hasOwnProperty("objectId"))
+                                    if (!$util.isString(message.objectId))
+                                        return "objectId: string expected";
+                                if (message.relation != null && message.hasOwnProperty("relation"))
+                                    if (!$util.isString(message.relation))
+                                        return "relation: string expected";
+                                return null;
+                            };
+    
+                            /**
+                             * Creates an EntityRelation message from a plain object. Also converts values to their respective internal types.
+                             * @function fromObject
+                             * @memberof google.cloud.documentai.v1beta1.Document.EntityRelation
+                             * @static
+                             * @param {Object.<string,*>} object Plain object
+                             * @returns {google.cloud.documentai.v1beta1.Document.EntityRelation} EntityRelation
+                             */
+                            EntityRelation.fromObject = function fromObject(object) {
+                                if (object instanceof $root.google.cloud.documentai.v1beta1.Document.EntityRelation)
+                                    return object;
+                                var message = new $root.google.cloud.documentai.v1beta1.Document.EntityRelation();
+                                if (object.subjectId != null)
+                                    message.subjectId = String(object.subjectId);
+                                if (object.objectId != null)
+                                    message.objectId = String(object.objectId);
+                                if (object.relation != null)
+                                    message.relation = String(object.relation);
+                                return message;
+                            };
+    
+                            /**
+                             * Creates a plain object from an EntityRelation message. Also converts values to other types if specified.
+                             * @function toObject
+                             * @memberof google.cloud.documentai.v1beta1.Document.EntityRelation
+                             * @static
+                             * @param {google.cloud.documentai.v1beta1.Document.EntityRelation} message EntityRelation
+                             * @param {$protobuf.IConversionOptions} [options] Conversion options
+                             * @returns {Object.<string,*>} Plain object
+                             */
+                            EntityRelation.toObject = function toObject(message, options) {
+                                if (!options)
+                                    options = {};
+                                var object = {};
+                                if (options.defaults) {
+                                    object.subjectId = "";
+                                    object.objectId = "";
+                                    object.relation = "";
+                                }
+                                if (message.subjectId != null && message.hasOwnProperty("subjectId"))
+                                    object.subjectId = message.subjectId;
+                                if (message.objectId != null && message.hasOwnProperty("objectId"))
+                                    object.objectId = message.objectId;
+                                if (message.relation != null && message.hasOwnProperty("relation"))
+                                    object.relation = message.relation;
+                                return object;
+                            };
+    
+                            /**
+                             * Converts this EntityRelation to JSON.
+                             * @function toJSON
+                             * @memberof google.cloud.documentai.v1beta1.Document.EntityRelation
+                             * @instance
+                             * @returns {Object.<string,*>} JSON object
+                             */
+                            EntityRelation.prototype.toJSON = function toJSON() {
+                                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                            };
+    
+                            return EntityRelation;
+                        })();
+    
+                        Document.TextAnchor = (function() {
+    
+                            /**
+                             * Properties of a TextAnchor.
+                             * @memberof google.cloud.documentai.v1beta1.Document
+                             * @interface ITextAnchor
+                             * @property {Array.<google.cloud.documentai.v1beta1.Document.TextAnchor.ITextSegment>|null} [textSegments] TextAnchor textSegments
+                             */
+    
+                            /**
+                             * Constructs a new TextAnchor.
+                             * @memberof google.cloud.documentai.v1beta1.Document
+                             * @classdesc Represents a TextAnchor.
+                             * @implements ITextAnchor
+                             * @constructor
+                             * @param {google.cloud.documentai.v1beta1.Document.ITextAnchor=} [properties] Properties to set
+                             */
+                            function TextAnchor(properties) {
+                                this.textSegments = [];
+                                if (properties)
+                                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                        if (properties[keys[i]] != null)
+                                            this[keys[i]] = properties[keys[i]];
+                            }
+    
+                            /**
+                             * TextAnchor textSegments.
+                             * @member {Array.<google.cloud.documentai.v1beta1.Document.TextAnchor.ITextSegment>} textSegments
+                             * @memberof google.cloud.documentai.v1beta1.Document.TextAnchor
+                             * @instance
+                             */
+                            TextAnchor.prototype.textSegments = $util.emptyArray;
+    
+                            /**
+                             * Creates a new TextAnchor instance using the specified properties.
+                             * @function create
+                             * @memberof google.cloud.documentai.v1beta1.Document.TextAnchor
+                             * @static
+                             * @param {google.cloud.documentai.v1beta1.Document.ITextAnchor=} [properties] Properties to set
+                             * @returns {google.cloud.documentai.v1beta1.Document.TextAnchor} TextAnchor instance
+                             */
+                            TextAnchor.create = function create(properties) {
+                                return new TextAnchor(properties);
+                            };
+    
+                            /**
+                             * Encodes the specified TextAnchor message. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.TextAnchor.verify|verify} messages.
+                             * @function encode
+                             * @memberof google.cloud.documentai.v1beta1.Document.TextAnchor
+                             * @static
+                             * @param {google.cloud.documentai.v1beta1.Document.ITextAnchor} message TextAnchor message or plain object to encode
+                             * @param {$protobuf.Writer} [writer] Writer to encode to
+                             * @returns {$protobuf.Writer} Writer
+                             */
+                            TextAnchor.encode = function encode(message, writer) {
+                                if (!writer)
+                                    writer = $Writer.create();
+                                if (message.textSegments != null && message.textSegments.length)
+                                    for (var i = 0; i < message.textSegments.length; ++i)
+                                        $root.google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment.encode(message.textSegments[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                                return writer;
+                            };
+    
+                            /**
+                             * Encodes the specified TextAnchor message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.TextAnchor.verify|verify} messages.
+                             * @function encodeDelimited
+                             * @memberof google.cloud.documentai.v1beta1.Document.TextAnchor
+                             * @static
+                             * @param {google.cloud.documentai.v1beta1.Document.ITextAnchor} message TextAnchor message or plain object to encode
+                             * @param {$protobuf.Writer} [writer] Writer to encode to
+                             * @returns {$protobuf.Writer} Writer
+                             */
+                            TextAnchor.encodeDelimited = function encodeDelimited(message, writer) {
+                                return this.encode(message, writer).ldelim();
+                            };
+    
+                            /**
+                             * Decodes a TextAnchor message from the specified reader or buffer.
+                             * @function decode
+                             * @memberof google.cloud.documentai.v1beta1.Document.TextAnchor
+                             * @static
+                             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                             * @param {number} [length] Message length if known beforehand
+                             * @returns {google.cloud.documentai.v1beta1.Document.TextAnchor} TextAnchor
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            TextAnchor.decode = function decode(reader, length) {
+                                if (!(reader instanceof $Reader))
+                                    reader = $Reader.create(reader);
+                                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.Document.TextAnchor();
+                                while (reader.pos < end) {
+                                    var tag = reader.uint32();
+                                    switch (tag >>> 3) {
+                                    case 1:
+                                        if (!(message.textSegments && message.textSegments.length))
+                                            message.textSegments = [];
+                                        message.textSegments.push($root.google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment.decode(reader, reader.uint32()));
+                                        break;
+                                    default:
+                                        reader.skipType(tag & 7);
+                                        break;
+                                    }
+                                }
+                                return message;
+                            };
+    
+                            /**
+                             * Decodes a TextAnchor message from the specified reader or buffer, length delimited.
+                             * @function decodeDelimited
+                             * @memberof google.cloud.documentai.v1beta1.Document.TextAnchor
+                             * @static
+                             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                             * @returns {google.cloud.documentai.v1beta1.Document.TextAnchor} TextAnchor
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            TextAnchor.decodeDelimited = function decodeDelimited(reader) {
+                                if (!(reader instanceof $Reader))
+                                    reader = new $Reader(reader);
+                                return this.decode(reader, reader.uint32());
+                            };
+    
+                            /**
+                             * Verifies a TextAnchor message.
+                             * @function verify
+                             * @memberof google.cloud.documentai.v1beta1.Document.TextAnchor
+                             * @static
+                             * @param {Object.<string,*>} message Plain object to verify
+                             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                             */
+                            TextAnchor.verify = function verify(message) {
+                                if (typeof message !== "object" || message === null)
+                                    return "object expected";
+                                if (message.textSegments != null && message.hasOwnProperty("textSegments")) {
+                                    if (!Array.isArray(message.textSegments))
+                                        return "textSegments: array expected";
+                                    for (var i = 0; i < message.textSegments.length; ++i) {
+                                        var error = $root.google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment.verify(message.textSegments[i]);
+                                        if (error)
+                                            return "textSegments." + error;
+                                    }
+                                }
+                                return null;
+                            };
+    
+                            /**
+                             * Creates a TextAnchor message from a plain object. Also converts values to their respective internal types.
+                             * @function fromObject
+                             * @memberof google.cloud.documentai.v1beta1.Document.TextAnchor
+                             * @static
+                             * @param {Object.<string,*>} object Plain object
+                             * @returns {google.cloud.documentai.v1beta1.Document.TextAnchor} TextAnchor
+                             */
+                            TextAnchor.fromObject = function fromObject(object) {
+                                if (object instanceof $root.google.cloud.documentai.v1beta1.Document.TextAnchor)
+                                    return object;
+                                var message = new $root.google.cloud.documentai.v1beta1.Document.TextAnchor();
+                                if (object.textSegments) {
+                                    if (!Array.isArray(object.textSegments))
+                                        throw TypeError(".google.cloud.documentai.v1beta1.Document.TextAnchor.textSegments: array expected");
+                                    message.textSegments = [];
+                                    for (var i = 0; i < object.textSegments.length; ++i) {
+                                        if (typeof object.textSegments[i] !== "object")
+                                            throw TypeError(".google.cloud.documentai.v1beta1.Document.TextAnchor.textSegments: object expected");
+                                        message.textSegments[i] = $root.google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment.fromObject(object.textSegments[i]);
+                                    }
+                                }
+                                return message;
+                            };
+    
+                            /**
+                             * Creates a plain object from a TextAnchor message. Also converts values to other types if specified.
+                             * @function toObject
+                             * @memberof google.cloud.documentai.v1beta1.Document.TextAnchor
+                             * @static
+                             * @param {google.cloud.documentai.v1beta1.Document.TextAnchor} message TextAnchor
+                             * @param {$protobuf.IConversionOptions} [options] Conversion options
+                             * @returns {Object.<string,*>} Plain object
+                             */
+                            TextAnchor.toObject = function toObject(message, options) {
+                                if (!options)
+                                    options = {};
+                                var object = {};
+                                if (options.arrays || options.defaults)
+                                    object.textSegments = [];
+                                if (message.textSegments && message.textSegments.length) {
+                                    object.textSegments = [];
+                                    for (var j = 0; j < message.textSegments.length; ++j)
+                                        object.textSegments[j] = $root.google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment.toObject(message.textSegments[j], options);
+                                }
+                                return object;
+                            };
+    
+                            /**
+                             * Converts this TextAnchor to JSON.
+                             * @function toJSON
+                             * @memberof google.cloud.documentai.v1beta1.Document.TextAnchor
+                             * @instance
+                             * @returns {Object.<string,*>} JSON object
+                             */
+                            TextAnchor.prototype.toJSON = function toJSON() {
+                                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                            };
+    
+                            TextAnchor.TextSegment = (function() {
+    
+                                /**
+                                 * Properties of a TextSegment.
+                                 * @memberof google.cloud.documentai.v1beta1.Document.TextAnchor
+                                 * @interface ITextSegment
+                                 * @property {number|Long|null} [startIndex] TextSegment startIndex
+                                 * @property {number|Long|null} [endIndex] TextSegment endIndex
+                                 */
+    
+                                /**
+                                 * Constructs a new TextSegment.
+                                 * @memberof google.cloud.documentai.v1beta1.Document.TextAnchor
+                                 * @classdesc Represents a TextSegment.
+                                 * @implements ITextSegment
+                                 * @constructor
+                                 * @param {google.cloud.documentai.v1beta1.Document.TextAnchor.ITextSegment=} [properties] Properties to set
+                                 */
+                                function TextSegment(properties) {
+                                    if (properties)
+                                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                            if (properties[keys[i]] != null)
+                                                this[keys[i]] = properties[keys[i]];
+                                }
+    
+                                /**
+                                 * TextSegment startIndex.
+                                 * @member {number|Long} startIndex
+                                 * @memberof google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment
+                                 * @instance
+                                 */
+                                TextSegment.prototype.startIndex = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+    
+                                /**
+                                 * TextSegment endIndex.
+                                 * @member {number|Long} endIndex
+                                 * @memberof google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment
+                                 * @instance
+                                 */
+                                TextSegment.prototype.endIndex = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+    
+                                /**
+                                 * Creates a new TextSegment instance using the specified properties.
+                                 * @function create
+                                 * @memberof google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.TextAnchor.ITextSegment=} [properties] Properties to set
+                                 * @returns {google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment} TextSegment instance
+                                 */
+                                TextSegment.create = function create(properties) {
+                                    return new TextSegment(properties);
+                                };
+    
+                                /**
+                                 * Encodes the specified TextSegment message. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment.verify|verify} messages.
+                                 * @function encode
+                                 * @memberof google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.TextAnchor.ITextSegment} message TextSegment message or plain object to encode
+                                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                                 * @returns {$protobuf.Writer} Writer
+                                 */
+                                TextSegment.encode = function encode(message, writer) {
+                                    if (!writer)
+                                        writer = $Writer.create();
+                                    if (message.startIndex != null && Object.hasOwnProperty.call(message, "startIndex"))
+                                        writer.uint32(/* id 1, wireType 0 =*/8).int64(message.startIndex);
+                                    if (message.endIndex != null && Object.hasOwnProperty.call(message, "endIndex"))
+                                        writer.uint32(/* id 2, wireType 0 =*/16).int64(message.endIndex);
+                                    return writer;
+                                };
+    
+                                /**
+                                 * Encodes the specified TextSegment message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment.verify|verify} messages.
+                                 * @function encodeDelimited
+                                 * @memberof google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.TextAnchor.ITextSegment} message TextSegment message or plain object to encode
+                                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                                 * @returns {$protobuf.Writer} Writer
+                                 */
+                                TextSegment.encodeDelimited = function encodeDelimited(message, writer) {
+                                    return this.encode(message, writer).ldelim();
+                                };
+    
+                                /**
+                                 * Decodes a TextSegment message from the specified reader or buffer.
+                                 * @function decode
+                                 * @memberof google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment
+                                 * @static
+                                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                 * @param {number} [length] Message length if known beforehand
+                                 * @returns {google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment} TextSegment
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                TextSegment.decode = function decode(reader, length) {
+                                    if (!(reader instanceof $Reader))
+                                        reader = $Reader.create(reader);
+                                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment();
+                                    while (reader.pos < end) {
+                                        var tag = reader.uint32();
+                                        switch (tag >>> 3) {
+                                        case 1:
+                                            message.startIndex = reader.int64();
+                                            break;
+                                        case 2:
+                                            message.endIndex = reader.int64();
+                                            break;
+                                        default:
+                                            reader.skipType(tag & 7);
+                                            break;
+                                        }
+                                    }
+                                    return message;
+                                };
+    
+                                /**
+                                 * Decodes a TextSegment message from the specified reader or buffer, length delimited.
+                                 * @function decodeDelimited
+                                 * @memberof google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment
+                                 * @static
+                                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                                 * @returns {google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment} TextSegment
+                                 * @throws {Error} If the payload is not a reader or valid buffer
+                                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                                 */
+                                TextSegment.decodeDelimited = function decodeDelimited(reader) {
+                                    if (!(reader instanceof $Reader))
+                                        reader = new $Reader(reader);
+                                    return this.decode(reader, reader.uint32());
+                                };
+    
+                                /**
+                                 * Verifies a TextSegment message.
+                                 * @function verify
+                                 * @memberof google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment
+                                 * @static
+                                 * @param {Object.<string,*>} message Plain object to verify
+                                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                                 */
+                                TextSegment.verify = function verify(message) {
+                                    if (typeof message !== "object" || message === null)
+                                        return "object expected";
+                                    if (message.startIndex != null && message.hasOwnProperty("startIndex"))
+                                        if (!$util.isInteger(message.startIndex) && !(message.startIndex && $util.isInteger(message.startIndex.low) && $util.isInteger(message.startIndex.high)))
+                                            return "startIndex: integer|Long expected";
+                                    if (message.endIndex != null && message.hasOwnProperty("endIndex"))
+                                        if (!$util.isInteger(message.endIndex) && !(message.endIndex && $util.isInteger(message.endIndex.low) && $util.isInteger(message.endIndex.high)))
+                                            return "endIndex: integer|Long expected";
+                                    return null;
+                                };
+    
+                                /**
+                                 * Creates a TextSegment message from a plain object. Also converts values to their respective internal types.
+                                 * @function fromObject
+                                 * @memberof google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment
+                                 * @static
+                                 * @param {Object.<string,*>} object Plain object
+                                 * @returns {google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment} TextSegment
+                                 */
+                                TextSegment.fromObject = function fromObject(object) {
+                                    if (object instanceof $root.google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment)
+                                        return object;
+                                    var message = new $root.google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment();
+                                    if (object.startIndex != null)
+                                        if ($util.Long)
+                                            (message.startIndex = $util.Long.fromValue(object.startIndex)).unsigned = false;
+                                        else if (typeof object.startIndex === "string")
+                                            message.startIndex = parseInt(object.startIndex, 10);
+                                        else if (typeof object.startIndex === "number")
+                                            message.startIndex = object.startIndex;
+                                        else if (typeof object.startIndex === "object")
+                                            message.startIndex = new $util.LongBits(object.startIndex.low >>> 0, object.startIndex.high >>> 0).toNumber();
+                                    if (object.endIndex != null)
+                                        if ($util.Long)
+                                            (message.endIndex = $util.Long.fromValue(object.endIndex)).unsigned = false;
+                                        else if (typeof object.endIndex === "string")
+                                            message.endIndex = parseInt(object.endIndex, 10);
+                                        else if (typeof object.endIndex === "number")
+                                            message.endIndex = object.endIndex;
+                                        else if (typeof object.endIndex === "object")
+                                            message.endIndex = new $util.LongBits(object.endIndex.low >>> 0, object.endIndex.high >>> 0).toNumber();
+                                    return message;
+                                };
+    
+                                /**
+                                 * Creates a plain object from a TextSegment message. Also converts values to other types if specified.
+                                 * @function toObject
+                                 * @memberof google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment
+                                 * @static
+                                 * @param {google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment} message TextSegment
+                                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                                 * @returns {Object.<string,*>} Plain object
+                                 */
+                                TextSegment.toObject = function toObject(message, options) {
+                                    if (!options)
+                                        options = {};
+                                    var object = {};
+                                    if (options.defaults) {
+                                        if ($util.Long) {
+                                            var long = new $util.Long(0, 0, false);
+                                            object.startIndex = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                                        } else
+                                            object.startIndex = options.longs === String ? "0" : 0;
+                                        if ($util.Long) {
+                                            var long = new $util.Long(0, 0, false);
+                                            object.endIndex = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                                        } else
+                                            object.endIndex = options.longs === String ? "0" : 0;
+                                    }
+                                    if (message.startIndex != null && message.hasOwnProperty("startIndex"))
+                                        if (typeof message.startIndex === "number")
+                                            object.startIndex = options.longs === String ? String(message.startIndex) : message.startIndex;
+                                        else
+                                            object.startIndex = options.longs === String ? $util.Long.prototype.toString.call(message.startIndex) : options.longs === Number ? new $util.LongBits(message.startIndex.low >>> 0, message.startIndex.high >>> 0).toNumber() : message.startIndex;
+                                    if (message.endIndex != null && message.hasOwnProperty("endIndex"))
+                                        if (typeof message.endIndex === "number")
+                                            object.endIndex = options.longs === String ? String(message.endIndex) : message.endIndex;
+                                        else
+                                            object.endIndex = options.longs === String ? $util.Long.prototype.toString.call(message.endIndex) : options.longs === Number ? new $util.LongBits(message.endIndex.low >>> 0, message.endIndex.high >>> 0).toNumber() : message.endIndex;
+                                    return object;
+                                };
+    
+                                /**
+                                 * Converts this TextSegment to JSON.
+                                 * @function toJSON
+                                 * @memberof google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment
+                                 * @instance
+                                 * @returns {Object.<string,*>} JSON object
+                                 */
+                                TextSegment.prototype.toJSON = function toJSON() {
+                                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                                };
+    
+                                return TextSegment;
+                            })();
+    
+                            return TextAnchor;
+                        })();
+    
+                        return Document;
+                    })();
+    
+                    v1beta1.Vertex = (function() {
+    
+                        /**
+                         * Properties of a Vertex.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @interface IVertex
+                         * @property {number|null} [x] Vertex x
+                         * @property {number|null} [y] Vertex y
+                         */
+    
+                        /**
+                         * Constructs a new Vertex.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @classdesc Represents a Vertex.
+                         * @implements IVertex
+                         * @constructor
+                         * @param {google.cloud.documentai.v1beta1.IVertex=} [properties] Properties to set
+                         */
+                        function Vertex(properties) {
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * Vertex x.
+                         * @member {number} x
+                         * @memberof google.cloud.documentai.v1beta1.Vertex
+                         * @instance
+                         */
+                        Vertex.prototype.x = 0;
+    
+                        /**
+                         * Vertex y.
+                         * @member {number} y
+                         * @memberof google.cloud.documentai.v1beta1.Vertex
+                         * @instance
+                         */
+                        Vertex.prototype.y = 0;
+    
+                        /**
+                         * Creates a new Vertex instance using the specified properties.
+                         * @function create
+                         * @memberof google.cloud.documentai.v1beta1.Vertex
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IVertex=} [properties] Properties to set
+                         * @returns {google.cloud.documentai.v1beta1.Vertex} Vertex instance
+                         */
+                        Vertex.create = function create(properties) {
+                            return new Vertex(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified Vertex message. Does not implicitly {@link google.cloud.documentai.v1beta1.Vertex.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.cloud.documentai.v1beta1.Vertex
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IVertex} message Vertex message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        Vertex.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.x != null && Object.hasOwnProperty.call(message, "x"))
+                                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.x);
+                            if (message.y != null && Object.hasOwnProperty.call(message, "y"))
+                                writer.uint32(/* id 2, wireType 0 =*/16).int32(message.y);
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified Vertex message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.Vertex.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.Vertex
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IVertex} message Vertex message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        Vertex.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes a Vertex message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.cloud.documentai.v1beta1.Vertex
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.cloud.documentai.v1beta1.Vertex} Vertex
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        Vertex.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.Vertex();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    message.x = reader.int32();
+                                    break;
+                                case 2:
+                                    message.y = reader.int32();
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes a Vertex message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.Vertex
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.cloud.documentai.v1beta1.Vertex} Vertex
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        Vertex.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies a Vertex message.
+                         * @function verify
+                         * @memberof google.cloud.documentai.v1beta1.Vertex
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        Vertex.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.x != null && message.hasOwnProperty("x"))
+                                if (!$util.isInteger(message.x))
+                                    return "x: integer expected";
+                            if (message.y != null && message.hasOwnProperty("y"))
+                                if (!$util.isInteger(message.y))
+                                    return "y: integer expected";
+                            return null;
+                        };
+    
+                        /**
+                         * Creates a Vertex message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.cloud.documentai.v1beta1.Vertex
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.cloud.documentai.v1beta1.Vertex} Vertex
+                         */
+                        Vertex.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.cloud.documentai.v1beta1.Vertex)
+                                return object;
+                            var message = new $root.google.cloud.documentai.v1beta1.Vertex();
+                            if (object.x != null)
+                                message.x = object.x | 0;
+                            if (object.y != null)
+                                message.y = object.y | 0;
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from a Vertex message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.cloud.documentai.v1beta1.Vertex
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.Vertex} message Vertex
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        Vertex.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.defaults) {
+                                object.x = 0;
+                                object.y = 0;
+                            }
+                            if (message.x != null && message.hasOwnProperty("x"))
+                                object.x = message.x;
+                            if (message.y != null && message.hasOwnProperty("y"))
+                                object.y = message.y;
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this Vertex to JSON.
+                         * @function toJSON
+                         * @memberof google.cloud.documentai.v1beta1.Vertex
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        Vertex.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return Vertex;
+                    })();
+    
+                    v1beta1.NormalizedVertex = (function() {
+    
+                        /**
+                         * Properties of a NormalizedVertex.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @interface INormalizedVertex
+                         * @property {number|null} [x] NormalizedVertex x
+                         * @property {number|null} [y] NormalizedVertex y
+                         */
+    
+                        /**
+                         * Constructs a new NormalizedVertex.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @classdesc Represents a NormalizedVertex.
+                         * @implements INormalizedVertex
+                         * @constructor
+                         * @param {google.cloud.documentai.v1beta1.INormalizedVertex=} [properties] Properties to set
+                         */
+                        function NormalizedVertex(properties) {
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * NormalizedVertex x.
+                         * @member {number} x
+                         * @memberof google.cloud.documentai.v1beta1.NormalizedVertex
+                         * @instance
+                         */
+                        NormalizedVertex.prototype.x = 0;
+    
+                        /**
+                         * NormalizedVertex y.
+                         * @member {number} y
+                         * @memberof google.cloud.documentai.v1beta1.NormalizedVertex
+                         * @instance
+                         */
+                        NormalizedVertex.prototype.y = 0;
+    
+                        /**
+                         * Creates a new NormalizedVertex instance using the specified properties.
+                         * @function create
+                         * @memberof google.cloud.documentai.v1beta1.NormalizedVertex
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.INormalizedVertex=} [properties] Properties to set
+                         * @returns {google.cloud.documentai.v1beta1.NormalizedVertex} NormalizedVertex instance
+                         */
+                        NormalizedVertex.create = function create(properties) {
+                            return new NormalizedVertex(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified NormalizedVertex message. Does not implicitly {@link google.cloud.documentai.v1beta1.NormalizedVertex.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.cloud.documentai.v1beta1.NormalizedVertex
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.INormalizedVertex} message NormalizedVertex message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        NormalizedVertex.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.x != null && Object.hasOwnProperty.call(message, "x"))
+                                writer.uint32(/* id 1, wireType 5 =*/13).float(message.x);
+                            if (message.y != null && Object.hasOwnProperty.call(message, "y"))
+                                writer.uint32(/* id 2, wireType 5 =*/21).float(message.y);
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified NormalizedVertex message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.NormalizedVertex.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.NormalizedVertex
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.INormalizedVertex} message NormalizedVertex message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        NormalizedVertex.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes a NormalizedVertex message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.cloud.documentai.v1beta1.NormalizedVertex
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.cloud.documentai.v1beta1.NormalizedVertex} NormalizedVertex
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        NormalizedVertex.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.NormalizedVertex();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    message.x = reader.float();
+                                    break;
+                                case 2:
+                                    message.y = reader.float();
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes a NormalizedVertex message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.NormalizedVertex
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.cloud.documentai.v1beta1.NormalizedVertex} NormalizedVertex
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        NormalizedVertex.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies a NormalizedVertex message.
+                         * @function verify
+                         * @memberof google.cloud.documentai.v1beta1.NormalizedVertex
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        NormalizedVertex.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.x != null && message.hasOwnProperty("x"))
+                                if (typeof message.x !== "number")
+                                    return "x: number expected";
+                            if (message.y != null && message.hasOwnProperty("y"))
+                                if (typeof message.y !== "number")
+                                    return "y: number expected";
+                            return null;
+                        };
+    
+                        /**
+                         * Creates a NormalizedVertex message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.cloud.documentai.v1beta1.NormalizedVertex
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.cloud.documentai.v1beta1.NormalizedVertex} NormalizedVertex
+                         */
+                        NormalizedVertex.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.cloud.documentai.v1beta1.NormalizedVertex)
+                                return object;
+                            var message = new $root.google.cloud.documentai.v1beta1.NormalizedVertex();
+                            if (object.x != null)
+                                message.x = Number(object.x);
+                            if (object.y != null)
+                                message.y = Number(object.y);
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from a NormalizedVertex message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.cloud.documentai.v1beta1.NormalizedVertex
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.NormalizedVertex} message NormalizedVertex
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        NormalizedVertex.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.defaults) {
+                                object.x = 0;
+                                object.y = 0;
+                            }
+                            if (message.x != null && message.hasOwnProperty("x"))
+                                object.x = options.json && !isFinite(message.x) ? String(message.x) : message.x;
+                            if (message.y != null && message.hasOwnProperty("y"))
+                                object.y = options.json && !isFinite(message.y) ? String(message.y) : message.y;
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this NormalizedVertex to JSON.
+                         * @function toJSON
+                         * @memberof google.cloud.documentai.v1beta1.NormalizedVertex
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        NormalizedVertex.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return NormalizedVertex;
+                    })();
+    
+                    v1beta1.BoundingPoly = (function() {
+    
+                        /**
+                         * Properties of a BoundingPoly.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @interface IBoundingPoly
+                         * @property {Array.<google.cloud.documentai.v1beta1.IVertex>|null} [vertices] BoundingPoly vertices
+                         * @property {Array.<google.cloud.documentai.v1beta1.INormalizedVertex>|null} [normalizedVertices] BoundingPoly normalizedVertices
+                         */
+    
+                        /**
+                         * Constructs a new BoundingPoly.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @classdesc Represents a BoundingPoly.
+                         * @implements IBoundingPoly
+                         * @constructor
+                         * @param {google.cloud.documentai.v1beta1.IBoundingPoly=} [properties] Properties to set
+                         */
+                        function BoundingPoly(properties) {
+                            this.vertices = [];
+                            this.normalizedVertices = [];
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * BoundingPoly vertices.
+                         * @member {Array.<google.cloud.documentai.v1beta1.IVertex>} vertices
+                         * @memberof google.cloud.documentai.v1beta1.BoundingPoly
+                         * @instance
+                         */
+                        BoundingPoly.prototype.vertices = $util.emptyArray;
+    
+                        /**
+                         * BoundingPoly normalizedVertices.
+                         * @member {Array.<google.cloud.documentai.v1beta1.INormalizedVertex>} normalizedVertices
+                         * @memberof google.cloud.documentai.v1beta1.BoundingPoly
+                         * @instance
+                         */
+                        BoundingPoly.prototype.normalizedVertices = $util.emptyArray;
+    
+                        /**
+                         * Creates a new BoundingPoly instance using the specified properties.
+                         * @function create
+                         * @memberof google.cloud.documentai.v1beta1.BoundingPoly
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IBoundingPoly=} [properties] Properties to set
+                         * @returns {google.cloud.documentai.v1beta1.BoundingPoly} BoundingPoly instance
+                         */
+                        BoundingPoly.create = function create(properties) {
+                            return new BoundingPoly(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified BoundingPoly message. Does not implicitly {@link google.cloud.documentai.v1beta1.BoundingPoly.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.cloud.documentai.v1beta1.BoundingPoly
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IBoundingPoly} message BoundingPoly message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        BoundingPoly.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.vertices != null && message.vertices.length)
+                                for (var i = 0; i < message.vertices.length; ++i)
+                                    $root.google.cloud.documentai.v1beta1.Vertex.encode(message.vertices[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                            if (message.normalizedVertices != null && message.normalizedVertices.length)
+                                for (var i = 0; i < message.normalizedVertices.length; ++i)
+                                    $root.google.cloud.documentai.v1beta1.NormalizedVertex.encode(message.normalizedVertices[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified BoundingPoly message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.BoundingPoly.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.BoundingPoly
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IBoundingPoly} message BoundingPoly message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        BoundingPoly.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes a BoundingPoly message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.cloud.documentai.v1beta1.BoundingPoly
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.cloud.documentai.v1beta1.BoundingPoly} BoundingPoly
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        BoundingPoly.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.BoundingPoly();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    if (!(message.vertices && message.vertices.length))
+                                        message.vertices = [];
+                                    message.vertices.push($root.google.cloud.documentai.v1beta1.Vertex.decode(reader, reader.uint32()));
+                                    break;
+                                case 2:
+                                    if (!(message.normalizedVertices && message.normalizedVertices.length))
+                                        message.normalizedVertices = [];
+                                    message.normalizedVertices.push($root.google.cloud.documentai.v1beta1.NormalizedVertex.decode(reader, reader.uint32()));
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes a BoundingPoly message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.BoundingPoly
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.cloud.documentai.v1beta1.BoundingPoly} BoundingPoly
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        BoundingPoly.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies a BoundingPoly message.
+                         * @function verify
+                         * @memberof google.cloud.documentai.v1beta1.BoundingPoly
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        BoundingPoly.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.vertices != null && message.hasOwnProperty("vertices")) {
+                                if (!Array.isArray(message.vertices))
+                                    return "vertices: array expected";
+                                for (var i = 0; i < message.vertices.length; ++i) {
+                                    var error = $root.google.cloud.documentai.v1beta1.Vertex.verify(message.vertices[i]);
+                                    if (error)
+                                        return "vertices." + error;
+                                }
+                            }
+                            if (message.normalizedVertices != null && message.hasOwnProperty("normalizedVertices")) {
+                                if (!Array.isArray(message.normalizedVertices))
+                                    return "normalizedVertices: array expected";
+                                for (var i = 0; i < message.normalizedVertices.length; ++i) {
+                                    var error = $root.google.cloud.documentai.v1beta1.NormalizedVertex.verify(message.normalizedVertices[i]);
+                                    if (error)
+                                        return "normalizedVertices." + error;
+                                }
+                            }
+                            return null;
+                        };
+    
+                        /**
+                         * Creates a BoundingPoly message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.cloud.documentai.v1beta1.BoundingPoly
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.cloud.documentai.v1beta1.BoundingPoly} BoundingPoly
+                         */
+                        BoundingPoly.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.cloud.documentai.v1beta1.BoundingPoly)
+                                return object;
+                            var message = new $root.google.cloud.documentai.v1beta1.BoundingPoly();
+                            if (object.vertices) {
+                                if (!Array.isArray(object.vertices))
+                                    throw TypeError(".google.cloud.documentai.v1beta1.BoundingPoly.vertices: array expected");
+                                message.vertices = [];
+                                for (var i = 0; i < object.vertices.length; ++i) {
+                                    if (typeof object.vertices[i] !== "object")
+                                        throw TypeError(".google.cloud.documentai.v1beta1.BoundingPoly.vertices: object expected");
+                                    message.vertices[i] = $root.google.cloud.documentai.v1beta1.Vertex.fromObject(object.vertices[i]);
+                                }
+                            }
+                            if (object.normalizedVertices) {
+                                if (!Array.isArray(object.normalizedVertices))
+                                    throw TypeError(".google.cloud.documentai.v1beta1.BoundingPoly.normalizedVertices: array expected");
+                                message.normalizedVertices = [];
+                                for (var i = 0; i < object.normalizedVertices.length; ++i) {
+                                    if (typeof object.normalizedVertices[i] !== "object")
+                                        throw TypeError(".google.cloud.documentai.v1beta1.BoundingPoly.normalizedVertices: object expected");
+                                    message.normalizedVertices[i] = $root.google.cloud.documentai.v1beta1.NormalizedVertex.fromObject(object.normalizedVertices[i]);
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from a BoundingPoly message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.cloud.documentai.v1beta1.BoundingPoly
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.BoundingPoly} message BoundingPoly
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        BoundingPoly.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.arrays || options.defaults) {
+                                object.vertices = [];
+                                object.normalizedVertices = [];
+                            }
+                            if (message.vertices && message.vertices.length) {
+                                object.vertices = [];
+                                for (var j = 0; j < message.vertices.length; ++j)
+                                    object.vertices[j] = $root.google.cloud.documentai.v1beta1.Vertex.toObject(message.vertices[j], options);
+                            }
+                            if (message.normalizedVertices && message.normalizedVertices.length) {
+                                object.normalizedVertices = [];
+                                for (var j = 0; j < message.normalizedVertices.length; ++j)
+                                    object.normalizedVertices[j] = $root.google.cloud.documentai.v1beta1.NormalizedVertex.toObject(message.normalizedVertices[j], options);
+                            }
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this BoundingPoly to JSON.
+                         * @function toJSON
+                         * @memberof google.cloud.documentai.v1beta1.BoundingPoly
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        BoundingPoly.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return BoundingPoly;
+                    })();
+    
+                    v1beta1.DocumentUnderstandingService = (function() {
+    
+                        /**
+                         * Constructs a new DocumentUnderstandingService service.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @classdesc Represents a DocumentUnderstandingService
+                         * @extends $protobuf.rpc.Service
+                         * @constructor
+                         * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
+                         * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
+                         * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
+                         */
+                        function DocumentUnderstandingService(rpcImpl, requestDelimited, responseDelimited) {
+                            $protobuf.rpc.Service.call(this, rpcImpl, requestDelimited, responseDelimited);
+                        }
+    
+                        (DocumentUnderstandingService.prototype = Object.create($protobuf.rpc.Service.prototype)).constructor = DocumentUnderstandingService;
+    
+                        /**
+                         * Creates new DocumentUnderstandingService service using the specified rpc implementation.
+                         * @function create
+                         * @memberof google.cloud.documentai.v1beta1.DocumentUnderstandingService
+                         * @static
+                         * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
+                         * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
+                         * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
+                         * @returns {DocumentUnderstandingService} RPC service. Useful where requests and/or responses are streamed.
+                         */
+                        DocumentUnderstandingService.create = function create(rpcImpl, requestDelimited, responseDelimited) {
+                            return new this(rpcImpl, requestDelimited, responseDelimited);
+                        };
+    
+                        /**
+                         * Callback as used by {@link google.cloud.documentai.v1beta1.DocumentUnderstandingService#batchProcessDocuments}.
+                         * @memberof google.cloud.documentai.v1beta1.DocumentUnderstandingService
+                         * @typedef BatchProcessDocumentsCallback
+                         * @type {function}
+                         * @param {Error|null} error Error, if any
+                         * @param {google.longrunning.Operation} [response] Operation
+                         */
+    
+                        /**
+                         * Calls BatchProcessDocuments.
+                         * @function batchProcessDocuments
+                         * @memberof google.cloud.documentai.v1beta1.DocumentUnderstandingService
+                         * @instance
+                         * @param {google.cloud.documentai.v1beta1.IBatchProcessDocumentsRequest} request BatchProcessDocumentsRequest message or plain object
+                         * @param {google.cloud.documentai.v1beta1.DocumentUnderstandingService.BatchProcessDocumentsCallback} callback Node-style callback called with the error, if any, and Operation
+                         * @returns {undefined}
+                         * @variation 1
+                         */
+                        Object.defineProperty(DocumentUnderstandingService.prototype.batchProcessDocuments = function batchProcessDocuments(request, callback) {
+                            return this.rpcCall(batchProcessDocuments, $root.google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest, $root.google.longrunning.Operation, request, callback);
+                        }, "name", { value: "BatchProcessDocuments" });
+    
+                        /**
+                         * Calls BatchProcessDocuments.
+                         * @function batchProcessDocuments
+                         * @memberof google.cloud.documentai.v1beta1.DocumentUnderstandingService
+                         * @instance
+                         * @param {google.cloud.documentai.v1beta1.IBatchProcessDocumentsRequest} request BatchProcessDocumentsRequest message or plain object
+                         * @returns {Promise<google.longrunning.Operation>} Promise
+                         * @variation 2
+                         */
+    
+                        return DocumentUnderstandingService;
+                    })();
+    
+                    v1beta1.BatchProcessDocumentsRequest = (function() {
+    
+                        /**
+                         * Properties of a BatchProcessDocumentsRequest.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @interface IBatchProcessDocumentsRequest
+                         * @property {Array.<google.cloud.documentai.v1beta1.IProcessDocumentRequest>|null} [requests] BatchProcessDocumentsRequest requests
+                         * @property {string|null} [parent] BatchProcessDocumentsRequest parent
+                         */
+    
+                        /**
+                         * Constructs a new BatchProcessDocumentsRequest.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @classdesc Represents a BatchProcessDocumentsRequest.
+                         * @implements IBatchProcessDocumentsRequest
+                         * @constructor
+                         * @param {google.cloud.documentai.v1beta1.IBatchProcessDocumentsRequest=} [properties] Properties to set
+                         */
+                        function BatchProcessDocumentsRequest(properties) {
+                            this.requests = [];
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * BatchProcessDocumentsRequest requests.
+                         * @member {Array.<google.cloud.documentai.v1beta1.IProcessDocumentRequest>} requests
+                         * @memberof google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest
+                         * @instance
+                         */
+                        BatchProcessDocumentsRequest.prototype.requests = $util.emptyArray;
+    
+                        /**
+                         * BatchProcessDocumentsRequest parent.
+                         * @member {string} parent
+                         * @memberof google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest
+                         * @instance
+                         */
+                        BatchProcessDocumentsRequest.prototype.parent = "";
+    
+                        /**
+                         * Creates a new BatchProcessDocumentsRequest instance using the specified properties.
+                         * @function create
+                         * @memberof google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IBatchProcessDocumentsRequest=} [properties] Properties to set
+                         * @returns {google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest} BatchProcessDocumentsRequest instance
+                         */
+                        BatchProcessDocumentsRequest.create = function create(properties) {
+                            return new BatchProcessDocumentsRequest(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified BatchProcessDocumentsRequest message. Does not implicitly {@link google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IBatchProcessDocumentsRequest} message BatchProcessDocumentsRequest message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        BatchProcessDocumentsRequest.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.requests != null && message.requests.length)
+                                for (var i = 0; i < message.requests.length; ++i)
+                                    $root.google.cloud.documentai.v1beta1.ProcessDocumentRequest.encode(message.requests[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                            if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+                                writer.uint32(/* id 2, wireType 2 =*/18).string(message.parent);
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified BatchProcessDocumentsRequest message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IBatchProcessDocumentsRequest} message BatchProcessDocumentsRequest message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        BatchProcessDocumentsRequest.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes a BatchProcessDocumentsRequest message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest} BatchProcessDocumentsRequest
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        BatchProcessDocumentsRequest.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    if (!(message.requests && message.requests.length))
+                                        message.requests = [];
+                                    message.requests.push($root.google.cloud.documentai.v1beta1.ProcessDocumentRequest.decode(reader, reader.uint32()));
+                                    break;
+                                case 2:
+                                    message.parent = reader.string();
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes a BatchProcessDocumentsRequest message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest} BatchProcessDocumentsRequest
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        BatchProcessDocumentsRequest.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies a BatchProcessDocumentsRequest message.
+                         * @function verify
+                         * @memberof google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        BatchProcessDocumentsRequest.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.requests != null && message.hasOwnProperty("requests")) {
+                                if (!Array.isArray(message.requests))
+                                    return "requests: array expected";
+                                for (var i = 0; i < message.requests.length; ++i) {
+                                    var error = $root.google.cloud.documentai.v1beta1.ProcessDocumentRequest.verify(message.requests[i]);
+                                    if (error)
+                                        return "requests." + error;
+                                }
+                            }
+                            if (message.parent != null && message.hasOwnProperty("parent"))
+                                if (!$util.isString(message.parent))
+                                    return "parent: string expected";
+                            return null;
+                        };
+    
+                        /**
+                         * Creates a BatchProcessDocumentsRequest message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest} BatchProcessDocumentsRequest
+                         */
+                        BatchProcessDocumentsRequest.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest)
+                                return object;
+                            var message = new $root.google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest();
+                            if (object.requests) {
+                                if (!Array.isArray(object.requests))
+                                    throw TypeError(".google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest.requests: array expected");
+                                message.requests = [];
+                                for (var i = 0; i < object.requests.length; ++i) {
+                                    if (typeof object.requests[i] !== "object")
+                                        throw TypeError(".google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest.requests: object expected");
+                                    message.requests[i] = $root.google.cloud.documentai.v1beta1.ProcessDocumentRequest.fromObject(object.requests[i]);
+                                }
+                            }
+                            if (object.parent != null)
+                                message.parent = String(object.parent);
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from a BatchProcessDocumentsRequest message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest} message BatchProcessDocumentsRequest
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        BatchProcessDocumentsRequest.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.arrays || options.defaults)
+                                object.requests = [];
+                            if (options.defaults)
+                                object.parent = "";
+                            if (message.requests && message.requests.length) {
+                                object.requests = [];
+                                for (var j = 0; j < message.requests.length; ++j)
+                                    object.requests[j] = $root.google.cloud.documentai.v1beta1.ProcessDocumentRequest.toObject(message.requests[j], options);
+                            }
+                            if (message.parent != null && message.hasOwnProperty("parent"))
+                                object.parent = message.parent;
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this BatchProcessDocumentsRequest to JSON.
+                         * @function toJSON
+                         * @memberof google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        BatchProcessDocumentsRequest.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return BatchProcessDocumentsRequest;
+                    })();
+    
+                    v1beta1.ProcessDocumentRequest = (function() {
+    
+                        /**
+                         * Properties of a ProcessDocumentRequest.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @interface IProcessDocumentRequest
+                         * @property {google.cloud.documentai.v1beta1.IInputConfig|null} [inputConfig] ProcessDocumentRequest inputConfig
+                         * @property {google.cloud.documentai.v1beta1.IOutputConfig|null} [outputConfig] ProcessDocumentRequest outputConfig
+                         * @property {string|null} [documentType] ProcessDocumentRequest documentType
+                         * @property {google.cloud.documentai.v1beta1.ITableExtractionParams|null} [tableExtractionParams] ProcessDocumentRequest tableExtractionParams
+                         * @property {google.cloud.documentai.v1beta1.IFormExtractionParams|null} [formExtractionParams] ProcessDocumentRequest formExtractionParams
+                         * @property {google.cloud.documentai.v1beta1.IEntityExtractionParams|null} [entityExtractionParams] ProcessDocumentRequest entityExtractionParams
+                         * @property {google.cloud.documentai.v1beta1.IOcrParams|null} [ocrParams] ProcessDocumentRequest ocrParams
+                         */
+    
+                        /**
+                         * Constructs a new ProcessDocumentRequest.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @classdesc Represents a ProcessDocumentRequest.
+                         * @implements IProcessDocumentRequest
+                         * @constructor
+                         * @param {google.cloud.documentai.v1beta1.IProcessDocumentRequest=} [properties] Properties to set
+                         */
+                        function ProcessDocumentRequest(properties) {
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * ProcessDocumentRequest inputConfig.
+                         * @member {google.cloud.documentai.v1beta1.IInputConfig|null|undefined} inputConfig
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentRequest
+                         * @instance
+                         */
+                        ProcessDocumentRequest.prototype.inputConfig = null;
+    
+                        /**
+                         * ProcessDocumentRequest outputConfig.
+                         * @member {google.cloud.documentai.v1beta1.IOutputConfig|null|undefined} outputConfig
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentRequest
+                         * @instance
+                         */
+                        ProcessDocumentRequest.prototype.outputConfig = null;
+    
+                        /**
+                         * ProcessDocumentRequest documentType.
+                         * @member {string} documentType
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentRequest
+                         * @instance
+                         */
+                        ProcessDocumentRequest.prototype.documentType = "";
+    
+                        /**
+                         * ProcessDocumentRequest tableExtractionParams.
+                         * @member {google.cloud.documentai.v1beta1.ITableExtractionParams|null|undefined} tableExtractionParams
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentRequest
+                         * @instance
+                         */
+                        ProcessDocumentRequest.prototype.tableExtractionParams = null;
+    
+                        /**
+                         * ProcessDocumentRequest formExtractionParams.
+                         * @member {google.cloud.documentai.v1beta1.IFormExtractionParams|null|undefined} formExtractionParams
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentRequest
+                         * @instance
+                         */
+                        ProcessDocumentRequest.prototype.formExtractionParams = null;
+    
+                        /**
+                         * ProcessDocumentRequest entityExtractionParams.
+                         * @member {google.cloud.documentai.v1beta1.IEntityExtractionParams|null|undefined} entityExtractionParams
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentRequest
+                         * @instance
+                         */
+                        ProcessDocumentRequest.prototype.entityExtractionParams = null;
+    
+                        /**
+                         * ProcessDocumentRequest ocrParams.
+                         * @member {google.cloud.documentai.v1beta1.IOcrParams|null|undefined} ocrParams
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentRequest
+                         * @instance
+                         */
+                        ProcessDocumentRequest.prototype.ocrParams = null;
+    
+                        /**
+                         * Creates a new ProcessDocumentRequest instance using the specified properties.
+                         * @function create
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentRequest
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IProcessDocumentRequest=} [properties] Properties to set
+                         * @returns {google.cloud.documentai.v1beta1.ProcessDocumentRequest} ProcessDocumentRequest instance
+                         */
+                        ProcessDocumentRequest.create = function create(properties) {
+                            return new ProcessDocumentRequest(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified ProcessDocumentRequest message. Does not implicitly {@link google.cloud.documentai.v1beta1.ProcessDocumentRequest.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentRequest
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IProcessDocumentRequest} message ProcessDocumentRequest message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        ProcessDocumentRequest.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.inputConfig != null && Object.hasOwnProperty.call(message, "inputConfig"))
+                                $root.google.cloud.documentai.v1beta1.InputConfig.encode(message.inputConfig, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                            if (message.outputConfig != null && Object.hasOwnProperty.call(message, "outputConfig"))
+                                $root.google.cloud.documentai.v1beta1.OutputConfig.encode(message.outputConfig, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                            if (message.documentType != null && Object.hasOwnProperty.call(message, "documentType"))
+                                writer.uint32(/* id 3, wireType 2 =*/26).string(message.documentType);
+                            if (message.tableExtractionParams != null && Object.hasOwnProperty.call(message, "tableExtractionParams"))
+                                $root.google.cloud.documentai.v1beta1.TableExtractionParams.encode(message.tableExtractionParams, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                            if (message.formExtractionParams != null && Object.hasOwnProperty.call(message, "formExtractionParams"))
+                                $root.google.cloud.documentai.v1beta1.FormExtractionParams.encode(message.formExtractionParams, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                            if (message.entityExtractionParams != null && Object.hasOwnProperty.call(message, "entityExtractionParams"))
+                                $root.google.cloud.documentai.v1beta1.EntityExtractionParams.encode(message.entityExtractionParams, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                            if (message.ocrParams != null && Object.hasOwnProperty.call(message, "ocrParams"))
+                                $root.google.cloud.documentai.v1beta1.OcrParams.encode(message.ocrParams, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified ProcessDocumentRequest message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.ProcessDocumentRequest.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentRequest
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IProcessDocumentRequest} message ProcessDocumentRequest message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        ProcessDocumentRequest.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes a ProcessDocumentRequest message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentRequest
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.cloud.documentai.v1beta1.ProcessDocumentRequest} ProcessDocumentRequest
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        ProcessDocumentRequest.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.ProcessDocumentRequest();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    message.inputConfig = $root.google.cloud.documentai.v1beta1.InputConfig.decode(reader, reader.uint32());
+                                    break;
+                                case 2:
+                                    message.outputConfig = $root.google.cloud.documentai.v1beta1.OutputConfig.decode(reader, reader.uint32());
+                                    break;
+                                case 3:
+                                    message.documentType = reader.string();
+                                    break;
+                                case 4:
+                                    message.tableExtractionParams = $root.google.cloud.documentai.v1beta1.TableExtractionParams.decode(reader, reader.uint32());
+                                    break;
+                                case 5:
+                                    message.formExtractionParams = $root.google.cloud.documentai.v1beta1.FormExtractionParams.decode(reader, reader.uint32());
+                                    break;
+                                case 6:
+                                    message.entityExtractionParams = $root.google.cloud.documentai.v1beta1.EntityExtractionParams.decode(reader, reader.uint32());
+                                    break;
+                                case 7:
+                                    message.ocrParams = $root.google.cloud.documentai.v1beta1.OcrParams.decode(reader, reader.uint32());
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes a ProcessDocumentRequest message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentRequest
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.cloud.documentai.v1beta1.ProcessDocumentRequest} ProcessDocumentRequest
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        ProcessDocumentRequest.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies a ProcessDocumentRequest message.
+                         * @function verify
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentRequest
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        ProcessDocumentRequest.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.inputConfig != null && message.hasOwnProperty("inputConfig")) {
+                                var error = $root.google.cloud.documentai.v1beta1.InputConfig.verify(message.inputConfig);
+                                if (error)
+                                    return "inputConfig." + error;
+                            }
+                            if (message.outputConfig != null && message.hasOwnProperty("outputConfig")) {
+                                var error = $root.google.cloud.documentai.v1beta1.OutputConfig.verify(message.outputConfig);
+                                if (error)
+                                    return "outputConfig." + error;
+                            }
+                            if (message.documentType != null && message.hasOwnProperty("documentType"))
+                                if (!$util.isString(message.documentType))
+                                    return "documentType: string expected";
+                            if (message.tableExtractionParams != null && message.hasOwnProperty("tableExtractionParams")) {
+                                var error = $root.google.cloud.documentai.v1beta1.TableExtractionParams.verify(message.tableExtractionParams);
+                                if (error)
+                                    return "tableExtractionParams." + error;
+                            }
+                            if (message.formExtractionParams != null && message.hasOwnProperty("formExtractionParams")) {
+                                var error = $root.google.cloud.documentai.v1beta1.FormExtractionParams.verify(message.formExtractionParams);
+                                if (error)
+                                    return "formExtractionParams." + error;
+                            }
+                            if (message.entityExtractionParams != null && message.hasOwnProperty("entityExtractionParams")) {
+                                var error = $root.google.cloud.documentai.v1beta1.EntityExtractionParams.verify(message.entityExtractionParams);
+                                if (error)
+                                    return "entityExtractionParams." + error;
+                            }
+                            if (message.ocrParams != null && message.hasOwnProperty("ocrParams")) {
+                                var error = $root.google.cloud.documentai.v1beta1.OcrParams.verify(message.ocrParams);
+                                if (error)
+                                    return "ocrParams." + error;
+                            }
+                            return null;
+                        };
+    
+                        /**
+                         * Creates a ProcessDocumentRequest message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentRequest
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.cloud.documentai.v1beta1.ProcessDocumentRequest} ProcessDocumentRequest
+                         */
+                        ProcessDocumentRequest.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.cloud.documentai.v1beta1.ProcessDocumentRequest)
+                                return object;
+                            var message = new $root.google.cloud.documentai.v1beta1.ProcessDocumentRequest();
+                            if (object.inputConfig != null) {
+                                if (typeof object.inputConfig !== "object")
+                                    throw TypeError(".google.cloud.documentai.v1beta1.ProcessDocumentRequest.inputConfig: object expected");
+                                message.inputConfig = $root.google.cloud.documentai.v1beta1.InputConfig.fromObject(object.inputConfig);
+                            }
+                            if (object.outputConfig != null) {
+                                if (typeof object.outputConfig !== "object")
+                                    throw TypeError(".google.cloud.documentai.v1beta1.ProcessDocumentRequest.outputConfig: object expected");
+                                message.outputConfig = $root.google.cloud.documentai.v1beta1.OutputConfig.fromObject(object.outputConfig);
+                            }
+                            if (object.documentType != null)
+                                message.documentType = String(object.documentType);
+                            if (object.tableExtractionParams != null) {
+                                if (typeof object.tableExtractionParams !== "object")
+                                    throw TypeError(".google.cloud.documentai.v1beta1.ProcessDocumentRequest.tableExtractionParams: object expected");
+                                message.tableExtractionParams = $root.google.cloud.documentai.v1beta1.TableExtractionParams.fromObject(object.tableExtractionParams);
+                            }
+                            if (object.formExtractionParams != null) {
+                                if (typeof object.formExtractionParams !== "object")
+                                    throw TypeError(".google.cloud.documentai.v1beta1.ProcessDocumentRequest.formExtractionParams: object expected");
+                                message.formExtractionParams = $root.google.cloud.documentai.v1beta1.FormExtractionParams.fromObject(object.formExtractionParams);
+                            }
+                            if (object.entityExtractionParams != null) {
+                                if (typeof object.entityExtractionParams !== "object")
+                                    throw TypeError(".google.cloud.documentai.v1beta1.ProcessDocumentRequest.entityExtractionParams: object expected");
+                                message.entityExtractionParams = $root.google.cloud.documentai.v1beta1.EntityExtractionParams.fromObject(object.entityExtractionParams);
+                            }
+                            if (object.ocrParams != null) {
+                                if (typeof object.ocrParams !== "object")
+                                    throw TypeError(".google.cloud.documentai.v1beta1.ProcessDocumentRequest.ocrParams: object expected");
+                                message.ocrParams = $root.google.cloud.documentai.v1beta1.OcrParams.fromObject(object.ocrParams);
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from a ProcessDocumentRequest message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentRequest
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.ProcessDocumentRequest} message ProcessDocumentRequest
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        ProcessDocumentRequest.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.defaults) {
+                                object.inputConfig = null;
+                                object.outputConfig = null;
+                                object.documentType = "";
+                                object.tableExtractionParams = null;
+                                object.formExtractionParams = null;
+                                object.entityExtractionParams = null;
+                                object.ocrParams = null;
+                            }
+                            if (message.inputConfig != null && message.hasOwnProperty("inputConfig"))
+                                object.inputConfig = $root.google.cloud.documentai.v1beta1.InputConfig.toObject(message.inputConfig, options);
+                            if (message.outputConfig != null && message.hasOwnProperty("outputConfig"))
+                                object.outputConfig = $root.google.cloud.documentai.v1beta1.OutputConfig.toObject(message.outputConfig, options);
+                            if (message.documentType != null && message.hasOwnProperty("documentType"))
+                                object.documentType = message.documentType;
+                            if (message.tableExtractionParams != null && message.hasOwnProperty("tableExtractionParams"))
+                                object.tableExtractionParams = $root.google.cloud.documentai.v1beta1.TableExtractionParams.toObject(message.tableExtractionParams, options);
+                            if (message.formExtractionParams != null && message.hasOwnProperty("formExtractionParams"))
+                                object.formExtractionParams = $root.google.cloud.documentai.v1beta1.FormExtractionParams.toObject(message.formExtractionParams, options);
+                            if (message.entityExtractionParams != null && message.hasOwnProperty("entityExtractionParams"))
+                                object.entityExtractionParams = $root.google.cloud.documentai.v1beta1.EntityExtractionParams.toObject(message.entityExtractionParams, options);
+                            if (message.ocrParams != null && message.hasOwnProperty("ocrParams"))
+                                object.ocrParams = $root.google.cloud.documentai.v1beta1.OcrParams.toObject(message.ocrParams, options);
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this ProcessDocumentRequest to JSON.
+                         * @function toJSON
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentRequest
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        ProcessDocumentRequest.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return ProcessDocumentRequest;
+                    })();
+    
+                    v1beta1.BatchProcessDocumentsResponse = (function() {
+    
+                        /**
+                         * Properties of a BatchProcessDocumentsResponse.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @interface IBatchProcessDocumentsResponse
+                         * @property {Array.<google.cloud.documentai.v1beta1.IProcessDocumentResponse>|null} [responses] BatchProcessDocumentsResponse responses
+                         */
+    
+                        /**
+                         * Constructs a new BatchProcessDocumentsResponse.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @classdesc Represents a BatchProcessDocumentsResponse.
+                         * @implements IBatchProcessDocumentsResponse
+                         * @constructor
+                         * @param {google.cloud.documentai.v1beta1.IBatchProcessDocumentsResponse=} [properties] Properties to set
+                         */
+                        function BatchProcessDocumentsResponse(properties) {
+                            this.responses = [];
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * BatchProcessDocumentsResponse responses.
+                         * @member {Array.<google.cloud.documentai.v1beta1.IProcessDocumentResponse>} responses
+                         * @memberof google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse
+                         * @instance
+                         */
+                        BatchProcessDocumentsResponse.prototype.responses = $util.emptyArray;
+    
+                        /**
+                         * Creates a new BatchProcessDocumentsResponse instance using the specified properties.
+                         * @function create
+                         * @memberof google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IBatchProcessDocumentsResponse=} [properties] Properties to set
+                         * @returns {google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse} BatchProcessDocumentsResponse instance
+                         */
+                        BatchProcessDocumentsResponse.create = function create(properties) {
+                            return new BatchProcessDocumentsResponse(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified BatchProcessDocumentsResponse message. Does not implicitly {@link google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IBatchProcessDocumentsResponse} message BatchProcessDocumentsResponse message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        BatchProcessDocumentsResponse.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.responses != null && message.responses.length)
+                                for (var i = 0; i < message.responses.length; ++i)
+                                    $root.google.cloud.documentai.v1beta1.ProcessDocumentResponse.encode(message.responses[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified BatchProcessDocumentsResponse message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IBatchProcessDocumentsResponse} message BatchProcessDocumentsResponse message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        BatchProcessDocumentsResponse.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes a BatchProcessDocumentsResponse message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse} BatchProcessDocumentsResponse
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        BatchProcessDocumentsResponse.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    if (!(message.responses && message.responses.length))
+                                        message.responses = [];
+                                    message.responses.push($root.google.cloud.documentai.v1beta1.ProcessDocumentResponse.decode(reader, reader.uint32()));
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes a BatchProcessDocumentsResponse message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse} BatchProcessDocumentsResponse
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        BatchProcessDocumentsResponse.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies a BatchProcessDocumentsResponse message.
+                         * @function verify
+                         * @memberof google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        BatchProcessDocumentsResponse.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.responses != null && message.hasOwnProperty("responses")) {
+                                if (!Array.isArray(message.responses))
+                                    return "responses: array expected";
+                                for (var i = 0; i < message.responses.length; ++i) {
+                                    var error = $root.google.cloud.documentai.v1beta1.ProcessDocumentResponse.verify(message.responses[i]);
+                                    if (error)
+                                        return "responses." + error;
+                                }
+                            }
+                            return null;
+                        };
+    
+                        /**
+                         * Creates a BatchProcessDocumentsResponse message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse} BatchProcessDocumentsResponse
+                         */
+                        BatchProcessDocumentsResponse.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse)
+                                return object;
+                            var message = new $root.google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse();
+                            if (object.responses) {
+                                if (!Array.isArray(object.responses))
+                                    throw TypeError(".google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse.responses: array expected");
+                                message.responses = [];
+                                for (var i = 0; i < object.responses.length; ++i) {
+                                    if (typeof object.responses[i] !== "object")
+                                        throw TypeError(".google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse.responses: object expected");
+                                    message.responses[i] = $root.google.cloud.documentai.v1beta1.ProcessDocumentResponse.fromObject(object.responses[i]);
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from a BatchProcessDocumentsResponse message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse} message BatchProcessDocumentsResponse
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        BatchProcessDocumentsResponse.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.arrays || options.defaults)
+                                object.responses = [];
+                            if (message.responses && message.responses.length) {
+                                object.responses = [];
+                                for (var j = 0; j < message.responses.length; ++j)
+                                    object.responses[j] = $root.google.cloud.documentai.v1beta1.ProcessDocumentResponse.toObject(message.responses[j], options);
+                            }
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this BatchProcessDocumentsResponse to JSON.
+                         * @function toJSON
+                         * @memberof google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        BatchProcessDocumentsResponse.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return BatchProcessDocumentsResponse;
+                    })();
+    
+                    v1beta1.ProcessDocumentResponse = (function() {
+    
+                        /**
+                         * Properties of a ProcessDocumentResponse.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @interface IProcessDocumentResponse
+                         * @property {google.cloud.documentai.v1beta1.IInputConfig|null} [inputConfig] ProcessDocumentResponse inputConfig
+                         * @property {google.cloud.documentai.v1beta1.IOutputConfig|null} [outputConfig] ProcessDocumentResponse outputConfig
+                         */
+    
+                        /**
+                         * Constructs a new ProcessDocumentResponse.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @classdesc Represents a ProcessDocumentResponse.
+                         * @implements IProcessDocumentResponse
+                         * @constructor
+                         * @param {google.cloud.documentai.v1beta1.IProcessDocumentResponse=} [properties] Properties to set
+                         */
+                        function ProcessDocumentResponse(properties) {
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * ProcessDocumentResponse inputConfig.
+                         * @member {google.cloud.documentai.v1beta1.IInputConfig|null|undefined} inputConfig
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentResponse
+                         * @instance
+                         */
+                        ProcessDocumentResponse.prototype.inputConfig = null;
+    
+                        /**
+                         * ProcessDocumentResponse outputConfig.
+                         * @member {google.cloud.documentai.v1beta1.IOutputConfig|null|undefined} outputConfig
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentResponse
+                         * @instance
+                         */
+                        ProcessDocumentResponse.prototype.outputConfig = null;
+    
+                        /**
+                         * Creates a new ProcessDocumentResponse instance using the specified properties.
+                         * @function create
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentResponse
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IProcessDocumentResponse=} [properties] Properties to set
+                         * @returns {google.cloud.documentai.v1beta1.ProcessDocumentResponse} ProcessDocumentResponse instance
+                         */
+                        ProcessDocumentResponse.create = function create(properties) {
+                            return new ProcessDocumentResponse(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified ProcessDocumentResponse message. Does not implicitly {@link google.cloud.documentai.v1beta1.ProcessDocumentResponse.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentResponse
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IProcessDocumentResponse} message ProcessDocumentResponse message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        ProcessDocumentResponse.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.inputConfig != null && Object.hasOwnProperty.call(message, "inputConfig"))
+                                $root.google.cloud.documentai.v1beta1.InputConfig.encode(message.inputConfig, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                            if (message.outputConfig != null && Object.hasOwnProperty.call(message, "outputConfig"))
+                                $root.google.cloud.documentai.v1beta1.OutputConfig.encode(message.outputConfig, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified ProcessDocumentResponse message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.ProcessDocumentResponse.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentResponse
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IProcessDocumentResponse} message ProcessDocumentResponse message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        ProcessDocumentResponse.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes a ProcessDocumentResponse message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentResponse
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.cloud.documentai.v1beta1.ProcessDocumentResponse} ProcessDocumentResponse
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        ProcessDocumentResponse.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.ProcessDocumentResponse();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    message.inputConfig = $root.google.cloud.documentai.v1beta1.InputConfig.decode(reader, reader.uint32());
+                                    break;
+                                case 2:
+                                    message.outputConfig = $root.google.cloud.documentai.v1beta1.OutputConfig.decode(reader, reader.uint32());
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes a ProcessDocumentResponse message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentResponse
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.cloud.documentai.v1beta1.ProcessDocumentResponse} ProcessDocumentResponse
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        ProcessDocumentResponse.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies a ProcessDocumentResponse message.
+                         * @function verify
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentResponse
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        ProcessDocumentResponse.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.inputConfig != null && message.hasOwnProperty("inputConfig")) {
+                                var error = $root.google.cloud.documentai.v1beta1.InputConfig.verify(message.inputConfig);
+                                if (error)
+                                    return "inputConfig." + error;
+                            }
+                            if (message.outputConfig != null && message.hasOwnProperty("outputConfig")) {
+                                var error = $root.google.cloud.documentai.v1beta1.OutputConfig.verify(message.outputConfig);
+                                if (error)
+                                    return "outputConfig." + error;
+                            }
+                            return null;
+                        };
+    
+                        /**
+                         * Creates a ProcessDocumentResponse message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentResponse
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.cloud.documentai.v1beta1.ProcessDocumentResponse} ProcessDocumentResponse
+                         */
+                        ProcessDocumentResponse.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.cloud.documentai.v1beta1.ProcessDocumentResponse)
+                                return object;
+                            var message = new $root.google.cloud.documentai.v1beta1.ProcessDocumentResponse();
+                            if (object.inputConfig != null) {
+                                if (typeof object.inputConfig !== "object")
+                                    throw TypeError(".google.cloud.documentai.v1beta1.ProcessDocumentResponse.inputConfig: object expected");
+                                message.inputConfig = $root.google.cloud.documentai.v1beta1.InputConfig.fromObject(object.inputConfig);
+                            }
+                            if (object.outputConfig != null) {
+                                if (typeof object.outputConfig !== "object")
+                                    throw TypeError(".google.cloud.documentai.v1beta1.ProcessDocumentResponse.outputConfig: object expected");
+                                message.outputConfig = $root.google.cloud.documentai.v1beta1.OutputConfig.fromObject(object.outputConfig);
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from a ProcessDocumentResponse message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentResponse
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.ProcessDocumentResponse} message ProcessDocumentResponse
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        ProcessDocumentResponse.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.defaults) {
+                                object.inputConfig = null;
+                                object.outputConfig = null;
+                            }
+                            if (message.inputConfig != null && message.hasOwnProperty("inputConfig"))
+                                object.inputConfig = $root.google.cloud.documentai.v1beta1.InputConfig.toObject(message.inputConfig, options);
+                            if (message.outputConfig != null && message.hasOwnProperty("outputConfig"))
+                                object.outputConfig = $root.google.cloud.documentai.v1beta1.OutputConfig.toObject(message.outputConfig, options);
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this ProcessDocumentResponse to JSON.
+                         * @function toJSON
+                         * @memberof google.cloud.documentai.v1beta1.ProcessDocumentResponse
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        ProcessDocumentResponse.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return ProcessDocumentResponse;
+                    })();
+    
+                    v1beta1.OcrParams = (function() {
+    
+                        /**
+                         * Properties of an OcrParams.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @interface IOcrParams
+                         * @property {Array.<string>|null} [languageHints] OcrParams languageHints
+                         */
+    
+                        /**
+                         * Constructs a new OcrParams.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @classdesc Represents an OcrParams.
+                         * @implements IOcrParams
+                         * @constructor
+                         * @param {google.cloud.documentai.v1beta1.IOcrParams=} [properties] Properties to set
+                         */
+                        function OcrParams(properties) {
+                            this.languageHints = [];
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * OcrParams languageHints.
+                         * @member {Array.<string>} languageHints
+                         * @memberof google.cloud.documentai.v1beta1.OcrParams
+                         * @instance
+                         */
+                        OcrParams.prototype.languageHints = $util.emptyArray;
+    
+                        /**
+                         * Creates a new OcrParams instance using the specified properties.
+                         * @function create
+                         * @memberof google.cloud.documentai.v1beta1.OcrParams
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IOcrParams=} [properties] Properties to set
+                         * @returns {google.cloud.documentai.v1beta1.OcrParams} OcrParams instance
+                         */
+                        OcrParams.create = function create(properties) {
+                            return new OcrParams(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified OcrParams message. Does not implicitly {@link google.cloud.documentai.v1beta1.OcrParams.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.cloud.documentai.v1beta1.OcrParams
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IOcrParams} message OcrParams message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        OcrParams.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.languageHints != null && message.languageHints.length)
+                                for (var i = 0; i < message.languageHints.length; ++i)
+                                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.languageHints[i]);
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified OcrParams message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.OcrParams.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.OcrParams
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IOcrParams} message OcrParams message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        OcrParams.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes an OcrParams message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.cloud.documentai.v1beta1.OcrParams
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.cloud.documentai.v1beta1.OcrParams} OcrParams
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        OcrParams.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.OcrParams();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    if (!(message.languageHints && message.languageHints.length))
+                                        message.languageHints = [];
+                                    message.languageHints.push(reader.string());
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes an OcrParams message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.OcrParams
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.cloud.documentai.v1beta1.OcrParams} OcrParams
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        OcrParams.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies an OcrParams message.
+                         * @function verify
+                         * @memberof google.cloud.documentai.v1beta1.OcrParams
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        OcrParams.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.languageHints != null && message.hasOwnProperty("languageHints")) {
+                                if (!Array.isArray(message.languageHints))
+                                    return "languageHints: array expected";
+                                for (var i = 0; i < message.languageHints.length; ++i)
+                                    if (!$util.isString(message.languageHints[i]))
+                                        return "languageHints: string[] expected";
+                            }
+                            return null;
+                        };
+    
+                        /**
+                         * Creates an OcrParams message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.cloud.documentai.v1beta1.OcrParams
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.cloud.documentai.v1beta1.OcrParams} OcrParams
+                         */
+                        OcrParams.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.cloud.documentai.v1beta1.OcrParams)
+                                return object;
+                            var message = new $root.google.cloud.documentai.v1beta1.OcrParams();
+                            if (object.languageHints) {
+                                if (!Array.isArray(object.languageHints))
+                                    throw TypeError(".google.cloud.documentai.v1beta1.OcrParams.languageHints: array expected");
+                                message.languageHints = [];
+                                for (var i = 0; i < object.languageHints.length; ++i)
+                                    message.languageHints[i] = String(object.languageHints[i]);
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from an OcrParams message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.cloud.documentai.v1beta1.OcrParams
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.OcrParams} message OcrParams
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        OcrParams.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.arrays || options.defaults)
+                                object.languageHints = [];
+                            if (message.languageHints && message.languageHints.length) {
+                                object.languageHints = [];
+                                for (var j = 0; j < message.languageHints.length; ++j)
+                                    object.languageHints[j] = message.languageHints[j];
+                            }
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this OcrParams to JSON.
+                         * @function toJSON
+                         * @memberof google.cloud.documentai.v1beta1.OcrParams
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        OcrParams.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return OcrParams;
+                    })();
+    
+                    v1beta1.TableExtractionParams = (function() {
+    
+                        /**
+                         * Properties of a TableExtractionParams.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @interface ITableExtractionParams
+                         * @property {boolean|null} [enabled] TableExtractionParams enabled
+                         * @property {Array.<google.cloud.documentai.v1beta1.ITableBoundHint>|null} [tableBoundHints] TableExtractionParams tableBoundHints
+                         * @property {Array.<string>|null} [headerHints] TableExtractionParams headerHints
+                         * @property {string|null} [modelVersion] TableExtractionParams modelVersion
+                         */
+    
+                        /**
+                         * Constructs a new TableExtractionParams.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @classdesc Represents a TableExtractionParams.
+                         * @implements ITableExtractionParams
+                         * @constructor
+                         * @param {google.cloud.documentai.v1beta1.ITableExtractionParams=} [properties] Properties to set
+                         */
+                        function TableExtractionParams(properties) {
+                            this.tableBoundHints = [];
+                            this.headerHints = [];
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * TableExtractionParams enabled.
+                         * @member {boolean} enabled
+                         * @memberof google.cloud.documentai.v1beta1.TableExtractionParams
+                         * @instance
+                         */
+                        TableExtractionParams.prototype.enabled = false;
+    
+                        /**
+                         * TableExtractionParams tableBoundHints.
+                         * @member {Array.<google.cloud.documentai.v1beta1.ITableBoundHint>} tableBoundHints
+                         * @memberof google.cloud.documentai.v1beta1.TableExtractionParams
+                         * @instance
+                         */
+                        TableExtractionParams.prototype.tableBoundHints = $util.emptyArray;
+    
+                        /**
+                         * TableExtractionParams headerHints.
+                         * @member {Array.<string>} headerHints
+                         * @memberof google.cloud.documentai.v1beta1.TableExtractionParams
+                         * @instance
+                         */
+                        TableExtractionParams.prototype.headerHints = $util.emptyArray;
+    
+                        /**
+                         * TableExtractionParams modelVersion.
+                         * @member {string} modelVersion
+                         * @memberof google.cloud.documentai.v1beta1.TableExtractionParams
+                         * @instance
+                         */
+                        TableExtractionParams.prototype.modelVersion = "";
+    
+                        /**
+                         * Creates a new TableExtractionParams instance using the specified properties.
+                         * @function create
+                         * @memberof google.cloud.documentai.v1beta1.TableExtractionParams
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.ITableExtractionParams=} [properties] Properties to set
+                         * @returns {google.cloud.documentai.v1beta1.TableExtractionParams} TableExtractionParams instance
+                         */
+                        TableExtractionParams.create = function create(properties) {
+                            return new TableExtractionParams(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified TableExtractionParams message. Does not implicitly {@link google.cloud.documentai.v1beta1.TableExtractionParams.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.cloud.documentai.v1beta1.TableExtractionParams
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.ITableExtractionParams} message TableExtractionParams message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        TableExtractionParams.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.enabled != null && Object.hasOwnProperty.call(message, "enabled"))
+                                writer.uint32(/* id 1, wireType 0 =*/8).bool(message.enabled);
+                            if (message.tableBoundHints != null && message.tableBoundHints.length)
+                                for (var i = 0; i < message.tableBoundHints.length; ++i)
+                                    $root.google.cloud.documentai.v1beta1.TableBoundHint.encode(message.tableBoundHints[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                            if (message.headerHints != null && message.headerHints.length)
+                                for (var i = 0; i < message.headerHints.length; ++i)
+                                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.headerHints[i]);
+                            if (message.modelVersion != null && Object.hasOwnProperty.call(message, "modelVersion"))
+                                writer.uint32(/* id 4, wireType 2 =*/34).string(message.modelVersion);
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified TableExtractionParams message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.TableExtractionParams.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.TableExtractionParams
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.ITableExtractionParams} message TableExtractionParams message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        TableExtractionParams.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes a TableExtractionParams message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.cloud.documentai.v1beta1.TableExtractionParams
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.cloud.documentai.v1beta1.TableExtractionParams} TableExtractionParams
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        TableExtractionParams.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.TableExtractionParams();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    message.enabled = reader.bool();
+                                    break;
+                                case 2:
+                                    if (!(message.tableBoundHints && message.tableBoundHints.length))
+                                        message.tableBoundHints = [];
+                                    message.tableBoundHints.push($root.google.cloud.documentai.v1beta1.TableBoundHint.decode(reader, reader.uint32()));
+                                    break;
+                                case 3:
+                                    if (!(message.headerHints && message.headerHints.length))
+                                        message.headerHints = [];
+                                    message.headerHints.push(reader.string());
+                                    break;
+                                case 4:
+                                    message.modelVersion = reader.string();
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes a TableExtractionParams message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.TableExtractionParams
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.cloud.documentai.v1beta1.TableExtractionParams} TableExtractionParams
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        TableExtractionParams.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies a TableExtractionParams message.
+                         * @function verify
+                         * @memberof google.cloud.documentai.v1beta1.TableExtractionParams
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        TableExtractionParams.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.enabled != null && message.hasOwnProperty("enabled"))
+                                if (typeof message.enabled !== "boolean")
+                                    return "enabled: boolean expected";
+                            if (message.tableBoundHints != null && message.hasOwnProperty("tableBoundHints")) {
+                                if (!Array.isArray(message.tableBoundHints))
+                                    return "tableBoundHints: array expected";
+                                for (var i = 0; i < message.tableBoundHints.length; ++i) {
+                                    var error = $root.google.cloud.documentai.v1beta1.TableBoundHint.verify(message.tableBoundHints[i]);
+                                    if (error)
+                                        return "tableBoundHints." + error;
+                                }
+                            }
+                            if (message.headerHints != null && message.hasOwnProperty("headerHints")) {
+                                if (!Array.isArray(message.headerHints))
+                                    return "headerHints: array expected";
+                                for (var i = 0; i < message.headerHints.length; ++i)
+                                    if (!$util.isString(message.headerHints[i]))
+                                        return "headerHints: string[] expected";
+                            }
+                            if (message.modelVersion != null && message.hasOwnProperty("modelVersion"))
+                                if (!$util.isString(message.modelVersion))
+                                    return "modelVersion: string expected";
+                            return null;
+                        };
+    
+                        /**
+                         * Creates a TableExtractionParams message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.cloud.documentai.v1beta1.TableExtractionParams
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.cloud.documentai.v1beta1.TableExtractionParams} TableExtractionParams
+                         */
+                        TableExtractionParams.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.cloud.documentai.v1beta1.TableExtractionParams)
+                                return object;
+                            var message = new $root.google.cloud.documentai.v1beta1.TableExtractionParams();
+                            if (object.enabled != null)
+                                message.enabled = Boolean(object.enabled);
+                            if (object.tableBoundHints) {
+                                if (!Array.isArray(object.tableBoundHints))
+                                    throw TypeError(".google.cloud.documentai.v1beta1.TableExtractionParams.tableBoundHints: array expected");
+                                message.tableBoundHints = [];
+                                for (var i = 0; i < object.tableBoundHints.length; ++i) {
+                                    if (typeof object.tableBoundHints[i] !== "object")
+                                        throw TypeError(".google.cloud.documentai.v1beta1.TableExtractionParams.tableBoundHints: object expected");
+                                    message.tableBoundHints[i] = $root.google.cloud.documentai.v1beta1.TableBoundHint.fromObject(object.tableBoundHints[i]);
+                                }
+                            }
+                            if (object.headerHints) {
+                                if (!Array.isArray(object.headerHints))
+                                    throw TypeError(".google.cloud.documentai.v1beta1.TableExtractionParams.headerHints: array expected");
+                                message.headerHints = [];
+                                for (var i = 0; i < object.headerHints.length; ++i)
+                                    message.headerHints[i] = String(object.headerHints[i]);
+                            }
+                            if (object.modelVersion != null)
+                                message.modelVersion = String(object.modelVersion);
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from a TableExtractionParams message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.cloud.documentai.v1beta1.TableExtractionParams
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.TableExtractionParams} message TableExtractionParams
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        TableExtractionParams.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.arrays || options.defaults) {
+                                object.tableBoundHints = [];
+                                object.headerHints = [];
+                            }
+                            if (options.defaults) {
+                                object.enabled = false;
+                                object.modelVersion = "";
+                            }
+                            if (message.enabled != null && message.hasOwnProperty("enabled"))
+                                object.enabled = message.enabled;
+                            if (message.tableBoundHints && message.tableBoundHints.length) {
+                                object.tableBoundHints = [];
+                                for (var j = 0; j < message.tableBoundHints.length; ++j)
+                                    object.tableBoundHints[j] = $root.google.cloud.documentai.v1beta1.TableBoundHint.toObject(message.tableBoundHints[j], options);
+                            }
+                            if (message.headerHints && message.headerHints.length) {
+                                object.headerHints = [];
+                                for (var j = 0; j < message.headerHints.length; ++j)
+                                    object.headerHints[j] = message.headerHints[j];
+                            }
+                            if (message.modelVersion != null && message.hasOwnProperty("modelVersion"))
+                                object.modelVersion = message.modelVersion;
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this TableExtractionParams to JSON.
+                         * @function toJSON
+                         * @memberof google.cloud.documentai.v1beta1.TableExtractionParams
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        TableExtractionParams.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return TableExtractionParams;
+                    })();
+    
+                    v1beta1.TableBoundHint = (function() {
+    
+                        /**
+                         * Properties of a TableBoundHint.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @interface ITableBoundHint
+                         * @property {number|null} [pageNumber] TableBoundHint pageNumber
+                         * @property {google.cloud.documentai.v1beta1.IBoundingPoly|null} [boundingBox] TableBoundHint boundingBox
+                         */
+    
+                        /**
+                         * Constructs a new TableBoundHint.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @classdesc Represents a TableBoundHint.
+                         * @implements ITableBoundHint
+                         * @constructor
+                         * @param {google.cloud.documentai.v1beta1.ITableBoundHint=} [properties] Properties to set
+                         */
+                        function TableBoundHint(properties) {
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * TableBoundHint pageNumber.
+                         * @member {number} pageNumber
+                         * @memberof google.cloud.documentai.v1beta1.TableBoundHint
+                         * @instance
+                         */
+                        TableBoundHint.prototype.pageNumber = 0;
+    
+                        /**
+                         * TableBoundHint boundingBox.
+                         * @member {google.cloud.documentai.v1beta1.IBoundingPoly|null|undefined} boundingBox
+                         * @memberof google.cloud.documentai.v1beta1.TableBoundHint
+                         * @instance
+                         */
+                        TableBoundHint.prototype.boundingBox = null;
+    
+                        /**
+                         * Creates a new TableBoundHint instance using the specified properties.
+                         * @function create
+                         * @memberof google.cloud.documentai.v1beta1.TableBoundHint
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.ITableBoundHint=} [properties] Properties to set
+                         * @returns {google.cloud.documentai.v1beta1.TableBoundHint} TableBoundHint instance
+                         */
+                        TableBoundHint.create = function create(properties) {
+                            return new TableBoundHint(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified TableBoundHint message. Does not implicitly {@link google.cloud.documentai.v1beta1.TableBoundHint.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.cloud.documentai.v1beta1.TableBoundHint
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.ITableBoundHint} message TableBoundHint message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        TableBoundHint.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.pageNumber != null && Object.hasOwnProperty.call(message, "pageNumber"))
+                                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.pageNumber);
+                            if (message.boundingBox != null && Object.hasOwnProperty.call(message, "boundingBox"))
+                                $root.google.cloud.documentai.v1beta1.BoundingPoly.encode(message.boundingBox, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified TableBoundHint message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.TableBoundHint.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.TableBoundHint
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.ITableBoundHint} message TableBoundHint message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        TableBoundHint.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes a TableBoundHint message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.cloud.documentai.v1beta1.TableBoundHint
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.cloud.documentai.v1beta1.TableBoundHint} TableBoundHint
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        TableBoundHint.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.TableBoundHint();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    message.pageNumber = reader.int32();
+                                    break;
+                                case 2:
+                                    message.boundingBox = $root.google.cloud.documentai.v1beta1.BoundingPoly.decode(reader, reader.uint32());
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes a TableBoundHint message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.TableBoundHint
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.cloud.documentai.v1beta1.TableBoundHint} TableBoundHint
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        TableBoundHint.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies a TableBoundHint message.
+                         * @function verify
+                         * @memberof google.cloud.documentai.v1beta1.TableBoundHint
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        TableBoundHint.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.pageNumber != null && message.hasOwnProperty("pageNumber"))
+                                if (!$util.isInteger(message.pageNumber))
+                                    return "pageNumber: integer expected";
+                            if (message.boundingBox != null && message.hasOwnProperty("boundingBox")) {
+                                var error = $root.google.cloud.documentai.v1beta1.BoundingPoly.verify(message.boundingBox);
+                                if (error)
+                                    return "boundingBox." + error;
+                            }
+                            return null;
+                        };
+    
+                        /**
+                         * Creates a TableBoundHint message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.cloud.documentai.v1beta1.TableBoundHint
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.cloud.documentai.v1beta1.TableBoundHint} TableBoundHint
+                         */
+                        TableBoundHint.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.cloud.documentai.v1beta1.TableBoundHint)
+                                return object;
+                            var message = new $root.google.cloud.documentai.v1beta1.TableBoundHint();
+                            if (object.pageNumber != null)
+                                message.pageNumber = object.pageNumber | 0;
+                            if (object.boundingBox != null) {
+                                if (typeof object.boundingBox !== "object")
+                                    throw TypeError(".google.cloud.documentai.v1beta1.TableBoundHint.boundingBox: object expected");
+                                message.boundingBox = $root.google.cloud.documentai.v1beta1.BoundingPoly.fromObject(object.boundingBox);
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from a TableBoundHint message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.cloud.documentai.v1beta1.TableBoundHint
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.TableBoundHint} message TableBoundHint
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        TableBoundHint.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.defaults) {
+                                object.pageNumber = 0;
+                                object.boundingBox = null;
+                            }
+                            if (message.pageNumber != null && message.hasOwnProperty("pageNumber"))
+                                object.pageNumber = message.pageNumber;
+                            if (message.boundingBox != null && message.hasOwnProperty("boundingBox"))
+                                object.boundingBox = $root.google.cloud.documentai.v1beta1.BoundingPoly.toObject(message.boundingBox, options);
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this TableBoundHint to JSON.
+                         * @function toJSON
+                         * @memberof google.cloud.documentai.v1beta1.TableBoundHint
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        TableBoundHint.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return TableBoundHint;
+                    })();
+    
+                    v1beta1.FormExtractionParams = (function() {
+    
+                        /**
+                         * Properties of a FormExtractionParams.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @interface IFormExtractionParams
+                         * @property {boolean|null} [enabled] FormExtractionParams enabled
+                         * @property {Array.<google.cloud.documentai.v1beta1.IKeyValuePairHint>|null} [keyValuePairHints] FormExtractionParams keyValuePairHints
+                         * @property {string|null} [modelVersion] FormExtractionParams modelVersion
+                         */
+    
+                        /**
+                         * Constructs a new FormExtractionParams.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @classdesc Represents a FormExtractionParams.
+                         * @implements IFormExtractionParams
+                         * @constructor
+                         * @param {google.cloud.documentai.v1beta1.IFormExtractionParams=} [properties] Properties to set
+                         */
+                        function FormExtractionParams(properties) {
+                            this.keyValuePairHints = [];
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * FormExtractionParams enabled.
+                         * @member {boolean} enabled
+                         * @memberof google.cloud.documentai.v1beta1.FormExtractionParams
+                         * @instance
+                         */
+                        FormExtractionParams.prototype.enabled = false;
+    
+                        /**
+                         * FormExtractionParams keyValuePairHints.
+                         * @member {Array.<google.cloud.documentai.v1beta1.IKeyValuePairHint>} keyValuePairHints
+                         * @memberof google.cloud.documentai.v1beta1.FormExtractionParams
+                         * @instance
+                         */
+                        FormExtractionParams.prototype.keyValuePairHints = $util.emptyArray;
+    
+                        /**
+                         * FormExtractionParams modelVersion.
+                         * @member {string} modelVersion
+                         * @memberof google.cloud.documentai.v1beta1.FormExtractionParams
+                         * @instance
+                         */
+                        FormExtractionParams.prototype.modelVersion = "";
+    
+                        /**
+                         * Creates a new FormExtractionParams instance using the specified properties.
+                         * @function create
+                         * @memberof google.cloud.documentai.v1beta1.FormExtractionParams
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IFormExtractionParams=} [properties] Properties to set
+                         * @returns {google.cloud.documentai.v1beta1.FormExtractionParams} FormExtractionParams instance
+                         */
+                        FormExtractionParams.create = function create(properties) {
+                            return new FormExtractionParams(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified FormExtractionParams message. Does not implicitly {@link google.cloud.documentai.v1beta1.FormExtractionParams.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.cloud.documentai.v1beta1.FormExtractionParams
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IFormExtractionParams} message FormExtractionParams message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        FormExtractionParams.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.enabled != null && Object.hasOwnProperty.call(message, "enabled"))
+                                writer.uint32(/* id 1, wireType 0 =*/8).bool(message.enabled);
+                            if (message.keyValuePairHints != null && message.keyValuePairHints.length)
+                                for (var i = 0; i < message.keyValuePairHints.length; ++i)
+                                    $root.google.cloud.documentai.v1beta1.KeyValuePairHint.encode(message.keyValuePairHints[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                            if (message.modelVersion != null && Object.hasOwnProperty.call(message, "modelVersion"))
+                                writer.uint32(/* id 3, wireType 2 =*/26).string(message.modelVersion);
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified FormExtractionParams message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.FormExtractionParams.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.FormExtractionParams
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IFormExtractionParams} message FormExtractionParams message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        FormExtractionParams.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes a FormExtractionParams message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.cloud.documentai.v1beta1.FormExtractionParams
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.cloud.documentai.v1beta1.FormExtractionParams} FormExtractionParams
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        FormExtractionParams.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.FormExtractionParams();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    message.enabled = reader.bool();
+                                    break;
+                                case 2:
+                                    if (!(message.keyValuePairHints && message.keyValuePairHints.length))
+                                        message.keyValuePairHints = [];
+                                    message.keyValuePairHints.push($root.google.cloud.documentai.v1beta1.KeyValuePairHint.decode(reader, reader.uint32()));
+                                    break;
+                                case 3:
+                                    message.modelVersion = reader.string();
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes a FormExtractionParams message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.FormExtractionParams
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.cloud.documentai.v1beta1.FormExtractionParams} FormExtractionParams
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        FormExtractionParams.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies a FormExtractionParams message.
+                         * @function verify
+                         * @memberof google.cloud.documentai.v1beta1.FormExtractionParams
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        FormExtractionParams.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.enabled != null && message.hasOwnProperty("enabled"))
+                                if (typeof message.enabled !== "boolean")
+                                    return "enabled: boolean expected";
+                            if (message.keyValuePairHints != null && message.hasOwnProperty("keyValuePairHints")) {
+                                if (!Array.isArray(message.keyValuePairHints))
+                                    return "keyValuePairHints: array expected";
+                                for (var i = 0; i < message.keyValuePairHints.length; ++i) {
+                                    var error = $root.google.cloud.documentai.v1beta1.KeyValuePairHint.verify(message.keyValuePairHints[i]);
+                                    if (error)
+                                        return "keyValuePairHints." + error;
+                                }
+                            }
+                            if (message.modelVersion != null && message.hasOwnProperty("modelVersion"))
+                                if (!$util.isString(message.modelVersion))
+                                    return "modelVersion: string expected";
+                            return null;
+                        };
+    
+                        /**
+                         * Creates a FormExtractionParams message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.cloud.documentai.v1beta1.FormExtractionParams
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.cloud.documentai.v1beta1.FormExtractionParams} FormExtractionParams
+                         */
+                        FormExtractionParams.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.cloud.documentai.v1beta1.FormExtractionParams)
+                                return object;
+                            var message = new $root.google.cloud.documentai.v1beta1.FormExtractionParams();
+                            if (object.enabled != null)
+                                message.enabled = Boolean(object.enabled);
+                            if (object.keyValuePairHints) {
+                                if (!Array.isArray(object.keyValuePairHints))
+                                    throw TypeError(".google.cloud.documentai.v1beta1.FormExtractionParams.keyValuePairHints: array expected");
+                                message.keyValuePairHints = [];
+                                for (var i = 0; i < object.keyValuePairHints.length; ++i) {
+                                    if (typeof object.keyValuePairHints[i] !== "object")
+                                        throw TypeError(".google.cloud.documentai.v1beta1.FormExtractionParams.keyValuePairHints: object expected");
+                                    message.keyValuePairHints[i] = $root.google.cloud.documentai.v1beta1.KeyValuePairHint.fromObject(object.keyValuePairHints[i]);
+                                }
+                            }
+                            if (object.modelVersion != null)
+                                message.modelVersion = String(object.modelVersion);
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from a FormExtractionParams message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.cloud.documentai.v1beta1.FormExtractionParams
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.FormExtractionParams} message FormExtractionParams
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        FormExtractionParams.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.arrays || options.defaults)
+                                object.keyValuePairHints = [];
+                            if (options.defaults) {
+                                object.enabled = false;
+                                object.modelVersion = "";
+                            }
+                            if (message.enabled != null && message.hasOwnProperty("enabled"))
+                                object.enabled = message.enabled;
+                            if (message.keyValuePairHints && message.keyValuePairHints.length) {
+                                object.keyValuePairHints = [];
+                                for (var j = 0; j < message.keyValuePairHints.length; ++j)
+                                    object.keyValuePairHints[j] = $root.google.cloud.documentai.v1beta1.KeyValuePairHint.toObject(message.keyValuePairHints[j], options);
+                            }
+                            if (message.modelVersion != null && message.hasOwnProperty("modelVersion"))
+                                object.modelVersion = message.modelVersion;
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this FormExtractionParams to JSON.
+                         * @function toJSON
+                         * @memberof google.cloud.documentai.v1beta1.FormExtractionParams
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        FormExtractionParams.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return FormExtractionParams;
+                    })();
+    
+                    v1beta1.KeyValuePairHint = (function() {
+    
+                        /**
+                         * Properties of a KeyValuePairHint.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @interface IKeyValuePairHint
+                         * @property {string|null} [key] KeyValuePairHint key
+                         * @property {Array.<string>|null} [valueTypes] KeyValuePairHint valueTypes
+                         */
+    
+                        /**
+                         * Constructs a new KeyValuePairHint.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @classdesc Represents a KeyValuePairHint.
+                         * @implements IKeyValuePairHint
+                         * @constructor
+                         * @param {google.cloud.documentai.v1beta1.IKeyValuePairHint=} [properties] Properties to set
+                         */
+                        function KeyValuePairHint(properties) {
+                            this.valueTypes = [];
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * KeyValuePairHint key.
+                         * @member {string} key
+                         * @memberof google.cloud.documentai.v1beta1.KeyValuePairHint
+                         * @instance
+                         */
+                        KeyValuePairHint.prototype.key = "";
+    
+                        /**
+                         * KeyValuePairHint valueTypes.
+                         * @member {Array.<string>} valueTypes
+                         * @memberof google.cloud.documentai.v1beta1.KeyValuePairHint
+                         * @instance
+                         */
+                        KeyValuePairHint.prototype.valueTypes = $util.emptyArray;
+    
+                        /**
+                         * Creates a new KeyValuePairHint instance using the specified properties.
+                         * @function create
+                         * @memberof google.cloud.documentai.v1beta1.KeyValuePairHint
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IKeyValuePairHint=} [properties] Properties to set
+                         * @returns {google.cloud.documentai.v1beta1.KeyValuePairHint} KeyValuePairHint instance
+                         */
+                        KeyValuePairHint.create = function create(properties) {
+                            return new KeyValuePairHint(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified KeyValuePairHint message. Does not implicitly {@link google.cloud.documentai.v1beta1.KeyValuePairHint.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.cloud.documentai.v1beta1.KeyValuePairHint
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IKeyValuePairHint} message KeyValuePairHint message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        KeyValuePairHint.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.key != null && Object.hasOwnProperty.call(message, "key"))
+                                writer.uint32(/* id 1, wireType 2 =*/10).string(message.key);
+                            if (message.valueTypes != null && message.valueTypes.length)
+                                for (var i = 0; i < message.valueTypes.length; ++i)
+                                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.valueTypes[i]);
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified KeyValuePairHint message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.KeyValuePairHint.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.KeyValuePairHint
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IKeyValuePairHint} message KeyValuePairHint message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        KeyValuePairHint.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes a KeyValuePairHint message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.cloud.documentai.v1beta1.KeyValuePairHint
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.cloud.documentai.v1beta1.KeyValuePairHint} KeyValuePairHint
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        KeyValuePairHint.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.KeyValuePairHint();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    message.key = reader.string();
+                                    break;
+                                case 2:
+                                    if (!(message.valueTypes && message.valueTypes.length))
+                                        message.valueTypes = [];
+                                    message.valueTypes.push(reader.string());
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes a KeyValuePairHint message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.KeyValuePairHint
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.cloud.documentai.v1beta1.KeyValuePairHint} KeyValuePairHint
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        KeyValuePairHint.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies a KeyValuePairHint message.
+                         * @function verify
+                         * @memberof google.cloud.documentai.v1beta1.KeyValuePairHint
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        KeyValuePairHint.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.key != null && message.hasOwnProperty("key"))
+                                if (!$util.isString(message.key))
+                                    return "key: string expected";
+                            if (message.valueTypes != null && message.hasOwnProperty("valueTypes")) {
+                                if (!Array.isArray(message.valueTypes))
+                                    return "valueTypes: array expected";
+                                for (var i = 0; i < message.valueTypes.length; ++i)
+                                    if (!$util.isString(message.valueTypes[i]))
+                                        return "valueTypes: string[] expected";
+                            }
+                            return null;
+                        };
+    
+                        /**
+                         * Creates a KeyValuePairHint message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.cloud.documentai.v1beta1.KeyValuePairHint
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.cloud.documentai.v1beta1.KeyValuePairHint} KeyValuePairHint
+                         */
+                        KeyValuePairHint.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.cloud.documentai.v1beta1.KeyValuePairHint)
+                                return object;
+                            var message = new $root.google.cloud.documentai.v1beta1.KeyValuePairHint();
+                            if (object.key != null)
+                                message.key = String(object.key);
+                            if (object.valueTypes) {
+                                if (!Array.isArray(object.valueTypes))
+                                    throw TypeError(".google.cloud.documentai.v1beta1.KeyValuePairHint.valueTypes: array expected");
+                                message.valueTypes = [];
+                                for (var i = 0; i < object.valueTypes.length; ++i)
+                                    message.valueTypes[i] = String(object.valueTypes[i]);
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from a KeyValuePairHint message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.cloud.documentai.v1beta1.KeyValuePairHint
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.KeyValuePairHint} message KeyValuePairHint
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        KeyValuePairHint.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.arrays || options.defaults)
+                                object.valueTypes = [];
+                            if (options.defaults)
+                                object.key = "";
+                            if (message.key != null && message.hasOwnProperty("key"))
+                                object.key = message.key;
+                            if (message.valueTypes && message.valueTypes.length) {
+                                object.valueTypes = [];
+                                for (var j = 0; j < message.valueTypes.length; ++j)
+                                    object.valueTypes[j] = message.valueTypes[j];
+                            }
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this KeyValuePairHint to JSON.
+                         * @function toJSON
+                         * @memberof google.cloud.documentai.v1beta1.KeyValuePairHint
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        KeyValuePairHint.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return KeyValuePairHint;
+                    })();
+    
+                    v1beta1.EntityExtractionParams = (function() {
+    
+                        /**
+                         * Properties of an EntityExtractionParams.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @interface IEntityExtractionParams
+                         * @property {boolean|null} [enabled] EntityExtractionParams enabled
+                         * @property {string|null} [modelVersion] EntityExtractionParams modelVersion
+                         */
+    
+                        /**
+                         * Constructs a new EntityExtractionParams.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @classdesc Represents an EntityExtractionParams.
+                         * @implements IEntityExtractionParams
+                         * @constructor
+                         * @param {google.cloud.documentai.v1beta1.IEntityExtractionParams=} [properties] Properties to set
+                         */
+                        function EntityExtractionParams(properties) {
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * EntityExtractionParams enabled.
+                         * @member {boolean} enabled
+                         * @memberof google.cloud.documentai.v1beta1.EntityExtractionParams
+                         * @instance
+                         */
+                        EntityExtractionParams.prototype.enabled = false;
+    
+                        /**
+                         * EntityExtractionParams modelVersion.
+                         * @member {string} modelVersion
+                         * @memberof google.cloud.documentai.v1beta1.EntityExtractionParams
+                         * @instance
+                         */
+                        EntityExtractionParams.prototype.modelVersion = "";
+    
+                        /**
+                         * Creates a new EntityExtractionParams instance using the specified properties.
+                         * @function create
+                         * @memberof google.cloud.documentai.v1beta1.EntityExtractionParams
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IEntityExtractionParams=} [properties] Properties to set
+                         * @returns {google.cloud.documentai.v1beta1.EntityExtractionParams} EntityExtractionParams instance
+                         */
+                        EntityExtractionParams.create = function create(properties) {
+                            return new EntityExtractionParams(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified EntityExtractionParams message. Does not implicitly {@link google.cloud.documentai.v1beta1.EntityExtractionParams.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.cloud.documentai.v1beta1.EntityExtractionParams
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IEntityExtractionParams} message EntityExtractionParams message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        EntityExtractionParams.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.enabled != null && Object.hasOwnProperty.call(message, "enabled"))
+                                writer.uint32(/* id 1, wireType 0 =*/8).bool(message.enabled);
+                            if (message.modelVersion != null && Object.hasOwnProperty.call(message, "modelVersion"))
+                                writer.uint32(/* id 2, wireType 2 =*/18).string(message.modelVersion);
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified EntityExtractionParams message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.EntityExtractionParams.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.EntityExtractionParams
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IEntityExtractionParams} message EntityExtractionParams message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        EntityExtractionParams.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes an EntityExtractionParams message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.cloud.documentai.v1beta1.EntityExtractionParams
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.cloud.documentai.v1beta1.EntityExtractionParams} EntityExtractionParams
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        EntityExtractionParams.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.EntityExtractionParams();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    message.enabled = reader.bool();
+                                    break;
+                                case 2:
+                                    message.modelVersion = reader.string();
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes an EntityExtractionParams message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.EntityExtractionParams
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.cloud.documentai.v1beta1.EntityExtractionParams} EntityExtractionParams
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        EntityExtractionParams.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies an EntityExtractionParams message.
+                         * @function verify
+                         * @memberof google.cloud.documentai.v1beta1.EntityExtractionParams
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        EntityExtractionParams.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.enabled != null && message.hasOwnProperty("enabled"))
+                                if (typeof message.enabled !== "boolean")
+                                    return "enabled: boolean expected";
+                            if (message.modelVersion != null && message.hasOwnProperty("modelVersion"))
+                                if (!$util.isString(message.modelVersion))
+                                    return "modelVersion: string expected";
+                            return null;
+                        };
+    
+                        /**
+                         * Creates an EntityExtractionParams message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.cloud.documentai.v1beta1.EntityExtractionParams
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.cloud.documentai.v1beta1.EntityExtractionParams} EntityExtractionParams
+                         */
+                        EntityExtractionParams.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.cloud.documentai.v1beta1.EntityExtractionParams)
+                                return object;
+                            var message = new $root.google.cloud.documentai.v1beta1.EntityExtractionParams();
+                            if (object.enabled != null)
+                                message.enabled = Boolean(object.enabled);
+                            if (object.modelVersion != null)
+                                message.modelVersion = String(object.modelVersion);
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from an EntityExtractionParams message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.cloud.documentai.v1beta1.EntityExtractionParams
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.EntityExtractionParams} message EntityExtractionParams
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        EntityExtractionParams.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.defaults) {
+                                object.enabled = false;
+                                object.modelVersion = "";
+                            }
+                            if (message.enabled != null && message.hasOwnProperty("enabled"))
+                                object.enabled = message.enabled;
+                            if (message.modelVersion != null && message.hasOwnProperty("modelVersion"))
+                                object.modelVersion = message.modelVersion;
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this EntityExtractionParams to JSON.
+                         * @function toJSON
+                         * @memberof google.cloud.documentai.v1beta1.EntityExtractionParams
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        EntityExtractionParams.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return EntityExtractionParams;
+                    })();
+    
+                    v1beta1.InputConfig = (function() {
+    
+                        /**
+                         * Properties of an InputConfig.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @interface IInputConfig
+                         * @property {google.cloud.documentai.v1beta1.IGcsSource|null} [gcsSource] InputConfig gcsSource
+                         * @property {string|null} [mimeType] InputConfig mimeType
+                         */
+    
+                        /**
+                         * Constructs a new InputConfig.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @classdesc Represents an InputConfig.
+                         * @implements IInputConfig
+                         * @constructor
+                         * @param {google.cloud.documentai.v1beta1.IInputConfig=} [properties] Properties to set
+                         */
+                        function InputConfig(properties) {
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * InputConfig gcsSource.
+                         * @member {google.cloud.documentai.v1beta1.IGcsSource|null|undefined} gcsSource
+                         * @memberof google.cloud.documentai.v1beta1.InputConfig
+                         * @instance
+                         */
+                        InputConfig.prototype.gcsSource = null;
+    
+                        /**
+                         * InputConfig mimeType.
+                         * @member {string} mimeType
+                         * @memberof google.cloud.documentai.v1beta1.InputConfig
+                         * @instance
+                         */
+                        InputConfig.prototype.mimeType = "";
+    
+                        // OneOf field names bound to virtual getters and setters
+                        var $oneOfFields;
+    
+                        /**
+                         * InputConfig source.
+                         * @member {"gcsSource"|undefined} source
+                         * @memberof google.cloud.documentai.v1beta1.InputConfig
+                         * @instance
+                         */
+                        Object.defineProperty(InputConfig.prototype, "source", {
+                            get: $util.oneOfGetter($oneOfFields = ["gcsSource"]),
+                            set: $util.oneOfSetter($oneOfFields)
+                        });
+    
+                        /**
+                         * Creates a new InputConfig instance using the specified properties.
+                         * @function create
+                         * @memberof google.cloud.documentai.v1beta1.InputConfig
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IInputConfig=} [properties] Properties to set
+                         * @returns {google.cloud.documentai.v1beta1.InputConfig} InputConfig instance
+                         */
+                        InputConfig.create = function create(properties) {
+                            return new InputConfig(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified InputConfig message. Does not implicitly {@link google.cloud.documentai.v1beta1.InputConfig.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.cloud.documentai.v1beta1.InputConfig
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IInputConfig} message InputConfig message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        InputConfig.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.gcsSource != null && Object.hasOwnProperty.call(message, "gcsSource"))
+                                $root.google.cloud.documentai.v1beta1.GcsSource.encode(message.gcsSource, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                            if (message.mimeType != null && Object.hasOwnProperty.call(message, "mimeType"))
+                                writer.uint32(/* id 2, wireType 2 =*/18).string(message.mimeType);
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified InputConfig message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.InputConfig.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.InputConfig
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IInputConfig} message InputConfig message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        InputConfig.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes an InputConfig message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.cloud.documentai.v1beta1.InputConfig
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.cloud.documentai.v1beta1.InputConfig} InputConfig
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        InputConfig.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.InputConfig();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    message.gcsSource = $root.google.cloud.documentai.v1beta1.GcsSource.decode(reader, reader.uint32());
+                                    break;
+                                case 2:
+                                    message.mimeType = reader.string();
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes an InputConfig message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.InputConfig
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.cloud.documentai.v1beta1.InputConfig} InputConfig
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        InputConfig.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies an InputConfig message.
+                         * @function verify
+                         * @memberof google.cloud.documentai.v1beta1.InputConfig
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        InputConfig.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            var properties = {};
+                            if (message.gcsSource != null && message.hasOwnProperty("gcsSource")) {
+                                properties.source = 1;
+                                {
+                                    var error = $root.google.cloud.documentai.v1beta1.GcsSource.verify(message.gcsSource);
+                                    if (error)
+                                        return "gcsSource." + error;
+                                }
+                            }
+                            if (message.mimeType != null && message.hasOwnProperty("mimeType"))
+                                if (!$util.isString(message.mimeType))
+                                    return "mimeType: string expected";
+                            return null;
+                        };
+    
+                        /**
+                         * Creates an InputConfig message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.cloud.documentai.v1beta1.InputConfig
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.cloud.documentai.v1beta1.InputConfig} InputConfig
+                         */
+                        InputConfig.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.cloud.documentai.v1beta1.InputConfig)
+                                return object;
+                            var message = new $root.google.cloud.documentai.v1beta1.InputConfig();
+                            if (object.gcsSource != null) {
+                                if (typeof object.gcsSource !== "object")
+                                    throw TypeError(".google.cloud.documentai.v1beta1.InputConfig.gcsSource: object expected");
+                                message.gcsSource = $root.google.cloud.documentai.v1beta1.GcsSource.fromObject(object.gcsSource);
+                            }
+                            if (object.mimeType != null)
+                                message.mimeType = String(object.mimeType);
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from an InputConfig message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.cloud.documentai.v1beta1.InputConfig
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.InputConfig} message InputConfig
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        InputConfig.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.defaults)
+                                object.mimeType = "";
+                            if (message.gcsSource != null && message.hasOwnProperty("gcsSource")) {
+                                object.gcsSource = $root.google.cloud.documentai.v1beta1.GcsSource.toObject(message.gcsSource, options);
+                                if (options.oneofs)
+                                    object.source = "gcsSource";
+                            }
+                            if (message.mimeType != null && message.hasOwnProperty("mimeType"))
+                                object.mimeType = message.mimeType;
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this InputConfig to JSON.
+                         * @function toJSON
+                         * @memberof google.cloud.documentai.v1beta1.InputConfig
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        InputConfig.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return InputConfig;
+                    })();
+    
+                    v1beta1.OutputConfig = (function() {
+    
+                        /**
+                         * Properties of an OutputConfig.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @interface IOutputConfig
+                         * @property {google.cloud.documentai.v1beta1.IGcsDestination|null} [gcsDestination] OutputConfig gcsDestination
+                         * @property {number|null} [pagesPerShard] OutputConfig pagesPerShard
+                         */
+    
+                        /**
+                         * Constructs a new OutputConfig.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @classdesc Represents an OutputConfig.
+                         * @implements IOutputConfig
+                         * @constructor
+                         * @param {google.cloud.documentai.v1beta1.IOutputConfig=} [properties] Properties to set
+                         */
+                        function OutputConfig(properties) {
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * OutputConfig gcsDestination.
+                         * @member {google.cloud.documentai.v1beta1.IGcsDestination|null|undefined} gcsDestination
+                         * @memberof google.cloud.documentai.v1beta1.OutputConfig
+                         * @instance
+                         */
+                        OutputConfig.prototype.gcsDestination = null;
+    
+                        /**
+                         * OutputConfig pagesPerShard.
+                         * @member {number} pagesPerShard
+                         * @memberof google.cloud.documentai.v1beta1.OutputConfig
+                         * @instance
+                         */
+                        OutputConfig.prototype.pagesPerShard = 0;
+    
+                        // OneOf field names bound to virtual getters and setters
+                        var $oneOfFields;
+    
+                        /**
+                         * OutputConfig destination.
+                         * @member {"gcsDestination"|undefined} destination
+                         * @memberof google.cloud.documentai.v1beta1.OutputConfig
+                         * @instance
+                         */
+                        Object.defineProperty(OutputConfig.prototype, "destination", {
+                            get: $util.oneOfGetter($oneOfFields = ["gcsDestination"]),
+                            set: $util.oneOfSetter($oneOfFields)
+                        });
+    
+                        /**
+                         * Creates a new OutputConfig instance using the specified properties.
+                         * @function create
+                         * @memberof google.cloud.documentai.v1beta1.OutputConfig
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IOutputConfig=} [properties] Properties to set
+                         * @returns {google.cloud.documentai.v1beta1.OutputConfig} OutputConfig instance
+                         */
+                        OutputConfig.create = function create(properties) {
+                            return new OutputConfig(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified OutputConfig message. Does not implicitly {@link google.cloud.documentai.v1beta1.OutputConfig.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.cloud.documentai.v1beta1.OutputConfig
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IOutputConfig} message OutputConfig message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        OutputConfig.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.gcsDestination != null && Object.hasOwnProperty.call(message, "gcsDestination"))
+                                $root.google.cloud.documentai.v1beta1.GcsDestination.encode(message.gcsDestination, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                            if (message.pagesPerShard != null && Object.hasOwnProperty.call(message, "pagesPerShard"))
+                                writer.uint32(/* id 2, wireType 0 =*/16).int32(message.pagesPerShard);
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified OutputConfig message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.OutputConfig.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.OutputConfig
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IOutputConfig} message OutputConfig message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        OutputConfig.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes an OutputConfig message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.cloud.documentai.v1beta1.OutputConfig
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.cloud.documentai.v1beta1.OutputConfig} OutputConfig
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        OutputConfig.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.OutputConfig();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    message.gcsDestination = $root.google.cloud.documentai.v1beta1.GcsDestination.decode(reader, reader.uint32());
+                                    break;
+                                case 2:
+                                    message.pagesPerShard = reader.int32();
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes an OutputConfig message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.OutputConfig
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.cloud.documentai.v1beta1.OutputConfig} OutputConfig
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        OutputConfig.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies an OutputConfig message.
+                         * @function verify
+                         * @memberof google.cloud.documentai.v1beta1.OutputConfig
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        OutputConfig.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            var properties = {};
+                            if (message.gcsDestination != null && message.hasOwnProperty("gcsDestination")) {
+                                properties.destination = 1;
+                                {
+                                    var error = $root.google.cloud.documentai.v1beta1.GcsDestination.verify(message.gcsDestination);
+                                    if (error)
+                                        return "gcsDestination." + error;
+                                }
+                            }
+                            if (message.pagesPerShard != null && message.hasOwnProperty("pagesPerShard"))
+                                if (!$util.isInteger(message.pagesPerShard))
+                                    return "pagesPerShard: integer expected";
+                            return null;
+                        };
+    
+                        /**
+                         * Creates an OutputConfig message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.cloud.documentai.v1beta1.OutputConfig
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.cloud.documentai.v1beta1.OutputConfig} OutputConfig
+                         */
+                        OutputConfig.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.cloud.documentai.v1beta1.OutputConfig)
+                                return object;
+                            var message = new $root.google.cloud.documentai.v1beta1.OutputConfig();
+                            if (object.gcsDestination != null) {
+                                if (typeof object.gcsDestination !== "object")
+                                    throw TypeError(".google.cloud.documentai.v1beta1.OutputConfig.gcsDestination: object expected");
+                                message.gcsDestination = $root.google.cloud.documentai.v1beta1.GcsDestination.fromObject(object.gcsDestination);
+                            }
+                            if (object.pagesPerShard != null)
+                                message.pagesPerShard = object.pagesPerShard | 0;
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from an OutputConfig message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.cloud.documentai.v1beta1.OutputConfig
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.OutputConfig} message OutputConfig
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        OutputConfig.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.defaults)
+                                object.pagesPerShard = 0;
+                            if (message.gcsDestination != null && message.hasOwnProperty("gcsDestination")) {
+                                object.gcsDestination = $root.google.cloud.documentai.v1beta1.GcsDestination.toObject(message.gcsDestination, options);
+                                if (options.oneofs)
+                                    object.destination = "gcsDestination";
+                            }
+                            if (message.pagesPerShard != null && message.hasOwnProperty("pagesPerShard"))
+                                object.pagesPerShard = message.pagesPerShard;
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this OutputConfig to JSON.
+                         * @function toJSON
+                         * @memberof google.cloud.documentai.v1beta1.OutputConfig
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        OutputConfig.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return OutputConfig;
+                    })();
+    
+                    v1beta1.GcsSource = (function() {
+    
+                        /**
+                         * Properties of a GcsSource.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @interface IGcsSource
+                         * @property {string|null} [uri] GcsSource uri
+                         */
+    
+                        /**
+                         * Constructs a new GcsSource.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @classdesc Represents a GcsSource.
+                         * @implements IGcsSource
+                         * @constructor
+                         * @param {google.cloud.documentai.v1beta1.IGcsSource=} [properties] Properties to set
+                         */
+                        function GcsSource(properties) {
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * GcsSource uri.
+                         * @member {string} uri
+                         * @memberof google.cloud.documentai.v1beta1.GcsSource
+                         * @instance
+                         */
+                        GcsSource.prototype.uri = "";
+    
+                        /**
+                         * Creates a new GcsSource instance using the specified properties.
+                         * @function create
+                         * @memberof google.cloud.documentai.v1beta1.GcsSource
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IGcsSource=} [properties] Properties to set
+                         * @returns {google.cloud.documentai.v1beta1.GcsSource} GcsSource instance
+                         */
+                        GcsSource.create = function create(properties) {
+                            return new GcsSource(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified GcsSource message. Does not implicitly {@link google.cloud.documentai.v1beta1.GcsSource.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.cloud.documentai.v1beta1.GcsSource
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IGcsSource} message GcsSource message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        GcsSource.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.uri != null && Object.hasOwnProperty.call(message, "uri"))
+                                writer.uint32(/* id 1, wireType 2 =*/10).string(message.uri);
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified GcsSource message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.GcsSource.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.GcsSource
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IGcsSource} message GcsSource message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        GcsSource.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes a GcsSource message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.cloud.documentai.v1beta1.GcsSource
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.cloud.documentai.v1beta1.GcsSource} GcsSource
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        GcsSource.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.GcsSource();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    message.uri = reader.string();
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes a GcsSource message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.GcsSource
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.cloud.documentai.v1beta1.GcsSource} GcsSource
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        GcsSource.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies a GcsSource message.
+                         * @function verify
+                         * @memberof google.cloud.documentai.v1beta1.GcsSource
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        GcsSource.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.uri != null && message.hasOwnProperty("uri"))
+                                if (!$util.isString(message.uri))
+                                    return "uri: string expected";
+                            return null;
+                        };
+    
+                        /**
+                         * Creates a GcsSource message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.cloud.documentai.v1beta1.GcsSource
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.cloud.documentai.v1beta1.GcsSource} GcsSource
+                         */
+                        GcsSource.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.cloud.documentai.v1beta1.GcsSource)
+                                return object;
+                            var message = new $root.google.cloud.documentai.v1beta1.GcsSource();
+                            if (object.uri != null)
+                                message.uri = String(object.uri);
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from a GcsSource message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.cloud.documentai.v1beta1.GcsSource
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.GcsSource} message GcsSource
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        GcsSource.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.defaults)
+                                object.uri = "";
+                            if (message.uri != null && message.hasOwnProperty("uri"))
+                                object.uri = message.uri;
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this GcsSource to JSON.
+                         * @function toJSON
+                         * @memberof google.cloud.documentai.v1beta1.GcsSource
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        GcsSource.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return GcsSource;
+                    })();
+    
+                    v1beta1.GcsDestination = (function() {
+    
+                        /**
+                         * Properties of a GcsDestination.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @interface IGcsDestination
+                         * @property {string|null} [uri] GcsDestination uri
+                         */
+    
+                        /**
+                         * Constructs a new GcsDestination.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @classdesc Represents a GcsDestination.
+                         * @implements IGcsDestination
+                         * @constructor
+                         * @param {google.cloud.documentai.v1beta1.IGcsDestination=} [properties] Properties to set
+                         */
+                        function GcsDestination(properties) {
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * GcsDestination uri.
+                         * @member {string} uri
+                         * @memberof google.cloud.documentai.v1beta1.GcsDestination
+                         * @instance
+                         */
+                        GcsDestination.prototype.uri = "";
+    
+                        /**
+                         * Creates a new GcsDestination instance using the specified properties.
+                         * @function create
+                         * @memberof google.cloud.documentai.v1beta1.GcsDestination
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IGcsDestination=} [properties] Properties to set
+                         * @returns {google.cloud.documentai.v1beta1.GcsDestination} GcsDestination instance
+                         */
+                        GcsDestination.create = function create(properties) {
+                            return new GcsDestination(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified GcsDestination message. Does not implicitly {@link google.cloud.documentai.v1beta1.GcsDestination.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.cloud.documentai.v1beta1.GcsDestination
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IGcsDestination} message GcsDestination message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        GcsDestination.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.uri != null && Object.hasOwnProperty.call(message, "uri"))
+                                writer.uint32(/* id 1, wireType 2 =*/10).string(message.uri);
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified GcsDestination message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.GcsDestination.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.GcsDestination
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IGcsDestination} message GcsDestination message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        GcsDestination.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes a GcsDestination message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.cloud.documentai.v1beta1.GcsDestination
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.cloud.documentai.v1beta1.GcsDestination} GcsDestination
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        GcsDestination.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.GcsDestination();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    message.uri = reader.string();
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes a GcsDestination message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.GcsDestination
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.cloud.documentai.v1beta1.GcsDestination} GcsDestination
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        GcsDestination.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies a GcsDestination message.
+                         * @function verify
+                         * @memberof google.cloud.documentai.v1beta1.GcsDestination
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        GcsDestination.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.uri != null && message.hasOwnProperty("uri"))
+                                if (!$util.isString(message.uri))
+                                    return "uri: string expected";
+                            return null;
+                        };
+    
+                        /**
+                         * Creates a GcsDestination message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.cloud.documentai.v1beta1.GcsDestination
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.cloud.documentai.v1beta1.GcsDestination} GcsDestination
+                         */
+                        GcsDestination.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.cloud.documentai.v1beta1.GcsDestination)
+                                return object;
+                            var message = new $root.google.cloud.documentai.v1beta1.GcsDestination();
+                            if (object.uri != null)
+                                message.uri = String(object.uri);
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from a GcsDestination message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.cloud.documentai.v1beta1.GcsDestination
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.GcsDestination} message GcsDestination
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        GcsDestination.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.defaults)
+                                object.uri = "";
+                            if (message.uri != null && message.hasOwnProperty("uri"))
+                                object.uri = message.uri;
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this GcsDestination to JSON.
+                         * @function toJSON
+                         * @memberof google.cloud.documentai.v1beta1.GcsDestination
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        GcsDestination.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return GcsDestination;
+                    })();
+    
+                    v1beta1.OperationMetadata = (function() {
+    
+                        /**
+                         * Properties of an OperationMetadata.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @interface IOperationMetadata
+                         * @property {google.cloud.documentai.v1beta1.OperationMetadata.State|null} [state] OperationMetadata state
+                         * @property {string|null} [stateMessage] OperationMetadata stateMessage
+                         * @property {google.protobuf.ITimestamp|null} [createTime] OperationMetadata createTime
+                         * @property {google.protobuf.ITimestamp|null} [updateTime] OperationMetadata updateTime
+                         */
+    
+                        /**
+                         * Constructs a new OperationMetadata.
+                         * @memberof google.cloud.documentai.v1beta1
+                         * @classdesc Represents an OperationMetadata.
+                         * @implements IOperationMetadata
+                         * @constructor
+                         * @param {google.cloud.documentai.v1beta1.IOperationMetadata=} [properties] Properties to set
+                         */
+                        function OperationMetadata(properties) {
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * OperationMetadata state.
+                         * @member {google.cloud.documentai.v1beta1.OperationMetadata.State} state
+                         * @memberof google.cloud.documentai.v1beta1.OperationMetadata
+                         * @instance
+                         */
+                        OperationMetadata.prototype.state = 0;
+    
+                        /**
+                         * OperationMetadata stateMessage.
+                         * @member {string} stateMessage
+                         * @memberof google.cloud.documentai.v1beta1.OperationMetadata
+                         * @instance
+                         */
+                        OperationMetadata.prototype.stateMessage = "";
+    
+                        /**
+                         * OperationMetadata createTime.
+                         * @member {google.protobuf.ITimestamp|null|undefined} createTime
+                         * @memberof google.cloud.documentai.v1beta1.OperationMetadata
+                         * @instance
+                         */
+                        OperationMetadata.prototype.createTime = null;
+    
+                        /**
+                         * OperationMetadata updateTime.
+                         * @member {google.protobuf.ITimestamp|null|undefined} updateTime
+                         * @memberof google.cloud.documentai.v1beta1.OperationMetadata
+                         * @instance
+                         */
+                        OperationMetadata.prototype.updateTime = null;
+    
+                        /**
+                         * Creates a new OperationMetadata instance using the specified properties.
+                         * @function create
+                         * @memberof google.cloud.documentai.v1beta1.OperationMetadata
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IOperationMetadata=} [properties] Properties to set
+                         * @returns {google.cloud.documentai.v1beta1.OperationMetadata} OperationMetadata instance
+                         */
+                        OperationMetadata.create = function create(properties) {
+                            return new OperationMetadata(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified OperationMetadata message. Does not implicitly {@link google.cloud.documentai.v1beta1.OperationMetadata.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.cloud.documentai.v1beta1.OperationMetadata
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IOperationMetadata} message OperationMetadata message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        OperationMetadata.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.state != null && Object.hasOwnProperty.call(message, "state"))
+                                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.state);
+                            if (message.stateMessage != null && Object.hasOwnProperty.call(message, "stateMessage"))
+                                writer.uint32(/* id 2, wireType 2 =*/18).string(message.stateMessage);
+                            if (message.createTime != null && Object.hasOwnProperty.call(message, "createTime"))
+                                $root.google.protobuf.Timestamp.encode(message.createTime, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                            if (message.updateTime != null && Object.hasOwnProperty.call(message, "updateTime"))
+                                $root.google.protobuf.Timestamp.encode(message.updateTime, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified OperationMetadata message, length delimited. Does not implicitly {@link google.cloud.documentai.v1beta1.OperationMetadata.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.OperationMetadata
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.IOperationMetadata} message OperationMetadata message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        OperationMetadata.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes an OperationMetadata message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.cloud.documentai.v1beta1.OperationMetadata
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.cloud.documentai.v1beta1.OperationMetadata} OperationMetadata
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        OperationMetadata.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.documentai.v1beta1.OperationMetadata();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    message.state = reader.int32();
+                                    break;
+                                case 2:
+                                    message.stateMessage = reader.string();
+                                    break;
+                                case 3:
+                                    message.createTime = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                                    break;
+                                case 4:
+                                    message.updateTime = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes an OperationMetadata message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.cloud.documentai.v1beta1.OperationMetadata
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.cloud.documentai.v1beta1.OperationMetadata} OperationMetadata
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        OperationMetadata.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies an OperationMetadata message.
+                         * @function verify
+                         * @memberof google.cloud.documentai.v1beta1.OperationMetadata
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        OperationMetadata.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.state != null && message.hasOwnProperty("state"))
+                                switch (message.state) {
+                                default:
+                                    return "state: enum value expected";
+                                case 0:
+                                case 1:
+                                case 2:
+                                case 3:
+                                case 4:
+                                case 5:
+                                case 6:
+                                    break;
+                                }
+                            if (message.stateMessage != null && message.hasOwnProperty("stateMessage"))
+                                if (!$util.isString(message.stateMessage))
+                                    return "stateMessage: string expected";
+                            if (message.createTime != null && message.hasOwnProperty("createTime")) {
+                                var error = $root.google.protobuf.Timestamp.verify(message.createTime);
+                                if (error)
+                                    return "createTime." + error;
+                            }
+                            if (message.updateTime != null && message.hasOwnProperty("updateTime")) {
+                                var error = $root.google.protobuf.Timestamp.verify(message.updateTime);
+                                if (error)
+                                    return "updateTime." + error;
+                            }
+                            return null;
+                        };
+    
+                        /**
+                         * Creates an OperationMetadata message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.cloud.documentai.v1beta1.OperationMetadata
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.cloud.documentai.v1beta1.OperationMetadata} OperationMetadata
+                         */
+                        OperationMetadata.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.cloud.documentai.v1beta1.OperationMetadata)
+                                return object;
+                            var message = new $root.google.cloud.documentai.v1beta1.OperationMetadata();
+                            switch (object.state) {
+                            case "STATE_UNSPECIFIED":
+                            case 0:
+                                message.state = 0;
+                                break;
+                            case "ACCEPTED":
+                            case 1:
+                                message.state = 1;
+                                break;
+                            case "WAITING":
+                            case 2:
+                                message.state = 2;
+                                break;
+                            case "RUNNING":
+                            case 3:
+                                message.state = 3;
+                                break;
+                            case "SUCCEEDED":
+                            case 4:
+                                message.state = 4;
+                                break;
+                            case "CANCELLED":
+                            case 5:
+                                message.state = 5;
+                                break;
+                            case "FAILED":
+                            case 6:
+                                message.state = 6;
+                                break;
+                            }
+                            if (object.stateMessage != null)
+                                message.stateMessage = String(object.stateMessage);
+                            if (object.createTime != null) {
+                                if (typeof object.createTime !== "object")
+                                    throw TypeError(".google.cloud.documentai.v1beta1.OperationMetadata.createTime: object expected");
+                                message.createTime = $root.google.protobuf.Timestamp.fromObject(object.createTime);
+                            }
+                            if (object.updateTime != null) {
+                                if (typeof object.updateTime !== "object")
+                                    throw TypeError(".google.cloud.documentai.v1beta1.OperationMetadata.updateTime: object expected");
+                                message.updateTime = $root.google.protobuf.Timestamp.fromObject(object.updateTime);
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from an OperationMetadata message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.cloud.documentai.v1beta1.OperationMetadata
+                         * @static
+                         * @param {google.cloud.documentai.v1beta1.OperationMetadata} message OperationMetadata
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        OperationMetadata.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.defaults) {
+                                object.state = options.enums === String ? "STATE_UNSPECIFIED" : 0;
+                                object.stateMessage = "";
+                                object.createTime = null;
+                                object.updateTime = null;
+                            }
+                            if (message.state != null && message.hasOwnProperty("state"))
+                                object.state = options.enums === String ? $root.google.cloud.documentai.v1beta1.OperationMetadata.State[message.state] : message.state;
+                            if (message.stateMessage != null && message.hasOwnProperty("stateMessage"))
+                                object.stateMessage = message.stateMessage;
+                            if (message.createTime != null && message.hasOwnProperty("createTime"))
+                                object.createTime = $root.google.protobuf.Timestamp.toObject(message.createTime, options);
+                            if (message.updateTime != null && message.hasOwnProperty("updateTime"))
+                                object.updateTime = $root.google.protobuf.Timestamp.toObject(message.updateTime, options);
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this OperationMetadata to JSON.
+                         * @function toJSON
+                         * @memberof google.cloud.documentai.v1beta1.OperationMetadata
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        OperationMetadata.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        /**
+                         * State enum.
+                         * @name google.cloud.documentai.v1beta1.OperationMetadata.State
+                         * @enum {number}
+                         * @property {number} STATE_UNSPECIFIED=0 STATE_UNSPECIFIED value
+                         * @property {number} ACCEPTED=1 ACCEPTED value
+                         * @property {number} WAITING=2 WAITING value
+                         * @property {number} RUNNING=3 RUNNING value
+                         * @property {number} SUCCEEDED=4 SUCCEEDED value
+                         * @property {number} CANCELLED=5 CANCELLED value
+                         * @property {number} FAILED=6 FAILED value
+                         */
+                        OperationMetadata.State = (function() {
+                            var valuesById = {}, values = Object.create(valuesById);
+                            values[valuesById[0] = "STATE_UNSPECIFIED"] = 0;
+                            values[valuesById[1] = "ACCEPTED"] = 1;
+                            values[valuesById[2] = "WAITING"] = 2;
+                            values[valuesById[3] = "RUNNING"] = 3;
+                            values[valuesById[4] = "SUCCEEDED"] = 4;
+                            values[valuesById[5] = "CANCELLED"] = 5;
+                            values[valuesById[6] = "FAILED"] = 6;
+                            return values;
+                        })();
+    
+                        return OperationMetadata;
+                    })();
+    
+                    return v1beta1;
+                })();
+    
                 documentai.v1beta2 = (function() {
     
                     /**
@@ -27511,30 +38033,6 @@
              */
             var api = {};
     
-            /**
-             * FieldBehavior enum.
-             * @name google.api.FieldBehavior
-             * @enum {number}
-             * @property {number} FIELD_BEHAVIOR_UNSPECIFIED=0 FIELD_BEHAVIOR_UNSPECIFIED value
-             * @property {number} OPTIONAL=1 OPTIONAL value
-             * @property {number} REQUIRED=2 REQUIRED value
-             * @property {number} OUTPUT_ONLY=3 OUTPUT_ONLY value
-             * @property {number} INPUT_ONLY=4 INPUT_ONLY value
-             * @property {number} IMMUTABLE=5 IMMUTABLE value
-             * @property {number} UNORDERED_LIST=6 UNORDERED_LIST value
-             */
-            api.FieldBehavior = (function() {
-                var valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[0] = "FIELD_BEHAVIOR_UNSPECIFIED"] = 0;
-                values[valuesById[1] = "OPTIONAL"] = 1;
-                values[valuesById[2] = "REQUIRED"] = 2;
-                values[valuesById[3] = "OUTPUT_ONLY"] = 3;
-                values[valuesById[4] = "INPUT_ONLY"] = 4;
-                values[valuesById[5] = "IMMUTABLE"] = 5;
-                values[valuesById[6] = "UNORDERED_LIST"] = 6;
-                return values;
-            })();
-    
             api.Http = (function() {
     
                 /**
@@ -28437,6 +38935,30 @@
                 };
     
                 return CustomHttpPattern;
+            })();
+    
+            /**
+             * FieldBehavior enum.
+             * @name google.api.FieldBehavior
+             * @enum {number}
+             * @property {number} FIELD_BEHAVIOR_UNSPECIFIED=0 FIELD_BEHAVIOR_UNSPECIFIED value
+             * @property {number} OPTIONAL=1 OPTIONAL value
+             * @property {number} REQUIRED=2 REQUIRED value
+             * @property {number} OUTPUT_ONLY=3 OUTPUT_ONLY value
+             * @property {number} INPUT_ONLY=4 INPUT_ONLY value
+             * @property {number} IMMUTABLE=5 IMMUTABLE value
+             * @property {number} UNORDERED_LIST=6 UNORDERED_LIST value
+             */
+            api.FieldBehavior = (function() {
+                var valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "FIELD_BEHAVIOR_UNSPECIFIED"] = 0;
+                values[valuesById[1] = "OPTIONAL"] = 1;
+                values[valuesById[2] = "REQUIRED"] = 2;
+                values[valuesById[3] = "OUTPUT_ONLY"] = 3;
+                values[valuesById[4] = "INPUT_ONLY"] = 4;
+                values[valuesById[5] = "IMMUTABLE"] = 5;
+                values[valuesById[6] = "UNORDERED_LIST"] = 6;
+                return values;
             })();
     
             api.ResourceDescriptor = (function() {
