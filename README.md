@@ -71,7 +71,8 @@ const {
 } = require('@google-cloud/documentai').v1beta3;
 
 // Instantiates a client
-// const client = new DocumentProcessorServiceClient({apiEndpoint: 'eu-documentai.googleapis.com'}); // Required if using eu based processor
+// You can use processors based in other regions, using the apiEndpoint option:
+// const client = new DocumentProcessorServiceClient({apiEndpoint: 'eu-documentai.googleapis.com'}); 
 const client = new DocumentProcessorServiceClient();
 
 async function quickstart() {
