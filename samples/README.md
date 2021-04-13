@@ -18,7 +18,7 @@
   * [Parse-form.v1beta2](#parse-form.v1beta2)
   * [Parse-table.v1beta2](#parse-table.v1beta2)
   * [Parse-with-model.v1beta2](#parse-with-model.v1beta2)
-  * [Process-document.v1beta3](#process-document.v1beta3)
+  * [Process-document](#process-document)
   * [Quickstart](#quickstart)
   * [Set-endpoint.v1beta2](#set-endpoint.v1beta2)
 
@@ -139,16 +139,16 @@ __Usage:__
 
 
 
-### Process-document.v1beta3
+### Process-document
 
-View the [source code](https://github.com/googleapis/nodejs-document-ai/blob/master/samples/process-document.v1beta3.js).
+View the [source code](https://github.com/googleapis/nodejs-document-ai/blob/master/samples/process-document.js).
 
-[![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-document-ai&page=editor&open_in_editor=samples/process-document.v1beta3.js,samples/README.md)
+[![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-document-ai&page=editor&open_in_editor=samples/process-document.js,samples/README.md)
 
 __Usage:__
 
 
-`node samples/process-document.v1beta3.js`
+`node samples/process-document.js`
 
 
 -----
