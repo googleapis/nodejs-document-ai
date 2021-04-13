@@ -31,7 +31,7 @@ const execSync = cmd => cp.execSync(cmd, {encoding: 'utf-8'});
 
 const storage = new Storage();
 const bucketName = `nodejs-docs-samples-test-${uuid.v4()}`;
-const cmd = 'node batch-process-document.v1beta3.js';
+const cmd = 'node batch-process-document.js';
 
 const testProcessDocument = {
   projectId: '',
