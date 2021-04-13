@@ -40,9 +40,9 @@ describe('Process document', () => {
   before(async () => {
     projectId = await client.getProjectId();
   });
-  it('should run document (process invoice)', async () => {
+  it('should run document (process invoice) (v1)', async () => {
     const stdout = execSync(
-      `node ./process-document.v1beta3.js ${projectId} ${LOCATION} ${PROCESSOR_ID} ${filePath}`,
+      `node ./process-document.js ${projectId} ${LOCATION} ${PROCESSOR_ID} ${filePath}`,
       {
         cwd,
       }
