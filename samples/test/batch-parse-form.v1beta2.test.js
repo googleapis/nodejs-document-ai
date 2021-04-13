@@ -24,15 +24,15 @@ const execSync = cmd => cp.execSync(cmd, {encoding: 'utf-8'});
 
 const storage = new Storage();
 const bucketName = `nodejs-docs-samples-test-${uuid.v4()}`;
-const cmd = 'node batch_parse_table.js';
+const cmd = 'node batch-parse-form.v1beta2.js';
 
-const testParseTable = {
+const testParseForm = {
   projectId: process.env.GCLOUD_PROJECT,
   location: 'us',
   gcsOutputUriPrefix: uuid.v4(),
 };
 
-describe('Document AI batch parse table', () => {
+describe('Document AI batch parse form', () => {
   before(async () => {
     await storage.createBucket(bucketName);
   });
@@ -43,10 +43,10 @@ describe('Document AI batch parse table', () => {
     await bucket.delete();
   });
 
-  it('should parse the GCS invoice example as as table', async () => {
+  it('should parse the GCS invoice example as a form', async () => {
     const output = execSync(
-      `${cmd} ${testParseTable.projectId} ${testParseTable.location} gs://${bucketName}`
+      `${cmd} ${testParseForm.projectId} ${testParseForm.location} gs://${bucketName}`
     );
-    assert.match(output, /Document processing complete./);
+    assert.match(output, /Extracted key value pair:/);
   });
 });
