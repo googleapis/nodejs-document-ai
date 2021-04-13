@@ -27,9 +27,12 @@ const LOCATION = 'us';
 
 describe('Document AI parse form', () => {
   it('should parse the GCS invoice example as a form (v1beta2)', async () => {
-    const stdout = execSync(`node ./parse-form.v1beta2.js ${projectId} ${LOCATION}`, {
-      cwd,
-    });
+    const stdout = execSync(
+      `node ./parse-form.v1beta2.js ${projectId} ${LOCATION}`,
+      {
+        cwd,
+      }
+    );
     assert.match(stdout, /Extracted key value pair:/);
   });
 });
