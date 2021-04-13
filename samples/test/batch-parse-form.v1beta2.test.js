@@ -32,7 +32,7 @@ const testParseForm = {
   gcsOutputUriPrefix: uuid.v4(),
 };
 
-describe('Document AI batch parse form', () => {
+describe('Document AI batch parse form (v1beta2)', () => {
   before(async () => {
     await storage.createBucket(bucketName);
   });

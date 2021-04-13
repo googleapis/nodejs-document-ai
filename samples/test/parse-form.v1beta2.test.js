@@ -26,7 +26,7 @@ const projectId = process.env.GCLOUD_PROJECT;
 const LOCATION = 'us';
 
 describe('Document AI parse form', () => {
-  it('should parse the GCS invoice example as a form', async () => {
+  it('should parse the GCS invoice example as a form (v1beta2)', async () => {
     const stdout = execSync(`node ./parse-form.v1beta2.js ${projectId} ${LOCATION}`, {
       cwd,
     });

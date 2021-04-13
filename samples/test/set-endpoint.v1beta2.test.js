@@ -25,7 +25,7 @@ const cwd = path.join(__dirname, '..');
 const projectId = process.env.GCLOUD_PROJECT;
 const LOCATION = 'eu';
 
-describe('Document AI set endpoint', () => {
+describe('Document AI set endpoint (v1beta2)', () => {
   it('should process a PDF in another region', async () => {
     const stdout = execSync(`node ./set-endpoint.v1beta2.js ${projectId} ${LOCATION}`, {
       cwd,

@@ -32,7 +32,7 @@ const testParseTable = {
   gcsOutputUriPrefix: uuid.v4(),
 };
 
-describe('Document AI batch parse table', () => {
+describe('Document AI batch parse table (v1beta2)', () => {
   before(async () => {
     await storage.createBucket(bucketName);
   });

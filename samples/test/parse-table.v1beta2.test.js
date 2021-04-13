@@ -26,7 +26,7 @@ const projectId = process.env.GCLOUD_PROJECT;
 const LOCATION = 'us';
 
 describe('Document AI parse table', () => {
-  it('should parse the GCS invoice example as as table', async () => {
+  it('should parse the GCS invoice example as as table (v1beta2)', async () => {
     const stdout = execSync(`node ./parse-table.v1beta2.js ${projectId} ${LOCATION}`, {
       cwd,
     });
