@@ -27,9 +27,12 @@ const LOCATION = 'us';
 
 describe('Document AI parse table', () => {
   it('should parse the GCS invoice example as as table (v1beta2)', async () => {
-    const stdout = execSync(`node ./parse-table.v1beta2.js ${projectId} ${LOCATION}`, {
-      cwd,
-    });
+    const stdout = execSync(
+      `node ./parse-table.v1beta2.js ${projectId} ${LOCATION}`,
+      {
+        cwd,
+      }
+    );
     assert.match(stdout, /Header row/);
   });
 });
