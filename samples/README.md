@@ -14,7 +14,7 @@
 * [Samples](#samples)
   * [Batch-parse-form.v1beta2](#batch-parse-form.v1beta2)
   * [Batch-parse-table.v1beta2](#batch-parse-table.v1beta2)
-  * [Batch-process-document.v1beta3](#batch-process-document.v1beta3)
+  * [Batch-process-document](#batch-process-document)
   * [Parse-form.v1beta2](#parse-form.v1beta2)
   * [Parse-table.v1beta2](#parse-table.v1beta2)
   * [Parse-with-model.v1beta2](#parse-with-model.v1beta2)
@@ -71,16 +71,16 @@ __Usage:__
 
 
 
-### Batch-process-document.v1beta3
+### Batch-process-document
 
-View the [source code](https://github.com/googleapis/nodejs-document-ai/blob/master/samples/batch-process-document.v1beta3.js).
+View the [source code](https://github.com/googleapis/nodejs-document-ai/blob/master/samples/batch-process-document.js).
 
-[![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-document-ai&page=editor&open_in_editor=samples/batch-process-document.v1beta3.js,samples/README.md)
+[![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-document-ai&page=editor&open_in_editor=samples/batch-process-document.js,samples/README.md)
 
 __Usage:__
 
 
-`node samples/batch-process-document.v1beta3.js`
+`node samples/batch-process-document.js`
 
 
 -----

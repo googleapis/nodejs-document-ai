@@ -55,15 +55,15 @@ async function main(
     const request = {
       name,
       inputDocuments: {
-          gcsDocuments: {
-            documents: [
-              {
-                gcsUri: gcsInputUri,
-                mimeType: 'application/pdf',
-              },
-            ],
-          },
+        gcsDocuments: {
+          documents: [
+            {
+              gcsUri: gcsInputUri,
+              mimeType: 'application/pdf',
+            },
+          ],
         },
+      },
       documentOutputConfig: {
         gcsOutputConfig: {
           gcsUri: `${gcsOutputUri}/${gcsOutputUriPrefix}/`,
