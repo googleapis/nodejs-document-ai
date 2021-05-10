@@ -76,10 +76,10 @@ export namespace google {
                     constructor(properties?: google.cloud.documentai.v1.IDocument);
 
                     /** Document uri. */
-                    public uri: string;
+                    public uri?: (string|null);
 
                     /** Document content. */
-                    public content: (Uint8Array|string);
+                    public content?: (Uint8Array|string|null);
 
                     /** Document mimeType. */
                     public mimeType: string;
@@ -2452,7 +2452,7 @@ export namespace google {
                             public addressValue?: (google.type.IPostalAddress|null);
 
                             /** NormalizedValue booleanValue. */
-                            public booleanValue: boolean;
+                            public booleanValue?: (boolean|null);
 
                             /** NormalizedValue text. */
                             public text: string;
@@ -3301,10 +3301,10 @@ export namespace google {
                         constructor(properties?: google.cloud.documentai.v1.Document.IRevision);
 
                         /** Revision agent. */
-                        public agent: string;
+                        public agent?: (string|null);
 
                         /** Revision processor. */
-                        public processor: string;
+                        public processor?: (string|null);
 
                         /** Revision id. */
                         public id: string;
@@ -5823,10 +5823,10 @@ export namespace google {
                     constructor(properties?: google.cloud.documentai.v1beta1.IDocument);
 
                     /** Document uri. */
-                    public uri: string;
+                    public uri?: (string|null);
 
                     /** Document content. */
-                    public content: (Uint8Array|string);
+                    public content?: (Uint8Array|string|null);
 
                     /** Document mimeType. */
                     public mimeType: string;
@@ -10019,10 +10019,10 @@ export namespace google {
                     constructor(properties?: google.cloud.documentai.v1beta2.IDocument);
 
                     /** Document uri. */
-                    public uri: string;
+                    public uri?: (string|null);
 
                     /** Document content. */
-                    public content: (Uint8Array|string);
+                    public content?: (Uint8Array|string|null);
 
                     /** Document mimeType. */
                     public mimeType: string;
@@ -10252,7 +10252,7 @@ export namespace google {
                         constructor(properties?: google.cloud.documentai.v1beta2.Document.ILabel);
 
                         /** Label automlModel. */
-                        public automlModel: string;
+                        public automlModel?: (string|null);
 
                         /** Label name. */
                         public name: string;
@@ -14179,7 +14179,7 @@ export namespace google {
                     public gcsSource?: (google.cloud.documentai.v1beta2.IGcsSource|null);
 
                     /** InputConfig contents. */
-                    public contents: (Uint8Array|string);
+                    public contents?: (Uint8Array|string|null);
 
                     /** InputConfig mimeType. */
                     public mimeType: string;
@@ -14713,10 +14713,10 @@ export namespace google {
                     constructor(properties?: google.cloud.documentai.v1beta3.IDocument);
 
                     /** Document uri. */
-                    public uri: string;
+                    public uri?: (string|null);
 
                     /** Document content. */
-                    public content: (Uint8Array|string);
+                    public content?: (Uint8Array|string|null);
 
                     /** Document mimeType. */
                     public mimeType: string;
@@ -17089,7 +17089,7 @@ export namespace google {
                             public addressValue?: (google.type.IPostalAddress|null);
 
                             /** NormalizedValue booleanValue. */
-                            public booleanValue: boolean;
+                            public booleanValue?: (boolean|null);
 
                             /** NormalizedValue text. */
                             public text: string;
@@ -17938,10 +17938,10 @@ export namespace google {
                         constructor(properties?: google.cloud.documentai.v1beta3.Document.IRevision);
 
                         /** Revision agent. */
-                        public agent: string;
+                        public agent?: (string|null);
 
                         /** Revision processor. */
-                        public processor: string;
+                        public processor?: (string|null);
 
                         /** Revision id. */
                         public id: string;
@@ -20834,19 +20834,19 @@ export namespace google {
             public selector: string;
 
             /** HttpRule get. */
-            public get: string;
+            public get?: (string|null);
 
             /** HttpRule put. */
-            public put: string;
+            public put?: (string|null);
 
             /** HttpRule post. */
-            public post: string;
+            public post?: (string|null);
 
             /** HttpRule delete. */
-            public delete: string;
+            public delete?: (string|null);
 
             /** HttpRule patch. */
-            public patch: string;
+            public patch?: (string|null);
 
             /** HttpRule custom. */
             public custom?: (google.api.ICustomHttpPattern|null);
