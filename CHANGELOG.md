@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.9.1](https://www.github.com/googleapis/nodejs-document-ai/compare/v2.9.0...v2.9.1) (2021-05-10)
+
+
+### Bug Fixes
+
+* **deps:** require google-gax v2.12.0 ([#210](https://www.github.com/googleapis/nodejs-document-ai/issues/210)) ([86d31c7](https://www.github.com/googleapis/nodejs-document-ai/commit/86d31c767881ee5524f4285bf828bf674a7d282e))
+
 ## [2.9.0](https://www.github.com/googleapis/nodejs-document-ai/compare/v2.8.0...v2.9.0) (2021-04-26)
 
 
