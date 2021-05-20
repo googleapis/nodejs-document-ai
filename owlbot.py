@@ -17,15 +17,11 @@ import os
 import synthtool as s
 import synthtool.gcp as gcp
 import synthtool.languages.node as node
+import json
 import logging
+from pathlib import Path
 
-# Infer version from src directory:
-versions = []
-default_version = 'v1beta3'
-for directory in os.listdir('./src'):
-  if os.path.isdir(os.path.join('./src', directory)):
-    versions.append(directory)
-name = 'documentai'
+node.owlbot_main()
 
 ## Note: this API only supports regional endpoints and does not support default scopes.
 s.replace(f"src/*/document_*_service_client.ts",
@@ -40,10 +36,3 @@ s.replace(f"src/*/document_*_service_client.ts",
           r"// Set the default scopes in auth client if needed(.|\n)*?}",
           ""
          )
-
-# Copy common templates
-common_templates = gcp.CommonTemplates()
-templates = common_templates.node_library(source_location='build/src', versions=versions, default_version=default_version)
-s.copy(templates, excludes=[])
-
-node.postprocess_gapic_library_hermetic()

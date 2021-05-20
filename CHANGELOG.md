@@ -1,5 +1,39 @@
 # Changelog
 
+## [2.10.0](https://www.github.com/googleapis/nodejs-document-ai/compare/v2.9.0...v2.10.0) (2021-05-12)
+
+
+### Features
+
+* add confidence field to the PageAnchor.PageRef in document.proto ([#206](https://www.github.com/googleapis/nodejs-document-ai/issues/206)) ([f3154a9](https://www.github.com/googleapis/nodejs-document-ai/commit/f3154a9456c5727b317af34c5a76ca0c7cda9cbb))
+
+
+### Bug Fixes
+
+* **deps:** require google-gax v2.12.0 ([#210](https://www.github.com/googleapis/nodejs-document-ai/issues/210)) ([86d31c7](https://www.github.com/googleapis/nodejs-document-ai/commit/86d31c767881ee5524f4285bf828bf674a7d282e))
+* use require() to load JSON protos ([#214](https://www.github.com/googleapis/nodejs-document-ai/issues/214)) ([c73202d](https://www.github.com/googleapis/nodejs-document-ai/commit/c73202dba1d62a1b414abe8b1dc39b93c0eb2e7b))
+
+## [2.9.0](https://www.github.com/googleapis/nodejs-document-ai/compare/v2.8.0...v2.9.0) (2021-04-26)
+
+
+### Features
+
+* add confidence field to the PageAnchor.PageRef in document.proto ([#204](https://www.github.com/googleapis/nodejs-document-ai/issues/204)) ([580150b](https://www.github.com/googleapis/nodejs-document-ai/commit/580150bdb3b5f7bfac599ee7c122a3ffb9a624c7))
+
+## [2.8.0](https://www.github.com/googleapis/nodejs-document-ai/compare/v2.7.0...v2.8.0) (2021-04-13)
+
+
+### Features
+
+* add v1 API surface ([#196](https://www.github.com/googleapis/nodejs-document-ai/issues/196)) ([54b1dc4](https://www.github.com/googleapis/nodejs-document-ai/commit/54b1dc4354c3700d2d729d745edf0de0657d1014))
+
+## [2.7.0](https://www.github.com/googleapis/nodejs-document-ai/compare/v2.6.0...v2.7.0) (2021-04-12)
+
+
+### Features
+
+* add EVAL_SKIPPED value to the Provenance.OperationType enum ([#191](https://www.github.com/googleapis/nodejs-document-ai/issues/191)) ([161b3e0](https://www.github.com/googleapis/nodejs-document-ai/commit/161b3e05412e27454f183c77038f3a920a8af8f5))
+
 ## [2.6.0](https://www.github.com/googleapis/nodejs-document-ai/compare/v2.5.0...v2.6.0) (2021-03-15)
 
 

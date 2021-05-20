@@ -25,9 +25,8 @@ async function main(projectId, location, processorId, filePath) {
   // const processorId = 'YOUR_PROCESSOR_ID'; // Create processor in Cloud Console
   // const filePath = '/path/to/local/pdf';
 
-  const {
-    DocumentProcessorServiceClient,
-  } = require('@google-cloud/documentai').v1beta3;
+  const {DocumentProcessorServiceClient} =
+    require('@google-cloud/documentai').v1;
 
   // Instantiates a client
   // apiEndpoint regions available: eu-documentai.googleapis.com, us-documentai.googleapis.com (Required if using eu based processor)
@@ -49,7 +48,7 @@ async function main(projectId, location, processorId, filePath) {
 
     const request = {
       name,
-      document: {
+      rawDocument: {
         content: encodedImage,
         mimeType: 'application/pdf',
       },
