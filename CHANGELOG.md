@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.10.1](https://www.github.com/googleapis/nodejs-document-ai/compare/v2.10.0...v2.10.1) (2021-05-20)
+
+
+### Bug Fixes
+
+* update default host to documentai.googleapis.com ([#217](https://www.github.com/googleapis/nodejs-document-ai/issues/217)) ([2d30ad0](https://www.github.com/googleapis/nodejs-document-ai/commit/2d30ad0f29e06d3fc83abba7e46f8d53c24762e7))
+
 ## [2.10.0](https://www.github.com/googleapis/nodejs-document-ai/compare/v2.9.0...v2.10.0) (2021-05-12)
 
 
