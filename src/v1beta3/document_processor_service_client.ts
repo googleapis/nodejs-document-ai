@@ -132,6 +132,8 @@ export class DocumentProcessorServiceClient {
     // Save the auth object to the client, for use by other methods.
     this.auth = this._gaxGrpc.auth as gax.GoogleAuth;
 
+    
+
     // Determine the client header string.
     const clientHeader = [`gax/${this._gaxModule.version}`, `gapic/${version}`];
     if (typeof process !== 'undefined' && 'versions' in process) {
@@ -397,7 +399,7 @@ export class DocumentProcessorServiceClient {
   // -- Service calls --
   // -------------------
   processDocument(
-    request: protos.google.cloud.documentai.v1beta3.IProcessRequest,
+    request?: protos.google.cloud.documentai.v1beta3.IProcessRequest,
     options?: CallOptions
   ): Promise<
     [
@@ -450,7 +452,7 @@ export class DocumentProcessorServiceClient {
    * const [response] = await client.processDocument(request);
    */
   processDocument(
-    request: protos.google.cloud.documentai.v1beta3.IProcessRequest,
+    request?: protos.google.cloud.documentai.v1beta3.IProcessRequest,
     optionsOrCallback?:
       | CallOptions
       | Callback<
@@ -491,7 +493,7 @@ export class DocumentProcessorServiceClient {
     return this.innerApiCalls.processDocument(request, options, callback);
   }
   fetchProcessorTypes(
-    request: protos.google.cloud.documentai.v1beta3.IFetchProcessorTypesRequest,
+    request?: protos.google.cloud.documentai.v1beta3.IFetchProcessorTypesRequest,
     options?: CallOptions
   ): Promise<
     [
@@ -543,7 +545,7 @@ export class DocumentProcessorServiceClient {
    * const [response] = await client.fetchProcessorTypes(request);
    */
   fetchProcessorTypes(
-    request: protos.google.cloud.documentai.v1beta3.IFetchProcessorTypesRequest,
+    request?: protos.google.cloud.documentai.v1beta3.IFetchProcessorTypesRequest,
     optionsOrCallback?:
       | CallOptions
       | Callback<
@@ -589,7 +591,7 @@ export class DocumentProcessorServiceClient {
     return this.innerApiCalls.fetchProcessorTypes(request, options, callback);
   }
   createProcessor(
-    request: protos.google.cloud.documentai.v1beta3.ICreateProcessorRequest,
+    request?: protos.google.cloud.documentai.v1beta3.ICreateProcessorRequest,
     options?: CallOptions
   ): Promise<
     [
@@ -645,7 +647,7 @@ export class DocumentProcessorServiceClient {
    * const [response] = await client.createProcessor(request);
    */
   createProcessor(
-    request: protos.google.cloud.documentai.v1beta3.ICreateProcessorRequest,
+    request?: protos.google.cloud.documentai.v1beta3.ICreateProcessorRequest,
     optionsOrCallback?:
       | CallOptions
       | Callback<
@@ -692,7 +694,7 @@ export class DocumentProcessorServiceClient {
   }
 
   batchProcessDocuments(
-    request: protos.google.cloud.documentai.v1beta3.IBatchProcessRequest,
+    request?: protos.google.cloud.documentai.v1beta3.IBatchProcessRequest,
     options?: CallOptions
   ): Promise<
     [
@@ -760,7 +762,7 @@ export class DocumentProcessorServiceClient {
    * const [response] = await operation.promise();
    */
   batchProcessDocuments(
-    request: protos.google.cloud.documentai.v1beta3.IBatchProcessRequest,
+    request?: protos.google.cloud.documentai.v1beta3.IBatchProcessRequest,
     optionsOrCallback?:
       | CallOptions
       | Callback<
@@ -845,7 +847,7 @@ export class DocumentProcessorServiceClient {
     >;
   }
   deleteProcessor(
-    request: protos.google.cloud.documentai.v1beta3.IDeleteProcessorRequest,
+    request?: protos.google.cloud.documentai.v1beta3.IDeleteProcessorRequest,
     options?: CallOptions
   ): Promise<
     [
@@ -902,7 +904,7 @@ export class DocumentProcessorServiceClient {
    * const [response] = await operation.promise();
    */
   deleteProcessor(
-    request: protos.google.cloud.documentai.v1beta3.IDeleteProcessorRequest,
+    request?: protos.google.cloud.documentai.v1beta3.IDeleteProcessorRequest,
     optionsOrCallback?:
       | CallOptions
       | Callback<
@@ -987,7 +989,7 @@ export class DocumentProcessorServiceClient {
     >;
   }
   enableProcessor(
-    request: protos.google.cloud.documentai.v1beta3.IEnableProcessorRequest,
+    request?: protos.google.cloud.documentai.v1beta3.IEnableProcessorRequest,
     options?: CallOptions
   ): Promise<
     [
@@ -1043,7 +1045,7 @@ export class DocumentProcessorServiceClient {
    * const [response] = await operation.promise();
    */
   enableProcessor(
-    request: protos.google.cloud.documentai.v1beta3.IEnableProcessorRequest,
+    request?: protos.google.cloud.documentai.v1beta3.IEnableProcessorRequest,
     optionsOrCallback?:
       | CallOptions
       | Callback<
@@ -1128,7 +1130,7 @@ export class DocumentProcessorServiceClient {
     >;
   }
   disableProcessor(
-    request: protos.google.cloud.documentai.v1beta3.IDisableProcessorRequest,
+    request?: protos.google.cloud.documentai.v1beta3.IDisableProcessorRequest,
     options?: CallOptions
   ): Promise<
     [
@@ -1184,7 +1186,7 @@ export class DocumentProcessorServiceClient {
    * const [response] = await operation.promise();
    */
   disableProcessor(
-    request: protos.google.cloud.documentai.v1beta3.IDisableProcessorRequest,
+    request?: protos.google.cloud.documentai.v1beta3.IDisableProcessorRequest,
     optionsOrCallback?:
       | CallOptions
       | Callback<
@@ -1269,7 +1271,7 @@ export class DocumentProcessorServiceClient {
     >;
   }
   reviewDocument(
-    request: protos.google.cloud.documentai.v1beta3.IReviewDocumentRequest,
+    request?: protos.google.cloud.documentai.v1beta3.IReviewDocumentRequest,
     options?: CallOptions
   ): Promise<
     [
@@ -1335,7 +1337,7 @@ export class DocumentProcessorServiceClient {
    * const [response] = await operation.promise();
    */
   reviewDocument(
-    request: protos.google.cloud.documentai.v1beta3.IReviewDocumentRequest,
+    request?: protos.google.cloud.documentai.v1beta3.IReviewDocumentRequest,
     optionsOrCallback?:
       | CallOptions
       | Callback<
@@ -1420,7 +1422,7 @@ export class DocumentProcessorServiceClient {
     >;
   }
   listProcessors(
-    request: protos.google.cloud.documentai.v1beta3.IListProcessorsRequest,
+    request?: protos.google.cloud.documentai.v1beta3.IListProcessorsRequest,
     options?: CallOptions
   ): Promise<
     [
@@ -1479,7 +1481,7 @@ export class DocumentProcessorServiceClient {
    *   for more details and examples.
    */
   listProcessors(
-    request: protos.google.cloud.documentai.v1beta3.IListProcessorsRequest,
+    request?: protos.google.cloud.documentai.v1beta3.IListProcessorsRequest,
     optionsOrCallback?:
       | CallOptions
       | PaginationCallback<

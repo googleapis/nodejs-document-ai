@@ -128,6 +128,8 @@ export class DocumentProcessorServiceClient {
     // Save the auth object to the client, for use by other methods.
     this.auth = this._gaxGrpc.auth as gax.GoogleAuth;
 
+    
+
     // Determine the client header string.
     const clientHeader = [`gax/${this._gaxModule.version}`, `gapic/${version}`];
     if (typeof process !== 'undefined' && 'versions' in process) {
@@ -331,7 +333,7 @@ export class DocumentProcessorServiceClient {
   // -- Service calls --
   // -------------------
   processDocument(
-    request: protos.google.cloud.documentai.v1.IProcessRequest,
+    request?: protos.google.cloud.documentai.v1.IProcessRequest,
     options?: CallOptions
   ): Promise<
     [
@@ -382,7 +384,7 @@ export class DocumentProcessorServiceClient {
    * const [response] = await client.processDocument(request);
    */
   processDocument(
-    request: protos.google.cloud.documentai.v1.IProcessRequest,
+    request?: protos.google.cloud.documentai.v1.IProcessRequest,
     optionsOrCallback?:
       | CallOptions
       | Callback<
@@ -422,7 +424,7 @@ export class DocumentProcessorServiceClient {
   }
 
   batchProcessDocuments(
-    request: protos.google.cloud.documentai.v1.IBatchProcessRequest,
+    request?: protos.google.cloud.documentai.v1.IBatchProcessRequest,
     options?: CallOptions
   ): Promise<
     [
@@ -486,7 +488,7 @@ export class DocumentProcessorServiceClient {
    * const [response] = await operation.promise();
    */
   batchProcessDocuments(
-    request: protos.google.cloud.documentai.v1.IBatchProcessRequest,
+    request?: protos.google.cloud.documentai.v1.IBatchProcessRequest,
     optionsOrCallback?:
       | CallOptions
       | Callback<
@@ -571,7 +573,7 @@ export class DocumentProcessorServiceClient {
     >;
   }
   reviewDocument(
-    request: protos.google.cloud.documentai.v1.IReviewDocumentRequest,
+    request?: protos.google.cloud.documentai.v1.IReviewDocumentRequest,
     options?: CallOptions
   ): Promise<
     [
@@ -617,6 +619,10 @@ export class DocumentProcessorServiceClient {
    * @param {string} request.humanReviewConfig
    *   Required. The resource name of the HumanReviewConfig that the document will be
    *   reviewed with.
+   * @param {boolean} request.enableSchemaValidation
+   *   Whether the validation should be performed on the ad-hoc review request.
+   * @param {google.cloud.documentai.v1.ReviewDocumentRequest.Priority} request.priority
+   *   The priority of the human review task.
    * @param {object} [options]
    *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
    * @returns {Promise} - The promise which resolves to an array.
@@ -631,7 +637,7 @@ export class DocumentProcessorServiceClient {
    * const [response] = await operation.promise();
    */
   reviewDocument(
-    request: protos.google.cloud.documentai.v1.IReviewDocumentRequest,
+    request?: protos.google.cloud.documentai.v1.IReviewDocumentRequest,
     optionsOrCallback?:
       | CallOptions
       | Callback<
