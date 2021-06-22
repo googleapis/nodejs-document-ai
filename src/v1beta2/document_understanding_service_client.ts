@@ -126,6 +126,8 @@ export class DocumentUnderstandingServiceClient {
     // Save the auth object to the client, for use by other methods.
     this.auth = this._gaxGrpc.auth as gax.GoogleAuth;
 
+    
+
     // Determine the client header string.
     const clientHeader = [`gax/${this._gaxModule.version}`, `gapic/${version}`];
     if (typeof process !== 'undefined' && 'versions' in process) {
@@ -305,7 +307,7 @@ export class DocumentUnderstandingServiceClient {
   // -- Service calls --
   // -------------------
   processDocument(
-    request: protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest,
+    request?: protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest,
     options?: CallOptions
   ): Promise<
     [
@@ -385,7 +387,7 @@ export class DocumentUnderstandingServiceClient {
    * const [response] = await client.processDocument(request);
    */
   processDocument(
-    request: protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest,
+    request?: protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest,
     optionsOrCallback?:
       | CallOptions
       | Callback<
@@ -432,7 +434,7 @@ export class DocumentUnderstandingServiceClient {
   }
 
   batchProcessDocuments(
-    request: protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsRequest,
+    request?: protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsRequest,
     options?: CallOptions
   ): Promise<
     [
@@ -495,7 +497,7 @@ export class DocumentUnderstandingServiceClient {
    * const [response] = await operation.promise();
    */
   batchProcessDocuments(
-    request: protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsRequest,
+    request?: protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsRequest,
     optionsOrCallback?:
       | CallOptions
       | Callback<
