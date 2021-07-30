@@ -131,8 +131,6 @@ export class DocumentUnderstandingServiceClient {
     // Save the auth object to the client, for use by other methods.
     this.auth = this._gaxGrpc.auth as gax.GoogleAuth;
 
-    
-
     // Determine the client header string.
     const clientHeader = [`gax/${this._gaxModule.version}`, `gapic/${version}`];
     if (typeof process !== 'undefined' && 'versions' in process) {
