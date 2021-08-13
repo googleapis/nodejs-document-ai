@@ -6,7 +6,7 @@
 
 [![release level](https://img.shields.io/badge/release%20level-beta-yellow.svg?style=flat)](https://cloud.google.com/terms/launch-stages)
 [![npm version](https://img.shields.io/npm/v/@google-cloud/documentai.svg)](https://www.npmjs.org/package/@google-cloud/documentai)
-[![codecov](https://img.shields.io/codecov/c/github/googleapis/nodejs-document-ai/master.svg?style=flat)](https://codecov.io/gh/googleapis/nodejs-document-ai)
+[![codecov](https://img.shields.io/codecov/c/github/googleapis/nodejs-document-ai/main.svg?style=flat)](https://codecov.io/gh/googleapis/nodejs-document-ai)
 
 
 
@@ -197,8 +197,8 @@ Contributions welcome! See the [Contributing Guide](https://github.com/googleapi
 Please note that this `README.md`, the `samples/README.md`,
 and a variety of configuration files in this repository (including `.nycrc` and `tsconfig.json`)
 are generated from a central template. To edit one of these files, make an edit
-to its template in this
-[directory](https://github.com/googleapis/synthtool/tree/master/synthtool/gcp/templates/node_library).
+to its templates in
+[directory](https://github.com/googleapis/synthtool).
 
 ## License
 
@@ -207,7 +207,7 @@ Apache Version 2.0
 See [LICENSE](https://github.com/googleapis/nodejs-document-ai/blob/main/LICENSE)
 
 [client-docs]: https://cloud.google.com/nodejs/docs/reference/documentai/latest
-[product-docs]: https://cloud.google.com/document-understanding/docs/
+[product-docs]: https://cloud.google.com/document-ai/docs/
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
 [projects]: https://console.cloud.google.com/project
 [billing]: https://support.google.com/cloud/answer/6293499#enable-billing
