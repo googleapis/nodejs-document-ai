@@ -139,6 +139,8 @@ export class DocumentProcessorServiceClient {
     // Set defaultServicePath on the auth object.
     this.auth.defaultServicePath = staticMembers.servicePath;
 
+    
+
     // Determine the client header string.
     const clientHeader = [`gax/${this._gaxModule.version}`, `gapic/${version}`];
     if (typeof process !== 'undefined' && 'versions' in process) {
@@ -395,6 +397,10 @@ export class DocumentProcessorServiceClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.processDocument(request);
+   *
+   * @example <caption>include:samples/generated/v1/document_processor_service.process_document.js</caption>
+   * region_tag:documentai_process_document_sample
+   *
    */
   processDocument(
     request?: protos.google.cloud.documentai.v1.IProcessRequest,
@@ -499,6 +505,10 @@ export class DocumentProcessorServiceClient {
    * @example
    * const [operation] = await client.batchProcessDocuments(request);
    * const [response] = await operation.promise();
+   *
+   * @example <caption>include:samples/generated/v1/document_processor_service.batch_process_documents.js</caption>
+   * region_tag:documentai_batch_process_documents_sample
+   *
    */
   batchProcessDocuments(
     request?: protos.google.cloud.documentai.v1.IBatchProcessRequest,
@@ -562,6 +572,10 @@ export class DocumentProcessorServiceClient {
    * console.log(decodedOperation.result);
    * console.log(decodedOperation.done);
    * console.log(decodedOperation.metadata);
+   *
+   * @example <caption>include:samples/generated/v1/document_processor_service.batch_process_documents.js</caption>
+   * region_tag:documentai_batch_process_documents_sample
+   *
    */
   async checkBatchProcessDocumentsProgress(
     name: string
@@ -648,6 +662,10 @@ export class DocumentProcessorServiceClient {
    * @example
    * const [operation] = await client.reviewDocument(request);
    * const [response] = await operation.promise();
+   *
+   * @example <caption>include:samples/generated/v1/document_processor_service.review_document.js</caption>
+   * region_tag:documentai_review_document_sample
+   *
    */
   reviewDocument(
     request?: protos.google.cloud.documentai.v1.IReviewDocumentRequest,
@@ -711,6 +729,10 @@ export class DocumentProcessorServiceClient {
    * console.log(decodedOperation.result);
    * console.log(decodedOperation.done);
    * console.log(decodedOperation.metadata);
+   *
+   * @example <caption>include:samples/generated/v1/document_processor_service.review_document.js</caption>
+   * region_tag:documentai_review_document_sample
+   *
    */
   async checkReviewDocumentProgress(
     name: string

@@ -137,6 +137,8 @@ export class DocumentUnderstandingServiceClient {
     // Set defaultServicePath on the auth object.
     this.auth.defaultServicePath = staticMembers.servicePath;
 
+    
+
     // Determine the client header string.
     const clientHeader = [`gax/${this._gaxModule.version}`, `gapic/${version}`];
     if (typeof process !== 'undefined' && 'versions' in process) {
@@ -378,6 +380,10 @@ export class DocumentUnderstandingServiceClient {
    * @example
    * const [operation] = await client.batchProcessDocuments(request);
    * const [response] = await operation.promise();
+   *
+   * @example <caption>include:samples/generated/v1beta1/document_understanding_service.batch_process_documents.js</caption>
+   * region_tag:documentai_batch_process_documents_sample
+   *
    */
   batchProcessDocuments(
     request?: protos.google.cloud.documentai.v1beta1.IBatchProcessDocumentsRequest,
@@ -441,6 +447,10 @@ export class DocumentUnderstandingServiceClient {
    * console.log(decodedOperation.result);
    * console.log(decodedOperation.done);
    * console.log(decodedOperation.metadata);
+   *
+   * @example <caption>include:samples/generated/v1beta1/document_understanding_service.batch_process_documents.js</caption>
+   * region_tag:documentai_batch_process_documents_sample
+   *
    */
   async checkBatchProcessDocumentsProgress(
     name: string
