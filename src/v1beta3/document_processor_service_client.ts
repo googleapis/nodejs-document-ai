@@ -143,6 +143,8 @@ export class DocumentProcessorServiceClient {
     // Set defaultServicePath on the auth object.
     this.auth.defaultServicePath = staticMembers.servicePath;
 
+    
+
     // Determine the client header string.
     const clientHeader = [`gax/${this._gaxModule.version}`, `gapic/${version}`];
     if (typeof process !== 'undefined' && 'versions' in process) {
@@ -1575,7 +1577,8 @@ export class DocumentProcessorServiceClient {
       gax.routingHeader.fromParams({
         parent: request.parent || '',
       });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listProcessors'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listProcessors.createStream(
       this.innerApiCalls.listProcessors as gax.GaxCall,
@@ -1629,7 +1632,8 @@ export class DocumentProcessorServiceClient {
         parent: request.parent || '',
       });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listProcessors'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listProcessors.asyncIterate(
       this.innerApiCalls['listProcessors'] as GaxCall,
