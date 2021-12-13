@@ -74,7 +74,8 @@ async function main(projectId, location, processorId, filePath) {
       const key = entity.type;
       // some other value formats in addition to text are availible
       // e.g. dates: `entity.normalizedValue.dateValue.year`
-      const textValue = entity.textAnchor.content !== null ? entity.textAnchor.content : '';
+      const textValue = 
+             'content' in entity.textAnchor ? entity.textAnchor.content : '';
       const conf = entity.confidence * 100;
       console.log(
         `* ${JSON.stringify(key)}: ${JSON.stringify(textValue)}(${conf.toFixed(
