@@ -3387,6 +3387,11 @@
                               "type": "FormField",
                               "id": 11
                             },
+                            "symbols": {
+                              "rule": "repeated",
+                              "type": "Symbol",
+                              "id": 12
+                            },
                             "provenance": {
                               "type": "Provenance",
                               "id": 16
@@ -3569,6 +3574,19 @@
                                       }
                                     }
                                   }
+                                }
+                              }
+                            },
+                            "Symbol": {
+                              "fields": {
+                                "layout": {
+                                  "type": "Layout",
+                                  "id": 1
+                                },
+                                "detectedLanguages": {
+                                  "rule": "repeated",
+                                  "type": "DetectedLanguage",
+                                  "id": 2
                                 }
                               }
                             },
@@ -3804,7 +3822,7 @@
                                   "type": "string",
                                   "id": 1,
                                   "options": {
-                                    "(google.api.field_behavior)": "REQUIRED"
+                                    "(google.api.field_behavior)": "OPTIONAL"
                                   }
                                 }
                               }
