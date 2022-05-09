@@ -1,5 +1,21 @@
 # Changelog
 
+## [4.0.0](https://github.com/googleapis/nodejs-document-ai/compare/v3.3.0...v4.0.0) (2022-05-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* mark Document.Entity.type as REQUIRED in all versions (#326)
+
+### Features
+
+* add `content` field in TextAnchor ([#315](https://github.com/googleapis/nodejs-document-ai/issues/315)) ([1fa9195](https://github.com/googleapis/nodejs-document-ai/commit/1fa9195d555bef2fc2c45668338200d95fec47cb))
+
+
+### Bug Fixes
+
+* mark Document.Entity.type as REQUIRED in all versions ([#326](https://github.com/googleapis/nodejs-document-ai/issues/326)) ([8ef4cca](https://github.com/googleapis/nodejs-document-ai/commit/8ef4cca05d7095ed51befbb791991209b0d1a3f8))
+
 ## [3.3.0](https://github.com/googleapis/nodejs-document-ai/compare/v3.2.1...v3.3.0) (2022-02-22)
 
 
