@@ -4725,21 +4725,21 @@ export namespace google {
                 namespace DocumentProcessorService {
 
                     /**
-                     * Callback as used by {@link google.cloud.documentai.v1.DocumentProcessorService|processDocument}.
+                     * Callback as used by {@link google.cloud.documentai.v1.DocumentProcessorService#processDocument}.
                      * @param error Error, if any
                      * @param [response] ProcessResponse
                      */
                     type ProcessDocumentCallback = (error: (Error|null), response?: google.cloud.documentai.v1.ProcessResponse) => void;
 
                     /**
-                     * Callback as used by {@link google.cloud.documentai.v1.DocumentProcessorService|batchProcessDocuments}.
+                     * Callback as used by {@link google.cloud.documentai.v1.DocumentProcessorService#batchProcessDocuments}.
                      * @param error Error, if any
                      * @param [response] Operation
                      */
                     type BatchProcessDocumentsCallback = (error: (Error|null), response?: google.longrunning.Operation) => void;
 
                     /**
-                     * Callback as used by {@link google.cloud.documentai.v1.DocumentProcessorService|reviewDocument}.
+                     * Callback as used by {@link google.cloud.documentai.v1.DocumentProcessorService#reviewDocument}.
                      * @param error Error, if any
                      * @param [response] Operation
                      */
@@ -8612,7 +8612,7 @@ export namespace google {
                 namespace DocumentUnderstandingService {
 
                     /**
-                     * Callback as used by {@link google.cloud.documentai.v1beta1.DocumentUnderstandingService|batchProcessDocuments}.
+                     * Callback as used by {@link google.cloud.documentai.v1beta1.DocumentUnderstandingService#batchProcessDocuments}.
                      * @param error Error, if any
                      * @param [response] Operation
                      */
@@ -13188,14 +13188,14 @@ export namespace google {
                 namespace DocumentUnderstandingService {
 
                     /**
-                     * Callback as used by {@link google.cloud.documentai.v1beta2.DocumentUnderstandingService|batchProcessDocuments}.
+                     * Callback as used by {@link google.cloud.documentai.v1beta2.DocumentUnderstandingService#batchProcessDocuments}.
                      * @param error Error, if any
                      * @param [response] Operation
                      */
                     type BatchProcessDocumentsCallback = (error: (Error|null), response?: google.longrunning.Operation) => void;
 
                     /**
-                     * Callback as used by {@link google.cloud.documentai.v1beta2.DocumentUnderstandingService|processDocument}.
+                     * Callback as used by {@link google.cloud.documentai.v1beta2.DocumentUnderstandingService#processDocument}.
                      * @param error Error, if any
                      * @param [response] Document
                      */
@@ -19593,63 +19593,63 @@ export namespace google {
                 namespace DocumentProcessorService {
 
                     /**
-                     * Callback as used by {@link google.cloud.documentai.v1beta3.DocumentProcessorService|processDocument}.
+                     * Callback as used by {@link google.cloud.documentai.v1beta3.DocumentProcessorService#processDocument}.
                      * @param error Error, if any
                      * @param [response] ProcessResponse
                      */
                     type ProcessDocumentCallback = (error: (Error|null), response?: google.cloud.documentai.v1beta3.ProcessResponse) => void;
 
                     /**
-                     * Callback as used by {@link google.cloud.documentai.v1beta3.DocumentProcessorService|batchProcessDocuments}.
+                     * Callback as used by {@link google.cloud.documentai.v1beta3.DocumentProcessorService#batchProcessDocuments}.
                      * @param error Error, if any
                      * @param [response] Operation
                      */
                     type BatchProcessDocumentsCallback = (error: (Error|null), response?: google.longrunning.Operation) => void;
 
                     /**
-                     * Callback as used by {@link google.cloud.documentai.v1beta3.DocumentProcessorService|fetchProcessorTypes}.
+                     * Callback as used by {@link google.cloud.documentai.v1beta3.DocumentProcessorService#fetchProcessorTypes}.
                      * @param error Error, if any
                      * @param [response] FetchProcessorTypesResponse
                      */
                     type FetchProcessorTypesCallback = (error: (Error|null), response?: google.cloud.documentai.v1beta3.FetchProcessorTypesResponse) => void;
 
                     /**
-                     * Callback as used by {@link google.cloud.documentai.v1beta3.DocumentProcessorService|listProcessors}.
+                     * Callback as used by {@link google.cloud.documentai.v1beta3.DocumentProcessorService#listProcessors}.
                      * @param error Error, if any
                      * @param [response] ListProcessorsResponse
                      */
                     type ListProcessorsCallback = (error: (Error|null), response?: google.cloud.documentai.v1beta3.ListProcessorsResponse) => void;
 
                     /**
-                     * Callback as used by {@link google.cloud.documentai.v1beta3.DocumentProcessorService|createProcessor}.
+                     * Callback as used by {@link google.cloud.documentai.v1beta3.DocumentProcessorService#createProcessor}.
                      * @param error Error, if any
                      * @param [response] Processor
                      */
                     type CreateProcessorCallback = (error: (Error|null), response?: google.cloud.documentai.v1beta3.Processor) => void;
 
                     /**
-                     * Callback as used by {@link google.cloud.documentai.v1beta3.DocumentProcessorService|deleteProcessor}.
+                     * Callback as used by {@link google.cloud.documentai.v1beta3.DocumentProcessorService#deleteProcessor}.
                      * @param error Error, if any
                      * @param [response] Operation
                      */
                     type DeleteProcessorCallback = (error: (Error|null), response?: google.longrunning.Operation) => void;
 
                     /**
-                     * Callback as used by {@link google.cloud.documentai.v1beta3.DocumentProcessorService|enableProcessor}.
+                     * Callback as used by {@link google.cloud.documentai.v1beta3.DocumentProcessorService#enableProcessor}.
                      * @param error Error, if any
                      * @param [response] Operation
                      */
                     type EnableProcessorCallback = (error: (Error|null), response?: google.longrunning.Operation) => void;
 
                     /**
-                     * Callback as used by {@link google.cloud.documentai.v1beta3.DocumentProcessorService|disableProcessor}.
+                     * Callback as used by {@link google.cloud.documentai.v1beta3.DocumentProcessorService#disableProcessor}.
                      * @param error Error, if any
                      * @param [response] Operation
                      */
                     type DisableProcessorCallback = (error: (Error|null), response?: google.longrunning.Operation) => void;
 
                     /**
-                     * Callback as used by {@link google.cloud.documentai.v1beta3.DocumentProcessorService|reviewDocument}.
+                     * Callback as used by {@link google.cloud.documentai.v1beta3.DocumentProcessorService#reviewDocument}.
                      * @param error Error, if any
                      * @param [response] Operation
                      */
@@ -25080,9 +25080,6 @@ export namespace google {
             /** FieldOptions lazy */
             lazy?: (boolean|null);
 
-            /** FieldOptions unverifiedLazy */
-            unverifiedLazy?: (boolean|null);
-
             /** FieldOptions deprecated */
             deprecated?: (boolean|null);
 
@@ -25119,9 +25116,6 @@ export namespace google {
 
             /** FieldOptions lazy. */
             public lazy: boolean;
-
-            /** FieldOptions unverifiedLazy. */
-            public unverifiedLazy: boolean;
 
             /** FieldOptions deprecated. */
             public deprecated: boolean;
@@ -28543,35 +28537,35 @@ export namespace google {
         namespace Operations {
 
             /**
-             * Callback as used by {@link google.longrunning.Operations|listOperations}.
+             * Callback as used by {@link google.longrunning.Operations#listOperations}.
              * @param error Error, if any
              * @param [response] ListOperationsResponse
              */
             type ListOperationsCallback = (error: (Error|null), response?: google.longrunning.ListOperationsResponse) => void;
 
             /**
-             * Callback as used by {@link google.longrunning.Operations|getOperation}.
+             * Callback as used by {@link google.longrunning.Operations#getOperation}.
              * @param error Error, if any
              * @param [response] Operation
              */
             type GetOperationCallback = (error: (Error|null), response?: google.longrunning.Operation) => void;
 
             /**
-             * Callback as used by {@link google.longrunning.Operations|deleteOperation}.
+             * Callback as used by {@link google.longrunning.Operations#deleteOperation}.
              * @param error Error, if any
              * @param [response] Empty
              */
             type DeleteOperationCallback = (error: (Error|null), response?: google.protobuf.Empty) => void;
 
             /**
-             * Callback as used by {@link google.longrunning.Operations|cancelOperation}.
+             * Callback as used by {@link google.longrunning.Operations#cancelOperation}.
              * @param error Error, if any
              * @param [response] Empty
              */
             type CancelOperationCallback = (error: (Error|null), response?: google.protobuf.Empty) => void;
 
             /**
-             * Callback as used by {@link google.longrunning.Operations|waitOperation}.
+             * Callback as used by {@link google.longrunning.Operations#waitOperation}.
              * @param error Error, if any
              * @param [response] Operation
              */
