@@ -232,9 +232,10 @@ describe('v1beta2.DocumentUnderstandingServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta2.ProcessDocumentRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('ProcessDocumentRequest', [
-        'parent',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta2.ProcessDocumentRequest',
+        ['parent']
+      );
       request.parent = defaultValue1;
       const expectedHeaderRequestParams = `parent=${defaultValue1}`;
       const expectedResponse = generateSampleMessage(
@@ -265,9 +266,10 @@ describe('v1beta2.DocumentUnderstandingServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta2.ProcessDocumentRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('ProcessDocumentRequest', [
-        'parent',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta2.ProcessDocumentRequest',
+        ['parent']
+      );
       request.parent = defaultValue1;
       const expectedHeaderRequestParams = `parent=${defaultValue1}`;
       const expectedResponse = generateSampleMessage(
@@ -314,9 +316,10 @@ describe('v1beta2.DocumentUnderstandingServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta2.ProcessDocumentRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('ProcessDocumentRequest', [
-        'parent',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta2.ProcessDocumentRequest',
+        ['parent']
+      );
       request.parent = defaultValue1;
       const expectedHeaderRequestParams = `parent=${defaultValue1}`;
       const expectedError = new Error('expected');
@@ -347,9 +350,10 @@ describe('v1beta2.DocumentUnderstandingServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta2.ProcessDocumentRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('ProcessDocumentRequest', [
-        'parent',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta2.ProcessDocumentRequest',
+        ['parent']
+      );
       request.parent = defaultValue1;
       const expectedError = new Error('The client has already been closed.');
       client.close();
@@ -371,7 +375,7 @@ describe('v1beta2.DocumentUnderstandingServiceClient', () => {
         new protos.google.cloud.documentai.v1beta2.BatchProcessDocumentsRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'BatchProcessDocumentsRequest',
+        '.google.cloud.documentai.v1beta2.BatchProcessDocumentsRequest',
         ['parent']
       );
       request.parent = defaultValue1;
@@ -407,7 +411,7 @@ describe('v1beta2.DocumentUnderstandingServiceClient', () => {
         new protos.google.cloud.documentai.v1beta2.BatchProcessDocumentsRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'BatchProcessDocumentsRequest',
+        '.google.cloud.documentai.v1beta2.BatchProcessDocumentsRequest',
         ['parent']
       );
       request.parent = defaultValue1;
@@ -464,7 +468,7 @@ describe('v1beta2.DocumentUnderstandingServiceClient', () => {
         new protos.google.cloud.documentai.v1beta2.BatchProcessDocumentsRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'BatchProcessDocumentsRequest',
+        '.google.cloud.documentai.v1beta2.BatchProcessDocumentsRequest',
         ['parent']
       );
       request.parent = defaultValue1;
@@ -501,7 +505,7 @@ describe('v1beta2.DocumentUnderstandingServiceClient', () => {
         new protos.google.cloud.documentai.v1beta2.BatchProcessDocumentsRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'BatchProcessDocumentsRequest',
+        '.google.cloud.documentai.v1beta2.BatchProcessDocumentsRequest',
         ['parent']
       );
       request.parent = defaultValue1;

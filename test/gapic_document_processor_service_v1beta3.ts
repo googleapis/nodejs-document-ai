@@ -300,7 +300,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.ProcessRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('ProcessRequest', ['name']);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.ProcessRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedHeaderRequestParams = `name=${defaultValue1}`;
       const expectedResponse = generateSampleMessage(
@@ -331,7 +334,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.ProcessRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('ProcessRequest', ['name']);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.ProcessRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedHeaderRequestParams = `name=${defaultValue1}`;
       const expectedResponse = generateSampleMessage(
@@ -378,7 +384,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.ProcessRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('ProcessRequest', ['name']);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.ProcessRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedHeaderRequestParams = `name=${defaultValue1}`;
       const expectedError = new Error('expected');
@@ -409,7 +418,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.ProcessRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('ProcessRequest', ['name']);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.ProcessRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedError = new Error('The client has already been closed.');
       client.close();
@@ -430,9 +442,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.FetchProcessorTypesRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('FetchProcessorTypesRequest', [
-        'parent',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.FetchProcessorTypesRequest',
+        ['parent']
+      );
       request.parent = defaultValue1;
       const expectedHeaderRequestParams = `parent=${defaultValue1}`;
       const expectedResponse = generateSampleMessage(
@@ -464,9 +477,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.FetchProcessorTypesRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('FetchProcessorTypesRequest', [
-        'parent',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.FetchProcessorTypesRequest',
+        ['parent']
+      );
       request.parent = defaultValue1;
       const expectedHeaderRequestParams = `parent=${defaultValue1}`;
       const expectedResponse = generateSampleMessage(
@@ -513,9 +527,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.FetchProcessorTypesRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('FetchProcessorTypesRequest', [
-        'parent',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.FetchProcessorTypesRequest',
+        ['parent']
+      );
       request.parent = defaultValue1;
       const expectedHeaderRequestParams = `parent=${defaultValue1}`;
       const expectedError = new Error('expected');
@@ -546,9 +561,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.FetchProcessorTypesRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('FetchProcessorTypesRequest', [
-        'parent',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.FetchProcessorTypesRequest',
+        ['parent']
+      );
       request.parent = defaultValue1;
       const expectedError = new Error('The client has already been closed.');
       client.close();
@@ -569,9 +585,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.GetProcessorRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('GetProcessorRequest', [
-        'name',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.GetProcessorRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedHeaderRequestParams = `name=${defaultValue1}`;
       const expectedResponse = generateSampleMessage(
@@ -602,9 +619,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.GetProcessorRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('GetProcessorRequest', [
-        'name',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.GetProcessorRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedHeaderRequestParams = `name=${defaultValue1}`;
       const expectedResponse = generateSampleMessage(
@@ -651,9 +669,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.GetProcessorRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('GetProcessorRequest', [
-        'name',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.GetProcessorRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedHeaderRequestParams = `name=${defaultValue1}`;
       const expectedError = new Error('expected');
@@ -684,9 +703,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.GetProcessorRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('GetProcessorRequest', [
-        'name',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.GetProcessorRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedError = new Error('The client has already been closed.');
       client.close();
@@ -707,9 +727,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.GetProcessorVersionRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('GetProcessorVersionRequest', [
-        'name',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.GetProcessorVersionRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedHeaderRequestParams = `name=${defaultValue1}`;
       const expectedResponse = generateSampleMessage(
@@ -741,9 +762,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.GetProcessorVersionRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('GetProcessorVersionRequest', [
-        'name',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.GetProcessorVersionRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedHeaderRequestParams = `name=${defaultValue1}`;
       const expectedResponse = generateSampleMessage(
@@ -790,9 +812,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.GetProcessorVersionRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('GetProcessorVersionRequest', [
-        'name',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.GetProcessorVersionRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedHeaderRequestParams = `name=${defaultValue1}`;
       const expectedError = new Error('expected');
@@ -823,9 +846,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.GetProcessorVersionRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('GetProcessorVersionRequest', [
-        'name',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.GetProcessorVersionRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedError = new Error('The client has already been closed.');
       client.close();
@@ -846,9 +870,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.CreateProcessorRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('CreateProcessorRequest', [
-        'parent',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.CreateProcessorRequest',
+        ['parent']
+      );
       request.parent = defaultValue1;
       const expectedHeaderRequestParams = `parent=${defaultValue1}`;
       const expectedResponse = generateSampleMessage(
@@ -879,9 +904,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.CreateProcessorRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('CreateProcessorRequest', [
-        'parent',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.CreateProcessorRequest',
+        ['parent']
+      );
       request.parent = defaultValue1;
       const expectedHeaderRequestParams = `parent=${defaultValue1}`;
       const expectedResponse = generateSampleMessage(
@@ -928,9 +954,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.CreateProcessorRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('CreateProcessorRequest', [
-        'parent',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.CreateProcessorRequest',
+        ['parent']
+      );
       request.parent = defaultValue1;
       const expectedHeaderRequestParams = `parent=${defaultValue1}`;
       const expectedError = new Error('expected');
@@ -961,9 +988,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.CreateProcessorRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('CreateProcessorRequest', [
-        'parent',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.CreateProcessorRequest',
+        ['parent']
+      );
       request.parent = defaultValue1;
       const expectedError = new Error('The client has already been closed.');
       client.close();
@@ -984,9 +1012,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.BatchProcessRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('BatchProcessRequest', [
-        'name',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.BatchProcessRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedHeaderRequestParams = `name=${defaultValue1}`;
       const expectedResponse = generateSampleMessage(
@@ -1019,9 +1048,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.BatchProcessRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('BatchProcessRequest', [
-        'name',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.BatchProcessRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedHeaderRequestParams = `name=${defaultValue1}`;
       const expectedResponse = generateSampleMessage(
@@ -1075,9 +1105,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.BatchProcessRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('BatchProcessRequest', [
-        'name',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.BatchProcessRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedHeaderRequestParams = `name=${defaultValue1}`;
       const expectedError = new Error('expected');
@@ -1111,9 +1142,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.BatchProcessRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('BatchProcessRequest', [
-        'name',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.BatchProcessRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedHeaderRequestParams = `name=${defaultValue1}`;
       const expectedError = new Error('expected');
@@ -1196,7 +1228,7 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
         new protos.google.cloud.documentai.v1beta3.DeleteProcessorVersionRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'DeleteProcessorVersionRequest',
+        '.google.cloud.documentai.v1beta3.DeleteProcessorVersionRequest',
         ['name']
       );
       request.name = defaultValue1;
@@ -1232,7 +1264,7 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
         new protos.google.cloud.documentai.v1beta3.DeleteProcessorVersionRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'DeleteProcessorVersionRequest',
+        '.google.cloud.documentai.v1beta3.DeleteProcessorVersionRequest',
         ['name']
       );
       request.name = defaultValue1;
@@ -1289,7 +1321,7 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
         new protos.google.cloud.documentai.v1beta3.DeleteProcessorVersionRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'DeleteProcessorVersionRequest',
+        '.google.cloud.documentai.v1beta3.DeleteProcessorVersionRequest',
         ['name']
       );
       request.name = defaultValue1;
@@ -1326,7 +1358,7 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
         new protos.google.cloud.documentai.v1beta3.DeleteProcessorVersionRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'DeleteProcessorVersionRequest',
+        '.google.cloud.documentai.v1beta3.DeleteProcessorVersionRequest',
         ['name']
       );
       request.name = defaultValue1;
@@ -1411,7 +1443,7 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
         new protos.google.cloud.documentai.v1beta3.DeployProcessorVersionRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'DeployProcessorVersionRequest',
+        '.google.cloud.documentai.v1beta3.DeployProcessorVersionRequest',
         ['name']
       );
       request.name = defaultValue1;
@@ -1447,7 +1479,7 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
         new protos.google.cloud.documentai.v1beta3.DeployProcessorVersionRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'DeployProcessorVersionRequest',
+        '.google.cloud.documentai.v1beta3.DeployProcessorVersionRequest',
         ['name']
       );
       request.name = defaultValue1;
@@ -1504,7 +1536,7 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
         new protos.google.cloud.documentai.v1beta3.DeployProcessorVersionRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'DeployProcessorVersionRequest',
+        '.google.cloud.documentai.v1beta3.DeployProcessorVersionRequest',
         ['name']
       );
       request.name = defaultValue1;
@@ -1541,7 +1573,7 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
         new protos.google.cloud.documentai.v1beta3.DeployProcessorVersionRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'DeployProcessorVersionRequest',
+        '.google.cloud.documentai.v1beta3.DeployProcessorVersionRequest',
         ['name']
       );
       request.name = defaultValue1;
@@ -1626,7 +1658,7 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
         new protos.google.cloud.documentai.v1beta3.UndeployProcessorVersionRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'UndeployProcessorVersionRequest',
+        '.google.cloud.documentai.v1beta3.UndeployProcessorVersionRequest',
         ['name']
       );
       request.name = defaultValue1;
@@ -1662,7 +1694,7 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
         new protos.google.cloud.documentai.v1beta3.UndeployProcessorVersionRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'UndeployProcessorVersionRequest',
+        '.google.cloud.documentai.v1beta3.UndeployProcessorVersionRequest',
         ['name']
       );
       request.name = defaultValue1;
@@ -1719,7 +1751,7 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
         new protos.google.cloud.documentai.v1beta3.UndeployProcessorVersionRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'UndeployProcessorVersionRequest',
+        '.google.cloud.documentai.v1beta3.UndeployProcessorVersionRequest',
         ['name']
       );
       request.name = defaultValue1;
@@ -1756,7 +1788,7 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
         new protos.google.cloud.documentai.v1beta3.UndeployProcessorVersionRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'UndeployProcessorVersionRequest',
+        '.google.cloud.documentai.v1beta3.UndeployProcessorVersionRequest',
         ['name']
       );
       request.name = defaultValue1;
@@ -1841,9 +1873,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.DeleteProcessorRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('DeleteProcessorRequest', [
-        'name',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.DeleteProcessorRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedHeaderRequestParams = `name=${defaultValue1}`;
       const expectedResponse = generateSampleMessage(
@@ -1876,9 +1909,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.DeleteProcessorRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('DeleteProcessorRequest', [
-        'name',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.DeleteProcessorRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedHeaderRequestParams = `name=${defaultValue1}`;
       const expectedResponse = generateSampleMessage(
@@ -1932,9 +1966,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.DeleteProcessorRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('DeleteProcessorRequest', [
-        'name',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.DeleteProcessorRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedHeaderRequestParams = `name=${defaultValue1}`;
       const expectedError = new Error('expected');
@@ -1965,9 +2000,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.DeleteProcessorRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('DeleteProcessorRequest', [
-        'name',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.DeleteProcessorRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedHeaderRequestParams = `name=${defaultValue1}`;
       const expectedError = new Error('expected');
@@ -2049,9 +2085,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.EnableProcessorRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('EnableProcessorRequest', [
-        'name',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.EnableProcessorRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedHeaderRequestParams = `name=${defaultValue1}`;
       const expectedResponse = generateSampleMessage(
@@ -2084,9 +2121,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.EnableProcessorRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('EnableProcessorRequest', [
-        'name',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.EnableProcessorRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedHeaderRequestParams = `name=${defaultValue1}`;
       const expectedResponse = generateSampleMessage(
@@ -2140,9 +2178,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.EnableProcessorRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('EnableProcessorRequest', [
-        'name',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.EnableProcessorRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedHeaderRequestParams = `name=${defaultValue1}`;
       const expectedError = new Error('expected');
@@ -2173,9 +2212,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.EnableProcessorRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('EnableProcessorRequest', [
-        'name',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.EnableProcessorRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedHeaderRequestParams = `name=${defaultValue1}`;
       const expectedError = new Error('expected');
@@ -2257,9 +2297,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.DisableProcessorRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('DisableProcessorRequest', [
-        'name',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.DisableProcessorRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedHeaderRequestParams = `name=${defaultValue1}`;
       const expectedResponse = generateSampleMessage(
@@ -2292,9 +2333,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.DisableProcessorRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('DisableProcessorRequest', [
-        'name',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.DisableProcessorRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedHeaderRequestParams = `name=${defaultValue1}`;
       const expectedResponse = generateSampleMessage(
@@ -2348,9 +2390,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.DisableProcessorRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('DisableProcessorRequest', [
-        'name',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.DisableProcessorRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedHeaderRequestParams = `name=${defaultValue1}`;
       const expectedError = new Error('expected');
@@ -2381,9 +2424,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.DisableProcessorRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('DisableProcessorRequest', [
-        'name',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.DisableProcessorRequest',
+        ['name']
+      );
       request.name = defaultValue1;
       const expectedHeaderRequestParams = `name=${defaultValue1}`;
       const expectedError = new Error('expected');
@@ -2466,7 +2510,7 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
         new protos.google.cloud.documentai.v1beta3.SetDefaultProcessorVersionRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'SetDefaultProcessorVersionRequest',
+        '.google.cloud.documentai.v1beta3.SetDefaultProcessorVersionRequest',
         ['processor']
       );
       request.processor = defaultValue1;
@@ -2502,7 +2546,7 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
         new protos.google.cloud.documentai.v1beta3.SetDefaultProcessorVersionRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'SetDefaultProcessorVersionRequest',
+        '.google.cloud.documentai.v1beta3.SetDefaultProcessorVersionRequest',
         ['processor']
       );
       request.processor = defaultValue1;
@@ -2559,7 +2603,7 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
         new protos.google.cloud.documentai.v1beta3.SetDefaultProcessorVersionRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'SetDefaultProcessorVersionRequest',
+        '.google.cloud.documentai.v1beta3.SetDefaultProcessorVersionRequest',
         ['processor']
       );
       request.processor = defaultValue1;
@@ -2596,7 +2640,7 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
         new protos.google.cloud.documentai.v1beta3.SetDefaultProcessorVersionRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'SetDefaultProcessorVersionRequest',
+        '.google.cloud.documentai.v1beta3.SetDefaultProcessorVersionRequest',
         ['processor']
       );
       request.processor = defaultValue1;
@@ -2681,9 +2725,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.ReviewDocumentRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('ReviewDocumentRequest', [
-        'humanReviewConfig',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.ReviewDocumentRequest',
+        ['humanReviewConfig']
+      );
       request.humanReviewConfig = defaultValue1;
       const expectedHeaderRequestParams = `human_review_config=${defaultValue1}`;
       const expectedResponse = generateSampleMessage(
@@ -2716,9 +2761,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.ReviewDocumentRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('ReviewDocumentRequest', [
-        'humanReviewConfig',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.ReviewDocumentRequest',
+        ['humanReviewConfig']
+      );
       request.humanReviewConfig = defaultValue1;
       const expectedHeaderRequestParams = `human_review_config=${defaultValue1}`;
       const expectedResponse = generateSampleMessage(
@@ -2772,9 +2818,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.ReviewDocumentRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('ReviewDocumentRequest', [
-        'humanReviewConfig',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.ReviewDocumentRequest',
+        ['humanReviewConfig']
+      );
       request.humanReviewConfig = defaultValue1;
       const expectedHeaderRequestParams = `human_review_config=${defaultValue1}`;
       const expectedError = new Error('expected');
@@ -2805,9 +2852,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.ReviewDocumentRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('ReviewDocumentRequest', [
-        'humanReviewConfig',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.ReviewDocumentRequest',
+        ['humanReviewConfig']
+      );
       request.humanReviewConfig = defaultValue1;
       const expectedHeaderRequestParams = `human_review_config=${defaultValue1}`;
       const expectedError = new Error('expected');
@@ -2889,9 +2937,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.ListProcessorTypesRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('ListProcessorTypesRequest', [
-        'parent',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.ListProcessorTypesRequest',
+        ['parent']
+      );
       request.parent = defaultValue1;
       const expectedHeaderRequestParams = `parent=${defaultValue1}`;
       const expectedResponse = [
@@ -2931,9 +2980,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.ListProcessorTypesRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('ListProcessorTypesRequest', [
-        'parent',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.ListProcessorTypesRequest',
+        ['parent']
+      );
       request.parent = defaultValue1;
       const expectedHeaderRequestParams = `parent=${defaultValue1}`;
       const expectedResponse = [
@@ -2990,9 +3040,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.ListProcessorTypesRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('ListProcessorTypesRequest', [
-        'parent',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.ListProcessorTypesRequest',
+        ['parent']
+      );
       request.parent = defaultValue1;
       const expectedHeaderRequestParams = `parent=${defaultValue1}`;
       const expectedError = new Error('expected');
@@ -3023,9 +3074,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.ListProcessorTypesRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('ListProcessorTypesRequest', [
-        'parent',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.ListProcessorTypesRequest',
+        ['parent']
+      );
       request.parent = defaultValue1;
       const expectedHeaderRequestParams = `parent=${defaultValue1}`;
       const expectedResponse = [
@@ -3086,9 +3138,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.ListProcessorTypesRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('ListProcessorTypesRequest', [
-        'parent',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.ListProcessorTypesRequest',
+        ['parent']
+      );
       request.parent = defaultValue1;
       const expectedHeaderRequestParams = `parent=${defaultValue1}`;
       const expectedError = new Error('expected');
@@ -3138,9 +3191,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.ListProcessorTypesRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('ListProcessorTypesRequest', [
-        'parent',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.ListProcessorTypesRequest',
+        ['parent']
+      );
       request.parent = defaultValue1;
       const expectedHeaderRequestParams = `parent=${defaultValue1}`;
       const expectedResponse = [
@@ -3190,9 +3244,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.ListProcessorTypesRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('ListProcessorTypesRequest', [
-        'parent',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.ListProcessorTypesRequest',
+        ['parent']
+      );
       request.parent = defaultValue1;
       const expectedHeaderRequestParams = `parent=${defaultValue1}`;
       const expectedError = new Error('expected');
@@ -3235,9 +3290,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.ListProcessorsRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('ListProcessorsRequest', [
-        'parent',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.ListProcessorsRequest',
+        ['parent']
+      );
       request.parent = defaultValue1;
       const expectedHeaderRequestParams = `parent=${defaultValue1}`;
       const expectedResponse = [
@@ -3276,9 +3332,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.ListProcessorsRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('ListProcessorsRequest', [
-        'parent',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.ListProcessorsRequest',
+        ['parent']
+      );
       request.parent = defaultValue1;
       const expectedHeaderRequestParams = `parent=${defaultValue1}`;
       const expectedResponse = [
@@ -3333,9 +3390,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.ListProcessorsRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('ListProcessorsRequest', [
-        'parent',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.ListProcessorsRequest',
+        ['parent']
+      );
       request.parent = defaultValue1;
       const expectedHeaderRequestParams = `parent=${defaultValue1}`;
       const expectedError = new Error('expected');
@@ -3366,9 +3424,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.ListProcessorsRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('ListProcessorsRequest', [
-        'parent',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.ListProcessorsRequest',
+        ['parent']
+      );
       request.parent = defaultValue1;
       const expectedHeaderRequestParams = `parent=${defaultValue1}`;
       const expectedResponse = [
@@ -3429,9 +3488,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.ListProcessorsRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('ListProcessorsRequest', [
-        'parent',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.ListProcessorsRequest',
+        ['parent']
+      );
       request.parent = defaultValue1;
       const expectedHeaderRequestParams = `parent=${defaultValue1}`;
       const expectedError = new Error('expected');
@@ -3481,9 +3541,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.ListProcessorsRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('ListProcessorsRequest', [
-        'parent',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.ListProcessorsRequest',
+        ['parent']
+      );
       request.parent = defaultValue1;
       const expectedHeaderRequestParams = `parent=${defaultValue1}`;
       const expectedResponse = [
@@ -3532,9 +3593,10 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
       const request = generateSampleMessage(
         new protos.google.cloud.documentai.v1beta3.ListProcessorsRequest()
       );
-      const defaultValue1 = getTypeDefaultValue('ListProcessorsRequest', [
-        'parent',
-      ]);
+      const defaultValue1 = getTypeDefaultValue(
+        '.google.cloud.documentai.v1beta3.ListProcessorsRequest',
+        ['parent']
+      );
       request.parent = defaultValue1;
       const expectedHeaderRequestParams = `parent=${defaultValue1}`;
       const expectedError = new Error('expected');
@@ -3578,7 +3640,7 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
         new protos.google.cloud.documentai.v1beta3.ListProcessorVersionsRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'ListProcessorVersionsRequest',
+        '.google.cloud.documentai.v1beta3.ListProcessorVersionsRequest',
         ['parent']
       );
       request.parent = defaultValue1;
@@ -3621,7 +3683,7 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
         new protos.google.cloud.documentai.v1beta3.ListProcessorVersionsRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'ListProcessorVersionsRequest',
+        '.google.cloud.documentai.v1beta3.ListProcessorVersionsRequest',
         ['parent']
       );
       request.parent = defaultValue1;
@@ -3681,7 +3743,7 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
         new protos.google.cloud.documentai.v1beta3.ListProcessorVersionsRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'ListProcessorVersionsRequest',
+        '.google.cloud.documentai.v1beta3.ListProcessorVersionsRequest',
         ['parent']
       );
       request.parent = defaultValue1;
@@ -3718,7 +3780,7 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
         new protos.google.cloud.documentai.v1beta3.ListProcessorVersionsRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'ListProcessorVersionsRequest',
+        '.google.cloud.documentai.v1beta3.ListProcessorVersionsRequest',
         ['parent']
       );
       request.parent = defaultValue1;
@@ -3790,7 +3852,7 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
         new protos.google.cloud.documentai.v1beta3.ListProcessorVersionsRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'ListProcessorVersionsRequest',
+        '.google.cloud.documentai.v1beta3.ListProcessorVersionsRequest',
         ['parent']
       );
       request.parent = defaultValue1;
@@ -3851,7 +3913,7 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
         new protos.google.cloud.documentai.v1beta3.ListProcessorVersionsRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'ListProcessorVersionsRequest',
+        '.google.cloud.documentai.v1beta3.ListProcessorVersionsRequest',
         ['parent']
       );
       request.parent = defaultValue1;
@@ -3908,7 +3970,7 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
         new protos.google.cloud.documentai.v1beta3.ListProcessorVersionsRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'ListProcessorVersionsRequest',
+        '.google.cloud.documentai.v1beta3.ListProcessorVersionsRequest',
         ['parent']
       );
       request.parent = defaultValue1;

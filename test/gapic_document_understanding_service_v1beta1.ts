@@ -224,7 +224,7 @@ describe('v1beta1.DocumentUnderstandingServiceClient', () => {
         new protos.google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'BatchProcessDocumentsRequest',
+        '.google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest',
         ['parent']
       );
       request.parent = defaultValue1;
@@ -260,7 +260,7 @@ describe('v1beta1.DocumentUnderstandingServiceClient', () => {
         new protos.google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'BatchProcessDocumentsRequest',
+        '.google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest',
         ['parent']
       );
       request.parent = defaultValue1;
@@ -317,7 +317,7 @@ describe('v1beta1.DocumentUnderstandingServiceClient', () => {
         new protos.google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'BatchProcessDocumentsRequest',
+        '.google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest',
         ['parent']
       );
       request.parent = defaultValue1;
@@ -354,7 +354,7 @@ describe('v1beta1.DocumentUnderstandingServiceClient', () => {
         new protos.google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest()
       );
       const defaultValue1 = getTypeDefaultValue(
-        'BatchProcessDocumentsRequest',
+        '.google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest',
         ['parent']
       );
       request.parent = defaultValue1;
