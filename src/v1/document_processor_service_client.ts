@@ -158,7 +158,6 @@ export class DocumentProcessorServiceClient {
     // Set defaultServicePath on the auth object.
     this.auth.defaultServicePath = staticMembers.servicePath;
 
-    
     this.locationsClient = new this._gaxModule.LocationsClient(
       this._gaxGrpc,
       opts
