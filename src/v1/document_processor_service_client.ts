@@ -158,6 +158,7 @@ export class DocumentProcessorServiceClient {
     // Set defaultServicePath on the auth object.
     this.auth.defaultServicePath = staticMembers.servicePath;
 
+    
     this.locationsClient = new this._gaxModule.LocationsClient(
       this._gaxGrpc,
       opts
@@ -576,6 +577,8 @@ export class DocumentProcessorServiceClient {
    *   false.
    * @param {google.protobuf.FieldMask} request.fieldMask
    *   Specifies which fields to include in ProcessResponse's document.
+   *   Only supports top level document and pages field so it must be in the form
+   *   of `{document_field_name}` or `pages.{page_field_name}`.
    * @param {object} [options]
    *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
    * @returns {Promise} - The promise which resolves to an array.
